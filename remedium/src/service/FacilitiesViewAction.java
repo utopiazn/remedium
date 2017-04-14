@@ -27,7 +27,7 @@ public class FacilitiesViewAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		return super.execute();
+		return SUCCESS;
 	}
 	
 	
