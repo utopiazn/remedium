@@ -16,17 +16,19 @@ public class JoinAction extends ActionSupport {
 	
 public JoinAction() throws IOException {
 		
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); // sqlMapConfig.xml 파일의 설정내용을 가져온다.
-		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);	// sqlMapConfig.xml의 내용을 적용한 sqlMapper 객체 생성.
+		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
+		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);	
 		reader.close();
 	}
 
+
+//회원 가입 정보 입력 폼
 public String joinForm() throws Exception {
 	
 	return SUCCESS;
 }
 
-
+//회원 가입 정보 입력 처리
 public String execute() throws Exception{
 	return SUCCESS;
 }

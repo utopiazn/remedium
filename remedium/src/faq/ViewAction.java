@@ -16,11 +16,12 @@ public class ViewAction extends ActionSupport{
 	
 public ViewAction() throws IOException {
 		
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); // sqlMapConfig.xml 파일의 설정내용을 가져온다.
-		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);	// sqlMapConfig.xml의 내용을 적용한 sqlMapper 객체 생성.
+		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); 
+		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);	
 		reader.close();
 	}
 
+//자주묻는 질문 상세보기
 public String execute() throws Exception{
 	
 	return SUCCESS;
