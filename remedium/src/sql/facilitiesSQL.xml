@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="facilities" type="bean.facilitiesBean" />
+
+	<resultMap id="facilitiesRes" class="facilities">
+		<result property="no" column="no" />
+		<result property="name" column="name" />
+		<result property="content" column="content" />
+		<result property="time" column="time" />
+		<result property="image" column="image" />
+	</resultMap>
+	
+
+</sqlMap>
