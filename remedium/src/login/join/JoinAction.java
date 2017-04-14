@@ -14,7 +14,7 @@ public class JoinAction extends ActionSupport {
 	public static SqlMapClient sqlMapper;
 
 	
-public JoinAction() throws IOException {
+	public JoinAction() throws IOException {
 		
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);	
@@ -22,16 +22,16 @@ public JoinAction() throws IOException {
 	}
 
 
-//회원 가입 정보 입력 폼
-public String joinForm() throws Exception {
+	//회원 가입 정보 입력 폼
+	public String joinForm() throws Exception {
+		
+		return SUCCESS;
+	}
 	
-	return SUCCESS;
-}
-
-//회원 가입 정보 입력 처리
-public String execute() throws Exception{
-	return SUCCESS;
-}
+	//회원 가입 정보 입력 처리
+	public String execute() throws Exception{
+		return SUCCESS;
+	}
 
 
 }
