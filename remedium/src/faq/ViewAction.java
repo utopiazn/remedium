@@ -21,12 +21,12 @@ public ViewAction() throws IOException {
 		reader.close();
 	}
 
-//자주묻는 질문 상세보기
-public String execute() throws Exception{
+	//자주묻는 질문 상세보기
+	public String execute() throws Exception{
+		
+		return SUCCESS;
+	}
 	
-	return SUCCESS;
-}
-
 
 
 }
