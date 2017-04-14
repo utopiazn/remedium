@@ -19,7 +19,7 @@ public class ViewAction extends ActionSupport {
 		reader.close();
 	}
 	
-	
+	// 문의사항 게시판 상세보기
 	public String execute() throws Exception {
 		return SUCCESS;
 	}

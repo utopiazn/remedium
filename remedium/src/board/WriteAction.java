@@ -19,11 +19,12 @@ public class WriteAction extends ActionSupport {
 		reader.close();
 	}
 	
+	// 문의 사항 게시글 쓰기 폼
 	public String form() throws Exception {
 		return SUCCESS;
 	}
 
-	
+	// 문의 사항 게시글 쓰기 처리
 	public String execute() throws Exception {
 		return SUCCESS;
 	}
