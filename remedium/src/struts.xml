@@ -6,7 +6,7 @@
 	
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.action.extension" value="action" />
-	
+	 
 </struts>
 
 
