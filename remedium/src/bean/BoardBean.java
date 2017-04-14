@@ -1,5 +1,5 @@
 package bean;
 
 public class BoardBean {
-	int i;
+	int ij;
 }
