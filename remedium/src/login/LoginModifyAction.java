@@ -1,5 +1,33 @@
 package login;
 
-public class LoginModifyAction {
+import java.io.IOException;
+import java.io.Reader;
 
+import com.ibatis.common.resources.Resources;
+import com.ibatis.sqlmap.client.SqlMapClient;
+import com.ibatis.sqlmap.client.SqlMapClientBuilder;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LoginModifyAction extends ActionSupport{
+	
+	public static Reader reader;
+	public static SqlMapClient sqlMapper;
+	
+	public LoginModifyAction() throws IOException {
+		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
+		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
+		reader.close();
+	}
+	
+	public String modifyForm() throws Exception {
+		return SUCCESS;
+	}
+	
+	public String admin() throws Exception {
+		return SUCCESS;
+	}
+	
+	public String execute() throws Exception {
+		return SUCCESS;
+	}
 }
