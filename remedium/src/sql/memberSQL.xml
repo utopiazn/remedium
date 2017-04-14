@@ -1,2 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+
+<sqlMap>
+	<typeAlias alias="member" type="bean.MemberBean" />
+
+	<resultMap id="memberRes" class="member">
+	
+		<result property="memberID" 		column="memberID" />
+		<result property="memberPassword" 	column="memberPassword" />
+		<result property="memberName" 		column="memberName" />
+		<result property="gender" 			column="gender" />
+		<result property="birthday" 		column="birthday" />
+		<result property="phone" 			column="phone" />
+		<result property="email" 			column="email" />
+		<result property="regdate" 			column="regdate" />
+		<result property="deldate" 			column="deldate" />
+		<result property="userAdmin" 		column="userAdmin" />
+		<result property="zipcode" 			column="zipcode" />
+		<result property="addr1" 			column="addr1" />
+		<result property="addr2" 			column="addr2" />
+		<result property="cash" 			column="cash" />		
+		<result property="userCheck" 		column="userCheck" />			
+		
+	</resultMap>
+	
+
+</sqlMap>
