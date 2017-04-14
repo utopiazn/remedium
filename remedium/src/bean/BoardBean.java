@@ -4,15 +4,15 @@ import java.sql.Date;
 
 public class BoardBean {
 
-	private int no;
-	private String subject;
-	private String memberID;
-	private String name;
-	private String content;
-	private String ref;
-	private String re_step;
-	private Date regdate;
-	private String type;
+	private int no; 	//글 번호
+	private String subject; 	//제목
+	private String memberID; 	//회원 ID
+	private String name; 	//작성자
+	private String content; 	//글 내용
+	private String ref; 	//글 구분
+	private String re_step; 	//글 답변
+	private Date regdate; 	//등록날짜
+	private String type; 	//답변상태
 	
 	public int getNo() {
 		return no;
