@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+
+<sqlMap>
+	<typeAlias alias="room" type="bean.RoomBean" />
+
+	<resultMap id="roomRes" class="room">
+		<result property="no" column="no" />
+		<result property="name" column="name" />
+		<result property="room_size" column="room_size" />
+		<result property="room_capacity" column="room_capacity" />
+		<result property="construction" column="construction" />
+		<result property="room_comment" column="room_comment" />
+		<result property="orgImage" column="orgImage" />
+		<result property="savImage" column="savImage" />
+		<result property="price" column="price" />
+		<result property="room_class" column="room_class" />
+	</resultMap>
+	
+
+</sqlMap>

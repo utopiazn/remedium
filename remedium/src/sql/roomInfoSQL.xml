@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="roomInfo" type="bean.RoomInfoBean" />
+
+	<resultMap id="roomInfoRes" class="roomInfo">
+		<result property="reservationNo" column="reservationNo" />
+		<result property="no" column="no" />
+		<result property="firstdate" column="firstdate" />
+		<result property="lastdate" column="lastdate" />
+		<result property="money" column="money" />
+		<result property="memberID" column="memberID" />
+	</resultMap>
+	
+
+</sqlMap>

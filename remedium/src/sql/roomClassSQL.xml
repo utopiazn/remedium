@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="roomclass" type="bean.RoomclassBean" />
+
+	<resultMap id="roomclassRes" class="roomclass">
+		<result property="room_class" column="room_class" />
+		<result property="image" column="image" />
+		<result property="content" column="content" />
+		<result property="image2" column="image2" />
+	</resultMap>
+	
+
+</sqlMap>
