@@ -1,4 +1,4 @@
-package room;
+package admin.room;
 
 import com.opensymphony.xwork2.ActionSupport;
 
