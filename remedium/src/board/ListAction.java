@@ -19,6 +19,7 @@ public class ListAction extends ActionSupport {
 		reader.close();
 	}
 	
+	// 문의 사항 게시판 리스트 처리
 	public String execute() throws Exception {
 		return SUCCESS;
 	}

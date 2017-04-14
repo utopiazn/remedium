@@ -19,6 +19,7 @@ public class DeleteAction extends ActionSupport {
 		reader.close();
 	}
 	
+	// 문의사항 게시판 삭제 처리 
 	public String execute() throws Exception {
 		return SUCCESS;
 	}

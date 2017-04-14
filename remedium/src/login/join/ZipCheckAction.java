@@ -20,6 +20,7 @@ public class ZipCheckAction extends ActionSupport{
 		reader.close();
 	}
 	
+	// 회원가입 우편번호 가져오기
 	public String execute() throws Exception {
 		return SUCCESS;
 	}

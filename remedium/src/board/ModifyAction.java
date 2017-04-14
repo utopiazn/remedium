@@ -19,6 +19,7 @@ public class ModifyAction extends ActionSupport {
 		reader.close();
 	}
 	
+	// 문의사항 게시판 수정 처리
 	public String execute() throws Exception {
 		return SUCCESS;
 	}

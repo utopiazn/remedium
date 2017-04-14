@@ -20,6 +20,7 @@ public class MemberIdCheckAction extends ActionSupport {
 		reader.close();
 	}
 	
+	// 회원 가입 아이디 중복 체크
 	public String execute() throws Exception {
 		return SUCCESS;
 	}
