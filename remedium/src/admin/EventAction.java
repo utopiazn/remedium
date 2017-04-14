@@ -19,35 +19,35 @@ public class EventAction extends ActionSupport{
 		reader.close();
 	}
 	
-		//관리자 이벤트 글 쓰기 폼
-		public String insForm() throws Exception{
-			
-			return SUCCESS;
-		}
+	//관리자 이벤트 글 쓰기 폼
+	public String insForm() throws Exception{
 		
-		//관리자 이벤트 글 쓰기 
-		public String execute() throws Exception{
-			
-			return SUCCESS;
-		}
-			
-		//관리자 이벤트 글 수정 폼
-		public String updForm() throws Exception{
-			
-			return SUCCESS;
-		}	
-		
-		//관리자 이벤트 글 수정 처리
-		public String update() throws Exception{
-			
-			return SUCCESS;
-		}
-		
-		//관리자 이벤트 글 삭제
-		public String delete() throws Exception{
-			
-			return SUCCESS;
-		}
+		return SUCCESS;
+	}
 	
+	//관리자 이벤트 글 쓰기 
+	public String execute() throws Exception{
+		
+		return SUCCESS;
+	}
+		
+	//관리자 이벤트 글 수정 폼
+	public String updForm() throws Exception{
+		
+		return SUCCESS;
+	}	
+	
+	//관리자 이벤트 글 수정 처리
+	public String update() throws Exception{
+		
+		return SUCCESS;
+	}
+	
+	//관리자 이벤트 글 삭제
+	public String delete() throws Exception{
+		
+		return SUCCESS;
+	}
+
 
 }
