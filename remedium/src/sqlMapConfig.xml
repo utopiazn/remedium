@@ -3,6 +3,7 @@
 	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
 
 <sqlMapConfig>
+
 	<properties resource="/dbconnect.properties"/>
 	<settings cacheModelsEnabled="true" 
 	         enhancementEnabled="true"
@@ -30,8 +31,7 @@
 	 <sqlMap resource="/sql/faqSQL.xml"/>
 	 <sqlMap resource="/sql/facilitiesSQL.xml"/>
 	 <sqlMap resource="/sql/eventSQL.xml"/>
-	 
-	 
+	  
 </sqlMapConfig>	
 
  <!-- 
