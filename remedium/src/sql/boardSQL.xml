@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="board" type="bean.BoardBean" />
+
+	<resultMap id="boardRes" class="board">
+		<result property="no" column="no" />
+		<result property="subject" column="subject" />
+		<result property="memberID" column="name" />
+		<result property="name" column="password" />
+		<result property="content" column="content" />
+		<result property="ref" column="ref" />
+		<result property="re_step" column="re_step" />
+		<result property="regdate" column="re_level" />
+		<result property="type" column="regdate" />
+	</resultMap>
+	
+
+</sqlMap>
+

@@ -2,3 +2,100 @@
 <!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
 	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
 
+<sqlMapConfig>
+	<properties resource="/dbconnect.properties"/>
+	<settings cacheModelsEnabled="true" 
+	         enhancementEnabled="true"
+	         lazyLoadingEnabled="true" 
+	         maxRequests="32" 
+	         maxSessions="10" 
+	         maxTransactions="5" 
+	         useStatementNamespaces="false" />
+	         
+	 <transactionManager type="JDBC" commitRequired="false">
+	 	<dataSource type="SIMPLE">
+	 		<property name="JDBC.Driver" value="${driver}"/>
+	 		<property name="JDBC.ConnectionURL" value="${url}"/>
+	 		<property name="JDBC.Username" value="${username}"/>
+	 		<property name="JDBC.Password" value="${password}"/>
+	 	</dataSource>
+	 </transactionManager>
+	 
+	 <sqlMap resource="/sql/boardSQL.xml"/>
+	 <sqlMap resource="/sql/memberSQL.xml"/>
+	 <sqlMap resource="/sql/roomSQL.xml"/>
+	 <sqlMap resource="/sql/roomClassSQL.xml"/>
+	 <sqlMap resource="/sql/roomInfoSQL.xml"/>
+	 <sqlMap resource="/sql/boardSQL.xml"/>
+	 <sqlMap resource="/sql/faqSQL.xml"/>
+	 <sqlMap resource="/sql/facilitiesSQL.xml"/>
+	 <sqlMap resource="/sql/eventSQL.xml"/>
+	 
+	 
+</sqlMapConfig>	
+
+ <!-- 
+ lazyLoadingsEnabled : 
+ 적재 지연은 정보를 필요 할 때만 읽어들이고 
+       다른 데이터는 명시적인 요청이 있을 때까지 적재를 미루는 기술이다.
+    
+    cacheModelsEnabled : 
+       성능을 향상시키는 기법으로 최근 사용된 데이터가 
+        미래에 다시 사용될 것이라 가정하고 메모리에 계속 저장해 두는 것.
+
+ enhancementEnabled : 
+ 적재 지연 기능을 향상시킬지 여부르 지정하는데 사용한다.
+
+ useStatementNamespace : 
+ 매핑구문이 적절한 이름을 가지고 있어야
+ iBatis 가 실행 될 수 있도록 하는 옵션.
+
+ maxRequest (비권장) : 
+ 한번에 실행될 수 있는 요청의 갯수
+ 
+  maxSessions (비권장) : 
+  활성 세션의 수
+ 
+ maxTransactions (비권장) : 
+ 활성트랜잭션의 수
+ 
+ 항상 maxRequest 값이 maxSessions 갑보다 커야하고
+ maxSessions 값이 maxTransactions 값 보다 커야 한다
+
+
+ or
+ 
+ *cacheModelsEnabled*
+ 성능을 향상시키는 기법으로, 최근에 사용된 데이터를 메모리에서 제거 하지 않고, 계속 저장해 두는 것
+  이 설정은 IBATIS 가 캐싱을 사용할지 여부를 지정하는데 사용합니다.
+ 
+ *enhancementEnabled*
+ 속성! 디폴트값은 "true" 입니다.
+ CGLIB에 최적화된 클래스를 통해 적재지연성능을 향상시킬지 여부를 지정하는데 사용합니다.
+ CGLIB 는 실행시간에 코드를 생성하는 라이브러리입니다. 꼭 필요하다고 생각되지 않으면 사용하지 않는 것이 좋아요
+
+ *lazyLoadingEnabled*
+ 속성!   디폴트 값은 "true" 이며, 적재지연이. 정보를 필요할때만 읽어들이고 다른데이터는 분명한 요청이 있을때까지 적재를 잠시 미루는 속성입니다. 
+ 정말정말확실한요청이 들어올때까지는 일을 적게하는 거죠!
+ 
+ 
+ *maxRequests*
+   은요! 비권장합니다.예를들어, <Settins maxRequests="32" />
+ 이것은, 입력,수정,삭제, 그리고 저장 프로시져 호출 같은 모든 sql 작업을, 디폴트 값 512 대신에
+ 최대 32개의 요청만이 한번에 수행될 수 있도록 최대 요청 개수를 설정.  
+
+
+ maxTransactions
+  활성트랜잭션의 수
+
+ *useStatementNamespace* 
+ 속성! 디폴트 값은 "false" 입니다.
+ 매핑구문이 적절한 이름을 가지고 이썽야 ibatis 가 실행될 수 있도록 하는 옵션!
+ sqlMap 을 정의할떄, 적절한 맵 이름을 가진 매핑구문을 선택하는데 사용되요. 
+ 계좌를 추가하자고 한다면, Account.insert 매핑구문을 호출하면되요! 
+ 다른맵에서 원하는 대로 여러 insert 라는 매핑구문을 작성해도 이름이 충돌하지 않게 되요!
+ Account.insert 와 School.insert는 충돌나지 않는거죠!
+ 이 nameSpace 를 사용하게되면, 대규모시스템작업에서 도움이 많이 됩니다.
+ 
+ 
+  -->
