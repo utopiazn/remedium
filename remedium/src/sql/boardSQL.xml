@@ -7,8 +7,8 @@
 	<resultMap id="boardRes" class="board">
 		<result property="no" column="no" />
 		<result property="subject" column="subject" />
-		<result property="memberID" column="name" />
-		<result property="name" column="password" />
+		<result property="memberID" column="memberID" />
+		<result property="name" column="name" />
 		<result property="content" column="content" />
 		<result property="ref" column="ref" />
 		<result property="re_step" column="re_step" />
