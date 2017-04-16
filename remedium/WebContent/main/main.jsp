@@ -13,12 +13,12 @@
 </head>
 <body>
 
-	<table width="1000" cellpadding="0" cellspacing="0">
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0">
 		
 		<tr>
 		
 			<!-- 헤더 정보--> 			
-			<td colspan="2" width="100" height="100" align="center">
+			<td colspan="2" width="100%" height="30%" align="center">
 				<tiles:insertAttribute name="header" />
 			</td>
 		</tr>
@@ -26,12 +26,12 @@
 		<tr>
 			
 			<!-- 오른쫀 메뉴 -->
-			<td valign="top"  width="500" height="250" align="center">  
+			<td valign="top"  width="25%" height="50%" align="center">  
 				 <tiles:insertAttribute name="lefter" /> 
 			</td>
 			
 			<!-- 오른쪽 메뉴에 따른 정보 -->
-			<td valign="top" width="770" align="center"> 
+			<td valign="top" width="75%" height="50%" align="center"> 
 				내용
 			<%-- <tiles:insertAttribute name="body" /> --%>
 			</td>
@@ -39,7 +39,7 @@
 		
 		<tr>
 			<!-- footer -->
-			<td colspan="2"  align="center">
+			<td colspan="2" width="100%" height="20%" align="center">
 				<tiles:insertAttribute name="footer" /> 
 			</td>
 		</tr>

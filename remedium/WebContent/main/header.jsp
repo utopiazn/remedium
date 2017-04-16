@@ -6,6 +6,6 @@
 <title></title>
 </head>
 <body>
-    해더 화면
+    해더 화면 
 </body>
 </html>
