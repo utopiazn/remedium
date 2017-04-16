@@ -10,13 +10,20 @@
 	
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.action.extension" value="action" />
-	
-	<package name="main" namespace="/" extends="struts-default, tiles-default">
+
+<!-- 	<package name="main"  extends="struts-default, tiles-default">
+		
 		<action name="main" class="main.MainAction">
 			<result type="tiles">main</result>
 		</action>
-	</package>
+	</package> -->
 	
+	<package name="tiles" namespace="/tiles" extends="struts-default, tiles-default">
+        <action name="main"  >
+            <result type="tiles">main</result>
+           
+        </action>
+	</package>
 	 
 </struts>
 
