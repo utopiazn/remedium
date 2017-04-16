@@ -19,7 +19,7 @@
 	</package> -->
 	
 	<package name="tiles" namespace="/tiles" extends="struts-default, tiles-default">
-        <action name="main"  >
+        <action name="main" class="main.MainAction" >
             <result type="tiles">main</result>
            
         </action>

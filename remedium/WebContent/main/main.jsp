@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+	<table border=1 width="100%" height="100%" cellpadding="0" cellspacing="0">
 		
 		<tr>
 		
