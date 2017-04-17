@@ -30,8 +30,8 @@
 	<s:else>
 		<s:iterator value="list">
 		<tr>
-			<td align="right"><s:property value="no"/>호</td>
-			<td align="center"><s:property value="name"/></td>
+			<td align="right"><a href="/remedium/roomView.action?num=<s:property value="no"/>"><s:property value="no"/>호</a></td>
+			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>"><s:property value="name"/></a></td>
 			<td><s:property value="room_class"/></td>
 			<td align="right"><s:property value="room_capacity"/>명</td>
 			<td align="right"><s:property value="price"/>원</td>
