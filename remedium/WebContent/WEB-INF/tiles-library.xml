@@ -16,7 +16,7 @@
 	</definition>
 	
  	<definition name="admin" extends="main">
-		<put-attribute name="body" value="/admin/joinForm.jsp" />
+		<put-attribute name="body" value="/join/joinForm.jsp" />
 	</definition>
 
 	
