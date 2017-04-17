@@ -4,9 +4,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>REMEDIUM HOTEL</title>
 </head>
 <body>
-
+<h1>HOTEL REMEDIUM</h1>
+<hr align="left" width="100%" size="2" color="gray">
+<table width=100%>
+<tr>
+<td align="center" ><h2>당신만을 위한 오리엔탈 프리미엄 에디션</h2>
+The Oriental Premium Edition for You<br>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img alt="호텔정보" src="/remedium/image/info.jpg" size="100%"><br>
+고객 중심의 고객을 위한 최고의 서비스와 가치 실현
+</td>
+</tr>
+<tr>
+<td>
+CONCEPT
+<hr align="left" width="100" size="1" color="gray">
+: 일상에 지친 당신만을 위한 휴식 공간. 
+</td>
+</tr>
+</table>
 </body>
 </html>
