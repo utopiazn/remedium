@@ -10,11 +10,11 @@
 	<table width="800">
 		<tr>
 			<td>
-				<img alt="호텔로고" src="/remedium/image/logo.png" width="200" height="200">
+				<img alt="호텔로고" src="/remedium/image/logo2.png" width="200" height="100">
 			</td>
 			<td>
-				전화번호 : 02-1111-1111 / Fax : 02-1111-1112 / E-mail : remedium.com <br>
-				주소 : 서울특별시 강남구 역삼동 222-22
+				전화번호 : 1544-9970 / FAX : 070-8290-2889 / E-mail : remedium.com <br>
+				주소 : 서울특별시 강남구 테헤란로 14길 6 남도빌딩
 			</td>
 		</tr>
 	</table>

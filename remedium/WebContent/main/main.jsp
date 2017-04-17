@@ -38,7 +38,7 @@
 		
 		<tr>
 			<!-- footer -->
-			<td  bgcolor="#B1AFAF" colspan="2" width="100%" height="20%" align="center">
+			<td  bgcolor="#C0C0C0" colspan="2" width="100%" height="20%" align="center">
 				<tiles:insertAttribute name="footer" /> 
 			</td>
 		</tr>
