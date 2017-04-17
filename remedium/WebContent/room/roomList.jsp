@@ -39,5 +39,6 @@
 		</s:iterator>
 	</s:else>
 	</table>
+	<a href="/remedium/roomInsertForm.action">객실추가</a>
 </body>
 </html>
