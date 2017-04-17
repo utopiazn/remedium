@@ -41,5 +41,15 @@ public class ListAction extends ActionSupport {
 		
 		return SUCCESS;
 	}
+
+	public List<RoomBean> getList() {
+		return list;
+	}
+
+	public void setList(List<RoomBean> list) {
+		this.list = list;
+	}
 	
 }
+
+
