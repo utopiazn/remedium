@@ -18,5 +18,29 @@
 		<result property="room_class" column="room_class" />
 	</resultMap>
 	
-
+	<sql id="room_select-all">SELECT * FROM ROOM</sql>
+	
+	<sql id="room_where-no">WHERE NO = #no#</sql>
+	
+	<select id="room_selectAll" resultMap="roomRes">
+	<include refid="room_select-all"/>
+	ORDER BY no DESC
+	</select>
+	
+	<select id="room_selectOne" resultMap="roomRes">
+	<include refid="room_select-all"/>
+	<include refid="room_where-no"/>
+	</select>
+	
+	<insert id="room_insertRoom" parameterClass="room">
+	INSERTINTO ROOM(NO, NAME, ROOM_SIZE, ROOM_CAPACITY, CONSTRUCTION, ROOM_COMMENT,
+	ORGIMAGE, SAVIMAGE, PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
+	#room_capacity#, #construction#, #room_comment#, #orgImage#, #savImage#,
+	#price#, #room_class#)
+	</insert>
+	
+	<delete id="room_deleteRoom" parameterClass="room">
+	DELETE FROM ROOM
+	<include refid="room_where-no"/>
+	</delete>
 </sqlMap>
