@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="room"  extends="struts-default, tiles-default">
+		
+		<action name="roomAllList" class="room.ListAction" method="all">
+			<result type="tiles">roomAllList</result>
+		</action>
+		
+		<action name="roomView" class="room.ViewAction">
+			<result type="tiles">roomView</result>
+		</action>
+		
+		<action name="roomInsertForm" class="admin.room.RoomAction" method="insForm">
+			<result type="tiles">roomInsertForm</result>
+		</action>
+		
+		<action name="roomInsert" class="admin.room.RoomAction" method="execute">
+			<result type="chain">roomAllList</result>
+		</action>
+		
+		<action name="roomDelete" class="admin.room.RoomAction" method="delete">
+			<result type="chain">roomAllList</result>
+		</action>
+		
+	</package>
+</struts>

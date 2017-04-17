@@ -23,7 +23,22 @@
 		<put-attribute name="body" value="/login/loginForm.jsp" />
 	</definition>
 	
+	<!-- 객실 관련 -->
+	<definition name="roomAllList" extends="main">
+		<put-attribute name="body" value="/room/roomList.jsp" />
+	</definition>
 	
+	<definition name="roomlist" extends="main">
+		<put-attribute name="body" value="/room/roomList.jsp" />
+	</definition>
+	
+	<definition name="roomView" extends="main">
+		<put-attribute name="body" value="/room/roomView.jsp" />
+	</definition>
+	
+	<definition name="roomInsertForm" extends="main">
+		<put-attribute name="body" value="/admin/roomInsertForm.jsp" />
+	</definition>
 
 	
 </tiles-definitions>
