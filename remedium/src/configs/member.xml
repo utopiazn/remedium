@@ -15,7 +15,7 @@
 		</action>
 		
 		<action name="loginAction" class="login.LoginAction">
-			<result type="tiles">main</result>
+			<result type="tiles">main2</result>
 			<result name="error">/login/error.jsp</result>
 		</action>  
 	</package>

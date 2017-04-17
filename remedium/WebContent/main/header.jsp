@@ -35,16 +35,18 @@
 
 <div id="navi">
 
-<a href="joinForm.action">회원가입</a>
-<a href="loginForm.action">로그인</a>
 
-<s:if test="${ session.id =='admin' }">
+<s:if test="${ session.memberId =='admin' }">
 <a href="memberAdminList.action">회원관리 </a>
 </s:if>
-<s:if test="${session.id != null}">
+<s:if test="${session.memberId != null}">
 <a href="myPageMain.action">마이페이지</a>
 <a href="loginModifyForm.action">회원수정</a>
 </s:if>
+<s:else>
+<a href="joinForm.action">회원가입</a>
+<a href="loginForm.action">로그인</a>
+</s:else>
 </div>
 
 <div id="logo">
