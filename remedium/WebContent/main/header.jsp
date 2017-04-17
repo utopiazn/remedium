@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,15 +8,14 @@
 <title></title>
 	<style type="text/css">
 	#top{
-	width: 100%; height: 100%; background-color: #C0C0C0; float: center;
+	width: 100%; height: 100%; background-color: #C0C0C0;
 	}
 	#navi {
-	margin: 0 10px; font-family: "돋음",sans-serif;
-	font-size: 18px; color: #FFFFFF;
-	float: right;
+	margin: 0 10px; font-family: "돋음",sans-serif; text-decoration: none;
+	font-size: 15px; color: #FFFFFF; float: right;
 	}
 	#menu{
-	 height:300; background-color:#C0C0C0; float: center; 
+	 height:300; background-color:#C0C0C0; float: center; text-decoration: none;
 	 font-family: "돋움",sans-serif; color: #FFFFFF; line-height: 3em; text-align: center;
 	}
 	#res{
@@ -22,7 +23,7 @@
 	color: #FFFFFF; text-align: center; line-height: 3em;
 	}
 	#logo{
-	margin: 0 auto;
+	margin: 0 auto; float: center;
 	}
 	
 	
@@ -33,8 +34,17 @@
 <div id="top">
 
 <div id="navi">
-<a href="login.join.JoinAction">회원가입</a>
-<a href="login.LoinAction">로그인</a>
+
+<a href="joinForm.action">회원가입</a>
+<a href="loginForm.action">로그인</a>
+
+<s:if test="${ session.id =='admin' }">
+<a href="memberAdminList.action">회원관리 </a>
+</s:if>
+<s:if test="${session.id != null}">
+<a href="myPageMain.action">마이페이지</a>
+<a href="loginModifyForm.action">회원수정</a>
+</s:if>
 </div>
 
 <div id="logo">
@@ -42,15 +52,15 @@
 </div>
 
 <div id="menu">
-	<a href="main.infoAction">호텔 정보   </a>
+	<a href="info.action">호텔 정보   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="room.infoAction">객실 소개   </a>
+    <a href="roomInfoList.action">객실 소개   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href=service.FacilitiesListAction">편의 시설   </a>
+    <a href=facilitiesList.action">편의 시설   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="service.EventListAction.java">이 벤 트   </a>
+    <a href="eventList.action">이 벤 트   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="board.ListAction">문의사항</a>
+    <a href="boardList.action">문의사항</a>
 </div>
 
 <div id="res">
