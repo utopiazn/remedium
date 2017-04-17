@@ -11,7 +11,7 @@
 	         maxRequests="32" 
 	         maxSessions="10" 
 	         maxTransactions="5" 
-	         useStatementNamespaces="false" />
+	         useStatementNamespaces="true" />
 	         
 	 <transactionManager type="JDBC" commitRequired="false">
 	 	<dataSource type="SIMPLE">
@@ -27,7 +27,6 @@
 	 <sqlMap resource="/sql/roomSQL.xml"/>
 	 <sqlMap resource="/sql/roomClassSQL.xml"/>
 	 <sqlMap resource="/sql/roomInfoSQL.xml"/>
-	 <sqlMap resource="/sql/boardSQL.xml"/>
 	 <sqlMap resource="/sql/faqSQL.xml"/>
 	 <sqlMap resource="/sql/facilitiesSQL.xml"/>
 	 <sqlMap resource="/sql/eventSQL.xml"/>

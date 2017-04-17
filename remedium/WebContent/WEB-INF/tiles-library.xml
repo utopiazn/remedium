@@ -15,9 +15,18 @@
 		
 	</definition>
 	
- 	<definition name="admin" extends="main">
+ 	<definition name="JoinForm" extends="main">
 		<put-attribute name="body" value="/join/joinForm.jsp" />
 	</definition>
+	
+	<definition name="LoginForm" extends="main">
+		<put-attribute name="body" value="/login/loginForm.jsp" />
+	</definition>
+	
+	<definition name="roomAllList" extends="main">
+		<put-attribute name="body" value="/room/roomList.jsp" />
+	</definition>
+	
 
 	
 </tiles-definitions>

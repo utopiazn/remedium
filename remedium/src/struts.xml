@@ -29,7 +29,8 @@
 	</package>
 	
 	
-	<include file="/configs/admin.xml" />
+	<include file="/configs/member.xml" />
+	<include file="/configs/room.xml" />
 	 
 </struts>
 

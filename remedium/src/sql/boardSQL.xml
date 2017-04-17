@@ -16,6 +16,5 @@
 		<result property="type" 		column="type" />
 	</resultMap>
 	
-
 </sqlMap>
 
