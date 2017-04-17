@@ -28,7 +28,7 @@
 	
 	</table>
 
-	<form action="JoinForm.action" method="post">
+	<form action="joinForm.action" method="post">
 	
 		<table width="600" border="0" cellspacing="0" cellpadding="0">
 			
@@ -98,7 +98,7 @@
 	<br/><br/><br/>
 	
 	
-
+<!-- 
 	
 	private String gender; // 회원 성별
 	private String birthday; // 회원 생년월일
@@ -111,7 +111,6 @@
 	private String addr1; // 회원 주소
 	private String addr2; // 회원 상세주소
 	private int cash; // 회원 캐쉬 
-	private int userCheck; // 회원 사용여부 -->
-
+	private int userCheck; // 회원 사용여부 --> 
 </body>
 </html>

@@ -6,8 +6,8 @@
 <struts>
 	<package name="member"  extends="struts-default, tiles-default">
 		
-		<action name="JoinForm" class="login.join.JoinAction">
-			<result type="tiles">JoinForm</result>
+		<action name="joinForm" class="login.join.JoinAction">
+			<result type="tiles">joinForm</result>
 		</action>
 		
 		<action name="loginForm" class="login.LoginAction" method="form">
