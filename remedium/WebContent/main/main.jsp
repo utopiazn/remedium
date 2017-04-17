@@ -31,9 +31,8 @@
 			</td>
 			
 			<!-- 오른쪽 메뉴에 따른 정보 -->
-			<td valign="top" width="75%" height="50%" align="center"> 
-				내용
-			 <tiles:insertAttribute name="body" />
+			<td valign="top" width="75%" height="50%" align="center"> 				
+			 	<tiles:insertAttribute name="body" />
 			</td>
 		</tr>
 		
