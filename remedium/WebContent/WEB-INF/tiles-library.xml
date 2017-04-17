@@ -19,15 +19,23 @@
 		<put-attribute name="body" value="/join/joinForm.jsp" />
 	</definition>
 	
-	<definition name="LoginForm" extends="main">
+	<definition name="loginForm" extends="main">
 		<put-attribute name="body" value="/login/loginForm.jsp" />
 	</definition>
-	
-	
 	
 	<!-- 객실 관련 -->
 	<definition name="roomAllList" extends="main">
 		<put-attribute name="body" value="/room/roomList.jsp" />
+	</definition>
+	
+
+	
+	<definition name="main2" template="/main/main2.jsp">
+		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />
+		<put-attribute name="header" value="/main/header.jsp" />		
+		<put-attribute name="body" value="내용" /> 
+		<put-attribute name="footer" value="/main/footer.jsp" />	
+		
 	</definition>
 	
 	<definition name="roomlist" extends="main">
@@ -41,6 +49,6 @@
 	<definition name="roomInsertForm" extends="main">
 		<put-attribute name="body" value="/admin/roomInsertForm.jsp" />
 	</definition>
-	<!-- 객실 관련 -->
+
 	
 </tiles-definitions>
