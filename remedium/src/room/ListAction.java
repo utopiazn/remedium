@@ -37,9 +37,21 @@ public class ListAction extends ActionSupport {
 	//모든 객실 리스트(관리자)
 	public String all() throws Exception {
 		
-		list = sqlMapper.queryForList("roomSQL.selectAll");
+		//list = sqlMapper.queryForList("roomSQL.selectAll");
+		
+		System.out.println(list.size());
 		
 		return SUCCESS;
 	}
+
+	public List<RoomBean> getList() {
+		return list;
+	}
+
+	public void setList(List<RoomBean> list) {
+		this.list = list;
+	}
 	
 }
+
+
