@@ -6,7 +6,7 @@
 <struts>
 	<package name="room"  extends="struts-default, tiles-default">
 		
-		<action name="roomAllList" class="room.LIstAction">
+		<action name="roomAllList" class="room.ListAction" method="all">
 			<result type="tiles">roomAllList</result>
 		</action>
 		
