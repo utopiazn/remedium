@@ -4,35 +4,45 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+	<style type="text/css">
+	#top{
+	width: 100%; height: 100%; background-color: #C0C0C0; float: center;
+	}
+	#navi {
+	margin: 0 10px; font-family: "돋음",sans-serif;
+	font-size: 18px; color: #FFFFFF;
+	float: right;
+	}
+	#menu{
+	 height:300; background-color:#C0C0C0; float: center; 
+	 font-family: "돋움",sans-serif; color: #FFFFFF; line-height: 3em; text-align: center;
+	}
+	#res{
+	height: 50px; background-color:#8EA8DB; font-family:"돋움",sans-serif;
+	color: #FFFFFF; text-align: center; line-height: 3em;
+	}
+	#logo{
+	margin: 0 auto;
+	}
+	
+	
+	</style>
 </head>
 <body>
 
-<table width="100%">
-<tr>
-	<td bgcolor="#C0C0C0">
-	<table width="100%">
-	
-	<tr>
-	<td align="center">
-	 &nbsp;&nbsp;&nbsp;
-	<img alt="호텔로고" src="/remedium/image/logo2.png" width="200" height="100">
-	</td>
-	
-    <td align="right">
-    <a href="login.join.JoinAction">회원가입</a>
-    <a href="login.LoinAction">로그인</a>
-    </td></tr>
-    </table>
-    </td>
-    
-</tr>
+<div id="top">
 
+<div id="navi">
+<a href="login.join.JoinAction">회원가입</a>
+<a href="login.LoinAction">로그인</a>
+</div>
 
+<div id="logo">
+<img alt="호텔로고" src="/remedium/image/logo2.png" width="200" height="100">
+</div>
 
-
-<tr>
-	<td align="center" colspan="2" height="30">
-    <a href="main.infoAction">호텔 정보   </a>
+<div id="menu">
+	<a href="main.infoAction">호텔 정보   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="room.infoAction">객실 소개   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -41,13 +51,9 @@
     <a href="service.EventListAction.java">이 벤 트   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="board.ListAction">문의사항</a>
-    
-    </td>
-    
-</tr>
+</div>
 
-<tr>
-<td align="center" colspan="2" height="30">
+<div id="res">
 숙박 날짜:
 <select name="years">
 <option>2017년</option>
@@ -129,10 +135,13 @@
 <input type="submit" value="검색" name="search">
 
 
+</div>
+</div>
+
 
 
     
-</table>
+
     
    
 </body>
