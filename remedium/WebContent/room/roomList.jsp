@@ -7,35 +7,37 @@
 </head>
 <body>
  
- <table width="600" border="0" cellspacing="0" cellpadding="2">
+ <table width="600" border="0" cellspacing="0" cellpadding="0">
 		<tr>
-			<td align="center"><b>임시 리스트 표입니다.</b></td>
+			<td align="center"><b>호텔 객실 리스트</b></td>
 		</tr>
 	</table>
 	
-	<table width="600" border="1" cellspacing="0" cellpadding="2">
+	<table width="100%" border="1" cellspacing="0" cellpadding="0">
 		<tr align="center">
-			<td width="50"><font color=blue><strong>방번호</strong></font></td>
-			<td width="350"><font color=blue><strong>이름</strong></font></td>
+			<td><strong>객실번호</strong></td>
+			<td><strong>객실이름</strong></td>
+			<td><strong>객실테마</strong></td>
+			<td><strong>정원</strong></td>
+			<td><strong>예약금</strong></td>
 		</tr>
 
 	<s:if test="list.size() <= 0">
 		<tr>
-			<td colspan="2" align="center">등록된 게시물이 없습니다</td>
+			<td colspan="5" align="center">등록된 객실이 없습니다</td>
 		</tr>
 	</s:if>
 	<s:else>
-		<s:iterator></s:iterator>
+		<s:iterator value="list">
 		<tr>
-			
-		
-		
+			<td align="right"><s:property value="no"/>호</td>
+			<td align="center"><s:property value="name"/></td>
+			<td><s:property value="room_class"/></td>
+			<td align="right"><s:property value="room_capacity"/>명</td>
+			<td align="right"><s:property value="price"/>원</td>
+		</tr>
+		</s:iterator>
 	</s:else>
-	
-	
-
 	</table>
- 
-
 </body>
 </html>
