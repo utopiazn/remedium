@@ -48,8 +48,7 @@
 			</td>
 			
 		</tr>
-	</table>
-		
+	</table>	
 		 <a href="joinForm.action"><font size=2>회원 가입</font></a>&nbsp;/
        	 <a href="findIDForm.action"><font size=2>아이디 찾기</font></a>&nbsp;/
        	 <a href="findPwForm.action"><font size=2>비밀번호 찾기</font></a>

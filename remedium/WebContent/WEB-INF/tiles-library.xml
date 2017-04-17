@@ -14,6 +14,8 @@
 		<put-attribute name="footer" value="/main/footer.jsp" />	
 		
 	</definition>
+
+		<!-- 로그인  -->
 	
 	<definition name="main2" template="/main/main2.jsp">
 		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />
@@ -36,6 +38,17 @@
 	</definition>	
 	<!-- 로그인폼 -->
 
+	
+		<!-- 아이디 찾기  -->
+	<definition name="findIDForm" extends="main">
+		<put-attribute name="body" value="/login/findID.jsp" />
+	</definition>
+	
+		<!-- 비번 찾기 -->
+	<definition name="findPwForm" extends="main">
+		<put-attribute name="body" value="/login/findPw.jsp" />
+	</definition>
+	
 	
 	<!-- 객실 관련 -->
 	<definition name="roomAllList" extends="main">
