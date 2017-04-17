@@ -10,8 +10,13 @@
 			<result type="tiles">JoinForm</result>
 		</action>
 		
-		<action name="LoginForm" class="login.LoginAction">
-			<result type="tiles">LoginForm</result>
+		<action name="loginForm" class="login.LoginAction" method="form">
+			<result type="tiles">loginForm</result>
 		</action>
+		
+		<action name="loginAction" class="login.LoginAction">
+			<result type="tiles">main</result>
+			<result name="error">/login/error.jsp</result>
+		</action>  
 	</package>
-</struts>
+</struts> 

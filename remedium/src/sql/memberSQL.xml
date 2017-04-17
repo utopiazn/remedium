@@ -2,11 +2,10 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
 
-<sqlMap>
+<sqlMap namespace = "member">
 	<typeAlias alias="member" type="bean.MemberBean" />
 
 	<resultMap id="memberRes" class="member">
-	
 		<result property="memberID" 		column="memberID" />
 		<result property="memberPassword" 	column="memberPassword" />
 		<result property="memberName" 		column="memberName" />
@@ -22,8 +21,30 @@
 		<result property="addr2" 			column="addr2" />
 		<result property="cash" 			column="cash" />		
 		<result property="userCheck" 		column="userCheck" />			
-		
 	</resultMap>
+	
+	<sql id="select-all">
+		select * from member
+	</sql>
+	
+	<sql id="where-memberID">
+		 where memberID = #memberID#
+	</sql>
+	
+	<select id="selectAll" resultMap="memberRes" parameterClass="String">
+		<include refid="select-all" />
+	</select>
+	
+	<select id="selectOne" resultMap="memberRes" parameterClass="String">
+		<include refid="select-all" />
+		<include refid="where-memberID" />
+	</select>
+	
+	<select id="selectPassword" resultMap="memberRes">
+		<include refid="select-all" />
+		<include refid="where-memberID" />
+		AND memberPassword = #memberPassword#
+	</select>
 	
 
 </sqlMap>
