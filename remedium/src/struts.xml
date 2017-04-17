@@ -30,6 +30,7 @@
 	
 	
 	<include file="/configs/member.xml" />
+	<include file="/configs/room.xml" />
 	 
 </struts>
 
