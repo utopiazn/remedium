@@ -10,7 +10,7 @@
 		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />
 		<put-attribute name="header" value="/main/header.jsp" />
 		<put-attribute name="lefter" value="/main/lefter/lefter.jsp" />
-		<!-- <put-attribute name="body" value="/main/lefter/lefter.jsp" /> -->
+		<put-attribute name="body" value="/main/lefter/lefter.jsp" /> 
 		<put-attribute name="footer" value="/main/footer.jsp" />	
 		
 	</definition>
