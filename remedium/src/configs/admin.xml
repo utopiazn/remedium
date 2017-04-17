@@ -5,8 +5,8 @@
 
 <struts>
 	
-	<package name="admin" namespace="/" extends="struts-default, tiles-default">
-		<action name="admin" class="login/join/JoinAction">
+	<package name="admin" extends="struts-default, tiles-default">
+		<action name="admin" class="login.join.JoinAction">
 			<result type="tiles">admin</result>
 		</action>
 	</package>
