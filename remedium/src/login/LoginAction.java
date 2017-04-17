@@ -25,6 +25,9 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	
 	private String memberId;
 	private String memberPasswd;
+	private String memberName;
+	private String birthday;
+
 
 	public LoginAction() throws IOException{
 		
@@ -60,24 +63,47 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			
 			return SUCCESS;
 		}
-		return ERROR;
+		return LOGIN;
 }
 
 	// 로그아웃에 대한 처리
 	public String logout() throws Exception {
-
-		return SUCCESS;
+		
+		if(session.get("memberId") != null){
+			session.remove("memberId");
+			session.remove("memberPasswd");
+			
+			return SUCCESS;
+		}
+		
+		return ERROR;
+		
+	
 	}
 
 	// 아이디 찾기 폼
 	public String findIdForm() throws Exception {
-
+		
 		return SUCCESS;
 	}
 
 	// 아이디 찾기 처리
 	public String findId() throws Exception {
-
+		
+		paramClass = new MemberBean();
+		resultClass = new MemberBean();
+		
+		paramClass.setMemberName(getMemberName());
+		paramClass.setBirthday(getBirthday());
+		
+		resultClass = (MemberBean)sqlMapper.queryForObject("member.selectFindId", paramClass);
+		
+		System.out.println( "resultClass.getMemberID() : " + resultClass.getMemberID());
+		
+		if(resultClass == null){
+			return ERROR;
+		}
+		
 		return SUCCESS;
 	}
 
@@ -90,7 +116,20 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	// 비밀번호 찾기 처리
 	public String findPw() throws Exception {
-
+		paramClass = new MemberBean();
+		resultClass = new MemberBean();
+		
+		paramClass.setMemberID(getMemberId());
+		paramClass.setMemberName(getMemberName());
+		paramClass.setBirthday(getBirthday());
+	
+		
+		resultClass = (MemberBean)sqlMapper.queryForObject("member.selectFindPasswd", paramClass);
+		
+		if(resultClass == null){
+			return ERROR;
+		}
+		
 		return SUCCESS;
 	}
 
@@ -134,8 +173,25 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		this.session = session;
 	}
 
-	
+	public String getMemberName() {
+		return memberName;
+	}
 
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	
+	
+	
 	
 	
 }

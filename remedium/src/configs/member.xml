@@ -16,7 +16,28 @@
 		
 		<action name="loginAction" class="login.LoginAction">
 			<result type="tiles">main2</result>
+			<result name="login" type="tiles">loginForm</result>
+		</action> 
+		
+		<action name="findIDForm" class="login.LoginAction" method="findIdForm">
+			<result type="tiles">findIDForm</result>
+		</action>
+		
+		<action name="findIDAction" class="login.LoginAction" method="findId">
+			<result type="tiles">loginForm</result>
+		</action>
+		
+		<action name="findPwForm" class="login.LoginAction" method="findPwForm">
+			<result type="tiles">findPwForm</result>
+		</action>
+		
+		<action name="findPwAction" class="login.LoginAction" method="findPw">
+			<result type="tiles">loginForm</result>
+		</action>
+
+		<action name="logout" class="login.LoginAction" method="logout">
+			<result type="tiles">main2</result>
 			<result name="error">/login/error.jsp</result>
-		</action>  
+		</action>   
 	</package>
 </struts> 
