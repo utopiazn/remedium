@@ -7,7 +7,7 @@
 </head>
 <body>
 	<center>
-	<table width="100%">
+	<table width="800">
 		<tr>
 			<td>
 				<img alt="호텔로고" src="/remedium/image/logo.png" width="200" height="200">
