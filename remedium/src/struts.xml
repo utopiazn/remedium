@@ -23,7 +23,17 @@
             <result type="tiles">main</result>
            
         </action>
+        
+        <action name="main4" class="main.MainAction" >
+            <result type="tiles">main2</result>
+           
+        </action>
+        
+        
 	</package>
+	
+	
+	<include file="/configs/admin.xml" />
 	 
 </struts>
 

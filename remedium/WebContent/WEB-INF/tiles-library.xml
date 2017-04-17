@@ -15,10 +15,9 @@
 		
 	</definition>
 	
-<!-- 	<definition name="admin" extends="main">
-		<put-attribute name="title" value="GREENBOOK Administrator" />
-		<put-attribute name="body" value="/admin/adminView.jsp" />
+ 	<definition name="admin" extends="main">
+		<put-attribute name="body" value="/admin/joinForm.jsp" />
 	</definition>
- -->
+
 	
 </tiles-definitions>
