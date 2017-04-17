@@ -33,7 +33,7 @@
 	</select>
 	
 	<insert id="insertRoom" parameterClass="room">
-		INSERTINTO ROOM(NO, NAME, ROOM_SIZE, ROOM_CAPACITY, CONSTRUCTION, ROOM_COMMENT,
+		INSERT INTO ROOM(NO, NAME, ROOM_SIZE, ROOM_CAPACITY, CONSTRUCTION, ROOM_COMMENT,
 		ORGIMAGE, SAVIMAGE, PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
 		#room_capacity#, #construction#, #room_comment#, #orgImage#, #savImage#,
 		#price#, #room_class#)

@@ -33,8 +33,8 @@
 			<td bgcolor="#FFFFFF">
 				<s:textfield name="memberId" theme="simple" cssStyle="width:100px" maxlength="20"/>
 			</td>
-			<td rowspan="3" >
-				 <input name="submit" type="submit" value="로그인" class="inputb">
+			<td rowspan="3">
+				 <input name="submit" type="submit" value="로그인" class="inputb" >
 			</td>
 		</tr>
 		<tr bgcolor="#777777"> 
@@ -46,8 +46,13 @@
 			<td bgcolor="#FFFFFF">
 				<s:textfield name="memberPasswd" theme="simple" cssStyle="width:100px" maxlength="20"/>
 			</td>
+			
 		</tr>
 	</table>
+		
+		 <a href="joinForm.action"><font size=2>회원 가입</font></a>&nbsp;/
+       	 <a href="findIDForm.action"><font size=2>아이디 찾기</font></a>&nbsp;/
+       	 <a href="findPwForm.action"><font size=2>비밀번호 찾기</font></a>
 </form>
 </body>
 </html>
