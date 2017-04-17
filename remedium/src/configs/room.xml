@@ -10,5 +10,13 @@
 			<result type="tiles">roomAllList</result>
 		</action>
 		
+		<action name="roomInsertForm" class="admin.room.RoomAction" method="insForm">
+			<result type="tiles">roomInsertForm</result>
+		</action>
+		
+		<action name="roomInsert" class="admin.room.RoomAction" method="execute">
+			<result type="chain">roomAllList</result>
+		</action>
+		
 	</package>
 </struts>

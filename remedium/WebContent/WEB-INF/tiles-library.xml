@@ -27,6 +27,8 @@
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	
-
+	<definition name="roomInsertForm" extends="main">
+		<put-attribute name="body" value="/admin/roomInsertForm.jsp" />
+	</definition>
 	
 </tiles-definitions>
