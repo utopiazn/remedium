@@ -20,12 +20,8 @@
 	
 	<package name="tiles"  extends="struts-default, tiles-default">
         <action name="main" class="main.MainAction" >
-            <result type="tiles">main</result>
-           
-        </action>
-        
-      
-        
+            <result type="tiles">main</result>           
+        </action>    
 	</package>
 	
 	
