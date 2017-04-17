@@ -18,5 +18,9 @@
 			<result type="chain">roomAllList</result>
 		</action>
 		
+		<action name="roomDelete" class="admin.room.RoomAction" method="delete">
+			<result type="chain">roomAllList</result>
+		</action>
+		
 	</package>
 </struts>
