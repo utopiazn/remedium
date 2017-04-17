@@ -5,7 +5,7 @@
 
 <struts>
 	<package name="admin"  extends="struts-default, tiles-default">
-		<action name="admin" class="admin.AdminAction">
+		<action name="admin" class="login.join.JoinAction">
 			<result type="tiles">admin</result>
 		</action>
 	</package>
