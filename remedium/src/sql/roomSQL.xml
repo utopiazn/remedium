@@ -2,7 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
 
-<sqlMap>
+<sqlMap namespace="roomSQL">
 	<typeAlias alias="room" type="bean.RoomBean" />
 
 	<resultMap id="roomRes" class="room">
@@ -18,5 +18,29 @@
 		<result property="room_class" column="room_class" />
 	</resultMap>
 	
-
+	<sql id="select-all">SELECT * FROM ROOM</sql>
+	
+	<sql id="where-no">WHERE NO = #no#</sql>
+	
+	<select id="selectAll" resultMap="roomRes">
+		<include refid="select-all"/>
+		ORDER BY no DESC
+	</select>
+	
+	<select id="selectOne" resultMap="roomRes">
+		<include refid="select-all"/>
+		<include refid="where-no"/>
+	</select>
+	
+	<insert id="insertRoom" parameterClass="room">
+		INSERTINTO ROOM(NO, NAME, ROOM_SIZE, ROOM_CAPACITY, CONSTRUCTION, ROOM_COMMENT,
+		ORGIMAGE, SAVIMAGE, PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
+		#room_capacity#, #construction#, #room_comment#, #orgImage#, #savImage#,
+		#price#, #room_class#)
+	</insert>
+	
+	<delete id="deleteRoom" parameterClass="room">
+		DELETE FROM ROOM
+		<include refid="where-no"/>
+	</delete>
 </sqlMap>
