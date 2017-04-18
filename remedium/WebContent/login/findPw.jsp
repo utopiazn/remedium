@@ -62,7 +62,7 @@
 		</tr>
 	</table>
 	<input name="submit" type="submit" value="찾기" class="inputb" >	
-	<button type="button" onclick="location.href='main2.action' ">취소</button> 
+	<button type="button" onclick="location.href='main.action' ">취소</button> 
 </form>
 </body>
 </html>
