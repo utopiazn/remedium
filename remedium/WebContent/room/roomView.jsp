@@ -24,6 +24,7 @@
 			<td align="right"><s:property value="resultClass.price"/>원</td>
 	</tr>
 	</table>
+	<a href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>' >객실수정</a>
 	<a href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>' >객실삭제</a>
 </body>
 </html>
