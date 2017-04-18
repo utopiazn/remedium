@@ -1,7 +1,10 @@
 package admin.room;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+
+import org.apache.commons.io.FileUtils;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -26,6 +29,10 @@ public class RoomAction extends ActionSupport{
 	private int price; // 객실 요금
 	private String room_class; // 객실 종류
 	
+	private File upload;
+	private String uploadContentType;
+	private String uploadFileName;
+	private String fileUploadPath="/remedium/WebContent/image/roomImage/";
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -54,12 +61,35 @@ public class RoomAction extends ActionSupport{
 		paramClass.setRoom_capacity(getRoom_capacity());
 		paramClass.setConstruction(getConstruction());
 		paramClass.setRoom_comment(getRoom_comment());
-		paramClass.setOrgImage("미구현");
-		paramClass.setSavImage("미구현");
+		paramClass.setOrgImage("추가 안함");
+		paramClass.setSavImage("추가 안함");
 		paramClass.setPrice(getPrice());
 		paramClass.setRoom_class(getRoom_class());
 		
 		sqlMapper.insert("roomSQL.insertRoom", paramClass);
+		
+		 if(getUpload() != null){
+		      //등록한 글 번호 가져오기.
+		      resultClass = (RoomBean)sqlMapper.queryForObject("board.selectOne", getNo());
+		      
+		      //실제 서버에 저장될 파일 이름과 확장자 설정.
+		      String file_name = "file_"+resultClass.getNo();
+		      String file_ext = getUploadFileName().substring(getUploadFileName().lastIndexOf('.')+1,getUploadFileName().length());
+		      
+		      //서버에 파일 저장.
+		      File destFile = new File(fileUploadPath + file_name + "." + file_ext);
+		      System.out.println(destFile.getPath());
+		      FileUtils.copyFile(getUpload(), destFile);
+		      
+		      //파일 정보 파라미터 설정.
+		      paramClass.setNo(resultClass.getNo());
+		      paramClass.setOrgImage(getUploadFileName());    //원래 파일 이름
+		      paramClass.setSavImage(file_name + "." + file_ext); //서버에 저장한 파일 이름
+
+		      //파일 정보 업데이트.
+		      sqlMapper.update("board.updateFile", paramClass);
+		      
+		    }
 		
 		return SUCCESS;
 	}
@@ -206,6 +236,30 @@ public class RoomAction extends ActionSupport{
 
 	public void setRoom_class(String room_class) {
 		this.room_class = room_class;
+	}
+
+	public File getUpload() {
+		return upload;
+	}
+
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+
+	public String getUploadContentType() {
+		return uploadContentType;
+	}
+
+	public void setUploadContentType(String uploadContentType) {
+		this.uploadContentType = uploadContentType;
+	}
+
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
 	}
 	
 	
