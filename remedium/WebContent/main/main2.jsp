@@ -32,7 +32,7 @@
 					
 							<center>
 							<!--메뉴에 따른 정보 -->
-							<table width="1200" height="800" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+							<table width="70%" height="800"  cellpadding="0" cellspacing="0" bgcolor="#ffffff">
 								<tr>
 									<td valign="top" align="center">					
 								 		<tiles:insertAttribute name="body" />

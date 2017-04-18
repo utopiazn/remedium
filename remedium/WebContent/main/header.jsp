@@ -7,25 +7,31 @@
 <meta charset="UTF-8">
 <title></title>
 	<style type="text/css">
-	#top{
+	#top /* 상단 */
+	{ 
 	width: 100%; height: 100%; background-color: #C0C0C0;
 	}
-	#navi {
+	#navi  /* 회원가입 로그인 부분 */
+	{
 	margin: 0 10px; font-family: "돋음",sans-serif; text-decoration: none;
 	font-size: 15px; color: #FFFFFF; float: right; padding-top: 50px; padding-right: 20px; font-weight: bolder;
 	}
-	#menu{
+	#menu /* 메뉴(카테고리) */
+	{
 	 height:300; background-color:#C0C0C0; float: center; text-decoration: none; 
 	 font-family: "돋움",sans-serif; color: #FFFFFF; line-height: 3em; text-align: center; font-weight: bolder;
 	}
-	#res{
+	#res /* 예약 부분 */
+	{
 	height: 50px; background-color:#8EA8DB; font-family:"돋움",sans-serif;
 	color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em;
 	}
-	#logo{
+	#logo /* 로고 */
+	{
 	margin: 0 auto; float: center; cursor: pointer;
 	}
-	 a {text-decoration: none; color: #000000; }
+	a /* 링크 속성 */
+	{text-decoration: none; color: #000000; } 
 	
 	</style>
 </head>
@@ -36,11 +42,11 @@
 <div id="navi">
 
 
-<s:if test="${ session.memberId =='admin' }">
+<s:if test="${ session.memberId =='admin' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <a href="memberAdminList.action">회원관리 </a>
 <a href="logout.action">로그아웃</a>
 </s:if>
-<s:if test="${session.memberId != null}">
+<s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 <a href="myPageMain.action">마이페이지</a>
 <a href="loginModifyForm.action">회원수정</a>
 <a href="logout.action">로그아웃</a>
