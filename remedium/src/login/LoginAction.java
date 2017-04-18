@@ -28,6 +28,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private String memberPasswd;
 	private String memberName = null;
 	private String birthday = null;
+	private String userAdmin;
 
 
 	public LoginAction() throws IOException{
@@ -61,6 +62,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			System.out.println( "resultClass.getMemberID() : " + resultClass.getMemberID());
 			session.put("memberId", resultClass.getMemberID()); 
 			session.put("memberPasswd", resultClass.getMemberPassword());
+			session.put("userAdmin", resultClass.getUserAdmin());
 			
 			return SUCCESS;
 		}
@@ -188,12 +190,19 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
-		System.out.println("memberName"+this.memberName);
 		
 	}
 
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
+	}
+
+	public String getUserAdmin() {
+		return userAdmin;
+	}
+
+	public void setUserAdmin(String userAdmin) {
+		this.userAdmin = userAdmin;
 	}
 
 	
