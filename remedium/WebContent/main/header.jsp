@@ -42,7 +42,7 @@
 <div id="navi">
 
 
-<s:if test="${ session.memberId =='admin' }"> <!-- 아이디가 관리자 아이디일 경우 -->
+<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <a href="memberAdminList.action">회원관리 </a>
 <a href="logout.action">로그아웃</a>
 </s:if>
@@ -161,7 +161,8 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<input type="submit" value="검색" name="search">
+<input type="button" value="검색" name="search" onclick="location.href='roomAllList.action'">
+
 
 
 </div>
