@@ -14,9 +14,10 @@
 	  
 		function windowclose(memberID){
 			
-			
+			//부모클래스
 			opener.setChildValue(memberID);
 			
+			//자식 클래스
 			window.close();
 			
 		

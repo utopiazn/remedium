@@ -18,24 +18,24 @@
 		}
 		
 		
-		function validation(userinput) {
+		function validation2(userinput){
 			
 			//var frm = document.forms(0);			
-	
+			//alert("dfsdfsfdsakljfdsjfsdafsajfasjdfskjkl");
 
-			if(userinput.memberPassword.value==""){
+			if(userinput.memberPassword.value== ""){
 				alert("비밀번호를 입력하세요");
-				return ;
+				return;
 			}
 			
 			if(userinput.memberPassword2.value==""){
 				alert("비밀번호 확인을 입력하세요");
-				return ;
+				return;
 			}
 			
 			if(userinput.memberPassword.value !=userinput.memberPassword2.value){
 				alert("비밀번호 와 확인 비밀번호가 서로 다릅니다.");
-				return ;
+				return;
 			}
 			
 			
@@ -90,7 +90,7 @@
 
 
 	<!-- 로그인폼으로 이동 -->
-	<form action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation(this.form);">
+	<form action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this.form);">
 	
 		<table width="600" border="0" cellspacing="0" cellpadding="0">
 			
@@ -117,7 +117,10 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50"/>					
+					<s:textfield name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50"/>					 
+					
+					
+					
 				</td>
 			</tr>
 			
