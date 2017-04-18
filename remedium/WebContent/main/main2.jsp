@@ -13,35 +13,44 @@
 </head>
 <body>
 
-	<table border=1 width="100%" height="100%" cellpadding="0" cellspacing="0">
-		
-		<tr>
-		
-			<!-- 헤더 정보--> 			
-			<td colspan="2" width="100%" height="30%" align="center">
-				<tiles:insertAttribute name="header" />
-			</td>
-		</tr>
-		 
-		<tr>
-			
-			
-			<!-- 오른쪽 메뉴에 따른 정보 -->
-			<td valign="top" width="75%" height="50%" align="center"> 				
-			 	<tiles:insertAttribute name="body" />
-			 	
-			</td>
-		</tr>
-		
-		<tr>
-			<!-- footer -->
-			<td  bgcolor="#C0C0C0" colspan="2" width="100%" height="20%" align="center">
-				<tiles:insertAttribute name="footer" /> 
-			</td>
-		</tr>
-	</table>
 
-
+	
+			
+				<table border=1 width="100%" cellpadding="0" cellspacing="0" bgcolor="#C0C0C0">
+					
+					<tr>
+					
+						<!-- 헤더 정보--> 			
+						<td colspan="2" width="100%" align="center">
+							<tiles:insertAttribute name="header" />
+						</td>
+					</tr>
+					 
+					<tr>
+					
+						<td>
+					
+							<center>
+							<!--메뉴에 따른 정보 -->
+							<table width="1200" height="800" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+								<tr>
+									<td valign="top" align="center">					
+								 		<tiles:insertAttribute name="body" />
+								 	</td>
+								 </tr>
+							 </table>	
+							 
+						</td>
+					</tr>
+					
+					<tr>
+						<!-- footer -->
+						<td  bgcolor="#C0C0C0" colspan="2" width="100%" align="center">
+							<tiles:insertAttribute name="footer" /> 
+						</td>
+					</tr>
+				</table>
+				
 
 </body>
 </html>
