@@ -26,8 +26,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	
 	private String memberId;
 	private String memberPasswd;
-	private String memberName;
-	private String birthday;
+	private String memberName = null;
+	private String birthday = null;
 
 
 	public LoginAction() throws IOException{
@@ -99,15 +99,16 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		paramClass.setBirthday(getBirthday());
 		
 		System.out.println( "paramClass.getBirthday() : " + paramClass.getBirthday());
-		resultClass = (MemberBean)sqlMapper.queryForObject("member.selectFindId", paramClass);
-		System.out.println( "resultClass.getBirthday() : " + resultClass.getMemberID());
 		
+		try{
+			resultClass = (MemberBean)sqlMapper.queryForObject("member.selectFindId", paramClass);
 		
-		if(resultClass == null){
+		}catch(Exception e){
 			return ERROR;
 		}
 		
 		return SUCCESS;
+	
 	}
 
 	// 비밀번호 찾기 폼
@@ -186,7 +187,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	}
 
 	public void setMemberName(String memberName) {
-	
 		this.memberName = memberName;
 		System.out.println("memberName"+this.memberName);
 		

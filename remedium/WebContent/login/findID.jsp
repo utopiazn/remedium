@@ -38,14 +38,13 @@
 		<table>
 			<tr>
 				<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 이 름</td>
-				<td bgcolor="#FFFFFF"><s:textfield name="memberName"theme="simple" cssStyle="width:100px" maxlength="20" /></td>
+				<td bgcolor="#FFFFFF"><s:textfield name="memberName" theme="simple" cssStyle="width:100px" maxlength="20" /></td>
 			</tr>
 			<tr>
 				<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 생년 월일</td>
-				<td bgcolor="#FFFFFF"><s:textfield name="birthday"
-						theme="simple" cssStyle="width:100px" maxlength="20" /></td>
+				<td bgcolor="#FFFFFF"><s:textfield name="birthday" theme="simple" cssStyle="width:100px" maxlength="20" /></td>
 			</tr>
-		</table>
+		</table> 
 		<input name="submit" type="submit" value="찾기" class="inputb">
 		<button type="button" onclick="location.href='main.action' ">취소</button>
 	</form>
