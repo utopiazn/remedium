@@ -32,22 +32,24 @@
 		<!-- 아이디 찾기 폼 -->
 		<action name="findIDForm" class="login.LoginAction" method="findIdForm">
 			<result type="tiles">findIDForm</result>
+			
 		</action>
 		
 		<!-- 아이디 찾기 처리 -->
 		<action name="findIDAction" class="login.LoginAction" method="findId">
-			<result >/login/findIDSuccess.jsp</result>
+			<result type="tiles">findIDSuccess</result>
 			<result name="error">/login/findError.jsp</result>
 		</action>
 		
 		<!-- 패스워드 찾기 폼 -->
 		<action name="findPwForm" class="login.LoginAction" method="findPwForm">
 			<result type="tiles">findPwForm</result>
+		
 		</action>
 		
 		<!-- 패드워드 찾기 처리 -->
 		<action name="findPwAction" class="login.LoginAction" method="findPw">
-			<result >/login/findPwSuccess.jsp</result>
+			<result type="tiles" >findPwSuccess</result>
 			<result name="error">/login/findError.jsp</result>
 		</action>
 		

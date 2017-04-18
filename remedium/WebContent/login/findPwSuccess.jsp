@@ -69,7 +69,7 @@ function windowclose() {
         </td>
         <tr>
         <td width="1000" align="center">
-          <a href="login.action"><font size=2><b>로그인</b></font></a>&nbsp;  | &nbsp; 
+          <a href="loginForm.action"><font size=2><b>로그인</b></font></a>&nbsp;  | &nbsp; 
           <a href="main.action"><font size=2><b>메인으로</b></font></a>
         </td>
       </tr>

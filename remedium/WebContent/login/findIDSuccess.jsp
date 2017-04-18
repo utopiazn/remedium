@@ -67,7 +67,7 @@ function windowclose() {
         <td width="1000" align="center">
           <a href="loginForm.action"><font size=2><b>로그인</b></font></a>&nbsp;  | &nbsp; 
           <a href="findPwForm.action"><font size=2><b>비밀번호찾기</b></font></a>&nbsp;  | &nbsp;
-          <a href="main2.action"><font size=2><b>메인으로</b></font></a>
+          <a href="main.action"><font size=2><b>메인으로</b></font></a>
         </td>
       </tr>
       </table>
