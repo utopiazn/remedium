@@ -46,11 +46,11 @@
 		AND memberPassword = #memberPassword#
 	</select>
 	
-	<select id="selectFindId" resultMap="memberRes">
+	<select id="selectFindId" resultClass="member" >
 		select memberID from member where memberName = #memberName# AND birthday = #birthday#
 	</select>
 	
-	<select id="selectFindPasswd" resultMap="memberRes">
+	<select id="selectFindPasswd" resultClass="member">
 		select memberPassword from member
 		<include refid="where-memberID" />
 		AND memberName = #memberName# AND birthday = #birthday#

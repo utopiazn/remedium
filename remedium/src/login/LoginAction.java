@@ -96,9 +96,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		paramClass.setMemberName(getMemberName());
 		paramClass.setBirthday(getBirthday());
 		
+		System.out.println( "paramClass.getBirthday() : " + paramClass.getBirthday());
 		resultClass = (MemberBean)sqlMapper.queryForObject("member.selectFindId", paramClass);
+		System.out.println( "resultClass.getBirthday() : " + resultClass.getMemberID());
 		
-		System.out.println( "resultClass.getMemberID() : " + resultClass.getMemberID());
 		
 		if(resultClass == null){
 			return ERROR;
@@ -174,20 +175,26 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	}
 
 	public String getMemberName() {
+		
 		return memberName;
-	}
-
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
 	}
 
 	public String getBirthday() {
 		return birthday;
 	}
 
+	public void setMemberName(String memberName) {
+	
+		this.memberName = memberName;
+		System.out.println("memberName"+this.memberName);
+		
+	}
+
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
+
+	
 
 	
 	

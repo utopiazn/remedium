@@ -36,12 +36,12 @@
 	</definition>	
 	
 		<!-- 아이디 찾기  -->
-	<definition name="findIDForm" extends="main">
+	<definition name="findIDForm" extends="main2">
 		<put-attribute name="body" value="/login/findID.jsp" />
 	</definition>
 	
 		<!-- 비번 찾기 -->
-	<definition name="findPwForm" extends="main">
+	<definition name="findPwForm" extends="main2">
 		<put-attribute name="body" value="/login/findPw.jsp" />
 	</definition>
 	
@@ -64,7 +64,7 @@
 		<put-attribute name="body" value="/admin/roomInsertForm.jsp" />
 	</definition>
 
-    <definition name="info" extends="main">
+    <definition name="info" extends="main2">
 		<put-attribute name="body" value="/main/info.jsp" />
 	</definition>
 	
