@@ -9,6 +9,6 @@
 </head>
 <body>
 
-<img alt="메인이미지" src="/remedium/image/hotelimage.jpg" width="100%" height="100%">
+<img alt="메인이미지" src="/remedium/image/hotel2.jpg" width="100%" height="100%">
 </body>
 </html>
