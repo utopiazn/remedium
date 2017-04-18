@@ -9,8 +9,6 @@
 </head>
 <body>
 
-		CHECK:${check}
-		ID:${memberId}
 		
 	<s:if test="%{check == 1}">
 	

@@ -71,7 +71,7 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/>
+					<s:textfield name="paramClass.memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/>
 					<input type="button" name="confirm_id" value="ID중복확인" OnClick="openConfirmid(this.form)">
 					
 				</td>
@@ -83,7 +83,7 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="memberPassword" theme="simple" value="%{resultClass.memberPassword}" cssStyle="width:270px" maxlength="50"/>					
+					<s:textfield name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
 			
@@ -93,7 +93,7 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="memberPassword2" theme="simple" value="%{resultClass.memberPassword2}" cssStyle="width:270px" maxlength="50"/>					
+					<s:textfield name="memberPassword2" theme="simple" value="%{paramClass.memberPassword2}" cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
 			
@@ -103,7 +103,7 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="memberName" theme="simple" value="%{resultClass.memberName}" cssStyle="width:270px" maxlength="50"/>					
+					<s:textfield name="memberName" theme="simple" value="%{paramClass.memberName}" cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
 			
@@ -129,7 +129,7 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="birthday" theme="simple" value="%{resultClass.birthday}" cssStyle="width:270px" maxlength="50"/> 예)20140407					
+					<s:textfield name="birthday" theme="simple" value="%{paramClass.birthday}" cssStyle="width:270px" maxlength="50"/> 예)20140407					
 				</td>
 			</tr>
 			
