@@ -26,8 +26,8 @@
 		 
 		<tr>
 			
-			<!-- 오른쫀 메뉴 -->
-			<td valign="top"  width="20%" height="800" align="center">  
+			<!-- 오른쪽 메뉴 -->
+			<td valign="top"  width="20%" height="800" align="left">  
 				 <tiles:insertAttribute name="lefter" /> 
 			</td>
 			

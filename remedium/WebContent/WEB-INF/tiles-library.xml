@@ -92,7 +92,7 @@
 		<put-attribute name="body" value="/main/info.jsp" />
 	</definition>
 <!-- 편의시설 -->
-    <definition name="facilitiesList" extends="main">
+    <definition name="facilitiesList" extends="main2">
 		<put-attribute name="body" value="/service/facilitiesList.jsp" />
 	</definition>
 <!-- 이벤트 -->
