@@ -9,8 +9,40 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-	<script language="javascript">
+
+
+	<script type="text/javascript">		
+	
+		function setChildValue(name){	
+		     document.getElementById("memberID").value = name;	
+		}
 		
+		
+		function validation(userinput) {
+			
+			//var frm = document.forms(0);			
+	
+
+			if(userinput.memberPassword.value==""){
+				alert("비밀번호를 입력하세요");
+				return ;
+			}
+			
+			if(userinput.memberPassword2.value==""){
+				alert("비밀번호 확인을 입력하세요");
+				return ;
+			}
+			
+			if(userinput.memberPassword.value !=userinput.memberPassword2.value){
+				alert("비밀번호 와 확인 비밀번호가 서로 다릅니다.");
+				return ;
+			}
+			
+			
+			//return true;
+		}
+	 
+
 		//아이디 중복 여부를 판다
 		function openConfirmid(userinput){
 			//아이디를 입력했는지 검사
@@ -18,11 +50,10 @@
 				alert("아이디를 입력하세요");
 				return;
 			}
+	
 			
-			//url과 사용자 입력 id를 조합합니다.
 			
-			//url="idCheck.action";
-			
+			//url과 사용자 입력 id를 조합합니다.			
 			url="idCheck.action?memberID="+userinput.memberID.value;
 			
 			//새로운 윈도우를 엽니다.
@@ -34,15 +65,13 @@
 	
 	</script>
 	
+	
+	
+	
 </head>
 <body>
 
 	
-
-
-
-
-
 	<table width="600" border="0" cellspacing="0" cellpadding="2">
 	
 		<tr>
@@ -61,7 +90,7 @@
 
 
 	<!-- 로그인폼으로 이동 -->
-	<form action="join.action" method="post">
+	<form action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation(this.form);">
 	
 		<table width="600" border="0" cellspacing="0" cellpadding="0">
 			
@@ -177,8 +206,10 @@
 		
 		</table>	
 		
+		<br/>
 		
-		<input type="submit" value="가입">	
+		<input type="submit" value="가입" >	
+		<button type="button" onclick="location.href='loginForm.action' ">취소</button>
 	</form>
 	
 	

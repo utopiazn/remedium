@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <SCRIPT type="text/javascript">
+		
 		function validation() {
 			
 			var frm = document.forms(0);

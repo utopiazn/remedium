@@ -9,28 +9,20 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
+	 <script type="text/javascript">
 
- 
-	<script language="javascript">
-		
-	
-		
-		function windowclose(){
+	  
+		function windowclose(memberID){
 			
-		
-		
 			
-			/* window.opener.document.joinForm.memberID.value ='dfdf'; */
-			// opener.document.joinform.MEMBER_ID.value="dff";
-			self.opener=self;
+			opener.setChildValue(memberID);
+			
 			window.close();
 			
-			
-			//self.close();
-		}
-	</script>
-
 		
+		}
+		
+	</script>
 
 
 </head>
@@ -68,9 +60,8 @@
 		<table width=360 border=0 cellspacing=0 cellpadding=5>
 			<tr>
 				<td align="center">
-					<font size=2>입력하신 ${memberID} 는 사용할 수 있는 아이디입니다.</font><br/><br/>
-					
-					<input type="button"  value="닫기" onclick="windowclose()">
+					<font size=2>입력하신 ${memberID} 는 사용할 수 있는 아이디입니다.</font><br/><br/>					
+					<input type="button"  value="닫기" onclick="windowclose('${memberID}')">
 					
  				</td>
 			</tr>
