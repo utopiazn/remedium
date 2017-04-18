@@ -10,31 +10,38 @@
 			<result type="tiles">joinForm</result>
 		</action>
 		
+		<!-- 로그인 폼 -->
 		<action name="loginForm" class="login.LoginAction" method="form">
 			<result type="tiles">loginForm</result>
 		</action>
 		
+		<!-- 로그인 처리 -->
 		<action name="loginAction" class="login.LoginAction">
 			<result type="tiles">main2</result>
 			<result name="login" type="tiles">loginForm</result>
 		</action> 
 		
+		<!-- 아이디 찾기 폼 -->
 		<action name="findIDForm" class="login.LoginAction" method="findIdForm">
 			<result type="tiles">findIDForm</result>
 		</action>
 		
+		<!-- 아이디 찾기 처리 -->
 		<action name="findIDAction" class="login.LoginAction" method="findId">
 			<result type="tiles">loginForm</result>
 		</action>
 		
+		<!-- 패스워드 찾기 폼 -->
 		<action name="findPwForm" class="login.LoginAction" method="findPwForm">
 			<result type="tiles">findPwForm</result>
 		</action>
 		
+		<!-- 패드워드 찾기 처리 -->
 		<action name="findPwAction" class="login.LoginAction" method="findPw">
 			<result type="tiles">loginForm</result>
 		</action>
-
+		
+		<!-- 로그아웃 처리 -->
 		<action name="logout" class="login.LoginAction" method="logout">
 			<result type="tiles">main2</result>
 			<result name="error">/login/error.jsp</result>
