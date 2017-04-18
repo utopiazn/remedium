@@ -25,12 +25,20 @@
 			
 			return true;
 		}
-	</SCRIPT> 
+	</SCRIPT>  
 <body>
 <form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+		<table width="600" border="0" cellspacing="0" cellpadding="2">
+	
+		<tr>
+			<td align="center">
+				<h2>로 그 인</h2>
+			</td>
+		</tr>		
+	</table>
 	<table>
 		<tr>
-			<td bgcolor="#F4F4F4"><font color="#FF0000">*</font>아이디</td>
+			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>아이디</td>
 			<td bgcolor="#FFFFFF">
 				<s:textfield name="memberId" theme="simple" cssStyle="width:100px" maxlength="20"/>
 			</td>
@@ -38,12 +46,8 @@
 				 <input name="submit" type="submit" value="로그인" class="inputb" >
 			</td>
 		</tr>
-		<tr bgcolor="#777777"> 
-			<td height="1" colspan="2"></td>
-		</tr>
-		
 		<tr>
-			<td bgcolor="#F4F4F4"><font color="#FF0000">*</font>비밀번호</td>
+			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>비밀번호</td>
 			<td bgcolor="#FFFFFF">
 				<s:password name="memberPasswd"  theme="simple" cssStyle="width:100px" maxlength="20"/>
 			</td>

@@ -50,7 +50,7 @@
 	</select>
 	
 	<!-- 이름 과 생년 월일을 통해 아이디를 찾음 -->
-	<select id="selectFindId" resultClass="member" >
+	<select id="selectFindId" resultClass="member" parameterClass="member" >
 		select memberID from member where memberName = #memberName# AND birthday = #birthday#
 	</select>
 	

@@ -46,6 +46,11 @@
 		<include refid="where-no"/>
 	</update>
 	
+	<update id="updateImage" parameterClass="room"> 
+		UPDATE ROOM SET ORGIMAGE = #orgImage#, SAVIMAGE = #savImage#
+		<include refid="where-no"/>
+	</update>
+	
 	<delete id="deleteRoom" parameterClass="room">
 		DELETE FROM ROOM
 		<include refid="where-no"/>
