@@ -7,26 +7,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<!-- <SCRIPT type="text/javascript">
+<SCRIPT type="text/javascript">
 		function validation() {
 		
 			var frm = document.forms(0);
 			
-			if(frm.memberID.value == "") {
-				alert("제목을 입력해주세요.");
+			if(frm.memberId.value == "") {
+				alert("아이디 입력해주세요.");
 				return false;
 			} 
 			
-			else if(frm.memberPassword.value == "") {
+			else if(frm.memberPasswd.value == "") {
 				alert("비밀번호를 입력해주세요.");
 				return false;
 			}
 					
 			return true;
 		}
-	</SCRIPT> -->
+	</SCRIPT> 
 <body>
-<form action="loginAction.action" method="post" enctype="multipart/form-data">
+<form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 	<table>
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">*</font>아이디</td>

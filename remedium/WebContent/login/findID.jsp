@@ -7,8 +7,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+<SCRIPT type="text/javascript">
+		function validation() {
+		
+			var frm = document.forms(0);
+			
+			if(frm.memberName.value == "") {
+				alert("이름을 입력해 주세요.");
+				return false;
+			} 
+			
+			else if(frm.birthday.value == "") {
+				alert("생년 월일을 입력해 주세요.");
+				return false;
+			}
+					
+			return true;
+		}
+	</SCRIPT> 
 <body>
-<form action="findIDAction.action" method="post" enctype="multipart/form-data">
+<form action="findIDAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 	<table>
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 이  름</td>
