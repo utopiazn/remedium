@@ -22,7 +22,7 @@
        
         <action name="main" class="main.MainAction" >
 
-            <result type="tiles">main</result>
+            <result type="tiles">main2</result>
            
         </action>
         

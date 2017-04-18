@@ -22,6 +22,14 @@
 			<result type="chain">roomAllList</result>
 		</action>
 		
+		<action name="roomUpdateForm" class="admin.room.RoomAction" method="updForm">
+			<result type="tiles">roomInsertForm</result>
+		</action>
+		
+		<action name="roomUpdate" class="admin.room.RoomAction" method="update">
+			<result type="chain">roomAllList</result>
+		</action>
+		
 		<action name="roomDelete" class="admin.room.RoomAction" method="delete">
 			<result type="chain">roomAllList</result>
 		</action>

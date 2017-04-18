@@ -5,7 +5,6 @@
 	
 <struts>
 	<package name="info"  extends="struts-default, tiles-default">
-		
 		<action name="info" class="main.InfoAction">
 			<result type="tiles">info</result>
 		</action>
