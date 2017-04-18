@@ -23,7 +23,7 @@
 	color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em;
 	}
 	#logo{
-	margin: 0 auto; float: center; 
+	margin: 0 auto; float: center; cursor: pointer;
 	}
 	 a {text-decoration: none; color: #000000; }
 	
@@ -53,11 +53,12 @@
 </div>
 
 <div id="logo">
-<img alt="호텔로고" src="/remedium/image/logo2.png" width="200" height="100" onclick="location.href='/remedium/main.action'">
+<img alt="호텔로고" src="/remedium/image/logo2.png" width="200" height="100" onclick="location.href='/remedium/main.action'" >
+
 
 </div>
 
-<div id="menu">
+<div id="menu" >
 	<a href="info.action">호텔 정보   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="roomInfoList.action">객실 소개   </a>
