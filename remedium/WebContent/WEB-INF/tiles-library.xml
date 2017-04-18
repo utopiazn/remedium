@@ -83,6 +83,9 @@
     <definition name="info" extends="main2">
 		<put-attribute name="body" value="/main/info.jsp" />
 	</definition>
-<!-- 호텔정보 -->
+<!-- 편의시설 -->
+    <definition name="facilitiesList" extends="main">
+		<put-attribute name="body" value="/service/facilitiesList.jsp" />
+	</definition>
 	
 </tiles-definitions>
