@@ -3,9 +3,10 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>편의시설</title>
-</head>  
-  <body>
-<h2>편의시설</h2>
-  </body>
+</head>
+<body>
+<H2>편의시설</H2>
+</body>
 </html>
+
+

@@ -87,5 +87,9 @@
     <definition name="facilitiesList" extends="main">
 		<put-attribute name="body" value="/service/facilitiesList.jsp" />
 	</definition>
+<!-- 이벤트 -->
+    <definition name="eventList" extends="main">
+		<put-attribute name="body" value="/service/eventList.jsp" />
+	</definition>
 	
 </tiles-definitions>
