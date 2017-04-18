@@ -36,7 +36,7 @@
 		
 		<!-- 아이디 찾기 처리 -->
 		<action name="findIDAction" class="login.LoginAction" method="findId">
-			<result type="tiles">loginForm</result>
+			<result >/login/findIDSuccess.jsp</result>
 			<result name="error">/login/findError.jsp</result>
 		</action>
 		
@@ -47,7 +47,7 @@
 		
 		<!-- 패드워드 찾기 처리 -->
 		<action name="findPwAction" class="login.LoginAction" method="findPw">
-			<result type="tiles">loginForm</result>
+			<result >/login/findPwSuccess.jsp</result>
 			<result name="error">/login/findError.jsp</result>
 		</action>
 		

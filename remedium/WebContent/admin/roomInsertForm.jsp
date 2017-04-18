@@ -43,7 +43,8 @@
 				<s:textarea name="room_comment" theme="simple" value="%{resultClass.room_comment}"/></td>
 			</tr>
 			<tr>
-				<td colspan="2">객실사진은 아직 안돼</td>
+				<td>객실사진</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td>객실요금</td><td> 
