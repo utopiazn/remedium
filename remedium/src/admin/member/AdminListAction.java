@@ -22,6 +22,8 @@ public class AdminListAction extends ActionSupport{
 	@Override
 	//가입된 고객들의 리스트
 	public String execute() throws Exception {
+		
+		
 		return SUCCESS;
 	}
 
