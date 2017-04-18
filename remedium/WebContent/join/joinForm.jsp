@@ -34,7 +34,9 @@
 	
 	</table>
 
-	<form action="joinForm.action" method="post">
+
+	<!-- 로그인폼으로 이동 -->
+	<form action="join.action" method="post">
 	
 		<table width="600" border="0" cellspacing="0" cellpadding="0">
 			

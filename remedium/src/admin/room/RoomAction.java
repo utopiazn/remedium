@@ -12,8 +12,8 @@ import bean.RoomBean;
 
 public class RoomAction extends ActionSupport{
 	
-	private RoomBean paramClass = new RoomBean();
-	private RoomBean resultClass = new RoomBean(); 
+	private RoomBean paramClass;
+	private RoomBean resultClass; 
 	
 	private int no; // 객실 번호
 	private String	name; // 객실 이름
@@ -45,6 +45,9 @@ public class RoomAction extends ActionSupport{
 	//객실정보 추가
 	public String execute() throws Exception {
 		
+		paramClass = new RoomBean();
+		resultClass = new RoomBean();
+		
 		paramClass.setNo(getNo());
 		paramClass.setName(getName());
 		paramClass.setRoom_size(getRoom_size());
@@ -63,16 +66,42 @@ public class RoomAction extends ActionSupport{
 	
 	//객실정보 수정 폼
 	public String updForm() throws Exception {
+		
+		paramClass = new RoomBean();
+		resultClass = new RoomBean();
+		
+		resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
+		
 		return SUCCESS;
 	}
 	
 	//객실정보 수정
 		public String update() throws Exception {
+			
+			paramClass = new RoomBean();
+			resultClass = new RoomBean();
+			
+			paramClass.setNo(getNo());
+			paramClass.setName(getName());
+			paramClass.setRoom_size(getRoom_size());
+			paramClass.setRoom_capacity(getRoom_capacity());
+			paramClass.setConstruction(getConstruction());
+			paramClass.setRoom_comment(getRoom_comment());
+			paramClass.setOrgImage("미구현");
+			paramClass.setSavImage("미구현");
+			paramClass.setPrice(getPrice());
+			paramClass.setRoom_class(getRoom_class());
+			
+			sqlMapper.update("roomSQL.updateRoom",paramClass);
+			
 			return SUCCESS;
 	}
 	
 	//객실정보 삭제
 	public String delete() throws Exception {
+		
+		paramClass = new RoomBean();
+		resultClass = new RoomBean();
 		
 		resultClass = (RoomBean) sqlMapper.queryForObject("roomSQL.selectOne", getNo());
 		
