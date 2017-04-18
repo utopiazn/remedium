@@ -14,12 +14,12 @@
 </head>
 <body>
 
-	 <table border="1" width="100%" height="100%" cellpadding="0" cellspacing="0">
+	 <table width="100%" height="100%" cellpadding="0" cellspacing="0">
 		
 		<tr>
 		
 			<!-- 헤더 정보--> 			
-			<td colspan="2" width="100%" height="30%" align="center">
+			<td  width="100%" height="30%" align="center">
 				<tiles:insertAttribute name="header" />
 			</td>
 		</tr>
