@@ -63,9 +63,17 @@
 	<definition name="roomInsertForm" extends="main">
 		<put-attribute name="body" value="/admin/roomInsertForm.jsp" />
 	</definition>
-
+	
+	
+    <!-- 호텔 정보  -->
     <definition name="info" extends="main2">
 		<put-attribute name="body" value="/main/info.jsp" />
+	</definition>
+    
+    
+    <!-- 편의시설  -->
+    <definition name="facilitiesList" extends="main">
+		<put-attribute name="body" value="/service/facilitiesList.jsp" />
 	</definition>
 	
 </tiles-definitions>
