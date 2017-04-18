@@ -23,11 +23,11 @@
 			
 			//url="idCheck.action";
 			
-			url="idCheck.action?memberId="+userinput.memberID.value;
+			url="idCheck.action?memberID="+userinput.memberID.value;
 			
 			//새로운 윈도우를 엽니다.
 			open(url,"confirm",
-			 "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
+			 "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400, height=200");
 	
 		}
 		
@@ -71,8 +71,13 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="paramClass.memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/>
-					<input type="button" name="confirm_id" value="ID중복확인" OnClick="openConfirmid(this.form)">
+				
+					<%-- <s:textfield name="memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/> --%>
+					<s:textfield name="memberID" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
+					<!-- <input type="text" name="memberID" size="40" > -->
+			
+					<input type="button" name="confirm_id" value="ID중복확인"  onclick="openConfirmid(this.form)">
+			
 					
 				</td>
 			</tr>
@@ -93,7 +98,7 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="memberPassword2" theme="simple" value="%{paramClass.memberPassword2}" cssStyle="width:270px" maxlength="50"/>					
+					<s:textfield name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
 			
@@ -163,8 +168,8 @@
 			
 				<td width="50" bgcolor="#FFFFFF">
 				
-					<input type="text" id="sample6_postcode" placeholder="우편번호">
-					<input type="button" onclick="sample6_execDaumPostcode()" name="zipcode" value="우편번호 찾기"><br>
+					<input type="text" id="sample6_postcode" name="zipcode" placeholder="우편번호">
+					<input type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
 					<input type="text" id="sample6_address" name="addr1"  placeholder="주소">
 					<input type="text" id="sample6_address2" name="addr2" placeholder="상세주소">
 				</td>

@@ -63,13 +63,30 @@
 		AND memberName = #memberName# AND birthday = #birthday#
 	</select>
 	
-	<!--ID 중복체크 -->
-			
+	<!--ID 중복체크 -->			
 	<select id="selectDistinctID" resultClass="member">
 		select * from member
-		<include refid="where-memberID" />
-		
+		where memberID = #memberID#
 	</select>
+	
+	<!--회원가입 입력-->		
+	<insert id="insertMember" parameterClass="member">
+	
+		INSERT INTO MEMBER 
+			(MEMBERID, MEMBERPASSWORD, MEMBERNAME, GENDER, BIRTHDAY, PHONE, EMAIL, 
+				REGDATE, USERADMIN, ZIPCODE, ADDR1, ADDR2, CASH, USERCHECK) 
+		VALUES (#memberID#, #memberPassword#, #memberName#, #gender#, #birthday#,#phone#, #email#, 
+				sysdate, #userAdmin#, #zipcode#, #addr1#, #addr2#, #cash#, #userCheck# )
+		
+	</insert>
+	
+	
+
+	
+		
+	
+		
+		
 	
 
 </sqlMap>

@@ -19,7 +19,7 @@ public class MemberIdCheckAction extends ActionSupport {
 	private MemberBean paramClass;
 	private MemberBean resultClass;
 
-	private String memberId;
+	private String memberID;
 	
 	int check =0;
 	
@@ -37,7 +37,7 @@ public class MemberIdCheckAction extends ActionSupport {
 		resultClass = new MemberBean();
 		
 
-		paramClass.setMemberID(getMemberId());
+		paramClass.setMemberID(getMemberID());
 		
 		resultClass = (MemberBean)sqlMapper.queryForObject("member.selectDistinctID", paramClass);
 		
@@ -46,7 +46,7 @@ public class MemberIdCheckAction extends ActionSupport {
 		if(resultClass == null){ //ID 사용가능
 			
 			//resultClass.setMemberID(getMemberId());
-			setCheck(1);
+			check = 1;
 		}
 		
 		
@@ -54,12 +54,12 @@ public class MemberIdCheckAction extends ActionSupport {
 	}
 	
 	
-	public String getMemberId() {
-		return memberId;
+	public String getMemberID() {
+		return memberID;
 	}
 
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+	public void setMemberID(String memberID) {
+		this.memberID = memberID;
 	}
 
 	public MemberBean getParamClass() {
