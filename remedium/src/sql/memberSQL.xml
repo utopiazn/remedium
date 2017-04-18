@@ -31,25 +31,30 @@
 		 where memberID = #memberID#
 	</sql>
 	
+	<!-- member 테이블 모든 정보를 가져옴 -->
 	<select id="selectAll" resultMap="memberRes" parameterClass="String">
 		<include refid="select-all" />
 	</select>
 	
+	<!-- 아이디 의 해당하는 정보를 모두 가져옴  -->
 	<select id="selectOne" resultMap="memberRes" parameterClass="String">
 		<include refid="select-all" />
 		<include refid="where-memberID" />
 	</select>
 	
+	<!-- 아이디와 비밀번호가 맞으면 아이디의 모든 정보를 가져옴  -->
 	<select id="selectPassword" resultMap="memberRes">
 		<include refid="select-all" />
 		<include refid="where-memberID" />
 		AND memberPassword = #memberPassword#
 	</select>
 	
+	<!-- 이름 과 생년 월일을 통해 아이디를 찾음 -->
 	<select id="selectFindId" resultClass="member" >
 		select memberID from member where memberName = #memberName# AND birthday = #birthday#
 	</select>
 	
+	<!-- 아이디와 이름 과 생년 월일을 통해 비밀번호를 찾음 -->
 	<select id="selectFindPasswd" resultClass="member">
 		select memberPassword from member
 		<include refid="where-memberID" />

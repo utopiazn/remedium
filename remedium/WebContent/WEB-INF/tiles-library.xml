@@ -63,7 +63,7 @@
 	<definition name="roomInsertForm" extends="main">
 		<put-attribute name="body" value="/admin/roomInsertForm.jsp" />
 	</definition>
-
+	
     <definition name="info" extends="main2">
 		<put-attribute name="body" value="/main/info.jsp" />
 	</definition>
