@@ -53,9 +53,17 @@
 		<put-attribute name="body" value="/login/findID.jsp" />
 	</definition>
 	
+	<definition name="findIDSuccess" extends="main2">
+		<put-attribute name="body" value="/login/findIDSuccess.jsp" />
+	</definition>
+	
 	<!-- 비번 찾기 -->
 	<definition name="findPwForm" extends="main2">
 		<put-attribute name="body" value="/login/findPw.jsp" />
+	</definition>
+	
+	<definition name="findPwSuccess" extends="main2">
+		<put-attribute name="body" value="/login/findPwSuccess.jsp" />
 	</definition>
 <!-- 로그인 -->
 	

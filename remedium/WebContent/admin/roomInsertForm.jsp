@@ -44,7 +44,15 @@
 			</tr>
 			<tr>
 				<td>객실사진</td>
-				<td></td>
+				<td>
+				<s:file name="upload" theme="simple" />
+			
+				<s:if test="resultClass.oprImage != NULL ">
+					&nbsp; * <s:property value="resultClass.oprImage" />
+					이미지가 이미 있음.
+				</s:if>
+				
+				</td>
 			</tr>
 			<tr>
 				<td>객실요금</td><td> 

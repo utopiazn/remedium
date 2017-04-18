@@ -30,7 +30,15 @@
 			return true;
 		}
 	</SCRIPT> 
-<body>
+<body><br/><br/><br/>
+	<table width="600" border="0" cellspacing="0" cellpadding="2">
+
+		<tr>
+			<td align="center">
+				<h2>비밀번호 찾기</h2>
+			</td>
+		</tr>
+	</table>
 	  <form action="findPwAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 	<table>
 		<tr>

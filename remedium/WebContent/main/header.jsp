@@ -18,17 +18,17 @@
 	}
 	#menu /* 메뉴(카테고리) */
 	{
-	 height:300; background-color:#C0C0C0; float: center; text-decoration: none; 
+	 background-color:#C0C0C0; float: center; text-decoration: none; 
 	 font-family: "돋움",sans-serif; color: #FFFFFF; line-height: 3em; text-align: center; font-weight: bolder;
 	}
 	#res /* 예약 부분 */
 	{
-	height: 50px; background-color:#8EA8DB; font-family:"돋움",sans-serif;
-	color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em;
+	height: 50px; background-color:#8EA8DB; font-family:"돋움",sans-serif; 
+	color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em; float: center;
 	}
 	#logo /* 로고 */
 	{
-	margin: 0 auto; float: center; cursor: pointer;
+	margin: 0 auto; float: center; cursor: pointer; padding-left: 50px;
 	}
 	a /* 링크 속성 */
 	{text-decoration: none; color: #000000; } 
@@ -148,11 +148,11 @@
 
 고객 수:
 <select name="people">
-<option>1명</option>
-<option>2명</option>
-<option>3명</option>
-<option>4명</option>
-<option>5명</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
 <option>단체</option>
 </select>
 
