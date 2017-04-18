@@ -10,35 +10,20 @@
 	
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.action.extension" value="action" />
-
-<!-- 	<package name="main"  extends="struts-default, tiles-default">
-		
-		<action name="main" class="main.MainAction">
-			<result type="tiles">main</result>
-		</action>
-	</package> -->
 	
-	<package name="tiles"  extends="struts-default, tiles-default">
-       
-        <action name="main" class="main.MainAction" >
-
-            <result type="tiles">main2</result>
-           
-        </action>
-        
-        <action name="main2" class="main.MainAction" >
-            <result type="tiles">main2</result>           
-        </action>
-      
-  		
+	<package name="tiles"  extends="struts-default, tiles-default">       
+    <action name="main" class="main.MainAction" >
+	<result type="tiles">main3</result>
+	</action>
+        	
 
 	</package>
 	
 	
 	<include file="/configs/member.xml" />
 	<include file="/configs/room.xml" />
-	 <include file="/configs/main.xml" />
-	  <include file="/configs/info.xml" />
+	<include file="/configs/info.xml" />
+	<include file="/configs/facilities.xml" />
 </struts>
 
 

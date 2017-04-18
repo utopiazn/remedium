@@ -6,6 +6,8 @@
 <tiles-definitions>
 
 <!-- 메인화면 -->
+
+	<!-- 서브메뉴 있음 -->
 	<definition name="main" template="/main/main.jsp">
 		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />
 		<put-attribute name="header" value="/main/header.jsp" />
@@ -14,8 +16,18 @@
 		<put-attribute name="footer" value="/main/footer.jsp" />	
 		
 	</definition>
-
+	
+	<!-- 양쪽 여백 -->
 	<definition name="main2" template="/main/main2.jsp">
+		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />
+		<put-attribute name="header" value="/main/header.jsp" />		
+		<put-attribute name="body" value="/main/body.jsp" /> 
+		<put-attribute name="footer" value="/main/footer.jsp" />	
+		
+	</definition>
+	
+	<!-- 전체 화면 -->
+	<definition name="main3" template="/main/main3.jsp">
 		<put-attribute name="title" value="Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]" />
 		<put-attribute name="header" value="/main/header.jsp" />		
 		<put-attribute name="body" value="/main/body.jsp" /> 
@@ -49,19 +61,19 @@
 	
 	
 <!-- 객실 관련 -->
-	<definition name="roomAllList" extends="main">
+	<definition name="roomAllList" extends="main2">
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	
-	<definition name="roomlist" extends="main">
+	<definition name="roomlist" extends="main2">
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	
-	<definition name="roomView" extends="main">
+	<definition name="roomView" extends="main2">
 		<put-attribute name="body" value="/room/roomView.jsp" />
 	</definition>
 	
-	<definition name="roomInsertForm" extends="main">
+	<definition name="roomInsertForm" extends="main2">
 		<put-attribute name="body" value="/admin/roomInsertForm.jsp" />
 	</definition>
 <!-- 객실 관련 -->	

@@ -3,9 +3,9 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<head>
+	<title>편의시설 상세보기</title>
 </head>
-<body>
-
-</body>
+  <body>
+  </body>
 </html>
