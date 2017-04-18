@@ -39,6 +39,13 @@
 		#price#, #room_class#)
 	</insert>
 	
+	<update id="updateRoom" parameterClass="room">
+		UPDATE ROOM SET NAME = #name#, ROOM_SIZE = #room_size#, ROOM_CAPACITY = #room_capacity#,
+		CONSTRUCTION = #construction#, ROOM_COMMENT = #room_comment#,
+		ORGIMAGE = #orgImage#, SAVIMAGE = #savImage#, PRICE = #price#, ROOM_CLASS = #room_class# 
+		<include refid="where-no"/>
+	</update>
+	
 	<delete id="deleteRoom" parameterClass="room">
 		DELETE FROM ROOM
 		<include refid="where-no"/>
