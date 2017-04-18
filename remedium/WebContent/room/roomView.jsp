@@ -8,7 +8,7 @@
 <style type="text/css">
 #image /* 사진 이미지 */
 {
-	width:700; height:500; float: center;
+	width:700; height:5000; float: center;
 }
 #room /* 객실 정보 */
 {
@@ -25,6 +25,7 @@ font-weight: bolder; font-family: "돋움", sans-serif; text-align: left;
 #all
 {
 display:inline; 
+}
 
 	
 
@@ -36,7 +37,7 @@ display:inline;
 
 <div id="image">
 
-<img alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" > <!-- 이미지 파일 받으면 이부분 삭제 후 적용 되는 지 봐야함! -->
+<img height="400" alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" > <!-- 이미지 파일 받으면 이부분 삭제 후 적용 되는 지 봐야함! -->
 </div>
 
 
