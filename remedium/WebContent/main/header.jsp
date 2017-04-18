@@ -161,7 +161,8 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<input type="submit" value="검색" name="search">
+<input type="button" value="검색" name="search" onclick="location.href='roomAllList.action'">
+
 
 
 </div>

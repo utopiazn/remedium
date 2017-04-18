@@ -100,13 +100,13 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		
 		System.out.println( "paramClass.getBirthday() : " + paramClass.getBirthday());
 		
-		try{
-			resultClass = (MemberBean)sqlMapper.queryForObject("member.selectFindId", paramClass);
 		
-		}catch(Exception e){
-			return ERROR;
+		resultClass = (MemberBean)sqlMapper.queryForObject("member.selectFindId", paramClass);
+		
+	
+		if(resultClass == null){
+		return ERROR;
 		}
-		
 		return SUCCESS;
 	
 	}
