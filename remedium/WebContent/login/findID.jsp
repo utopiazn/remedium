@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>아이디 찾기</title>
 </head>
 <SCRIPT type="text/javascript">
 		function validation() {
@@ -26,8 +26,10 @@
 		}
 	</SCRIPT> 
 <body>
-<form action="findIDAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+	
 	<table>
+ 
+    <form action="findIDAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 이  름</td>
 			<td bgcolor="#FFFFFF">
