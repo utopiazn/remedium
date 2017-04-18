@@ -67,8 +67,14 @@
 </div>
 
 <div id="res">
+
 숙박 날짜:
-<select name="years">
+<input type="date">
+~
+<input type="date">
+
+
+<%-- <select name="years">
 <option>2017년</option>
 <option>2016년</option>
 </select>
@@ -128,7 +134,7 @@
 <option>2박</option>
 <option>3박</option>
 <option>4박</option>
-</select>
+</select> --%>
 
 고객 수:
 <select name="people">
