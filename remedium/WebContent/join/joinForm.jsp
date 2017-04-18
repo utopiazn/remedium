@@ -14,7 +14,7 @@
 		//아이디 중복 여부를 판다
 		function openConfirmid(userinput){
 			//아이디를 입력했는지 검사
-			if(userinput.id.value==""){
+			if(userinput.memberID.value==""){
 				alert("아이디를 입력하세요");
 				return;
 			}
@@ -23,7 +23,7 @@
 			
 			//url="idCheck.action";
 			
-			url="idCheck.action?id="+userinput.id.value;
+			url="idCheck.action?memberId="+userinput.memberID.value;
 			
 			//새로운 윈도우를 엽니다.
 			open(url,"confirm",
