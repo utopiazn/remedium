@@ -25,7 +25,8 @@ The Oriental Premium Edition for You<br>
 <td>
 CONCEPT
 <hr align="left" width="100" size="1" color="gray">
-: 일상에 지친 당신만을 위한 휴식 공간. 
+: 일상에 지친 당신만을 위한 휴식 공간.
+바쁜 일상에서 벗어나 온전한 휴식과 프라이빗한 시간을 즐기실 수 있습니다. 
 </td>
 </tr>
 </table>
