@@ -4,6 +4,8 @@
 
 <sqlMap namespace = "member">
 	<typeAlias alias="member" type="bean.MemberBean" />
+	
+	
 
 	<resultMap id="memberRes" class="member">
 		<result property="memberID" 		column="memberID" />
@@ -59,6 +61,14 @@
 		select memberPassword from member
 		<include refid="where-memberID" />
 		AND memberName = #memberName# AND birthday = #birthday#
+	</select>
+	
+	<!--ID 중복체크 -->
+			
+	<select id="selectDistinctID" resultClass="member">
+		select * from member
+		<include refid="where-memberID" />
+		
 	</select>
 	
 

@@ -17,6 +17,12 @@
 			<result type="tiles">loginForm</result>
 		</action>
 		
+		<action name="idCheck" class="login.join.MemberIdCheckAction"  method="execute" >
+			<result>/join/idCheck.jsp</result>
+		</action>
+		
+		
+		<!-- 회원가입 처리 -->
 		
 		<!-- 로그인 폼 -->
 		<action name="loginForm" class="login.LoginAction" method="form">
