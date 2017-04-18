@@ -12,39 +12,27 @@
 	<title><tiles:getAsString name="title" /></title>
 </head>
 <body>
-
-
-	
-			
-				<table border=1 width="100%" cellpadding="0" cellspacing="0" bgcolor="#C0C0C0">
+				<table  width="100%" cellpadding="0" cellspacing="0" >
 					
 					<tr>
-					
-						<!-- 헤더 정보--> 			
-						<td colspan="2" width="100%" align="center">
-							<tiles:insertAttribute name="header" />
-						</td>
+					<!-- 헤더 정보--> 			
+					<td colspan="2" width="100%" align="center">
+					<tiles:insertAttribute name="header" />
+					</td>
 					</tr>
 					 
 					<tr>
-					
-					
-					
-							
-							<!--메뉴에 따른 정보 -->
-						
-									<td height="1200" width="100%" valign="top" align="center">					
-								 		<tiles:insertAttribute name="body" />
-								 	</td>
-								
-						
+					<!--메뉴에 따른 정보 -->
+					<td height="1200" width="100%" valign="top" align="center">					
+					<tiles:insertAttribute name="body" />
+					</td>					
 					</tr>
 					
 					<tr>
-						<!-- footer -->
-						<td  bgcolor="#C0C0C0" colspan="2" width="100%" align="center">
-							<tiles:insertAttribute name="footer" /> 
-						</td>
+					<!-- footer -->
+					<td  bgcolor="#C0C0C0" colspan="2" width="100%" align="center">
+					<tiles:insertAttribute name="footer" /> 
+					</td>
 					</tr>
 				</table>
 				
