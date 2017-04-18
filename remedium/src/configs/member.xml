@@ -25,7 +25,7 @@
 		
 		<!-- 로그인 처리 -->
 		<action name="loginAction" class="login.LoginAction">
-			<result type="tiles">main2</result>
+			<result type="tiles">main3</result>
 			<result name="error">/login/loginError.jsp</result>
 		</action> 
 		
@@ -55,7 +55,7 @@
 		
 		<!-- 로그아웃 처리 -->
 		<action name="logout" class="login.LoginAction" method="logout">
-			<result type="tiles">main2</result>
+			<result type="tiles">main3</result>
 			<result name="error">/login/error.jsp</result>
 		</action>   
 	</package>

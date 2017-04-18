@@ -60,7 +60,7 @@ display:inline;
 
 <br>
 
-<s:if test="${ session.memberId =='admin' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
+<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
 <a href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>' >객실수정</a>
 <a href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>' >객실삭제</a>
 </s:if>
