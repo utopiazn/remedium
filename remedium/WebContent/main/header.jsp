@@ -59,7 +59,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="roomInfoList.action">객실 소개   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href=facilitiesList.action">편의 시설   </a>
+    <a href="facilitiesList.action">편의 시설   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="eventList.action">이 벤 트   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
