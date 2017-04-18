@@ -9,6 +9,31 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
+	<script language="javascript">
+		
+		//아이디 중복 여부를 판다
+		function openConfirmid(userinput){
+			//아이디를 입력했는지 검사
+			if(userinput.id.value==""){
+				alert("아이디를 입력하세요");
+				return;
+			}
+			
+			//url과 사용자 입력 id를 조합합니다.
+			
+			//url="idCheck.action";
+			
+			url="idCheck.action?id="+userinput.id.value;
+			
+			//새로운 윈도우를 엽니다.
+			open(url,"confirm",
+			 "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
+	
+		}
+		
+	
+	</script>
+	
 </head>
 <body>
 
@@ -47,7 +72,8 @@
 			
 				<td width="50" bgcolor="#FFFFFF">
 					<s:textfield name="memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/>
-					<input type="button" value="중복 체크">
+					<input type="button" name="confirm_id" value="ID중복확인" OnClick="openConfirmid(this.form)">
+					
 				</td>
 			</tr>
 			
