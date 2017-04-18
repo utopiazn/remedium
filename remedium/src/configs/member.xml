@@ -26,7 +26,7 @@
 		<!-- 로그인 처리 -->
 		<action name="loginAction" class="login.LoginAction">
 			<result type="tiles">main2</result>
-			<result name="login" type="tiles">loginForm</result>
+			<result name="error">/login/loginError.jsp</result>
 		</action> 
 		
 		<!-- 아이디 찾기 폼 -->
@@ -36,7 +36,8 @@
 		
 		<!-- 아이디 찾기 처리 -->
 		<action name="findIDAction" class="login.LoginAction" method="findId">
-			<result type="tiles">loginForm</result>
+			<result >/login/findIDSuccess.jsp</result>
+			<result name="error">/login/findError.jsp</result>
 		</action>
 		
 		<!-- 패스워드 찾기 폼 -->
@@ -46,7 +47,8 @@
 		
 		<!-- 패드워드 찾기 처리 -->
 		<action name="findPwAction" class="login.LoginAction" method="findPw">
-			<result type="tiles">loginForm</result>
+			<result >/login/findPwSuccess.jsp</result>
+			<result name="error">/login/findError.jsp</result>
 		</action>
 		
 		<!-- 로그아웃 처리 -->

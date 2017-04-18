@@ -45,7 +45,7 @@
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">*</font>비밀번호</td>
 			<td bgcolor="#FFFFFF">
-				<s:textfield name="memberPasswd" theme="simple" cssStyle="width:100px" maxlength="20"/>
+				<s:password name="memberPasswd"  theme="simple" cssStyle="width:100px" maxlength="20"/>
 			</td>
 			
 		</tr>

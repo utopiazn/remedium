@@ -1,15 +1,16 @@
 package login;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Reader;
 import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
-
-import org.apache.struts2.interceptor.SessionAware;
 
 import bean.MemberBean;
 
@@ -63,7 +64,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			
 			return SUCCESS;
 		}
-		return LOGIN;
+		
+		return ERROR;
 }
 
 	// 로그아웃에 대한 처리
