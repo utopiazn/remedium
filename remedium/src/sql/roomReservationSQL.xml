@@ -2,9 +2,9 @@
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
 <sqlMap>
-	<typeAlias alias="roomInfo" type="bean.RoomInfoBean" />
+	<typeAlias alias="roomReservation" type="bean.RoomReservationBean" />
 
-	<resultMap id="roomInfoRes" class="roomInfo">
+	<resultMap id="roomReservationRes" class="roomReservation">
 		<result property="reservationNo" column="reservationNo" />
 		<result property="no" column="no" />
 		<result property="firstdate" column="firstdate" />
