@@ -19,23 +19,23 @@
 		</tr> 
 	</table>
 	 
-	<table width="600" border="0" cellspacing="0" cellpadding="2">
+	<table align="center" width="600" border="0" cellspacing="0" cellpadding="2">
 		<tr align="center" bgcolor="#F3F3F3">
 			<td width="50"><strong>아이디</strong></td>
-			<td width="350"><strong>이 름</strong></td>
-			<td width="70"><strong>생년 월일</strong></td>
+			<td width="50"><strong>이 름</strong></td>
+			<td width="80"><strong>생년 월일</strong></td>
 			<td width="80"><strong>핸드폰</strong></td>
-			<td width="50"><strong>가입일</strong></td>
-			<td width="50"><strong>캐 쉬</strong></td>
+			<td width="80"><strong>가입일</strong></td>
+			<td width="80"><strong>캐 쉬</strong></td>
 		</tr>
 		<tr bgcolor="#777777">
-			<td height="1" colspan="5"></td>
+			<td height="1" colspan="7"></td>
 		</tr>
 		
 		<s:iterator value="list" status="stat">
-			<s:url id="viewURL" action="ViewAction">
-				<s:param name="no">
-					<s:property value="no"/>
+			<s:url id="viewURL" action="memberAdminView">
+				<s:param name="memberID">
+					<s:property value="memberID"/>
 				</s:param>
 				<s:param name="currentPage">
 					<s:property value="currentPage"/>
@@ -44,10 +44,7 @@
 			<tr bgcolor="#FFFFFF" align="center">
 				<td><s:property value="no"/></td>
 				<td align="left"> 
-					<s:if test="re_level != 0">
-					<c:forEach var = "i" begin = "${re_level}" end = "0">&nbsp;</c:forEach>
-					</s:if>	
-				<s:a href="%{viewURL}"><s:property value="subject"/></s:a></td>
+				<s:a href="%{viewURL}"><s:property value="memberID"/></s:a></td>
 				<td align="center"><s:property value="name"/></td>
 				<td align="center"><s:property value="regdate"/></td>
 				<td><s:property value="readhit"/></td>
@@ -69,7 +66,7 @@
 			<td colspan="5"><s:property value="pagingHtml" escape="false"/></td>
 		</tr>
 		<tr align="right">
-			<td colspan="5">
+			<td colspan="8">
 			<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='WriteForm.action?currentPage=<s:property value="currentPage"/>';">
 			</td>
 		</tr>
@@ -77,9 +74,9 @@
 	</table>
 	<form>
 		<select name="searchNum">
-			<option value="0">작성자</option>
-			<option value="1">제목</option>
-			<option value="2">내용</option>
+			<option value="0">아이디</option>
+			<option value="1">이름</option>
+			<option value="2">핸드폰</option>
 		</select>
 		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
 		<input name="submit" type="submit" value="검색" class="inputb">
