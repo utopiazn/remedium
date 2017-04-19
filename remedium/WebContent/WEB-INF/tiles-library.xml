@@ -99,5 +99,9 @@
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />
 	</definition>
+<!-- 문의사항 -->
+    <definition name="faqList" extends="main2">
+		<put-attribute name="body" value="/faq/faqList.jsp" />
+	</definition>
 	
 </tiles-definitions>
