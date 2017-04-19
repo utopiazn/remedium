@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+	<package name="roomInfo"  extends="struts-default, tiles-default">
+		<action name="roomInfoList" class="room.InfoAction" method="execute">
+			<result>/room/roomInfoList.jsp</result>
+		</action>
+		
+		<action name="roomInfoView" class="room.InfoAction" method="view">
+			<result type="tiles">roomInfoView</result>
+		</action>
+		
+		
+	</package>
+</struts>

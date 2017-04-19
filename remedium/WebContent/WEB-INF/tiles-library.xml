@@ -100,4 +100,13 @@
 		<put-attribute name="body" value="/service/eventList.jsp" />
 	</definition>
 	
+<!-- 객실소개 -->   
+	<definition name="roomInfoList" extends="main2">
+		
+		<put-attribute name="body" value="/room/roomInfoList.jsp" />
+		
+	</definition>
+<!-- 객실소개 -->
+	
+	
 </tiles-definitions>
