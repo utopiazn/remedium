@@ -25,7 +25,7 @@
 			
 			return true;
 		}
-</SCRIPT>  
+</SCRIPT>
 </head>
 
 <body>
