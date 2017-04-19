@@ -43,9 +43,11 @@ public class AdminListAction extends ActionSupport{
 		if(getSearchKey() != null){
 			return search();
 		}
-		
+		System.out.println("list");
 		list = sqlMapper.queryForList("member.selectAll"); // 멤버 회원 전부를 가져옴
 		
+		System.out.println("list ");
+	
 		totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
 		
 		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
@@ -63,6 +65,40 @@ public class AdminListAction extends ActionSupport{
 	}
 	
 	public String search() throws Exception {
+		
+		System.out.println("getSearchKey"+getSearchKey());
+		System.out.println("searchNum"+searchNum);
+		
+		if(searchNum == 0) {
+			list = sqlMapper.queryForList("member.searchID", "%"+getSearchKey()+"%");
+			System.out.println("list size"+list.size());
+		}
+		
+		if(searchNum == 1) {
+			list = sqlMapper.queryForList("member.searchName", "%"+getSearchKey()+"%");
+		}
+		
+		if(searchNum == 2) {
+			list = sqlMapper.queryForList("member.searchPhone", "%"+getSearchKey()+"%");
+		}
+	
+		totalCount = list.size(); // 모든 글 수를 totalCount 에 저장 한다.
+		
+		// pagingAction 객체 생성
+		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, searchNum, getSearchKey());
+		pagingHtml = page.getPagingHtml().toString(); 	//페이지 HTML 생성
+		
+		// 현재 페이지에서 보여줄 마지막 글의 번호 설정.
+		int lastCount = totalCount;
+				
+		// 현재 페이지의 마지막 글의 번호가 전체의 마지막 글 번호보다 작으면 lagtCount 를 +1 번호로 설정
+		if(page.getEndCount() < totalCount) {
+			lastCount = page.getEndCount() + 1;
+		}
+		
+		//전체 리스트 에서 현재 페이지만큼의 리스트만 가져온다.
+		list = list.subList(page.getStartCount(), lastCount);
+		
 		return SUCCESS;
 	}
 

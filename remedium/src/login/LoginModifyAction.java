@@ -21,6 +21,7 @@ public class LoginModifyAction extends ActionSupport{
 	
 	//마이페이지 회원 수정 폼
 	public String modifyForm() throws Exception {
+		
 		return SUCCESS;
 	}
 	

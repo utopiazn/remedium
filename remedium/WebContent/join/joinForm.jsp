@@ -131,7 +131,6 @@
 	<!-- 로그인폼으로 이동 -->
 	<form name="myForm" action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
 
-	
 		<table width="600" border="0" cellspacing="0" cellpadding="0">
 			
 			<tr>

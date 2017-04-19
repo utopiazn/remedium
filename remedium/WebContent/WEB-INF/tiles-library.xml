@@ -66,7 +66,19 @@
 		<put-attribute name="body" value="/login/findPwSuccess.jsp" />
 	</definition>
 <!-- 로그인 -->
+
+<!-- Admin 관련 -->
+
+	<!-- 회원 리스트 -->
+	<definition name="memberAdminList" extends="main2" >
+		<put-attribute name="body" value="/admin/memberAdminList.jsp" />
+	</definition>
 	
+	<definition name="memberAdminView" extends="main2" >
+		<put-attribute name="body" value="/admin/memberAdminView.jsp" />
+	</definition>
+	
+<!-- Admin 관련 -->
 	
 <!-- 객실 관련 -->
 	<definition name="roomAllList" extends="main2">
