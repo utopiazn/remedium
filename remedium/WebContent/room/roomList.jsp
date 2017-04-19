@@ -39,6 +39,8 @@
 		</s:iterator>
 	</s:else>
 	</table>
+	<s:if test="${ session.userAdmin == '1' }">
 	<a href="/remedium/roomInsertForm.action">객실추가</a>
+	</s:if>
 </body>
 </html>

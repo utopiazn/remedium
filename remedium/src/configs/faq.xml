@@ -4,11 +4,9 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 <struts>
-	<package name="info"  extends="struts-default, tiles-default">
-		<action name="info" class="main.InfoAction">
-			<result type="tiles">info</result>
+	<package name="faqList"  extends="struts-default, tiles-default">
+		<action name="faqList" class="faq.ListAction">
+			<result type="tiles">faqList</result>
 		</action>
-		
-		
 	</package>
 </struts>

@@ -45,8 +45,6 @@
 <s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <a href="memberAdminList.action">회원관리 </a>
 &nbsp;
-<a href="logout.action">로그아웃</a>
-&nbsp;
 </s:if>
 <s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 <a href="myPageMain.action">마이페이지</a>
@@ -74,21 +72,21 @@
 <div id="menu" >
 	<a href="info.action">호텔 정보   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="roomInfoList.action">객실 소개   </a>
+    <a href="roomInfoView.action?room_class='1'">객실 소개   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="facilitiesList.action">편의 시설   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="eventList.action">이 벤 트   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="boardList.action">문의사항</a>
+    <a href="faqList.action">문의사항</a>
 </div>
-
+<form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
 
 숙박 날짜:
-<input type="date">
+<input type="date" name="firstdate">
 ~
-<input type="date">
+<input type="date" name="lastdate">
 
 
 <%-- <select name="years">
@@ -155,24 +153,25 @@
 
 고객 수:
 <select name="people">
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5</option>
-<option>단체</option>
+<option value="1">1명</option>
+<option value="2">2명</option>
+<option value="3">3명</option>
+<option value="4">4명</option>
+<option value="5">5명</option>
+<option value="0">단체</option>
 </select>
-
-<input type="checkbox" name="unknow" id="unknow">
-<label for="unknow">일정미정</label>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<input type="button" value="검색" name="search" onclick="location.href='roomAllList.action'">
+
+<input type="submit" value="검색">
+
+<input type="button" value="전체" name="search" onclick="location.href='roomAllList.action'">
 
 
 
 </div>
+</form>
 </div>
 
 
@@ -182,4 +181,34 @@
     
    
 </body>
+<script type="text/javascript">
+
+function ReservationCH(userinput){
+	alert("실행되고");
+	if(userinput.firstdate.value==""){
+		alert("처음이 공백");
+		return false;
+	}
+	
+	if(userinput.lastdate.value==""){
+		alert("마지막이 공백");
+		return false;
+	}
+	
+	var fd =userinput.firstdate.value;
+	var ld =userinput.lastdate.value;
+	
+	if(fd==ld){
+		alert("당일치기금지");
+		return false;
+	}
+	
+	if(fd>ld){
+		alert("???");
+		return false;
+	}
+}
+
+</script>
+
 </html>

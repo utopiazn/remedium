@@ -85,7 +85,7 @@
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	
-	<definition name="roomlist" extends="main2">
+	<definition name="roomList" extends="main2">
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	
@@ -111,5 +111,25 @@
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />
 	</definition>
+<!-- 문의사항 -->
+    <definition name="faqList" extends="main2">
+		<put-attribute name="body" value="/faq/faqList.jsp" />
+	</definition>
+	
+<!-- 객실소개 -->   
+	<definition name="roomInfoList" extends="main2">
+		
+		<put-attribute name="body" value="/room/roomInfoList.jsp" />
+		
+	</definition>
+<!-- 객실소개 -->
+
+<!-- 마이페이지 -->   
+	<definition name="myPageMain" extends="main2">
+		
+		<put-attribute name="body" value="/mypage/pageMain.jsp" />
+		
+	</definition>
+	
 	
 </tiles-definitions>

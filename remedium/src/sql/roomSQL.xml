@@ -27,6 +27,16 @@
 		ORDER BY no DESC
 	</select>
 	
+	<select id="selectSerch" resultMap="roomRes" parameterClass="room">
+		<include refid="select-all"/>
+		WHERE ROOM_CAPACITY >= #room_capacity# ORDER BY no DESC
+	</select>
+	
+	<select id="selectSerchGroup" resultMap="roomRes" parameterClass="room">
+		<include refid="select-all"/>
+		WHERE ROOM_CAPACITY = #room_capacity# ORDER BY no DESC
+	</select>
+	
 	<select id="selectOne" resultMap="roomRes">
 		<include refid="select-all"/>
 		<include refid="where-no"/>
