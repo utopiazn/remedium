@@ -72,8 +72,8 @@ public class RoomAction extends ActionSupport{
 		paramClass.setRoom_class(getRoom_class());
 		
 		sqlMapper.insert("roomSQL.insertRoom", paramClass);
-		
-		 if(getUpload() != null){
+
+		if(getUpload() != null){
 		      //등록한 글 번호 가져오기.
 		      resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
 		      System.out.println("등록한 글 번호 가져오기.");
@@ -122,15 +122,12 @@ public class RoomAction extends ActionSupport{
 			paramClass.setRoom_capacity(getRoom_capacity());
 			paramClass.setConstruction(getConstruction());
 			paramClass.setRoom_comment(getRoom_comment());
-			paramClass.setOrgImage("미구현");
-			paramClass.setSavImage("미구현");
+			paramClass.setOrgImage(getOrgImage());
+			paramClass.setSavImage(getSavImage());
 			paramClass.setPrice(getPrice());
 			paramClass.setRoom_class(getRoom_class());
 			
-			
-			
-			//임시 수정 요망함..젭라
-			File deleteFile = new File(fileUploadPath + resultClass.getSavImage());
+			/*File deleteFile = new File(fileUploadPath + resultClass.getSavImage());
 			deleteFile.delete();
 			
 			resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
@@ -151,9 +148,7 @@ public class RoomAction extends ActionSupport{
 		      System.out.println("이미지 정보 파라미터 설정.");
 		      //파일 정보 업데이트.
 		      sqlMapper.update("roomSQL.updateImage", paramClass);
-		      System.out.println("이미지 정보 업데이트.");
-			
-		      
+		      System.out.println("이미지 정보 업데이트.");*/
 			
 			sqlMapper.update("roomSQL.updateRoom",paramClass);
 			

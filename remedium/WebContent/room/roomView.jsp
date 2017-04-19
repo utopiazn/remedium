@@ -53,7 +53,12 @@ display:inline;
 객실 종류 :
 <s:property value="resultClass.room_class"/><br>
 객실 정원 :
+<s:if test="%{resultClass.room_capacity==0}">
+단체(5~20명 수용가능)<br>
+</s:if>
+<s:else>
 <s:property value="resultClass.room_capacity"/>명<br>
+</s:else>
 객실 소개:<br>
 <s:property value="resultClass.room_comment"/><br>
 이용 요금:
@@ -62,8 +67,9 @@ display:inline;
 <br>
 
 <s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
-<a href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>' >객실수정</a>
-<a href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>' >객실삭제</a>
+<input type="button" value="객실수정" onclick="location.href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>'" />
+<input type="button" value="객실삭제" onclick="location.href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>'" />
+
 </s:if>
 
 </div>

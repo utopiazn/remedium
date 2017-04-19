@@ -18,12 +18,12 @@ public class ListAction extends ActionSupport {
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
 	
-	/*private List<RoomBean> list;
+	private List<RoomBean> list;
 	private RoomBean paramClass;
 	
-	private Date firstdate;
-	private Date lastdate;
-	private int people;*/
+	private String firstdate;
+	private String lastdate;
+	private int people;
 	
 	
 	
@@ -36,33 +36,30 @@ public class ListAction extends ActionSupport {
 	@Override
 	//검색된 객실 리스트
 	public String execute() throws Exception {
-		System.out.println("되냐?");
-		/*
+		
 		list = new ArrayList<RoomBean>();
 		paramClass = new RoomBean();
-		System.out.println(getPeople());
 		paramClass.setRoom_capacity(getPeople());
 		
 		if(paramClass.getRoom_capacity()==0){
-			System.out.println("여기까지");
 			list = sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
 		}else{
 			list = sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
-		}*/
+		}
 		return SUCCESS;
 	}
 	
 	//모든 객실 리스트(관리자)
-	/*public String all() throws Exception {
+	public String all() throws Exception {
 		
 		list = new ArrayList<RoomBean>();
 		
 		list = sqlMapper.queryForList("roomSQL.selectAll");
 		
 		return SUCCESS;
-	}*/
+	}
 
-	/*public List<RoomBean> getList() {
+	public List<RoomBean> getList() {
 		return list;
 	}
 
@@ -70,19 +67,19 @@ public class ListAction extends ActionSupport {
 		this.list = list;
 	}
 
-	public Date getFirstdate() {
+	public String getFirstdate() {
 		return firstdate;
 	}
 
-	public void setFirstdate(Date firstdate) {
+	public void setFirstdate(String firstdate) {
 		this.firstdate = firstdate;
 	}
 
-	public Date getLastdate() {
+	public String getLastdate() {
 		return lastdate;
 	}
 
-	public void setLastdate(Date lastdate) {
+	public void setLastdate(String lastdate) {
 		this.lastdate = lastdate;
 	}
 
@@ -92,7 +89,15 @@ public class ListAction extends ActionSupport {
 
 	public void setPeople(int people) {
 		this.people = people;
-	}*/
+	}
+
+	public RoomBean getParamClass() {
+		return paramClass;
+	}
+
+	public void setParamClass(RoomBean paramClass) {
+		this.paramClass = paramClass;
+	}
 	
 	
 }
