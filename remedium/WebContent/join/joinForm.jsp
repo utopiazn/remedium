@@ -17,9 +17,10 @@
 		     document.getElementById("memberID").value = name;	
 		}
 		
-		
+	</script>	
+	<script type="text/javascript">	
 		function validation2(userinput){
-			
+
 		
 			if(userinput.memberID.value==""){
 				alert("아이디를 입력하세요");
@@ -31,12 +32,12 @@
 				return false;
 			}
 			
-			if(userinput.memberPassword2.value==""){
+			else if (userinput.memberPassword2.value==""){
 				alert("비밀번호 확인을 입력하세요");
 				return false;
 			}
 			
-			if(userinput.memberPassword.value !=userinput.memberPassword2.value){
+			else if(userinput.memberPassword.value != userinput.memberPassword2.value){
 				alert("비밀번호 와 확인 비밀번호가 서로 다릅니다.");
 				return false;
 			}
@@ -79,7 +80,8 @@
 			
 			return true;
 		}
-	 
+		</script>	
+	 	<script type="text/javascript">	
 
 		//아이디 중복 여부를 판다
 		function openConfirmid(userinput){
@@ -89,7 +91,6 @@
 				return;
 			}
 	
-			
 			
 			//url과 사용자 입력 id를 조합합니다.			
 			url="idCheck.action?memberID="+userinput.memberID.value;
@@ -129,6 +130,7 @@
 
 	<!-- 로그인폼으로 이동 -->
 	<form name="myForm" action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
+
 	
 		<table width="600" border="0" cellspacing="0" cellpadding="0">
 			
