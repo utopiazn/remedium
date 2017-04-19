@@ -66,14 +66,26 @@
 		<put-attribute name="body" value="/login/findPwSuccess.jsp" />
 	</definition>
 <!-- 로그인 -->
+
+<!-- Admin 관련 -->
+
+	<!-- 회원 리스트 -->
+	<definition name="memberAdminList" extends="main2" >
+		<put-attribute name="body" value="/admin/memberAdminList.jsp" />
+	</definition>
 	
+	<definition name="memberAdminView" extends="main2" >
+		<put-attribute name="body" value="/admin/memberAdminView.jsp" />
+	</definition>
+	
+<!-- Admin 관련 -->
 	
 <!-- 객실 관련 -->
 	<definition name="roomAllList" extends="main2">
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	
-	<definition name="roomlist" extends="main2">
+	<definition name="roomList" extends="main2">
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	
@@ -104,12 +116,20 @@
 		<put-attribute name="body" value="/faq/faqList.jsp" />
 	</definition>
 	
-<!-- 객실소개 -->   
-	<definition name="roomInfoList" extends="main2">
-		
-		<put-attribute name="body" value="/room/roomInfoList.jsp" />
-		
+	<definition name="faqView" extends="main2">
+		<put-attribute name="body" value="/faq/faqView.jsp" />
 	</definition>
+	
+<!-- 객실소개 -->   
+	<definition name="roomInfoList" extends="main">		
+		<put-attribute name="body" value="/room/roomInfoList.jsp" />		
+	</definition>
+	
+	
+	<definition name="roomInfoView" extends="main">		
+		<put-attribute name="body" value="/room/roomInfoView.jsp" />		
+	</definition>
+	
 <!-- 객실소개 -->
 
 <!-- 마이페이지 -->   
