@@ -8,16 +8,16 @@
 <title>Insert title here</title>
 <SCRIPT type="text/javascript">
 		
-		function validation() {
+		function validation(userinput) {
 			
-			var frm = document.forms(0);
+			//var frm = document.forms(0);
 			
-			if(frm.memberId.value == "") {
+			if(userinput.memberId.value == "") {
 				alert("아이디 입력해주세요.");
 				return false;
 			} 
 			
-			else if(frm.memberPasswd.value == "") {
+			else if(userinput.memberPasswd.value == "") {
 				alert("비밀번호를 입력해주세요.");
 				return false;
 			}
@@ -29,7 +29,7 @@
 </head>
 
 <body>
-<form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+<form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 		<table width="600" border="0" cellspacing="0" cellpadding="2">
 	
 		<tr>

@@ -20,10 +20,9 @@
 		
 		function validation2(userinput){
 			
-			//var frm = document.forms(0);			
-			//alert("dfsdfsfdsakljfdsjfsdafsajfasjdfskjkl");
-
-			if(userinput.memberPassword.value== ""){
+		
+			
+		 	if(userinput.memberPassword.value== ""){
 				alert("비밀번호를 입력하세요");
 				return;
 			}
@@ -90,7 +89,7 @@
 
 
 	<!-- 로그인폼으로 이동 -->
-	<form action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this.form);">
+	<form name="myForm" action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
 	
 		<table width="600" border="0" cellspacing="0" cellpadding="0">
 			
