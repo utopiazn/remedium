@@ -25,7 +25,6 @@
 
 
 	<!-- 로그인폼으로 이동 -->
-	
 		<table width="600" border="1" cellspacing="3" cellpadding="3">	
 			<tr>
 				<td width="50" bgcolor="#F4F4F4" >
@@ -146,7 +145,7 @@
 		</table>	
 		
 		<br/>
-		<button type="button" onclick="location.href='memberAdminList.action' ">회원 목록</button>
+		<button type="button" onclick="location.href='memberAdminList.action ">회원 목록</button>
 		<button type="button" onclick="location.href='memberAdminList.action' ">회원 수정</button>
 		<button type="button" onclick="location.href='memberAdminList.action' ">회원 삭제</button>
 </body>

@@ -78,6 +78,14 @@
 		<put-attribute name="body" value="/admin/memberAdminView.jsp" />
 	</definition>
 	
+	<definition name="memberAdminModifyForm" extends="main2" >
+		<put-attribute name="body" value="/admin/memberAdminModify.jsp" />
+	</definition>
+	
+	<definition name="memberAdminModify" extends="main2" >
+		<put-attribute name="body" value="/admin/memberAdminView.jsp" />
+	</definition>
+	
 <!-- Admin 관련 -->
 	
 <!-- 객실 관련 -->

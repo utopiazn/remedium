@@ -13,8 +13,12 @@
 			<result type="tiles">memberAdminView</result>
 		</action>
 		
-		<action name="memberAdminModifyForm" class="login.LoginModifyAction" method="modifyForm">
+		<action name="memberAdminModifyForm" class="admin.member.AdminModifyAction" method="modifyForm">
 			<result type="tiles">memberAdminModifyForm</result>
+		</action>
+		
+		<action name="memberAdminModify" class="admin.member.AdminModifyAction" >
+			<result type="tiles">memberAdminModify</result>
 		</action>
 	</package>
 </struts>

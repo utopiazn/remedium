@@ -25,11 +25,6 @@ public class LoginModifyAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	//관리자 회원 수정 처리
-	public String admin() throws Exception {
-		return SUCCESS;
-	}
-	
 	//마이페이지 회원 수정 처리
 	public String execute() throws Exception {
 		return SUCCESS;

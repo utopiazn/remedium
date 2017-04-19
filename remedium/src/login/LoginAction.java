@@ -107,8 +107,9 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		
 	
 		if(resultClass == null){
-		return ERROR;
+			return ERROR;
 		}
+		
 		return SUCCESS;
 	
 	}
