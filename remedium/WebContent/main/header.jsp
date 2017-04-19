@@ -75,13 +75,13 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="boardList.action">문의사항</a>
 </div>
-
+<form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
 
 숙박 날짜:
-<input type="date">
+<input type="date" name="firstdate">
 ~
-<input type="date">
+<input type="date" name="lastdate">
 
 
 <%-- <select name="years">
@@ -161,11 +161,17 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<input type="button" value="검색" name="search" onclick="location.href='roomAllList.action'">
+
+<input type="submit" value="검색">
+
+
+<input type="button" value="전체 리스트" name="search" onclick="location.href='roomAllList.action'">
+
 
 
 
 </div>
+</form>
 </div>
 
 
@@ -175,4 +181,15 @@
     
    
 </body>
+<script type="text/javascript">
+
+function ReservationCH(userinput){
+	
+	if(userinput.firstdate.value==null){
+		return false;
+	}
+}
+
+</script>
+
 </html>
