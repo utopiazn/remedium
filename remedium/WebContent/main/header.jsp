@@ -13,7 +13,7 @@
 	}
 	#navi  /* 회원가입 로그인 부분 */
 	{
-	margin: 0 10px; font-family: "돋음",sans-serif; text-decoration: none;
+	margin: 0 10px; font-family: "돋음",sans-serif; text-decoration: none; 
 	font-size: 15px; color: #FFFFFF; float: right; padding-top: 50px; padding-right: 20px; font-weight: bolder;
 	}
 	#menu /* 메뉴(카테고리) */
