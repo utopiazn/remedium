@@ -73,7 +73,7 @@
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	
-	<definition name="roomlist" extends="main2">
+	<definition name="roomList" extends="main2">
 		<put-attribute name="body" value="/room/roomList.jsp" />
 	</definition>
 	

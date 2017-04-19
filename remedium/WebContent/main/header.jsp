@@ -45,8 +45,6 @@
 <s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <a href="memberAdminList.action">회원관리 </a>
 &nbsp;
-<a href="logout.action">로그아웃</a>
-&nbsp;
 </s:if>
 <s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 <a href="myPageMain.action">마이페이지</a>
@@ -155,12 +153,12 @@
 
 고객 수:
 <select name="people">
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5</option>
-<option>단체</option>
+<option value="1">1명</option>
+<option value="2">2명</option>
+<option value="3">3명</option>
+<option value="4">4명</option>
+<option value="5">5명</option>
+<option value="0">단체</option>
 </select>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

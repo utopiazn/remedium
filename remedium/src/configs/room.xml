@@ -10,6 +10,10 @@
 			<result type="tiles">roomAllList</result>
 		</action>
 		
+		<action name="roomList" class="room.ListAction" method="execute">
+			<result type="tiles">roomList</result>
+		</action>
+		
 		<action name="roomView" class="room.ViewAction">
 			<result type="tiles">roomView</result>
 		</action>
