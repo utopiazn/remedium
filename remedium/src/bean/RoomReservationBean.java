@@ -2,7 +2,7 @@ package bean;
 
 import java.util.Date;
 
-public class RoomInfoBean {
+public class RoomReservationBean {
 
 	int reservationNo;	// 예약번호
 	int no;				// 객실번호
