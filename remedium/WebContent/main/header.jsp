@@ -163,17 +163,12 @@
 <option>단체</option>
 </select>
 
-<input type="checkbox" name="unknow" id="unknow">
-<label for="unknow">일정미정</label>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 <input type="submit" value="검색">
 
-
-<input type="button" value="전체 리스트" name="search" onclick="location.href='roomAllList.action'">
-
+<input type="button" value="전체" name="search" onclick="location.href='roomAllList.action'">
 
 
 
@@ -191,8 +186,27 @@
 <script type="text/javascript">
 
 function ReservationCH(userinput){
+	alert("실행되고");
+	if(userinput.firstdate.value==""){
+		alert("처음이 공백");
+		return false;
+	}
 	
-	if(userinput.firstdate.value==null){
+	if(userinput.lastdate.value==""){
+		alert("마지막이 공백");
+		return false;
+	}
+	
+	var fd =userinput.firstdate.value;
+	var ld =userinput.lastdate.value;
+	
+	if(fd==ld){
+		alert("당일치기금지");
+		return false;
+	}
+	
+	if(fd>ld){
+		alert("???");
 		return false;
 	}
 }
