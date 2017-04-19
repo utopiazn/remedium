@@ -19,6 +19,8 @@
 	<table>
 			<tr>
 				<s:hidden name="no" value="%{resultClass.no}" />
+				<s:hidden name="orgImage" value="%{resultClass.orgImage}" />
+				<s:hidden name="savImage" value="%{resultClass.savImage}" />
 				<td>객실번호&nbsp;</td><td>${resultClass.no}호</td>
 			</tr>
 			
@@ -42,26 +44,26 @@
 				<td>객실소개&nbsp;</td><td> 
 				<s:textarea name="room_comment" theme="simple" value="%{resultClass.room_comment}"/></td>
 			</tr>
-			<tr>
-				<td>객실사진</td>
-				<td>
-				<s:file name="upload" theme="simple" />
+			<s:if test="resultClass.orgImage != NULL">
 			
-				<s:if test="resultClass.oprImage != NULL ">
-					&nbsp; * <s:property value="resultClass.oprImage" />
-					이미지가 이미 있음.
-				</s:if>
-				
-				</td>
+			</s:if>
+			<s:else>
+			<tr>
+				<td>객실사진&nbsp;</td>
+				<td><s:file name="upload" theme="simple"/></td>
 			</tr>
+			</s:else>
 			<tr>
 				<td>객실요금</td><td> 
 				<s:textfield name="price" theme="simple" value="%{resultClass.price}"/></td>
 			</tr>
 			<tr>
 				<td>객실종류</td><td> <select name="room_class">
-						<option value="0">개구린 방</option>
-						<option value="1">좋은 방</option>
+						<option value="1">기본 방</option>
+						<option value="2">좋은 방</option>
+						<option value="3">독방...?</option>
+						<option value="4">사막ㅠㅠ</option>
+						<option value="5">툰드라 ㄷㄷ</option>
 					  </select></td>
 			</tr>
 			<tr>		  

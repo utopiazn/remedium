@@ -13,7 +13,7 @@
 	}
 	#navi  /* 회원가입 로그인 부분 */
 	{
-	margin: 0 10px; font-family: "돋음",sans-serif; text-decoration: none;
+	margin: 0 10px; font-family: "돋음",sans-serif; text-decoration: none; 
 	font-size: 15px; color: #FFFFFF; float: right; padding-top: 50px; padding-right: 20px; font-weight: bolder;
 	}
 	#menu /* 메뉴(카테고리) */
@@ -72,7 +72,8 @@
 <div id="menu" >
 	<a href="info.action">호텔 정보   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="roomInfoView.action?room_class='1'">객실 소개   </a>
+    <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
+    <a href="roomInfoView.action">객실 소개   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="facilitiesList.action">편의 시설   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
