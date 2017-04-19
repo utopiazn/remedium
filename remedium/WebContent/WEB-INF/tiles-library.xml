@@ -116,6 +116,10 @@
 		<put-attribute name="body" value="/faq/faqList.jsp" />
 	</definition>
 	
+	<definition name="faqView" extends="main2">
+		<put-attribute name="body" value="/faq/faqView.jsp" />
+	</definition>
+	
 <!-- 객실소개 -->   
 	<definition name="roomInfoList" extends="main2">
 		
