@@ -39,7 +39,7 @@
 	</select>
 	
 	<!-- 아이디 의 해당하는 정보를 모두 가져옴  -->
-	<select id="selectOne" resultMap="memberRes" parameterClass="String">
+	<select id="selectOne" resultMap="memberRes">
 		<include refid="select-all" />
 		<include refid="where-memberID" />
 	</select>
@@ -69,6 +69,8 @@
 		where memberID = #memberID#
 	</select>
 	
+	
+	
 	<!--회원가입 입력-->		
 	<insert id="insertMember" parameterClass="member">
 	
@@ -80,13 +82,26 @@
 		
 	</insert>
 	
+	<!-- 아이디 검색 -->
+	<select id="searchID" resultMap="memberRes">
+		select 
+			* 
+		from 
+			member 
+		where 
+			memberID like #memberID#
+	</select>
+	
+	<!-- 이름 검색 -->
+	<select id="searchName" resultMap="memberRes">
+		select * from member where memberName like #memberName#
+	</select>
+	
+	<!-- 핸드폰 번호 검색 -->
+	<select id="searchPhone" resultMap="memberRes">
+		select * from member where phone like #phone#
+	</select>
 	
 
-	
-		
-	
-		
-		
-	
 
 </sqlMap>
