@@ -26,7 +26,7 @@
 	 <sqlMap resource="/sql/memberSQL.xml"/>
 	 <sqlMap resource="/sql/roomSQL.xml"/>
 	 <sqlMap resource="/sql/roomClassSQL.xml"/>
-	 <sqlMap resource="/sql/roomInfoSQL.xml"/>
+	 <sqlMap resource="/sql/roomReservationSQL.xml"/>
 	 <sqlMap resource="/sql/faqSQL.xml"/>
 	 <sqlMap resource="/sql/facilitiesSQL.xml"/>
 	 <sqlMap resource="/sql/eventSQL.xml"/>
