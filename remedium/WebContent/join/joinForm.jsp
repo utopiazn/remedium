@@ -21,24 +21,63 @@
 		function validation2(userinput){
 			
 		
-			
+			if(userinput.memberID.value==""){
+				alert("아이디를 입력하세요");
+				return false;
+			}
+				
 		 	if(userinput.memberPassword.value== ""){
 				alert("비밀번호를 입력하세요");
-				return;
+				return false;
 			}
 			
 			if(userinput.memberPassword2.value==""){
 				alert("비밀번호 확인을 입력하세요");
-				return;
+				return false;
 			}
 			
 			if(userinput.memberPassword.value !=userinput.memberPassword2.value){
 				alert("비밀번호 와 확인 비밀번호가 서로 다릅니다.");
-				return;
+				return false;
+			}
+			
+			if(userinput.memberName.value==""){
+				alert("이름을 확인을 입력하세요");
+				return false;
+			}
+			
+			if(userinput.birthday.value==""){
+				alert("생년월일을 입력하세요");
+				return false;
+			}
+			
+			if(userinput.birthday.value==""){
+				alert("생년월일을 입력하세요");
+				return false;
+			}
+			
+			if(userinput.email.value==""){
+				alert("이메일을 입력하세요");
+				return false;
+			}
+			
+			if(userinput.zipcode.value==""){
+				alert("우편번호 입력하세요");
+				return false;
 			}
 			
 			
-			//return true;
+			if(userinput.addr1.value==""){
+				alert("주소를 입력하세요");
+				return false;
+			}
+			
+			if(userinput.addr2.value==""){
+				alert("상세주소를 입력하세요");
+				return false;
+			}
+			
+			return true;
 		}
 	 
 
@@ -95,7 +134,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>아이디
+					<font color="#FF0000">*</font>아이디
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -112,7 +151,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>비밀번호
+					<font color="#FF0000">*</font>비밀번호
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -125,7 +164,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>비밀번호 확인
+					<font color="#FF0000">*</font>비밀번호 확인
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -135,7 +174,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>이름
+					<font color="#FF0000">*</font>이름
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -145,7 +184,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>성별
+					<font color="#FF0000">*</font>성별
 				</td>
 				
 			
@@ -161,7 +200,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>생년월일
+					<font color="#FF0000">*</font>생년월일
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -172,7 +211,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>전화 번호
+					<font color="#FF0000">*</font>전화 번호
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -183,7 +222,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>이메일
+					<font color="#FF0000">*</font>이메일
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -193,7 +232,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000"></font>주소
+					<font color="#FF0000">*</font>주소
 				</td>
 			
 			
