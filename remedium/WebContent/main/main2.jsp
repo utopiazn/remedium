@@ -22,7 +22,7 @@
 				 
 		<tr>
 		<td>
-		
+		<center>
 		<!--메뉴에 따른 정보 -->
 		<table width="70%" height="800"  cellpadding="0" cellspacing="0" bgcolor="#ffffff" >
 		<tr>
