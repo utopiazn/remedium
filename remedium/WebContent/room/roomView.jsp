@@ -51,7 +51,22 @@ display:inline;
 객실 크기 :
 <s:property value="resultClass.room_size"/><br>
 객실 종류 :
-<s:property value="resultClass.room_class"/><br>
+<s:if test="%{resultClass.room_class==1}">
+기본 방
+</s:if>
+<s:elseif test="%{resultClass.room_class==2}">
+좋은 방
+</s:elseif>
+<s:elseif test="%{resultClass.room_class==3}">
+독방...?
+</s:elseif>
+<s:elseif test="%{resultClass.room_class==4}">
+사막ㅠㅠ
+</s:elseif>
+<s:elseif test="%{resultClass.room_class==5}">
+툰드라 ㄷㄷ
+</s:elseif>
+<s:else>여기가 그유명한 지옥이라네요!</s:else><br>
 객실 정원 :
 <s:if test="%{resultClass.room_capacity==0}">
 단체(5~20명 수용가능)<br>

@@ -59,8 +59,11 @@
 			</tr>
 			<tr>
 				<td>객실종류</td><td> <select name="room_class">
-						<option value="0">개구린 방</option>
-						<option value="1">좋은 방</option>
+						<option value="1">기본 방</option>
+						<option value="2">좋은 방</option>
+						<option value="3">독방...?</option>
+						<option value="4">사막ㅠㅠ</option>
+						<option value="5">툰드라 ㄷㄷ</option>
 					  </select></td>
 			</tr>
 			<tr>		  

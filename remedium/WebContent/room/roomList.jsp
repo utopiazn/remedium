@@ -12,7 +12,7 @@
 			<td align="center"><b>호텔 객실 리스트</b></td>
 		</tr>
 	</table>
-	
+	<table width="100%"><tr><td>
 	<table width="100%" border="1" cellspacing="0" cellpadding="0">
 		<tr align="center">
 			<td><strong>객실번호</strong></td>
@@ -32,7 +32,24 @@
 		<tr>
 			<td align="right"><a href="/remedium/roomView.action?num=<s:property value="no"/>"><s:property value="no"/>호</a></td>
 			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>"><s:property value="name"/></a></td>
-			<td><s:property value="room_class"/></td>
+			<td align="center">
+			<s:if test="%{room_class==1}">
+			기본 방
+			</s:if>
+			<s:elseif test="%{room_class==2}">
+			좋은 방
+			</s:elseif>
+			<s:elseif test="%{room_class==3}">
+			독방...?
+			</s:elseif>
+			<s:elseif test="%{room_class==4}">
+			사막ㅠㅠ
+			</s:elseif>
+			<s:elseif test="%{room_class==5}">
+			툰드라 ㄷㄷ
+			</s:elseif>
+			<s:else>여기가 그유명한 지옥이라네요!</s:else>
+			</td>
 			<td align="right">
 			<s:if test="%{room_capacity == 0}">
 			단체(5~20명 수용가능)
@@ -46,9 +63,12 @@
 		</tr>
 		</s:iterator>
 	</s:else>
-	</table>
+	</table></td></tr>
 	<s:if test="${ session.userAdmin == '1' }">
-	<a href="/remedium/roomInsertForm.action">객실추가</a>
+	<tr><td align="right">
+	<input type="button" value="객실추가" onclick="location.href='/remedium/roomInsertForm.action'"/>
+	</td></tr>
 	</s:if>
+	</table>
 </body>
 </html>
