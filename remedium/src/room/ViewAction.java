@@ -31,6 +31,7 @@ public class ViewAction extends ActionSupport{
 	public String execute() throws Exception {
 		
 		resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNum());
+		
 		return SUCCESS;
 	}
 

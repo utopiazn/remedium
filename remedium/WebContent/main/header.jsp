@@ -74,7 +74,7 @@
 <div id="menu" >
 	<a href="info.action">호텔 정보   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="roomInfoList.action">객실 소개   </a>
+    <a href="roomInfoView.action?room_class='1'">객실 소개   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="facilitiesList.action">편의 시설   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,13 +82,13 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="faqList.action">문의사항</a>
 </div>
-
+<form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
 
 숙박 날짜:
-<input type="date">
+<input type="date" name="firstdate">
 ~
-<input type="date">
+<input type="date" name="lastdate">
 
 
 <%-- <select name="years">
@@ -163,16 +163,17 @@
 <option>단체</option>
 </select>
 
-<input type="checkbox" name="unknow" id="unknow">
-<label for="unknow">일정미정</label>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<input type="button" value="검색" name="search" onclick="location.href='roomAllList.action'">
+
+<input type="submit" value="검색">
+
+<input type="button" value="전체" name="search" onclick="location.href='roomAllList.action'">
 
 
 
 </div>
+</form>
 </div>
 
 
@@ -182,4 +183,34 @@
     
    
 </body>
+<script type="text/javascript">
+
+function ReservationCH(userinput){
+	alert("실행되고");
+	if(userinput.firstdate.value==""){
+		alert("처음이 공백");
+		return false;
+	}
+	
+	if(userinput.lastdate.value==""){
+		alert("마지막이 공백");
+		return false;
+	}
+	
+	var fd =userinput.firstdate.value;
+	var ld =userinput.lastdate.value;
+	
+	if(fd==ld){
+		alert("당일치기금지");
+		return false;
+	}
+	
+	if(fd>ld){
+		alert("???");
+		return false;
+	}
+}
+
+</script>
+
 </html>
