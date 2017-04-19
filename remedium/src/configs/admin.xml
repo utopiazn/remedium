@@ -4,5 +4,17 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	
+	<package name="admin" extends="struts-default, tiles-default">
+		<action name="memberAdminList" class="admin.member.AdminListAction">
+			<result type="tiles">memberAdminList</result>
+		</action>
+		
+		<action name="memberAdminView" class="admin.member.AdminViewAction">
+			<result type="tiles">memberAdminView</result>
+		</action>
+		
+		<action name="memberAdminModifyForm" class="login.LoginModifyAction" method="modifyForm">
+			<result type="tiles">memberAdminModifyForm</result>
+		</action>
+	</package>
 </struts>
