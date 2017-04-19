@@ -7,7 +7,7 @@
 <title>EVENT</title>
 </head>
 <body>
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="800" border="0" cellspacing="0" cellpadding="2">
   		<tr>
   			<td align="center"><h2>EVENT＊PROMOTION</h2></td>
   		</tr>

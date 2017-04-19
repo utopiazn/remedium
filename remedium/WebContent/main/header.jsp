@@ -80,7 +80,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="eventList.action">이 벤 트   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="boardList.action">문의사항</a>
+    <a href="faqList.action">문의사항</a>
 </div>
 
 <div id="res">
