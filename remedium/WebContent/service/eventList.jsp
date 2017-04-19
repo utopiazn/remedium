@@ -7,7 +7,7 @@
 <title>EVENT</title>
 </head>
 <body>
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="800" border="0" cellspacing="0" cellpadding="2">
   		<tr>
   			<td align="center"><h2>EVENT＊PROMOTION</h2></td>
   		</tr>
@@ -17,11 +17,10 @@
   	</table>
   	
   
-	<table width="600" border="0" cellspacing="0" cellpadding="2">
-	      <tr align="center" bgcolor="#F3F3F3">
+	<table width="800" border="0" cellspacing="0" cellpadding="2">
+	      <tr align="center" bgcolor="#C0C0C0">
       		<td width="50"><strong>번호</strong></td>
-		<td width="350"><strong>제목</strong></td>
-        		<td width="70"><strong>글쓴이</strong></td>
+		<td width="450"><strong>제목</strong></td>
         		<td width="80"><strong>날짜</strong></td>
 		<td width="50"><strong>조회</strong></td>
       	      </tr>
