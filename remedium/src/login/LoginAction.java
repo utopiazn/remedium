@@ -76,7 +76,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if(session.get("memberId") != null){
 			session.remove("memberId");
 			session.remove("memberPasswd");
-			
+			session.remove("userAdmin");
 			return SUCCESS;
 		}
 		
