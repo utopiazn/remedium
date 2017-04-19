@@ -40,6 +40,9 @@ public class PagingAction {
 		// 끝 번호 = 시작 번호 + 한 페이지 게시글 수 - 1
 		endCount = startCount + blockCount -1;
 		
+		startPage = (int)((currentPage - 1)/blockPage) * blockPage + 1;
+		endPage = startPage + blockPage - 1;
+		
 		// 끝 페이지가 총 페이지 수보다 클경우 총 페이지 수로 변경
 		if(endPage > totalPage) {
 			endPage = totalPage;
@@ -52,12 +55,12 @@ public class PagingAction {
 				pagingHtml.append("<a href=memberAdminList.action?currentPage="+(startPage - 1) + "&searchKeyword="+searchKey+"&searchNum="+searchNum+">");
 			}
 			else{
-				pagingHtml.append("<a href=memberAdminList.Action?currentPage="+(startPage - 1) + ">");
+				pagingHtml.append("<a href=memberAdminList.action?currentPage="+(startPage - 1) + ">");
 			}
 			pagingHtml.append("이전");
 			pagingHtml.append("</a>");
 		}
-		pagingHtml.append("&nbsp;|&nbsp;");
+		pagingHtml.append("&nbsp|");
 		
 		for(int i = startPage; i<=endPage; i++){
 			if( i > totalPage){
@@ -65,13 +68,13 @@ public class PagingAction {
 			}
 			if(i == currentPage)
 			{
-				pagingHtml.append("&nbsp;<b> <font color='red'>");
+				pagingHtml.append("<b> <font color='red'>");
 				pagingHtml.append(i);
 				pagingHtml.append("</font></b>");
 			}
 			else
 			{
-				pagingHtml.append("&nbsp;<a href='ListAction.action?currentPage=");
+				pagingHtml.append("&nbsp;<a href='memberAdminList.action?currentPage=");
 				pagingHtml.append(i);
 				if(searchKey != "")
 					pagingHtml.append("&searchKeyword="+searchKey);
@@ -81,11 +84,11 @@ public class PagingAction {
 			}
 			pagingHtml.append("&nbsp;");
 		}
-		pagingHtml.append("&nbsp;&nbsp;|&nbsp;&nbsp;");
+		pagingHtml.append("|&nbsp;");
 		
 		if(totalPage - startPage >= blockPage)
 		{
-			pagingHtml.append("&nbsp;<a href= listAction.action?currentPage=");
+			pagingHtml.append("&nbsp;<a href= memberAdminList.action?currentPage=");
 			pagingHtml.append((endPage+1));
 			if(searchKey != "")
 				pagingHtml.append("&searchKeyword="+searchKey);

@@ -24,6 +24,7 @@
 	<include file="/configs/info.xml" />
 	<include file="/configs/facilities.xml" />
 	<include file="/configs/event.xml" />
+	<include file="/configs/admin.xml" />
 </struts>
 
 
