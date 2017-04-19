@@ -7,7 +7,7 @@
 <struts>
 	<package name="roomInfo"  extends="struts-default, tiles-default">
 		<action name="roomInfoList" class="room.InfoAction" method="execute">
-			<result>/room/roomInfoList.jsp</result>
+			<result type="tiles">roomInfoList</result>
 		</action>
 		
 		<action name="roomInfoView" class="room.InfoAction" method="view">

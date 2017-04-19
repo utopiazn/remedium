@@ -121,11 +121,15 @@
 	</definition>
 	
 <!-- 객실소개 -->   
-	<definition name="roomInfoList" extends="main2">
-		
-		<put-attribute name="body" value="/room/roomInfoList.jsp" />
-		
+	<definition name="roomInfoList" extends="main">		
+		<put-attribute name="body" value="/room/roomInfoList.jsp" />		
 	</definition>
+	
+	
+	<definition name="roomInfoView" extends="main">		
+		<put-attribute name="body" value="/room/roomInfoView.jsp" />		
+	</definition>
+	
 <!-- 객실소개 -->
 
 <!-- 마이페이지 -->   
