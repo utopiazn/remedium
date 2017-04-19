@@ -107,6 +107,13 @@
 		
 	</definition>
 <!-- 객실소개 -->
+
+<!-- 마이페이지 -->   
+	<definition name="myPageMain" extends="main2">
+		
+		<put-attribute name="body" value="/mypage/pageMain.jsp" />
+		
+	</definition>
 	
 	
 </tiles-definitions>
