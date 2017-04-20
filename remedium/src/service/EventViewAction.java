@@ -17,6 +17,7 @@ public class EventViewAction extends ActionSupport{
 	
 	public static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
+
 	
 	//생성자
 	public EventViewAction() throws IOException{
