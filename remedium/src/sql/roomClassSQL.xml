@@ -18,6 +18,8 @@
 	<select id="selectAll" resultMap="roomclassRes">
 	
 		select * from room_class 
+		order by 
+			room_class asc	
 	</select>
 	
 	
