@@ -2,6 +2,7 @@ package login.join;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Calendar;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -32,7 +33,7 @@ public class MemberIdCheckAction extends ActionSupport {
 	// 회원 가입 아이디 중복 체크
 	public String execute() throws Exception {
 		
-				
+	
 		paramClass = new MemberBean();
 		resultClass = new MemberBean();
 		

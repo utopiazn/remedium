@@ -74,17 +74,26 @@
 		<put-attribute name="body" value="/admin/memberAdminList.jsp" />
 	</definition>
 	
+	<!-- 회원 상세보기 -->
 	<definition name="memberAdminView" extends="main2" >
 		<put-attribute name="body" value="/admin/memberAdminView.jsp" />
 	</definition>
 	
+	<!-- 회원 수정 폼 -->
 	<definition name="memberAdminModifyForm" extends="main2" >
 		<put-attribute name="body" value="/admin/memberAdminModify.jsp" />
 	</definition>
 	
+	<!-- 회원 수정 처리 -->
 	<definition name="memberAdminModify" extends="main2" >
 		<put-attribute name="body" value="/admin/memberAdminView.jsp" />
 	</definition>
+	
+	<!-- 회원 삭제 -->
+	<definition name="memberAdminDelete" extends="main2" >
+		<put-attribute name="body" value="/admin/memberAdminList.jsp" />
+	</definition>
+	
 	
 <!-- Admin 관련 -->
 	
