@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="roomReservation"  extends="struts-default, tiles-default">
+		
+		<action name="roomReservationForm" class="room.ReservationAction" method="roomRes">
+			<result type="tiles">roomReservationForm</result>
+		</action>
+		
+		<action name="roomReservation" class="room.ReservationAction" method="execute">
+			<result type="tiles">roomView</result>
+		</action>
+		
+	</package>
+</struts>

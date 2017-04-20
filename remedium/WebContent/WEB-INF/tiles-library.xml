@@ -105,7 +105,14 @@
 		<put-attribute name="body" value="/admin/roomInsertForm.jsp" />
 	</definition>
 <!-- 객실 관련 -->	
-	
+
+<!-- 객실예약 관련 -->
+	<definition name="roomReservationForm" extends="main2">
+		<put-attribute name="body" value="/room/roomReservation.jsp" />
+	</definition>
+
+<!-- 객실예약  관련 -->
+
 	
 <!-- 호텔정보 -->
     <definition name="info" extends="main2">

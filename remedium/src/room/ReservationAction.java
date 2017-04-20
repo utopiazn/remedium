@@ -26,7 +26,7 @@ public class ReservationAction extends ActionSupport{
 	}
 
 	//객실 예약 
-	public String Res() throws Exception {
+	public String roomRes() throws Exception {
 		return SUCCESS;
 	}
 	

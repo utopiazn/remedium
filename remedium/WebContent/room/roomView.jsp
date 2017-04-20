@@ -81,12 +81,12 @@ display:inline;
 
 <br>
 
+<input type="button" value="객실예약" onclick="location.href='/remedium/roomReservationForm.action'" />
 <s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
 <input type="button" value="객실수정" onclick="location.href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>'" />
 <input type="button" value="객실삭제" onclick="location.href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>'" />
 
 </s:if>
-
 </div>
 
  
