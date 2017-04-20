@@ -35,11 +35,6 @@
 				return false;
 			}
 			
-			else if(userinput.memberPassword.value != userinput.memberPassword2.value){
-				alert("비밀번호 와 확인 비밀번호가 서로 다릅니다.");
-				return false;
-			}
-			
 			if(userinput.memberName.value==""){
 				alert("이름을 확인을 입력하세요");
 				return false;
@@ -113,13 +108,13 @@
 	
 		<tr>
 			<td align="center">
-				<h2>회원 가입</h2>
+				<h2>회원 수정</h2>
 			</td>
 		</tr>	
 		
 		<tr>
 			<td align="right">
-				<font color="#FF0000">*</font>는 필수 입력 사항입니다.
+				<font color="#FF0000">* </font>는 필수 입력 사항입니다.
 			</td>
 		</tr>
 	
@@ -127,30 +122,32 @@
 
 
 	<!-- 로그인폼으로 이동 -->
-	<form name="myForm" action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
-
+	<form name="myForm" action="memberAdminModify.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
+			<s:hidden name="memberID" value="%{resultClass.memberID}" />
+			<s:hidden name="regdate" value="%{resultClass.regdate}" />
+			<s:hidden name="zipcode" value="%{resultClass.zipcode}" />
+			<s:hidden name="addr1" value="%{resultClass.addr1}" />
+			<s:hidden name="addr2" value="%{resultClass.addr2}" />
+			<s:hidden name="currentPage" value="%{currentPage}" />
 		<table width="600" border="0" cellspacing="0" cellpadding="0">
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>아이디
+					<font color="#FF0000">* </font>아이디
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
 				
-					<%-- <s:textfield name="memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/> --%>
-					<s:textfield name="memberID" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
-					<!-- <input type="text" name="memberID" size="40" > -->
-			
-					<input type="button" name="confirm_id" value="ID중복확인"  onclick="openConfirmid(this.form)">
-			
+					<s:property value="%{resultClass.memberID}"/>
+					<%-- <s:textfield name="memberID" theme="simple"  cssStyle="width:270px" maxlength="50"/> --%>				
+					<!-- <input type="text" name="memberID" size="40" > -->		
 					
 				</td>
 			</tr>
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>비밀번호
+					<font color="#FF0000">* </font>비밀번호
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -163,17 +160,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>비밀번호 확인
-				</td>
-			
-				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>이름
+					<font color="#FF0000">* </font>이름
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -183,23 +170,19 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>성별
-				</td>
-				
-			
-			
+					<font color="#FF0000">* </font>성별
+				</td>		
 				<td width="50" bgcolor="#FFFFFF">
 									
 					<input type="radio" name="gender" value="M"  checked="checked" />남자
 					<input type="radio" name="gender" value="W"/>여자
 
-				
 				</td>
 			</tr>
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>생년월일
+					<font color="#FF0000">* </font>생년 월일
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -210,7 +193,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>전화 번호
+					<font color="#FF0000">* </font>전화 번호
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -221,7 +204,7 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>이메일
+					<font color="#FF0000">* </font>이메일
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF">
@@ -231,16 +214,16 @@
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">*</font>주소
+					<font color="#FF0000">* </font>주 소
 				</td>
 			
 			
 				<td width="50" bgcolor="#FFFFFF">
 				
-					<input type="text" id="sample6_postcode" name="zipcode" placeholder="우편번호">
+					<input type="text" id="sample6_postcode" name="zipcode1" placeholder="${resultClass.zipcode}">
 					<input type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
-					<input type="text" id="sample6_address" name="addr1"  placeholder="주소">
-					<input type="text" id="sample6_address2" name="addr2" placeholder="상세주소">
+					<input type="text" id="sample6_address" name="addr11"  placeholder="${resultClass.addr1}">
+					<input type="text" id="sample6_address2" name="addr22" placeholder="${resultClass.addr2}">
 				</td>
 			</tr>
 		
@@ -248,9 +231,9 @@
 		
 		<br/>
 		
-		<input type="submit" value="가입" >	
-		<button type="button" onclick="location.href='loginForm.action' ">취소</button>
-	</form>
+		<input type="submit" value="수 정" >	
+		<input type="button" value="취 소" onclick="location.href='memberAdminView.action?memberID=<s:property value="resultClass.memberID" />&currentPage=<s:property value="currentPage" />'">
+	</form> 
 	
 	
 
@@ -260,6 +243,8 @@
     function sample6_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
+            	
+            	
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
                 // 각 주소의 노출 규칙에 따라 주소를 조합한다.
