@@ -6,34 +6,42 @@
 <struts>
 	<package name="room"  extends="struts-default, tiles-default">
 		
+		<!-- 관리자용 객실 전체 리스트 -->
 		<action name="roomAllList" class="room.ListAction" method="all">
 			<result type="tiles">roomAllList</result>
 		</action>
 		
+		<!-- 고객용 객실 검색 리스트 -->
 		<action name="roomList" class="room.ListAction" method="execute">
 			<result type="tiles">roomList</result>
 		</action>
 		
+		<!-- 객실 개별 페이지 -->
 		<action name="roomView" class="room.ViewAction">
 			<result type="tiles">roomView</result>
 		</action>
 		
+		<!-- 관리자용 객실 추가 폼 -->
 		<action name="roomInsertForm" class="admin.room.RoomAction" method="insForm">
 			<result type="tiles">roomInsertForm</result>
 		</action>
 		
+		<!-- 관리자용 객실 추가 -->
 		<action name="roomInsert" class="admin.room.RoomAction" method="execute">
 			<result type="chain">roomAllList</result>
 		</action>
 		
+		<!-- 관리자용 객실 수정 폼 -->
 		<action name="roomUpdateForm" class="admin.room.RoomAction" method="updForm">
 			<result type="tiles">roomInsertForm</result>
 		</action>
 		
+		<!-- 관리자용 객실 수정 -->
 		<action name="roomUpdate" class="admin.room.RoomAction" method="update">
 			<result type="chain">roomAllList</result>
 		</action>
 		
+		<!-- 관리자용 객실 삭제 -->
 		<action name="roomDelete" class="admin.room.RoomAction" method="delete">
 			<result type="chain">roomAllList</result>
 		</action>
