@@ -2,6 +2,7 @@ package room;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ibatis.common.resources.Resources;
@@ -9,6 +10,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
+import bean.RoomBean;
 import bean.RoomclassBean;
 
 public class InfoAction extends ActionSupport {
@@ -34,6 +36,23 @@ public class InfoAction extends ActionSupport {
 	private String image; 		//사진경로(메인)
 	private String content; 	//내용
 	private String image2; 		//시설정보
+	
+	
+	public String roomClassCtrl() throws Exception {
+		
+		
+		System.out.println(roomClass);
+		
+		list = new ArrayList<String>();
+		
+		
+		
+		
+		
+		return SUCCESS;
+	}
+	
+	
 	
 	
 	@Override
@@ -77,6 +96,62 @@ public class InfoAction extends ActionSupport {
 	public String delete() throws Exception {
 		
 		return SUCCESS;
+	}
+
+	public int getRoomClass() {
+		return roomClass;
+	}
+
+	public void setRoomClass(int roomClass) {
+		this.roomClass = roomClass;
+	}
+
+	public List<String> getList() {
+		return list;
+	}
+
+	public void setList(List<String> list) {
+		this.list = list;
+	}
+
+	public RoomclassBean getParamClass() {
+		return paramClass;
+	}
+
+	public void setParamClass(RoomclassBean paramClass) {
+		this.paramClass = paramClass;
+	}
+
+	public String getRoom_class() {
+		return room_class;
+	}
+
+	public void setRoom_class(String room_class) {
+		this.room_class = room_class;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getImage2() {
+		return image2;
+	}
+
+	public void setImage2(String image2) {
+		this.image2 = image2;
 	}
 	
 	
