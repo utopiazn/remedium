@@ -85,6 +85,7 @@ display:inline;
 <input type="hidden" name="firstDate" value="${firstDate }"/>
 <input type="hidden" name="lastDate" value="${lastDate }"/>
 <input type="hidden" name="room_capacity" value="${resultClass.room_capacity}"/>
+<input type="hidden" name="price" value="${resultClass.price}"/>
 <input type="submit"value="객실예약"/>
 </form>
 <%-- <input type="button" value="객실예약" onclick="location.href='/remedium/roomReservationForm.action?num=<s:property value="num"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>'" /> --%>

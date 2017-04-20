@@ -20,6 +20,9 @@
 			<tr>
 				<td>퇴실날짜</td><td>${lastDate }</td>
 			</tr>
+			<tr>
+				<td>예약금액</td><td>${price }</td>
+			</tr>
 			
 	</table>
 
