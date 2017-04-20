@@ -8,6 +8,14 @@
 <meta charset="UTF-8">
 <title></title>
 
+<script type="text/javascript">
+function open_win_noresizable(url, name) {
+	var oWin = window.open(url, name,"scrollbars=no, status=no, resizable=no, width=300, height=150");
+	
+	
+}
+</script>
+
  <style type="text/css">
  #reslist /* 예약리스트 */
  {
@@ -36,13 +44,12 @@
 
 <div class="mainBox">
 	<div id="modify">
- 	<img alt="회원정보 수정" src="/remedium/image/modify.png" width="100%" height="100%"  onclick="location.href='myPageList.action'" > 
+ 	<img alt="회원정보 수정" src="/remedium/image/modify.png" width="100%" height="100%"  onclick="LoginModifyForm.action'" > 
   
  	</div>
   
  	<div id="out">
- 	<img alt="회원 탈퇴" src="/remedium/image/out.png" width="100%" height="100%"  onclick="location.href='loginDelete.action'" > 
-  
+ 	<img alt="회원 탈퇴" src="/remedium/image/out.png" width="100%" height="100%"  onClick="javascript:open_win_noresizable('loginDeleteForm.action')">
   
  	</div>
 </div>
@@ -50,7 +57,7 @@
  <s:if test="${ session.userAdmin != '1'}">	<!-- 관리자일 경우 보이지 않음 -->
  <div class="mainBox">	
  	<div id="reslist">
- 	<img alt="나의 예약 페이지" src="/remedium/image/reslist.png" width="100%" height="100%"  onclick="location.href='LoginModifyForm.action'" > 
+ 	<img alt="나의 예약 페이지" src="/remedium/image/reslist.png" width="100%" height="100%"  onclick="location.href='myPageList.action'" > 
  	</div>
   
  	<div id="cash">
