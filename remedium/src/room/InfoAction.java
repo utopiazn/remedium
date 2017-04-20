@@ -10,6 +10,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
+import bean.MemberBean;
 import bean.RoomclassBean;
 
 public class InfoAction extends ActionSupport {
@@ -29,7 +30,7 @@ public class InfoAction extends ActionSupport {
 	private List<RoomclassBean> list;  //객실 종류 리스트
 	
 	private RoomclassBean paramClass;
-	
+	private RoomclassBean resultClass;
 	
 	private String room_class; 	//객실종류
 	private String image; 		//사진경로(메인)
@@ -42,6 +43,7 @@ public class InfoAction extends ActionSupport {
 		
 		System.out.println(roomClass);
 		
+		//객실 클래스 리스트/////////////////////////////
 		list = new ArrayList<RoomclassBean>();
 		
 		if(roomClass >0 ){
@@ -51,6 +53,15 @@ public class InfoAction extends ActionSupport {
 			System.out.println(list.size());
 		}
 		
+		
+		//객실 클래스 개별 뷰///////////////////////////
+		
+		paramClass = new RoomclassBean();
+		resultClass = new RoomclassBean();		
+		
+		paramClass.setRoom_class(String.valueOf(roomClass));		
+
+		resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
 		
 		
 		return SUCCESS;
@@ -156,6 +167,20 @@ public class InfoAction extends ActionSupport {
 
 	public void setImage2(String image2) {
 		this.image2 = image2;
+	}
+
+
+
+
+	public RoomclassBean getResultClass() {
+		return resultClass;
+	}
+
+
+
+
+	public void setResultClass(RoomclassBean resultClass) {
+		this.resultClass = resultClass;
 	}
 	
 	
