@@ -69,8 +69,6 @@
 		where memberID = #memberID#
 	</select>
 	
-	
-	
 	<!--회원가입 입력-->		
 	<insert id="insertMember" parameterClass="member">
 	
@@ -81,6 +79,14 @@
 				sysdate, #userAdmin#, #zipcode#, #addr1#, #addr2#, #cash#, #userCheck# )
 		
 	</insert>
+	
+	<!-- 회원 수정 입력 -->
+	<update id="updateMember" parameterClass="member">
+		update member set memberPassword = #memberPassword#, memberName = #memberName#,
+		 		gender = #gender#, birthday = #birthday#, phone = #phone#, email = #email#, zipcode = #zipcode#,
+		 		addr1 = #addr1#, addr2 = #addr2# 
+		<include refid="where-memberID" />
+	</update>
 	
 	<!-- 아이디 검색 -->
 	<select id="searchID" resultMap="memberRes">

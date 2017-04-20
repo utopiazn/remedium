@@ -19,6 +19,12 @@ public class InfoAction extends ActionSupport {
 		reader.close();
 	}
 	
+	private String room_class; //객실종류
+	private String image; //사진경로(메인)
+	private String content; //내용
+	private String image2; //시설정보
+	
+	
 	@Override
 	//객실 클래스 리스트
 	public String execute() throws Exception {
@@ -61,4 +67,8 @@ public class InfoAction extends ActionSupport {
 		
 		return SUCCESS;
 	}
+	
+	
+	
+	
 }
