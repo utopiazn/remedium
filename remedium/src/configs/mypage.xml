@@ -6,13 +6,29 @@
 <struts>
 	<package name="mypage"  extends="struts-default, tiles-default">
 		
-		<action name="myPageMain" class="mypage.ListAction">
+		<action name="myPageMain" class="mypage.ListAction" method="main">
 			<result type="tiles">myPageMain</result>
 		</action>
 		
-		<action name="myPageList" class="mypage.ListAction">
-			<result type="tiles">myPageLsit</result>
+		<action name="myPageList" class="mypage.ListAction" method="execute">
+			<result type="tiles">myPageList</result>
 		</action>
+		
+		 <action name="loginDeleteForm" class="login.LoginDeleteAction" method="delete" >
+			<result>/mypage/checkPassword.jsp</result>
+		</action>
+		
+		 <action name="loginDelete" class="login.LoginDeleteAction" method="delete" >
+			<result type="chain">main</result>
+		</action>
+		
+		
+		
+		<!-- <action name="loginModifyForm" class="login.LoginModifyAction" >
+			<result type="tiles">modifyForm</result>
+		</action> -->
+		
+		
 
 	</package>
 </struts>

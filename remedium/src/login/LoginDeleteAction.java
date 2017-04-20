@@ -25,6 +25,13 @@ public class LoginDeleteAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
+	public String delete() throws Exception{
+		
+		return SUCCESS;
+	}
+	
+	
+	
 	
 
 }
