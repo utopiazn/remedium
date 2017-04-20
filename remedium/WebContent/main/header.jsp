@@ -30,7 +30,7 @@
 	}
 	#logo /* 로고 */
 	{
-	margin: 0 auto; float: center; cursor: pointer; padding-left: 50px;
+	margin: 0 auto; float: center; cursor: pointer; padding-left: 350px;
 	}
 	a /* 링크 속성 */
 	{text-decoration: none; color: #000000; } 
