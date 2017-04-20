@@ -5,22 +5,27 @@
 
 <struts>
 	<package name="admin" extends="struts-default, tiles-default">
+		<!-- 어드민 회원 리스트 -->
 		<action name="memberAdminList" class="admin.member.AdminListAction">
 			<result type="tiles">memberAdminList</result>
 		</action>
 		
+		<!-- 어드민 회원 상세보기 -->
 		<action name="memberAdminView" class="admin.member.AdminViewAction">
 			<result type="tiles">memberAdminView</result>
 		</action>
 		
+		<!-- 어드민 회원 수정폼 -->
 		<action name="memberAdminModifyForm" class="admin.member.AdminModifyAction" method="modifyForm">
 			<result type="tiles">memberAdminModifyForm</result>
 		</action>
 		
+		<!-- 어드민 회원 수정 처리-->
 		<action name="memberAdminModify" class="admin.member.AdminModifyAction" >
 			<result type="tiles">memberAdminModify</result>
 		</action>
 		
+		<!-- 어드민 회원  삭제 -->
 		<action name="memberAdminDelete" class="admin.member.AdminDeleteAction" >
 			<result type="redirect-action">
 				<param name="actionName">memberAdminList</param>

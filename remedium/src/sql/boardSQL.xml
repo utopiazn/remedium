@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
-<sqlMap>
+<sqlMap namespace = "board">
 	<typeAlias alias="board" type="bean.BoardBean" />
 
 	<resultMap id="boardRes" class="board">
@@ -15,6 +15,23 @@
 		<result property="regdate" 		column="regdate" />
 		<result property="type" 		column="type" />
 	</resultMap>
+	
+	<sql id="select-all">
+		select * from board
+	</sql>
+	
+	<sql id="where-boardNo">
+		 where no = #no#
+	</sql>
+	
+	<select id="selectAll" resultMap="boardRes" parameterClass="int">
+		<include refid="select-all" />
+	</select>
+	
+	<select id="selectOne" resultMap="boardRes">
+		<include refid="select-all" /> 
+		<include refid="where-boardNo" />
+	</select>
 	
 </sqlMap>
 

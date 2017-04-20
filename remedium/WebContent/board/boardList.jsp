@@ -7,7 +7,7 @@
 <title>QnA</title>
 </head>
 <body>
-<table width="800" border="0" cellspacing="0" cellpadding="2">
+<table width="800" border="0" cellspacing="0" cellpadding="2" align="center">
   		<tr>
   			<td align="center"><h2>QnA</h2></td>
   		</tr>
@@ -17,52 +17,71 @@
   	</table>
   	
   
-	<table width="800" border="0" cellspacing="0" cellpadding="2">
-	      <tr align="center" bgcolor="#C0C0C0">
-      		<td width="50"><strong>번호</strong></td>
-		<td width="450"><strong>제목</strong></td>
-        		<td width="80"><strong>날짜</strong></td>
-		<td width="50"><strong>조회</strong></td>
+	<table width="800" border="0" cellspacing="0" cellpadding="2" align="center">
+	    <tr align="center" bgcolor="#F3F3F3">
+      		<td width="50"><strong>번 호</strong></td>
+			<td width="100"><strong>제 목</strong></td>
+			<td width="50"><strong>아이디</strong></td>
+        	<td width="50"><strong>날 짜</strong></td>
+        	<td width="50"><strong>답변 상태</strong></td>
+			
       	      </tr>
       	      <tr bgcolor="#777777">
         		<td height="1" colspan="5"></td>
       	      </tr>
 
 	      <s:iterator value="list" status="stat">
-
-		<s:url id="viewURL" action="viewAction" >
-			<s:param name="no">
-				<s:property value="no" />
-			</s:param>
-			<s:param name="currentPage">
-				<s:property value="currentPage" />
-			</s:param>
-		</s:url>
-			
-     	      <tr bgcolor="#FFFFFF"  align="center">
-        		<td><s:property value="no" /></td>
-        		<td align="left"> &nbsp;<s:a href="%{viewURL}"><s:property value="subject" /></s:a></td>
-        		<td align="center"><s:property value="name" /></td>
-		<td align="center"><s:property value="regdate" /></td>
-        		<td><s:property value="readhit" /></td>
-      	      </tr>
-      	      <tr bgcolor="#777777">
-        		<td height="1" colspan="5"></td>
-      	      </tr>
-      
-	      </s:iterator>
-			
-	      <s:if test="list.size() <= 0">
-				
-	      <tr bgcolor="#777777">
-      		<td height="1" colspan="5"></td>
-    	      </tr>
-    		
-	      </s:if>
-			
-	      <tr align="center">
-    		<td colspan="5"><s:property value="pagingHtml"  escape="false" /></td>
-    	      </tr>
+			<s:url id="viewURL" action="boardView">
+				<s:param name="no">
+					<s:property value="no"/>
+				</s:param>
+				<s:param name="currentPage">
+					<s:property value="currentPage"/>
+				</s:param>
+			</s:url>
+			<tr bgcolor="#FFFFFF" align="center">
+				<td><s:property value="no"/></td>
+				<td align="center"> 
+				<s:a href="%{viewURL}"><s:property value="subject"/></s:a></td>
+				<td align="center">
+				<s:a href="%{viewURL}"><s:property value="memberID"/></s:a></td>
+				<td align="center"><s:property value="regdate"/></td>
+				<td align="center"><s:property value="type"/></td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="7"></td>
+			</tr>
+		</s:iterator>	
+		<s:if test="list.size() <= 0">
+			<tr bgcolor="#FFFFFF" align="center">
+				<td colspan="7">등록된 게시글이 없습니다.</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="7"></td>
+			</tr> 
+		</s:if>
+		
+		<tr algin="center">
+			<td colspan="7" ><s:property value="pagingHtml" escape="false"/></td>
+		</tr>
+		<tr align="right">
+			<td colspan="7" >
+			<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='boardWrite.action?currentPage=<s:property value="currentPage"/>';">
+			</td>
+		</tr>
+		<tr>
 	</table>
+	
+	<center>
+	<form action="memberAdminList.action">
+		<select name="searchNum">
+			<option value="0">제 목</option>
+			<option value="1">아이디</option>
+			<option value="2">답변 상태</option>
+		</select>
+		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
+		<input name="submit" type="submit" value="검색" class="inputb">
+		</form>
+	</center>
 </body>
 </html>
