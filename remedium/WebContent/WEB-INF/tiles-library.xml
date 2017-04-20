@@ -119,26 +119,13 @@
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />
 	</definition>
-<!-- FAQ -->
-    <definition name="faqList" extends="main">
+<!-- 문의사항 -->
+    <definition name="faqList" extends="main2">
 		<put-attribute name="body" value="/faq/faqList.jsp" />
 	</definition>
 	
-	<definition name="faqView" extends="main">
+	<definition name="faqView" extends="main2">
 		<put-attribute name="body" value="/faq/faqView.jsp" />
-	</definition>
-	
-<!-- 문의사항 -->
-    <definition name="boardList" extends="main">
-		<put-attribute name="body" value="/board/boardList.jsp" />
-	</definition>
-	
-	<definition name="boardView" extends="main">
-		<put-attribute name="body" value="/board/boardView.jsp" />
-	</definition>
-	
-	<definition name="boardWriteForm" extends="main">
-		<put-attribute name="body" value="/board/boardWriteForm.jsp" />
 	</definition>
 	
 <!-- 객실소개 -->   
@@ -153,14 +140,17 @@
 	
 <!-- 객실소개 -->
 
-<!-- 마이페이지 -->   
-	<definition name="myPageMain" extends="main2">
-		
-		<put-attribute name="body" value="/mypage/pageMain.jsp" />
-		
-	</definition>
+<!-- 마이페이지 -->  
 
+<!-- 마이페이지메인 --> 
+	<definition name="myPageMain" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageMain.jsp" />		
+	</definition>
+<!-- 예약리스트 -->	
+<definition name="myPageList" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageList.jsp" />		
+	</definition>
 	
-	
+<!-- 마이페이지 -->  
 	
 </tiles-definitions>
