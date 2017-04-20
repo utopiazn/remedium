@@ -9,6 +9,10 @@
 		<action name="myPageMain" class="mypage.ListAction">
 			<result type="tiles">myPageMain</result>
 		</action>
+		
+		<action name="myPageList" class="mypage.ListAction">
+			<result type="tiles">myPageLsit</result>
+		</action>
 
 	</package>
 </struts>

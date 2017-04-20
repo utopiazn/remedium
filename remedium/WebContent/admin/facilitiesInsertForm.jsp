@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관리자 편의시설 글쓰기 폼</title>
 </head>
 <body>
 

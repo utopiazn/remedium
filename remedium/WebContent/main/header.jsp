@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="util.TimeUtil.*" %>
+<%@ page import="util.ProjectUtil.*" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -75,13 +75,13 @@
 	<a href="info.action">호텔 정보   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
-    <a href="roomInfoView.action">객실 소개   </a>
+    <a href="roomInfoView.action?roomClass=1">객실 소개   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="facilitiesList.action">편의 시설   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="eventList.action">이 벤 트   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="faqList.action">문의사항</a>
+    <a href="boardList.action">문의사항</a>
 </div>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
