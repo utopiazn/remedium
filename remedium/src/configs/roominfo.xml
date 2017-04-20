@@ -6,11 +6,14 @@
 	
 <struts>
 	<package name="roomInfo"  extends="struts-default, tiles-default">
+		
 		<action name="roomInfoList" class="room.InfoAction" method="execute">
 			<result type="tiles">roomInfoList</result>
 		</action>
 		
-		<action name="roomInfoView" class="room.InfoAction" method="view">
+		
+		<!-- 롬 소개 리스트 및 개별 정보 호출 -->
+		<action name="roomInfoView" class="room.InfoAction" method="roomClassCtrl">
 			<result type="tiles">roomInfoView</result>
 		</action>
 		
