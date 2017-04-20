@@ -6,6 +6,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-11111
+	
+	<br/><br/>	${resultClass.name}	<br/><br/><br/>
+	
+	
+
+
 </body>
 </html>

@@ -29,6 +29,7 @@ public class WriteAction extends ActionSupport {
 
 	// 문의 사항 게시글 쓰기 처리
 	public String execute() throws Exception {
+		
 		return SUCCESS;
 		
 	}

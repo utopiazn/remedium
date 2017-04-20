@@ -16,12 +16,17 @@
 	
 	<!-- 객실소개 전체 리스트 호출 -->
 	<select id="selectAll" resultMap="roomclassRes">
-	
+
 		select * from room_class 
 		order by 
 			room_class asc	
+
 	</select>
 	
+	<select id="selectRoomClass" resultMap="roomclassRes">
+	
+		select * from room_class where room_class = #room_class#
+	</select>
 	
 
 </sqlMap>
