@@ -10,7 +10,6 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
-import bean.RoomBean;
 import bean.RoomclassBean;
 
 public class InfoAction extends ActionSupport {
@@ -27,7 +26,7 @@ public class InfoAction extends ActionSupport {
 	
 	private int roomClass;
 		
-	private List<String> list;  //객실 종류 리스트
+	private List<RoomclassBean> list;  //객실 종류 리스트
 	
 	private RoomclassBean paramClass;
 	
@@ -43,9 +42,14 @@ public class InfoAction extends ActionSupport {
 		
 		System.out.println(roomClass);
 		
-		list = new ArrayList<String>();
+		list = new ArrayList<RoomclassBean>();
 		
-		
+		if(roomClass >0 ){
+			
+			list = sqlMapper.queryForList("roomclassSQL.selectAll");
+			
+			System.out.println(list.size());
+		}
 		
 		
 		
@@ -106,11 +110,11 @@ public class InfoAction extends ActionSupport {
 		this.roomClass = roomClass;
 	}
 
-	public List<String> getList() {
+	public List<RoomclassBean> getList() {
 		return list;
 	}
 
-	public void setList(List<String> list) {
+	public void setList(List<RoomclassBean> list) {
 		this.list = list;
 	}
 

@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,6 +9,33 @@
 <title></title>
 </head>
 <body>
-왼쪽 서브 메뉴
+		 
+	 <s:if test="list.size() <= 0">
+				
+		객실 클래스 정보가 없습니다
+					
+	</s:if>	 
+	 <s:else>
+	 <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" >
+		 	<tr height="50%"><td >
+		 	<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+				<s:iterator value="list">
+				<tr  height="10%">
+			 		
+			 		<td align="center">
+			 		
+			 			<s:property value="name"/>
+			 		<td>	
+			 
+				
+				</tr>	
+				</s:iterator>
+				</table>
+				
+	</td></tr>
+	<tr height="50%"><td ></td></tr>
+	</table>			
+	</s:else>
+
 </body>
 </html>
