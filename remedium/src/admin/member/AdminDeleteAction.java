@@ -1,4 +1,4 @@
-package login;
+package admin.member;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -8,12 +8,12 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginDeleteAction extends ActionSupport{
+public class AdminDeleteAction extends ActionSupport{
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
 
-	public LoginDeleteAction() throws IOException{
+	public AdminDeleteAction() throws IOException{
 		
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
