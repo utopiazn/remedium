@@ -33,6 +33,7 @@ public class AdminViewAction extends ActionSupport{
 	public String execute() throws Exception {
 		
 		paramClass = new MemberBean();
+		resultClass = new MemberBean();
 		
 		paramClass.setMemberID(getMemberID());
 		
