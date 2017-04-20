@@ -20,5 +20,9 @@
 		<action name="memberAdminModify" class="admin.member.AdminModifyAction" >
 			<result type="tiles">memberAdminModify</result>
 		</action>
+		
+		<action name="memberAdminDelete" class="admin.member.AdminDeleteAction" >
+			<result type="tiles">memberAdminDelete</result>
+		</action>
 	</package>
 </struts>
