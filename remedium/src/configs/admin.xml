@@ -22,7 +22,9 @@
 		</action>
 		
 		<action name="memberAdminDelete" class="admin.member.AdminDeleteAction" >
-			<result type="tiles">memberAdminDelete</result>
+			<result type="redirect-action">
+				<param name="actionName">memberAdminList</param>
+			</result>
 		</action>
 	</package>
 </struts>

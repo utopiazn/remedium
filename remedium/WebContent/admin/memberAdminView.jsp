@@ -5,6 +5,22 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="UTF-8" ?>
 <html lang="ko"  xmlns="http://www.w3.org/1999/xhtml" >
+	<script type="text/javascript">
+	  
+	function button_event(url){
+		var del = confirm("이 회원을 정말로 삭제 하시겠습니까??");
+		
+		if(del == true){
+			alert("삭제하였습니다.");			
+			document.location.href=url;
+		}
+		else{
+			alert("취소하셧습니다.");
+			return
+		}
+		
+	}
+	</script>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
@@ -144,7 +160,7 @@
 		</table>
 		<input name="list" type="button" value="회원 목록" class="inputb" onClick="javascript:location.href='memberAdminList.action'">
     	<input name="modify" type="button" value="회원 수정" class="inputb" onClick="javascript:location.href='memberAdminModifyForm.action?memberID=<s:property value="resultClass.memberID" />&currentPage=<s:property value="currentPage" />'"> 
-		<input name="delete" type="button" value="회원 삭제" class="inputb" onClick="javascript:location.href='ReplyForm.action?memberID=<s:property value="resultClass.memberID" />','delete')">
+		<input type="button" value="회원 삭제" class="inputb" onClick="javascript:button_event('memberAdminDelete.action?memberID=<s:property value="resultClass.memberID" />')">
 
 </body>
 </html>
