@@ -80,14 +80,14 @@ display:inline;
 <s:property value="resultClass.price"/>원
 
 <br>
-<!-- <form action="roomReservationForm.action" method="post" enctype="multipart/form-data">
-<input type="hidden" name="num" value="num"/>
-<input type="hidden" name="firstDate" value="firstDate"/>
-<input type="hidden" name="lastDate" value="lastDate"/>
-<input type="hidden" name="room_capacity" value="resultClass.room_capacity"/>
+<form action="roomReservationForm.action" method="post" enctype="multipart/form-data">
+<input type="hidden" name="num" value="${num }"/>
+<input type="hidden" name="firstDate" value="${firstDate }"/>
+<input type="hidden" name="lastDate" value="${lastDate }"/>
+<input type="hidden" name="room_capacity" value="${resultClass.room_capacity}"/>
 <input type="submit"value="객실예약"/>
-</form> -->
-<input type="button" value="객실예약" onclick="location.href='/remedium/roomReservationForm.action?num=<s:property value="num"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>'" />
+</form>
+<%-- <input type="button" value="객실예약" onclick="location.href='/remedium/roomReservationForm.action?num=<s:property value="num"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>'" /> --%>
 <s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
 <input type="button" value="객실수정" onclick="location.href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>'" />
 <input type="button" value="객실삭제" onclick="location.href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>'" />

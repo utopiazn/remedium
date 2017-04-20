@@ -33,6 +33,12 @@ public class ReservationAction extends ActionSupport{
 
 	//객실 예약 
 	public String roomRes() throws Exception {
+		
+		System.out.println(getNum());
+		System.out.println(getFirstDate());
+		System.out.println(getLastDate());
+		System.out.println(getRoom_capacity());
+		
 		return SUCCESS;
 	}
 	
