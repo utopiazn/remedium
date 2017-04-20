@@ -11,6 +11,8 @@ import com.opensymphony.xwork2.ActionSupport;
 public class EventAction extends ActionSupport{
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
+	
+	
 
 	public EventAction() throws IOException{
 		
