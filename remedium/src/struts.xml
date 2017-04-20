@@ -29,6 +29,7 @@
 	<include file="/configs/roominfo.xml" />
 	<include file="/configs/mypage.xml" />
 	<include file="/configs/board.xml" />
+	<include file="/configs/roomReservation.xml" />
 	
 </struts>
 
