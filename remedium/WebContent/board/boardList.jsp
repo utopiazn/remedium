@@ -4,12 +4,12 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>문의사항</title>
+<title>QnA</title>
 </head>
 <body>
 <table width="800" border="0" cellspacing="0" cellpadding="2" align="center">
   		<tr>
-  			<td align="center"><h2>문의사항</h2></td>
+  			<td align="center"><h2>QnA</h2></td>
   		</tr>
   		<tr>
   			<td height="20"></td>

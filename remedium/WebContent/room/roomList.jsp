@@ -18,6 +18,7 @@
 			<td><strong>객실번호</strong></td>
 			<td><strong>객실이름</strong></td>
 			<td><strong>객실테마</strong></td>
+			<td><strong>객실구성</strong></td>
 			<td><strong>정원</strong></td>
 			<td><strong>예약금</strong></td>
 		</tr>
@@ -30,8 +31,8 @@
 	<s:else>
 		<s:iterator value="list">
 		<tr>
-			<td align="right"><a href="/remedium/roomView.action?num=<s:property value="no"/>"><s:property value="no"/>호</a></td>
-			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>"><s:property value="name"/></a></td>
+			<td align="right"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>"><s:property value="no"/>호</a></td>
+			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>"><s:property value="name"/></a></td>
 			<td align="center">
 			<s:if test="%{room_class==1}">
 			기본 방
@@ -50,6 +51,7 @@
 			</s:elseif>
 			<s:else>여기가 그유명한 지옥이라네요!</s:else>
 			</td>
+			<td align="left"><s:property value="construction"/></td>
 			<td align="right">
 			<s:if test="%{room_capacity == 0}">
 			단체(5~20명 수용가능)
@@ -64,6 +66,10 @@
 		</s:iterator>
 	</s:else>
 	</table></td></tr>
+	<tr><td align="center">
+	<strong><b>${ firstDate } ~ ${ lastDate }
+	<br> 예약가능 리스트</b></strong>
+	</td></tr>
 	<s:if test="${ session.userAdmin == '1' }">
 	<tr><td align="right">
 	<input type="button" value="객실추가" onclick="location.href='/remedium/roomInsertForm.action'"/>

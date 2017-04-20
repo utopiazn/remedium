@@ -8,26 +8,30 @@
 <meta charset="UTF-8">
 <title></title>
 
+<script type="text/javascript">
+function open_win_noresizable(url, name) {
+	var oWin = window.open(url, name,"scrollbars=no, status=no, resizable=no, width=300, height=150");
+	
+	
+}
+</script>
+
  <style type="text/css">
  #reslist /* 예약리스트 */
  {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px;  display:table-cell;
- font-family: "돋움",sans-serif; color: #FFFFFF; text-align: center; font-weight: bolder;  text-decoration: none; border-radius: 5px;
+ background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px;  display:table-cell; border-radius: 5px;
  }
   #cash /* 캐쉬 충전 */
  {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell;
- font-family: "돋움",sans-serif; color: #FFFFFF; text-align: center; font-weight: bolder;  text-decoration: none; border-radius: 5px;
+ background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px;
  }
   #modify /* 정보 수정*/
  {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell;
- font-family: "돋움",sans-serif; color: #FFFFFF; text-align: center; font-weight: bolder;  text-decoration: none; border-radius: 5px;
+ background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px;
  }
   #out /*회원 탈퇴*/
  {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell;
- font-family: "돋움",sans-serif; color: #FFFFFF; text-align: center; font-weight: bolder;  text-decoration: none; border-radius: 5px;
+ background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px;
 }
 .mainBox{width: 700px; margin: 0 auto; display: table-row; float: center;} 
  
@@ -40,13 +44,12 @@
 
 <div class="mainBox">
 	<div id="modify">
- 	<img alt="회원정보 수정" src="/remedium/image/modify.png" width="100%" height="100%"  onclick="location.href='myPageList.action'" > 
+ 	<img alt="회원정보 수정" src="/remedium/image/modify.png" width="100%" height="100%"  onclick="LoginModifyForm.action'" > 
   
  	</div>
   
  	<div id="out">
- 	<img alt="회원 탈퇴" src="/remedium/image/out.png" width="100%" height="100%"  onclick="location.href='myPageList.action'" > 
-  
+ 	<img alt="회원 탈퇴" src="/remedium/image/out.png" width="100%" height="100%"  onClick="javascript:open_win_noresizable('loginDeleteForm.action')">
   
  	</div>
 </div>
@@ -58,7 +61,7 @@
  	</div>
   
  	<div id="cash">
-  	<img alt="캐쉬 충전" src="/remedium/image/cash.png" width="100%" height="100%"  onclick="location.href='myPageList.action'" > 
+  	<img alt="캐쉬 충전" src="/remedium/image/cash.png" width="100%" height="100%"  onclick="location.href='myPageCash.action'" > 
 	</div>
 	
 </div>

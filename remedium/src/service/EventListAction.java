@@ -19,6 +19,8 @@ public class EventListAction extends ActionSupport{
 	//생성자
 	public EventListAction() throws IOException{
 		
+	
+		
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); //sqlMapConfig.xml 파일의 설정 내용을 가져온다
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);  //sqlMapConfig.xml 내용을 적용한 sqlMapper 객체 생성
 		
