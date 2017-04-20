@@ -24,7 +24,7 @@
 	</table>
 
 
-<input type="button" value="객실예약완료" onclick="location.href='/remedium/roomReservation.action'" />
+<input type="button" value="객실예약완료" onclick="location.href='/remedium/roomView.action?num=${num}&firstDate=${firstDate}&lastDate=${lastDate}'" />
 </form>
 </body>
 </html>
