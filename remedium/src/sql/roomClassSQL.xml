@@ -9,6 +9,8 @@
 		<result property="image" column="image" />
 		<result property="content" column="content" />
 		<result property="image2" column="image2" />
+		<result property="name" column="name" />
+		
 	</resultMap>
 	
 

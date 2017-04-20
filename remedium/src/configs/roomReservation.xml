@@ -6,10 +6,12 @@
 <struts>
 	<package name="roomReservation"  extends="struts-default, tiles-default">
 		
+		<!-- 고객용 객실 에약 폼 -->
 		<action name="roomReservationForm" class="room.ReservationAction" method="roomRes">
 			<result type="tiles">roomReservationForm</result>
 		</action>
 		
+		<!-- 고객용 객실 에약 -->
 		<action name="roomReservation" class="room.ReservationAction" method="execute">
 			<result type="tiles">roomView</result>
 		</action>

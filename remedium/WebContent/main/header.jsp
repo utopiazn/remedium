@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="util.ProjectUtil.*" %>
+<%@ page import="util.*" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -30,7 +30,7 @@
 	}
 	#logo /* 로고 */
 	{
-	margin: 0 auto; float: center; cursor: pointer; padding-left: 50px;
+	margin: 0 auto; float: center; cursor: pointer; padding-left: 350px;
 	}
 	a /* 링크 속성 */
 	{text-decoration: none; color: #000000; } 
@@ -84,9 +84,9 @@
     <a href="boardList.action">문의사항</a>
 </div>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
-<div id="res">
-<c:set var="date" value='currentDate()'/>
-<input type="hidden" name="currentDate" value="${date }">
+<div id="res">D
+<c:set var="cDate" value="<%=new ProjectUtil()%>"/>
+<input type="hidden" name="curDate" value="${cDate.currentDate}">
 숙박 날짜:
 <input type="date" name="firstDate">
 ~
@@ -200,7 +200,7 @@ function ReservationCH(userinput){
 	
 	var fd = userinput.firstDate.value;
 	var ld = userinput.lastDate.value;
-	var cd = userinput.currentDate.value;
+	var cd = userinput.curDate.value;
 	if(fd == ld){
 		alert("당일치기금지");
 		return false;
@@ -212,7 +212,7 @@ function ReservationCH(userinput){
 	}
 	
 	if(fd < cd){
-		alert("과거로 돌아가지 못해용");
+		alert("과거로 돌아가지 못해용\n 입력하신 검색날짜:"+fd+" / 현재날짜:"+cd);
 		return false;
 	}
 }

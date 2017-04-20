@@ -135,7 +135,9 @@
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />
 	</definition>
+	
 <!-- FAQ -->
+
     <definition name="faqList" extends="main2">
 		<put-attribute name="body" value="/faq/faqList.jsp" />
 	</definition>
@@ -156,7 +158,7 @@
 	<definition name="boardWriteForm" extends="main2">
 		<put-attribute name="body" value="/board/boardWriteForm.jsp" />
 	</definition>
-	
+
 <!-- 객실소개 -->   
 	<definition name="roomInfoList" extends="main">		
 		<put-attribute name="body" value="/room/roomInfoList.jsp" />		
@@ -169,14 +171,17 @@
 	
 <!-- 객실소개 -->
 
-<!-- 마이페이지 -->   
-	<definition name="myPageMain" extends="main2">
-		
-		<put-attribute name="body" value="/mypage/pageMain.jsp" />
-		
-	</definition>
+<!-- 마이페이지 -->  
 
+<!-- 마이페이지메인 --> 
+	<definition name="myPageMain" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageMain.jsp" />		
+	</definition>
+<!-- 예약리스트 -->	
+<definition name="myPageList" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageList.jsp" />		
+	</definition>
 	
-	
+<!-- 마이페이지 -->  
 	
 </tiles-definitions>

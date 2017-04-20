@@ -15,7 +15,9 @@ public class ViewAction extends ActionSupport{
 	private RoomBean paramClass = new RoomBean();
 	private RoomBean resultClass = new RoomBean();
 	
-	private int Num;
+	private int num;
+	private String firstDate;
+	private String lastDate;
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -52,11 +54,30 @@ public class ViewAction extends ActionSupport{
 	}
 
 	public int getNum() {
-		return Num;
+		return num;
 	}
 
 	public void setNum(int num) {
-		Num = num;
+		this.num = num;
 	}
+
+	public String getFirstDate() {
+		return firstDate;
+	}
+
+	public void setFirstDate(String firstDate) {
+		this.firstDate = firstDate;
+	}
+
+	public String getLastDate() {
+		return lastDate;
+	}
+
+	public void setLastDate(String lastDate) {
+		this.lastDate = lastDate;
+	}
+	
+	
+	
 	
 }
