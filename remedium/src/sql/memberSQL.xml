@@ -80,7 +80,7 @@
 		
 	</insert>
 	
-	<!-- 회원 수정 입력 -->
+	<!-- 회원 수정 -->
 	<update id="updateMember" parameterClass="member">
 		update member set memberPassword = #memberPassword#, memberName = #memberName#,
 		 		gender = #gender#, birthday = #birthday#, phone = #phone#, email = #email#, zipcode = #zipcode#,
@@ -88,14 +88,15 @@
 		<include refid="where-memberID" />
 	</update>
 	
+	<!-- 회원 삭제 -->
+	<delete id="deleteMember" parameterClass="member">
+		delete from member
+		<include refid="where-memberID" />
+	</delete>
+	
 	<!-- 아이디 검색 -->
 	<select id="searchID" resultMap="memberRes">
-		select 
-			* 
-		from 
-			member 
-		where 
-			memberID like #memberID#
+		select 	* from 	member 	where 	memberID like #memberID#
 	</select>
 	
 	<!-- 이름 검색 -->
