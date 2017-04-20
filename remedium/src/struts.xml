@@ -28,6 +28,7 @@
 	<include file="/configs/faq.xml" />
 	<include file="/configs/roominfo.xml" />
 	<include file="/configs/mypage.xml" />
+	<include file="/configs/board.xml" />
 	
 </struts>
 

@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page import="util.TimeUtil.*" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -79,15 +81,16 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="eventList.action">이 벤 트   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="faqList.action">문의사항</a>
+    <a href="boardList.action">문의사항</a>
 </div>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
-
+<c:set var="date" value='currentDate()'/>
+<input type="hidden" name="currentDate" value="${date }">
 숙박 날짜:
-<input type="date" name="firstdate">
+<input type="date" name="firstDate">
 ~
-<input type="date" name="lastdate">
+<input type="date" name="lastDate">
 
 
 <%-- <select name="years">
@@ -185,27 +188,31 @@
 <script type="text/javascript">
 
 function ReservationCH(userinput){
-	alert("실행되고");
-	if(userinput.firstdate.value==""){
-		alert("처음이 공백");
+	if(userinput.firstDate.value==""){
+		alert("입실날짜를 적어주세요!");
 		return false;
 	}
 	
-	if(userinput.lastdate.value==""){
-		alert("마지막이 공백");
+	if(userinput.lastDate.value==""){
+		alert("퇴실날짜를 적어주세요!");
 		return false;
 	}
 	
-	var fd =userinput.firstdate.value;
-	var ld =userinput.lastdate.value;
-	
-	if(fd==ld){
+	var fd = userinput.firstDate.value;
+	var ld = userinput.lastDate.value;
+	var cd = userinput.currentDate.value;
+	if(fd == ld){
 		alert("당일치기금지");
 		return false;
 	}
 	
-	if(fd>ld){
+	if(fd > ld){
 		alert("???");
+		return false;
+	}
+	
+	if(fd < cd){
+		alert("과거로 돌아가지 못해용");
 		return false;
 	}
 }

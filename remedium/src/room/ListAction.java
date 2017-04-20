@@ -3,7 +3,6 @@ package room;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.ibatis.common.resources.Resources;
@@ -21,8 +20,8 @@ public class ListAction extends ActionSupport {
 	private List<RoomBean> list;
 	private RoomBean paramClass;
 	
-	private String firstdate;
-	private String lastdate;
+	private String firstDate;
+	private String lastDate;
 	private int people;
 	
 	
@@ -67,20 +66,20 @@ public class ListAction extends ActionSupport {
 		this.list = list;
 	}
 
-	public String getFirstdate() {
-		return firstdate;
+	public String getFirstDate() {
+		return firstDate;
 	}
 
-	public void setFirstdate(String firstdate) {
-		this.firstdate = firstdate;
+	public void setFirstDate(String firstDate) {
+		this.firstDate = firstDate;
 	}
 
-	public String getLastdate() {
-		return lastdate;
+	public String getLastDate() {
+		return lastDate;
 	}
 
-	public void setLastdate(String lastdate) {
-		this.lastdate = lastdate;
+	public void setLastDate(String lastDate) {
+		this.lastDate = lastDate;
 	}
 
 	public int getPeople() {

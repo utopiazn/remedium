@@ -140,13 +140,11 @@
 				<s:property value="%{resultClass.addr2}" /> 
 				</td>
 			</tr>
-			<tr>
 		
-		</table>	
-		
-		<br/>
-		<button type="button" onclick="location.href='memberAdminList.action ">회원 목록</button>
-		<button type="button" onclick="location.href='memberAdminList.action' ">회원 수정</button>
-		<button type="button" onclick="location.href='memberAdminList.action' ">회원 삭제</button>
+		</table>
+		<input name="list" type="button" value="회원 목록" class="inputb" onClick="javascript:location.href='memberAdminList.action'">
+    	<input name="modify" type="button" value="회원 수정" class="inputb" onClick="javascript:location.href='memberAdminModifyForm.action?memberID=<s:property value="resultClass.memberID" />&currentPage=<s:property value="currentPage" />'"> 
+		<input name="delete" type="button" value="회원 삭제" class="inputb" onClick="javascript:location.href='ReplyForm.action?memberID=<s:property value="resultClass.memberID" />','delete')">
+
 </body>
 </html>

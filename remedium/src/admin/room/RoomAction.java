@@ -12,6 +12,7 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.RoomBean;
+import util.ProjectUtil;
 
 public class RoomAction extends ActionSupport{
 	
@@ -34,10 +35,7 @@ public class RoomAction extends ActionSupport{
 	private String uploadContentType;
 	private String uploadFileName;
 	
-	//어떤 pc에서도 경로가 잡히도록 하기 위해 엄청난 뻘짓을 햇다...눈물...
-	private String s = this.getClass().getResource("/").getPath();
-	private String sc = s.substring(0, s.indexOf(".metadata"));
-	private String fileUploadPath=sc+"remedium/WebContent/image/roomImage/";
+	private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/roomImage/";
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
