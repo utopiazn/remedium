@@ -16,8 +16,7 @@
 
 	 <table width="100%" height="100%" cellpadding="0" cellspacing="0">
 		
-		<tr>
-		
+		<tr>		
 			<!-- 헤더 정보--> 			
 			<td colspan="2" width="100%" height="30%" align="center">
 				<tiles:insertAttribute name="header" />

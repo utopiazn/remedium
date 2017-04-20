@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
-<sqlMap>
+<sqlMap namespace="roomclassSQL">
 	<typeAlias alias="roomclass" type="bean.RoomclassBean" />
 
 	<resultMap id="roomclassRes" class="roomclass">
@@ -12,6 +12,14 @@
 		<result property="name" column="name" />
 		
 	</resultMap>
+	
+	
+	<!-- 객실소개 전체 리스트 호출 -->
+	<select id="selectAll" resultMap="roomclassRes">
+	
+		select * from room_class 
+	</select>
+	
 	
 
 </sqlMap>
