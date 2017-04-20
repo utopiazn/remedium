@@ -145,15 +145,15 @@
 	</definition>
 	
 <!-- 문의사항 -->
-    <definition name="boardList" extends="main">
+    <definition name="boardList" extends="main2">
 		<put-attribute name="body" value="/board/boardList.jsp" />
 	</definition>
 	
-	<definition name="boardView" extends="main">
+	<definition name="boardView" extends="main2">
 		<put-attribute name="body" value="/board/boardView.jsp" />
 	</definition>
 	
-	<definition name="boardWriteForm" extends="main">
+	<definition name="boardWriteForm" extends="main2">
 		<put-attribute name="body" value="/board/boardWriteForm.jsp" />
 	</definition>
 	
