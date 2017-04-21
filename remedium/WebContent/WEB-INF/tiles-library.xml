@@ -131,6 +131,7 @@
     <definition name="facilitiesList" extends="main2">
 		<put-attribute name="body" value="/service/facilitiesList.jsp" />
 	</definition>
+	
 <!-- 이벤트 -->
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />
@@ -186,14 +187,19 @@
 <!-- <definition name="loginModifyForm" extends="main2">		
 		<put-attribute name="body" value="/main/main.jsp" />		
 	</definition> -->
-<!-- 예약리스트 -->	
-<definition name="myPageList" extends="main2">		
-		<put-attribute name="body" value="/mypage/pageList.jsp" />		
-	</definition>
 <!-- 회원탈퇴 -->	
 <!-- <definition name="loginDelete" extends="main2">		
 		<put-attribute name="body" value="/main/main.jsp" />		
 	</definition> -->
+<!-- 예약리스트 -->	
+<definition name="myPageList" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageList.jsp" />		
+	</definition>
+<!-- 캐쉬 충전 -->	
+<definition name="myPageCash" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageListCash.jsp" />		
+	</definition>
+
 	
 <!-- 마이페이지 -->  
 	

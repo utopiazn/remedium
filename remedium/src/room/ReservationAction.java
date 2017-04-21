@@ -1,44 +1,55 @@
 package room;
 
-import java.io.IOException;
-import java.io.Reader;
+import java.sql.Date;
 
-import com.ibatis.common.resources.Resources;
-import com.ibatis.sqlmap.client.SqlMapClient;
-import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
+
+import bean.RoomReservationBean;
 
 public class ReservationAction extends ActionSupport{
 	
-	public static Reader reader;
-	public static SqlMapClient sqlMapper;
+	private RoomReservationBean paramClass;
 	
 	private int num;
+	private int no;
 	private String firstDate;
 	private String lastDate;
 	private int room_capacity;
 	private int price;
-	
-	
-	public ReservationAction() throws IOException {
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
-		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
-		reader.close();
-	}
+	private int money;
+	private String memberID;
 	
 	@Override
 	//객실 예약 처리
 	public String execute() throws Exception {
+		
+		
+		Date firstDateD = Date.valueOf(getFirstDate());
+		Date lastDateD = Date.valueOf(getLastDate());
+		
+		paramClass = new RoomReservationBean();
+		paramClass.setNo(no);
+		paramClass.setFirstDate(firstDateD);
+		paramClass.setLastDate(lastDateD);
+		paramClass.setMoney(money);
+		paramClass.setMemberID(memberID);
+		
+		
+		System.out.println("---------------------------");
+		System.out.println("no : "+getNo()+" / paramClass.no : "+paramClass.getNo());
+		System.out.println("firstDate : "+getFirstDate()+" / paramClass.firstDate : "+paramClass.getFirstDate());
+		System.out.println("lastDate : "+getLastDate()+" / paramClass.lastDate : "+paramClass.getLastDate());
+		System.out.println("money : "+getMoney()+" / paramClass.money : "+paramClass.getMoney());
+		System.out.println("memberID : "+getMemberID()+" / paramClass.memberID : "+paramClass.getMemberID());
+		System.out.println("---------------------------");
+		
+		util.ProjectUtil.sqlMapper.update("roomReservationSQL.insertRes", paramClass);
+		
 		return SUCCESS;
 	}
 
-	//객실 예약 
+	//객실 예약 폼
 	public String roomRes() throws Exception {
-		
-		System.out.println(getNum());
-		System.out.println(getFirstDate());
-		System.out.println(getLastDate());
-		System.out.println(getRoom_capacity());
 		
 		return SUCCESS;
 	}
@@ -49,22 +60,6 @@ public class ReservationAction extends ActionSupport{
 
 	public void setNum(int num) {
 		this.num = num;
-	}
-
-	public String getFirstDate() {
-		return firstDate;
-	}
-
-	public void setFirstDate(String firstDate) {
-		this.firstDate = firstDate;
-	}
-
-	public String getLastDate() {
-		return lastDate;
-	}
-
-	public void setLastDate(String lastDate) {
-		this.lastDate = lastDate;
 	}
 
 	public int getRoom_capacity() {
@@ -82,7 +77,54 @@ public class ReservationAction extends ActionSupport{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+	public String getMemberID() {
+		return memberID;
+	}
+
+	public void setMemberID(String memberID) {
+		this.memberID = memberID;
+	}
+
+	public RoomReservationBean getParamClass() {
+		return paramClass;
+	}
+
+	public void setParamClass(RoomReservationBean paramClass) {
+		this.paramClass = paramClass;
+	}
+
+	public String getFirstDate() {
+		return firstDate;
+	}
+
+	public void setFirstDate(String firstDate) {
+		this.firstDate = firstDate;
+	}
+
+	public String getLastDate() {
+		return lastDate;
+	}
+
+	public void setLastDate(String lastDate) {
+		this.lastDate = lastDate;
+	}
 	
 	
 }

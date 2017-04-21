@@ -32,8 +32,7 @@
 					</tr>
 				</s:if>
 						 	
-		 	
-		 
+	
 				<s:iterator value="list">
 					<tr  height="10%">
 				 		
