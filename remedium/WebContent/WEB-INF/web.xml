@@ -46,12 +46,10 @@
         <servlet-class>org.apache.tiles.web.startup.TilesServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
-
+ 
     <servlet-mapping>
         <servlet-name>tiles_dispatcher</servlet-name>
         <url-pattern>*.tiles</url-pattern>
    </servlet-mapping>
 
-
-  
 </web-app>

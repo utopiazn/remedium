@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
-<sqlMap namespace = "board">
+<sqlMap namespace ="board">
 	<typeAlias alias="board" type="bean.BoardBean" />
 
 	<resultMap id="boardRes" class="board">
@@ -33,14 +33,9 @@
 		<include refid="where-boardNo" />
 	</select>
 	
-	<insert id="insertBoard" parameterClass="member">
-	
-		INSERT INTO MEMBER 
-			(no, subject, content, ref, BIRTHDAY, PHONE, EMAIL, 
-				REGDATE, USERADMIN, ZIPCODE, ADDR1, ADDR2, CASH, USERCHECK) 
-		VALUES (#memberID#, #memberPassword#, #memberName#, #gender#, #birthday#,#phone#, #email#, 
-				sysdate, #userAdmin#, #zipcode#, #addr1#, #addr2#, #cash#, #userCheck# )
-		
+	<insert id="insertBoard" parameterClass="board">
+		  insert into board (no, subject, memberID, name, content, ref, re_step, regdate, type)
+		VALUES (BOARD_NO_SEQ.nextval, #subject#, #memberID#, #name#, #content, #ref#, #re_step, sysdate, #type#)		 	
 	</insert>
 	
 </sqlMap>

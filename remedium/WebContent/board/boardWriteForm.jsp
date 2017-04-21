@@ -42,11 +42,11 @@
 	</table>
 	
 	<s:if test="resultClass == NULL">
-		<form action="WriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+		<form action="boardWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 	</s:if>
 	
 	<s:else>
-		<form action="ModifyAction.action" method="post" enctype="multipart/form-data">
+		<form action="boardModify.action" method="post" enctype="multipart/form-data">
 			<s:hidden name="no" value="%{resultClass.no}" />
 			<s:hidden name="currentPage" value="%{currentPage}" />
 	</s:else> 

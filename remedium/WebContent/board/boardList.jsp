@@ -66,7 +66,7 @@
 		</tr>
 		<tr align="right">
 			<td colspan="7" >
-			<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='boardWrite.action?currentPage=<s:property value="currentPage"/>';">
+			<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='boardWriteForm.action'">
 			</td>
 		</tr>
 		<tr>
