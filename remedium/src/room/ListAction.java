@@ -45,6 +45,7 @@ public class ListAction extends ActionSupport {
 		}else{
 			list = sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
 		}
+		
 		return SUCCESS;
 	}
 	

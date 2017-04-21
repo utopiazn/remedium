@@ -37,7 +37,7 @@ display:inline;
 
 <div id="image">
 
-<img height="400" alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" > <!-- 이미지 파일 받으면 이부분 삭제 후 적용 되는 지 봐야함! -->
+<img height="400" alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" >
 </div>
 
 
@@ -85,6 +85,7 @@ display:inline;
 <input type="hidden" name="firstDate" value="${firstDate }"/>
 <input type="hidden" name="lastDate" value="${lastDate }"/>
 <input type="hidden" name="room_capacity" value="${resultClass.room_capacity}"/>
+<input type="hidden" name="price" value="${resultClass.price}"/>
 <input type="submit"value="객실예약"/>
 </form>
 <%-- <input type="button" value="객실예약" onclick="location.href='/remedium/roomReservationForm.action?num=<s:property value="num"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>'" /> --%>
