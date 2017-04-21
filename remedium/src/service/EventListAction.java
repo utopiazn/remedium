@@ -68,9 +68,9 @@ public class EventListAction extends ActionSupport{
 		if(page.getEndCount() < totalCount) {
 			lastCount = page.getEndCount() + 1;
 		}
-		
-		list = list.subList(page.getStartCount(), lastCount);
-		
+	
+		//list = list.subList(page.getStartCount(), lastCount);
+		System.out.println(list.size());
 		
 		return SUCCESS;
 	}
