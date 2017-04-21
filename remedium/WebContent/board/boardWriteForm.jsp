@@ -74,7 +74,7 @@
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">*</font>아이디</td>
 			<td bgcolor="#FFFFFF">
-				<s:textfield name="name" theme="simple" value="%{resultClass.memberID}" cssStyle="width:100px" maxlength="20"/>
+				<s:textfield name="name" theme="simple" value="${session.memberId}" cssStyle="width:100px" maxlength="20"/>
 			</td>
 		</tr>
 		

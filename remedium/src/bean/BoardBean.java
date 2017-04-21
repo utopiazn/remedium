@@ -9,8 +9,8 @@ public class BoardBean {
 	private String memberID; 	//회원 ID
 	private String name; 	//작성자
 	private String content; 	//글 내용
-	private String ref; 	//글 구분
-	private String re_step; 	//글 답변
+	private int ref; 	//글 구분
+	private int re_step; 	//글 답변
 	private Date regdate; 	//등록날짜
 	private String type; 	//답변상태
 	
@@ -44,16 +44,16 @@ public class BoardBean {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getRef() {
+	public int getRef() {
 		return ref;
 	}
-	public void setRef(String ref) {
+	public void setRef(int ref) {
 		this.ref = ref;
 	}
-	public String getRe_step() {
+	public int getRe_step() {
 		return re_step;
 	}
-	public void setRe_step(String re_step) {
+	public void setRe_step(int re_step) {
 		this.re_step = re_step;
 	}
 	public Date getRegdate() {

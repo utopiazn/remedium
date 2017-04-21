@@ -13,6 +13,10 @@
 			<result type="tiles">boardView</result>
 		</action>
 		
+		<action name="boardWriteForm" class="board.WriteAction" method="form">
+			<result type="tiles">boardWriteForm</result>
+		</action>
+		
 		<action name="boardWrite" class="board.WriteAction">
 			<result type="tiles">boardWrite</result>
 		</action>
