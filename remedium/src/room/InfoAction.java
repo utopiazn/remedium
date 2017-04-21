@@ -25,7 +25,7 @@ public class InfoAction extends ActionSupport {
 	}
 	
 	
-	private int roomClass;
+	private int roomClass = -1;
 		
 	private List<RoomclassBean> list;  //객실 종류 리스트
 	
@@ -46,7 +46,7 @@ public class InfoAction extends ActionSupport {
 		//객실 클래스 리스트/////////////////////////////
 		list = new ArrayList<RoomclassBean>();
 		
-		if(roomClass >0 ){
+		if( roomClass >= 0 ){
 			
 			list = sqlMapper.queryForList("roomclassSQL.selectAll");
 			
@@ -54,16 +54,17 @@ public class InfoAction extends ActionSupport {
 		}
 		
 		
-		//객실 클래스 개별 뷰///////////////////////////
+		//객실 클래스 개별 뷰///////////////////////////		
+		if( roomClass > 0 ){			
 		
-		paramClass = new RoomclassBean();
-		resultClass = new RoomclassBean();		
-		
-		paramClass.setRoom_class(String.valueOf(roomClass));		
-
-		resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
-		
-		
+			paramClass = new RoomclassBean();
+			resultClass = new RoomclassBean();		
+			
+			paramClass.setRoom_class(String.valueOf(roomClass));		
+	
+			resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
+		}
+			
 		return SUCCESS;
 	}
 	

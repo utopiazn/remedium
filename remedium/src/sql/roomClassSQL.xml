@@ -23,6 +23,7 @@
 
 	</select>
 	
+	<!-- 객실 소개의 개별 리스트 값  호출 -->
 	<select id="selectRoomClass" resultMap="roomclassRes">
 	
 		select * from room_class where room_class = #room_class#
