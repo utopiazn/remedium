@@ -19,20 +19,11 @@ public class ViewAction extends ActionSupport{
 	private String firstDate;
 	private String lastDate;
 	
-	public static Reader reader;
-	public static SqlMapClient sqlMapper;
-	
-	public ViewAction() throws IOException {
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
-		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
-		reader.close();
-	}
-	
 	@Override
 	//객실 개별 뷰
 	public String execute() throws Exception {
 		
-		resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNum());
+		resultClass = (RoomBean)util.ProjectUtil.sqlMapper.queryForObject("roomSQL.selectOne", getNum());
 		
 		return SUCCESS;
 	}
