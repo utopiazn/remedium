@@ -1,12 +1,166 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8""
-    pageEncoding="UTF-8""%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
+<!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8" ?>
+<html lang="ko"  xmlns="http://www.w3.org/1999/xhtml" >
+	<script type="text/javascript">
+	  
+	function button_event(url){
+		var del = confirm("이 회원을 정말로 삭제 하시겠습니까??");
+		
+		if(del == true){
+			alert("삭제하였습니다.");			
+			document.location.href=url;
+		}
+		else{
+			alert("취소하셧습니다.");
+			return
+		}
+		
+	}
+	</script>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"">
-<title>QnA 상세보기</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
 </head>
 <body>
+
+	
+	<table width="600" border="0" cellspacing="0" cellpadding="2">
+	
+		<tr>
+			<td align="center">
+				<h2>회원 상세 보기</h2>
+			</td>
+		</tr>	
+		
+	
+	</table>
+
+
+	<!-- 로그인폼으로 이동 -->
+		<table width="600" border="1" cellspacing="3" cellpadding="3">	
+			<tr>
+				<td width="50" bgcolor="#F4F4F4" >
+					<font color="#FF0000">* </font>글번호 
+				</td>
+			
+				<td  bgcolor="#FFFFFF" >
+					<s:property value="%{resultClass.no}"/> 
+				</td>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>아이디
+				</td>
+				<td bgcolor="#FFFFFF" >
+					<s:property value="%{resultClass.memberID}"/>					 
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>
+				</td>
+			
+				<td width="50" bgcolor="#FFFFFF" >
+					<s:property value="%{resultClass.memberPassword}"/>					 
+				</td>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>탈퇴일
+				</td>
+				<td bgcolor="#FFFFFF" >
+					<s:property value="%{resultClass.deldate}"/>					 
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>이 름
+				</td>
+			
+				<td width="50" bgcolor="#FFFFFF" >
+					<s:property value="%{resultClass.memberName}"/>					
+				</td>
+					<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>보유 Cash
+				</td>
+				<td bgcolor="#FFFFFF" >
+					<s:property value="%{resultClass.cash}"/>					 
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>성 별
+				</td>
+				<td width="50" bgcolor="#FFFFFF">
+					<s:property value="%{resultClass.gender}"/>					
+				</td>
+					<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>사용 여부
+				</td>
+				<td bgcolor="#FFFFFF" >
+					<s:property value="%{resultClass.userCheck}"/>					 
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>생년 월일
+				</td>
+			
+				<td width="50" bgcolor="#FFFFFF" colspan="3">
+					<s:property value="%{resultClass.birthday}" />				
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>전화 번호
+				</td>
+			
+				<td width="50" bgcolor="#FFFFFF" colspan="3">
+					<s:property  value="%{resultClass.phone}" /> 			
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>이메일
+				</td>
+			
+				<td width="50" bgcolor="#FFFFFF" colspan="3">
+					<s:property value="%{resultClass.email}"/> 					
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>우편 번호
+				</td>
+				<td width="50" bgcolor="#FFFFFF" colspan="3">
+				<s:property value="%{resultClass.zipcode}" /> 	
+				</td>
+			</tr> 
+			<tr>
+				<td width="100" bgcolor="#F4F4F4">
+					<font color="#FF0000">* </font>주 소
+				</td>
+				<td width="200"bgcolor="#FFFFFF">
+				<s:property value="%{resultClass.addr1}" /> 
+				</td>
+				<td colspan="2">
+				<s:property value="%{resultClass.addr2}" /> 
+				</td>
+			</tr>
+		
+		</table>
+		<input name="list" type="button" value="회원 목록" class="inputb" onClick="javascript:location.href='memberAdminList.action'">
+    	<input name="modify" type="button" value="회원 수정" class="inputb" onClick="javascript:location.href='memberAdminModifyForm.action?memberID=<s:property value="resultClass.memberID" />&currentPage=<s:property value="currentPage" />'"> 
+		<input type="button" value="회원 삭제" class="inputb" onClick="javascript:button_event('memberAdminDelete.action?memberID=<s:property value="resultClass.memberID" />')">
 
 </body>
 </html>

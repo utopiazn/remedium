@@ -25,6 +25,7 @@ public class WriteAction extends ActionSupport {
 	public String form() throws Exception {	
 		
 		return SUCCESS;
+		
 	}
 
 	// 문의 사항 게시글 쓰기 처리
