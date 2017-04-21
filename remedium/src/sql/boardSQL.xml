@@ -34,8 +34,8 @@
 	</select>
 	
 	<insert id="insertBoard" parameterClass="board">
-		 <!--  insert into board (no, subject, memberID, name, content, ref, re_step, regdate, type)
-		VALUES (BOARD_NO_SEQ.nextval, #subject#, #memberID#, #name#, #content, #ref#, #re_step, sysdate, #type#)	 -->	 	
+		   insert into board (no, subject, memberID, name, content, ref, re_step, regdate, type)
+		VALUES (BOARD_NO_SEQ.nextval, #subject#, #memberID#, #name#, #content#, #ref#, #re_step#, sysdate, #type#)	 	 	
 	</insert>
 	
 </sqlMap>
