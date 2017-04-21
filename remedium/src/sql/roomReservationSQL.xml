@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
-<sqlMap>
+<sqlMap namespace="roomReservationSQL">
 	<typeAlias alias="roomReservation" type="bean.RoomReservationBean" />
 
 	<resultMap id="roomReservationRes" class="roomReservation">
 		<result property="reservationNo" column="reservationNo" />
 		<result property="no" column="no" />
-		<result property="firstdate" column="firstdate" />
-		<result property="lastdate" column="lastdate" />
+		<result property="firstDate" column="firstDate" />
+		<result property="lastDate" column="lastDate" />
 		<result property="money" column="money" />
 		<result property="memberID" column="memberID" />
 	</resultMap>
 	
-
+	<sql id="select-all">SELECT * FROM ROOM_RESERVATION</sql>
+	
+	<sql id="where-no">WHERE RESERVATIONNO = #ReservationNo#</sql>
+	
+	<insert id="insertRes" parameterClass="roomReservation">
+		INSERT INTO ROOM_RESERVATION(RESERVATIONNO, NO, FIRSTDATE, LASTDATE,
+		MONEY, MEMBERID) VALUES (ROOM_RESERVATION_NO_SEQ.NEXTVAL, 103, '2017-04-21',
+		'2017-04-28', 40000, '11')
+	</insert>
 </sqlMap>

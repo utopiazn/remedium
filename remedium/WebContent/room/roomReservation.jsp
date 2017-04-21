@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -26,7 +27,11 @@
 <input type="hidden" name="money" value="${price }">
 <input type="hidden" name="memberID" value="${session.memberId}">
 
-<input type="button" value="객실예약하기" onclick="location.href='/remedium/roomView.action?num=${num}&firstDate=${firstDate}&lastDate=${lastDate}'" />
+
+
+
+<input type="submit" value="객실예약">
+<input type="button" value="처음으로" onclick="location.href='/remedium/main.action'" />
 </form>
 </body>
 </html>
