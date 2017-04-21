@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
-<sqlMap>
+<sqlMap namespace="facilities">
 	<typeAlias alias="facilities" type="bean.FacilitiesBean" />
 
 	<resultMap id="facilitiesRes" class="facilities">
@@ -11,6 +11,23 @@
 		<result property="time" column="time" />
 		<result property="image" column="image" />
 	</resultMap>
-	
+
+	<sql id="select-all">
+		select * from facilities
+	</sql>
+
+	<sql id="where-no">
+		WHERE no = #no#
+	</sql>
+
+	<select id="selectAll" resultMap="facilitiesRes">
+		<include refid="select-all" />
+	</select>
+
+	<select id="selectOne" resultMap="facilitiesRes">
+		<include refid="select-all" />
+		<include refid="where-no" />
+	</select>
+
 
 </sqlMap>

@@ -131,6 +131,7 @@
     <definition name="facilitiesList" extends="main2">
 		<put-attribute name="body" value="/service/facilitiesList.jsp" />
 	</definition>
+	
 <!-- 이벤트 -->
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />
@@ -164,20 +165,19 @@
 	</definition>
 
 <!-- 객실소개 -->   
+
+	<!-- 롬 소개  리스트(관리자 권한 일대만 호출됨) 호출 -->
 	<definition name="roomInfoList" extends="main">		
+		<put-attribute name="lefter" value="/main/lefter/roomClassLefter.jsp" />
 		<put-attribute name="body" value="/room/roomInfoList.jsp" />		
 	</definition>
 	
 	<!-- 롬 소개 리스트 및 개별 정보 호출 -->
-	<definition name="roomInfoView" extends="main">		
-		<put-attribute name="body" value="/room/roomInfoView.jsp" />		
-	</definition>
-	
-	
 	<definition name="roomInfoView" extends="main">	
-		<put-attribute name="lefter" value="/main/lefter/roomClassLefter.jsp" />
+		<put-attribute name="lefter" value="/main/lefter/roomClassLefter.jsp" />	
 		<put-attribute name="body" value="/room/roomInfoView.jsp" />		
 	</definition>
+	
 	
 <!-- 객실소개 -->
 
@@ -191,14 +191,19 @@
 <!-- <definition name="loginModifyForm" extends="main2">		
 		<put-attribute name="body" value="/main/main.jsp" />		
 	</definition> -->
-<!-- 예약리스트 -->	
-<definition name="myPageList" extends="main2">		
-		<put-attribute name="body" value="/mypage/pageList.jsp" />		
-	</definition>
 <!-- 회원탈퇴 -->	
 <!-- <definition name="loginDelete" extends="main2">		
 		<put-attribute name="body" value="/main/main.jsp" />		
 	</definition> -->
+<!-- 예약리스트 -->	
+<definition name="myPageList" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageList.jsp" />		
+	</definition>
+<!-- 캐쉬 충전 -->	
+<definition name="myPageCash" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageListCash.jsp" />		
+	</definition>
+
 	
 <!-- 마이페이지 -->  
 	

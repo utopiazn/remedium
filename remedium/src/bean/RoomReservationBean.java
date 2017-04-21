@@ -1,15 +1,16 @@
 package bean;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class RoomReservationBean {
-
+	
 	int reservationNo;	// 예약번호
 	int no;				// 객실번호
-	Date firstdate;		// 입실날짜
-	Date lastdate;		// 퇴실날짜
+	Date firstDate;		// 입실날짜
+	Date lastDate;		// 퇴실날짜
 	int money;			// 예약금
 	String memberID;	// 회원ID
+	
 	public int getReservationNo() {
 		return reservationNo;
 	}
@@ -22,17 +23,17 @@ public class RoomReservationBean {
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public Date getFirstdate() {
-		return firstdate;
+	public Date getFirstDate() {
+		return firstDate;
 	}
-	public void setFirstdate(Date firstdate) {
-		this.firstdate = firstdate;
+	public void setFirstDate(Date firstDate) {
+		this.firstDate = firstDate;
 	}
-	public Date getLastdate() {
-		return lastdate;
+	public Date getLastDate() {
+		return lastDate;
 	}
-	public void setLastdate(Date lastdate) {
-		this.lastdate = lastdate;
+	public void setLastDate(Date lastDate) {
+		this.lastDate = lastDate;
 	}
 	public int getMoney() {
 		return money;
