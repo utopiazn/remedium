@@ -206,11 +206,4 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		this.userAdmin = userAdmin;
 	}
 
-	
-
-	
-	
-	
-	
-	
 }
