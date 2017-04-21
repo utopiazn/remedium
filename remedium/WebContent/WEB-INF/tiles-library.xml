@@ -164,8 +164,14 @@
 		<put-attribute name="body" value="/room/roomInfoList.jsp" />		
 	</definition>
 	
-	
+	<!-- 롬 소개 리스트 및 개별 정보 호출 -->
 	<definition name="roomInfoView" extends="main">		
+		<put-attribute name="body" value="/room/roomInfoView.jsp" />		
+	</definition>
+	
+	
+	<definition name="roomInfoView" extends="main">	
+		<put-attribute name="lefter" value="/main/lefter/roomClassLefter.jsp" />
 		<put-attribute name="body" value="/room/roomInfoView.jsp" />		
 	</definition>
 	

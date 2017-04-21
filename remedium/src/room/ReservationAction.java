@@ -17,6 +17,7 @@ public class ReservationAction extends ActionSupport{
 	private String firstDate;
 	private String lastDate;
 	private int room_capacity;
+	private int price;
 	
 	
 	public ReservationAction() throws IOException {
@@ -73,5 +74,15 @@ public class ReservationAction extends ActionSupport{
 	public void setRoom_capacity(int room_capacity) {
 		this.room_capacity = room_capacity;
 	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	
 	
 }
