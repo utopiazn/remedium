@@ -7,9 +7,6 @@
 <title>EVENT</title>
 </head>
 <body>
-      <s:iterator value="list" >
-      <s:property value="no" />
-      </s:iterator>
 <table width="800" border="0" cellspacing="0" cellpadding="2">
   		<tr>
   			<td align="center"><h2>EVENT＊PROMOTION</h2></td>
