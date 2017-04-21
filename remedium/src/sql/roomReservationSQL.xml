@@ -19,7 +19,7 @@
 	
 	<insert id="insertRes" parameterClass="roomReservation">
 		INSERT INTO ROOM_RESERVATION(RESERVATIONNO, NO, FIRSTDATE, LASTDATE,
-		MONEY, MEMBERID) VALUES (ROOM_RESERVATION_NO_SEQ.NEXTVAL, 103, '2017-04-21',
-		'2017-04-28', 40000, '11')
+		MONEY, MEMBERID) VALUES (ROOM_RESERVATION_NO_SEQ.NEXTVAL, #no#, #firstDate#,
+		#lastDate#, #money#, #memberID#)
 	</insert>
 </sqlMap>

@@ -43,7 +43,7 @@ public class ReservationAction extends ActionSupport{
 		System.out.println("memberID : "+getMemberID()+" / paramClass.memberID : "+paramClass.getMemberID());
 		System.out.println("---------------------------");
 		
-		util.ProjectUtil.sqlMapper.queryForObject("roomReservationSQL.insertRes", paramClass);
+		util.ProjectUtil.sqlMapper.update("roomReservationSQL.insertRes", paramClass);
 		
 		return SUCCESS;
 	}

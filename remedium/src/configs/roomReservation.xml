@@ -13,7 +13,7 @@
 		
 		<!-- 고객용 객실 에약 -->
 		<action name="roomReservation" class="room.ReservationAction" method="execute">
-			<result>roomlist.ation</result>
+			<result>roomList.action</result>
 		</action>
 		
 	</package>
