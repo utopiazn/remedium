@@ -82,7 +82,8 @@ public class WriteAction extends ActionSupport implements SessionAware{
 		
 		else {
 			paramClass.setRef(getRef());		
-			paramClass.setRe_step(getRe_step() + 1);		
+			paramClass.setRe_step(getRe_step() + 1);	
+			paramClass.setType("1");
 		}
 		
 		paramClass.setNo(getNo());
@@ -91,15 +92,6 @@ public class WriteAction extends ActionSupport implements SessionAware{
 		paramClass.setRef(getRef());
 		paramClass.setRe_step(getRe_step());			
 		paramClass.setType("0");
-		
-		System.out.println("no"+paramClass.getNo());
-		System.out.println("id"+paramClass.getMemberID());
-		System.out.println("no"+paramClass.getName());
-		System.out.println("su"+paramClass.getSubject());
-		System.out.println("con"+paramClass.getContent());
-		System.out.println("ref"+paramClass.getRef());
-		System.out.println("step"+paramClass.getRe_step());
-		System.out.println("type"+paramClass.getType());
 		
 		sqlMapper.insert("board.insertBoard",paramClass);
 		

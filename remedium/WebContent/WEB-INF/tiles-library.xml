@@ -158,11 +158,7 @@
 	
 	<definition name="boardWriteForm" extends="main2">
 		<put-attribute name="body" value="/board/boardWriteForm.jsp" />
-	</definition>
-	
-	<definition name="boardWrite" extends="main2">
-		<put-attribute name="body" value="/board/boardList.jsp" />
-	</definition>
+	</definition>	
 
 <!-- 객실소개 -->   
 

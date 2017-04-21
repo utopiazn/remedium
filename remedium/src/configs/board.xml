@@ -18,7 +18,9 @@
 		</action>
 		
 		<action name="boardWrite" class="board.WriteAction">
-			<result type="tiles">boardWrite</result>
+			<result type="redirect-action">
+				<param name="actionName">boardList</param>
+			</result>
 		</action>
 		
 		<action name="boardModify" class="board.ModifyAction">

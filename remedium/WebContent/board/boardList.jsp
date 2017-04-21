@@ -61,8 +61,8 @@
 			</tr> 
 		</s:if>
 		
-		<tr algin="center">
-			<td colspan="7" ><s:property value="pagingHtml" escape="false"/></td>
+		<tr align="center">
+			<td colspan="5" ><s:property value="pagingHtml" escape="false"/></td>
 		</tr>
 		<tr align="right">
 			<td colspan="7" >

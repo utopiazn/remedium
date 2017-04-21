@@ -26,6 +26,7 @@
 	
 	<select id="selectAll" resultMap="boardRes" parameterClass="int">
 		<include refid="select-all" />
+		ORDER BY ref DESC, re_step ASC
 	</select>
 	
 	<select id="selectOne" resultMap="boardRes">

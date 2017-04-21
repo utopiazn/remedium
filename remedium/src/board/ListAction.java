@@ -40,10 +40,106 @@ public class ListAction extends ActionSupport {
 	
 	// 문의 사항 게시판 리스트 처리
 	public String execute() throws Exception {
+	
+		System.out.println("list");
+		list = sqlMapper.queryForList("board.selectAll"); // 멤버 회원 전부를 가져옴
 		
-		list = sqlMapper.queryForList("board.selectAll");
+		System.out.println("list ");
+	
+		totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
+		
+		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
+		pagingHtml = page.getPagingHtml().toString(); 	//페이지 HTML 생성
+		
+		int lastCount = totalCount;
+		
+		if(page.getEndCount() < totalCount) {
+			lastCount = page.getEndCount() + 1;
+		}
+		
+		list = list.subList(page.getStartCount(), lastCount);
 		
 		return SUCCESS;
+	}
+
+	public List<BoardBean> getList() {
+		return list;
+	}
+
+	public String getSearchKey() {
+		return searchKey;
+	}
+
+	public int getSearchNum() {
+		return searchNum;
+	}
+
+	public int getCurrentPage() {
+		return currentPage;
+	}
+
+	public int getTotalCount() {
+		return totalCount;
+	}
+
+	public int getBlockCount() {
+		return blockCount;
+	}
+
+	public int getBlockPage() {
+		return blockPage;
+	}
+
+	public String getPagingHtml() {
+		return pagingHtml;
+	}
+
+	public PagingAction getPage() {
+		return page;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setList(List<BoardBean> list) {
+		this.list = list;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+	}
+
+	public void setSearchNum(int searchNum) {
+		this.searchNum = searchNum;
+	}
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public void setBlockCount(int blockCount) {
+		this.blockCount = blockCount;
+	}
+
+	public void setBlockPage(int blockPage) {
+		this.blockPage = blockPage;
+	}
+
+	public void setPagingHtml(String pagingHtml) {
+		this.pagingHtml = pagingHtml;
+	}
+
+	public void setPage(PagingAction page) {
+		this.page = page;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
 	}
 	
 	
