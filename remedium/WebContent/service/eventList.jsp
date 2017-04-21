@@ -7,6 +7,9 @@
 <title>EVENT</title>
 </head>
 <body>
+      <s:iterator value="list" >
+      <s:property value="no" />
+      </s:iterator>
 <table width="800" border="0" cellspacing="0" cellpadding="2">
   		<tr>
   			<td align="center"><h2>EVENT＊PROMOTION</h2></td>
@@ -28,7 +31,7 @@
         		<td height="1" colspan="5"></td>
       	      </tr>
 
-	      <s:iterator value="list" status="stat">
+	      <s:iterator value="list" >
 
 		<s:url id="viewURL" action="viewAction" >
 			<s:param name="no">
@@ -41,7 +44,7 @@
 			
      	      <tr bgcolor="#FFFFFF"  align="center">
         		<td><s:property value="no" /></td>
-        		<td align="left"> &nbsp;<s:a href="%{viewURL}"><s:property value="subject" /></s:a></td>
+        		<td align="left"> &nbsp;<s:a href="%{viewURL}"><s:property value="name" /></s:a></td>
         		<td align="center"><s:property value="name" /></td>
 		<td align="center"><s:property value="regdate" /></td>
         		<td><s:property value="readhit" /></td>
