@@ -131,6 +131,7 @@
     <definition name="facilitiesList" extends="main2">
 		<put-attribute name="body" value="/service/facilitiesList.jsp" />
 	</definition>
+	
 <!-- 이벤트 -->
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />

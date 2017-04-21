@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
-<sqlMap>
+<sqlMap namespace="event">
 	<typeAlias alias="event" type="bean.EventBean"/>
 	
 	<resultMap id="eventRes" class="event">
@@ -12,4 +12,23 @@
 		<result property="lastdate" column="lastdate" />
 		<result property="image" column="image" />
 	</resultMap>
+	
+	<sql id = "select-all">
+	select * from event
+	</sql>
+	
+	<sql id = "where-no">
+	WHERE no = #no#
+	</sql>
+	
+	<select id = "selectAll" resultMap="eventRes" >
+	<include refid="select-all"/>
+	</select>
+	
+	<select id="selectOne" resultMap="eventRes">
+	<include refid="select-all"/>
+	<include refid="where-no"/>
+	</select>
+
+	
 </sqlMap>
