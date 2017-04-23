@@ -7,8 +7,18 @@
 </head>
 <body>
 	
-	<br/><br/>	${resultClass.name}	<br/><br/><br/>
-	
+	<table   border="0" cellspacing="0" cellpadding="0" >
+		<tr height="50%" >
+		
+			<td align="center">
+			<p><h3>
+				${resultClass.name}
+			</h3></p>
+			
+			</td >
+		
+		</tr>
+	</table>
 	
 
 

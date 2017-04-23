@@ -69,7 +69,7 @@
 			<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='boardWriteForm.action'">
 			</td>
 		</tr>
-		<tr>
+		
 	</table>
 	
 	<center>

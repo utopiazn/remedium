@@ -192,11 +192,11 @@
 		<put-attribute name="body" value="/main/main.jsp" />		
 	</definition> -->
 <!-- 예약리스트 -->	
-<definition name="myPageList" extends="main2">		
+	<definition name="myPageList" extends="main2">		
 		<put-attribute name="body" value="/mypage/pageList.jsp" />		
 	</definition>
 <!-- 캐쉬 충전 -->	
-<definition name="myPageCash" extends="main2">		
+	<definition name="myPageCash" extends="main2">		
 		<put-attribute name="body" value="/mypage/pageListCash.jsp" />		
 	</definition>
 
