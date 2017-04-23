@@ -33,7 +33,8 @@ public class InfoAction extends ActionSupport {
 	}
 	
 	
-	private int roomClass = -1;
+	private int roomClass = -1;  // 서브 메뉴 값.
+	private int roomClassNum=0;
 		
 	private List<RoomclassBean> list;  //객실 종류 리스트
 	
@@ -57,7 +58,7 @@ public class InfoAction extends ActionSupport {
 	public String roomClassCtrl() throws Exception {
 		
 		
-		System.out.println(roomClass);
+		//System.out.println(roomClass);
 		
 		//객실 클래스 리스트/////////////////////////////
 		execute();		
@@ -93,15 +94,27 @@ public class InfoAction extends ActionSupport {
 			
 			list = list.subList(page.getStartCount(), lastCount);
 			
-			System.out.println(list.size());
+			//System.out.println(list.size());
 		}
 		
 		
 		return SUCCESS;
 	}
 	
+	
+	
+	
 	//객실 클래스 개별 뷰
 	public String view() throws Exception {
+		
+
+		roomInfo(roomClass);
+			
+		return SUCCESS;
+	}
+	
+	public void roomInfo(int roomClass) throws Exception {
+		
 		
 
 		if( roomClass > 0 ){			
@@ -113,12 +126,13 @@ public class InfoAction extends ActionSupport {
 	
 			resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
 		}
-			
-		return SUCCESS;
+		
 	}
 	
 	//객실 클래스를 추가 폼
 	public String insForm() throws Exception {
+		
+	
 		
 		return SUCCESS;
 	}
@@ -126,11 +140,22 @@ public class InfoAction extends ActionSupport {
 	//객실 클래스를 추가
 	public String insert() throws Exception {
 		
+		
+	
+		
+		
+		
 		return SUCCESS;
 	}
 	
 	//객실 클래스를 수정 폼
 	public String updForm() throws Exception {
+		
+		execute();
+		
+		System.out.println(roomClassNum);
+		
+		roomInfo(roomClassNum);
 		
 		return SUCCESS;
 	}
@@ -229,6 +254,20 @@ public class InfoAction extends ActionSupport {
 
 	public void setPagingHtml(String pagingHtml) {
 		this.pagingHtml = pagingHtml;
+	}
+
+
+
+
+	public int getRoomClassNum() {
+		return roomClassNum;
+	}
+
+
+
+
+	public void setRoomClassNum(int roomClassNum) {
+		this.roomClassNum = roomClassNum;
 	}
 	
 	

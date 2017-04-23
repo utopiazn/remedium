@@ -18,6 +18,17 @@
 			<result type="tiles">roomInfoView</result>
 		</action>
 		
+		<!-- 객실 소개 수정폼 -->
+		<action name="roomInfoUpdateForm" class="room.InfoAction" method="updForm">
+			<result type="tiles">roomInfoUpdateForm</result>
+		</action>
+		
+		<!-- 객실 소개 추가폼 -->
+		<action name="roomInfoInsertForm" class="room.InfoAction" method="insForm">
+			<result type="tiles">roomInfoInsertForm</result>
+		</action>
+		
+		
 		
 	</package>
 </struts>
