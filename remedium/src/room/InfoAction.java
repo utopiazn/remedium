@@ -13,7 +13,13 @@ import com.opensymphony.xwork2.ActionSupport;
 import bean.MemberBean;
 import bean.RoomclassBean;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 public class InfoAction extends ActionSupport {
+	
+	Log log = LogFactory.getLog(InfoAction.class);
+
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
