@@ -12,14 +12,16 @@
 	${resultClass.name}<br>
 
 
-<!-- 	<form action="memberAdminList.action">
+	
+
+
+	<form action="roomInfoInsertForm.action">
 	
 	
 	
 	
 	</form>
 
- -->
 
 
 
