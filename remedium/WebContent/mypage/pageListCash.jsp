@@ -8,7 +8,7 @@
 <style type="text/css">
 .cash
 {
-float: center; margin-top: 200px; width: 1200px; height: 200px;  line-height: 200px;
+float: center; margin-top: 200px; width: 1200px; height: 150px;  line-height: 100px;
 font-family: '돋움', sans-serif; font-size: 20px; font-weight: bolder;
 }
 
@@ -22,21 +22,21 @@ font-family: '돋움', sans-serif; font-size: 20px; font-weight: bolder;
 
 <div class="cash">
 
-<input type="radio" name="cash" value="50000CASH"/> 50,000 CASH
-<input type="radio" name="cash" value="100000CASH"/> 100,000 CASH
-<input type="radio" name="cash" value="200000CASH"/> 200,000 CASH
-<input type="radio" name="cash" value="300000CASH"/> 300,000 CASH
-<input type="radio" name="cash" value="500000CASH"/> 500,000 CASH
+<form action="myPageCash" method="post" enctype="mutipart/form-data">
+<input type="radio" name="cash" value="50000"/> 50,000 CASH
+<input type="radio" name="cash" value="100000"/> 100,000 CASH
+<input type="radio" name="cash" value="200000"/> 200,000 CASH
+<input type="radio" name="cash" value="300000"/> 300,000 CASH
+<br>
+<input type="text" name="cash"/>
+<input type="submit" value="충전하기">
+<!-- <input type="radio" name="cash" value="500000CASH"/> 500,000 CASH
 <input type="radio" name="cash" value="100000CASH"/> 1000,000 CASH
-
+ -->
+ </form>
 </div>
 
-<div>
-<input type="text" height="20" >
 
-<input type="submit" value="충전 하기">
-
-</div>
 
 </body>
 </html>
