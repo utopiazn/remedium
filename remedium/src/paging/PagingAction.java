@@ -105,6 +105,8 @@ public class PagingAction {
 			this.currentPage = currentPage;
 			this.totalCount = totalCount;
 			
+			System.out.println("i"+searchKey);
+			System.out.println("url : " + url);
 			// 전체 페이지 수 = 전체 수 / 한 페이지 게시글 수
 			totalPage = (int)Math.ceil((double) totalCount / blockCount);
 			
@@ -136,15 +138,16 @@ public class PagingAction {
 			
 			if(currentPage > blockPage){
 				if(searchKey != ""){
-					pagingHtml.append("<a href="+url+"currentPage="+(startPage - 1) + "&searchKeyword="+searchKey+"&searchNum="+searchNum+">");
+					pagingHtml.append("<a href='"+url+"currentPage="+(startPage - 1) + "&searchKeyword="+searchKey+"&searchNum="+searchNum+">");
 				}
 				else{
-					pagingHtml.append("<a href="+url+"currentPage="+(startPage - 1) + ">");
+					pagingHtml.append("<a href='"+url+"currentPage="+(startPage - 1) + ">");
 				}
 				pagingHtml.append("이전");
 				pagingHtml.append("</a>");
 			}
 			pagingHtml.append("&nbsp|");
+			
 			
 			for(int i = startPage; i<=endPage; i++){
 				if( i > totalPage){
@@ -158,10 +161,15 @@ public class PagingAction {
 				}
 				else
 				{
-					pagingHtml.append("&nbsp;<a href="+url+"currentPage=");
+					pagingHtml.append("&nbsp;<a href='"+url+"currentPage=");
 					pagingHtml.append(i);
 					
+					System.out.println("i"+pagingHtml);
+				
+					
 					if(searchKey != "") {
+						
+						System.out.println("서취키"+searchKey);
 						pagingHtml.append("&searchKeyword="+searchKey);
 					}
 					
@@ -175,7 +183,7 @@ public class PagingAction {
 			
 			if(totalPage - startPage >= blockPage)
 			{
-				pagingHtml.append("&nbsp;<a href="+url+"currentPage=");
+				pagingHtml.append("&nbsp;<a href='"+url+"currentPage=");
 				pagingHtml.append((endPage+1));
 				if(searchKey != "")
 					pagingHtml.append("&searchKeyword="+searchKey);

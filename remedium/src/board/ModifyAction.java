@@ -31,6 +31,12 @@ public class ModifyAction extends ActionSupport {
 		paramClass = new BoardBean();
 		resultClass = new BoardBean();
 		
+		paramClass.setNo(getNo());
+		
+		System.out.println("ID : "+paramClass.getNo());
+		
+		resultClass = (BoardBean) sqlMapper.queryForObject("board.selectOne",paramClass);
+		
 		return SUCCESS;
 	}
 	
