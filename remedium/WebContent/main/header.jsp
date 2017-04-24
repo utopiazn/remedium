@@ -51,8 +51,6 @@
 <s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 <a href="myPageMain.action">마이페이지</a>
 &nbsp;
-<a href="loginModifyForm.action">회원수정</a>
-&nbsp;
 <a href="logout.action">로그아웃</a>
 &nbsp;
 </s:if>
@@ -105,9 +103,9 @@
 
 
 <input type="submit" value="검색">
-
+<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <input type="button" value="전체" name="search" onclick="location.href='roomAllList.action'">
-
+</s:if>
 
 
 </div>

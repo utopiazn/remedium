@@ -94,6 +94,11 @@
 		<put-attribute name="body" value="/admin/memberAdminList.jsp" />
 	</definition>
 	
+	<definition name="eventWriteForm" extends="main2" >
+		<put-attribute name="body" value="/admin/eventInsertForm.jsp" />
+	</definition>
+	
+	
 	
 <!-- Admin 관련 -->
 	
@@ -135,6 +140,10 @@
 <!-- 이벤트 -->
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />
+	</definition>
+	
+	<definition name="eventView" extends="main2">
+		<put-attribute name="body" value="/service/eventView.jsp" />
 	</definition>
 	
 <!-- FAQ -->
@@ -200,10 +209,15 @@
 	<definition name="myPageMain" extends="main2">		
 		<put-attribute name="body" value="/mypage/pageMain.jsp" />		
 	</definition>
-<!-- 회원 정보 수정 -->	
-<!-- <definition name="loginModifyForm" extends="main2">		
-		<put-attribute name="body" value="/main/main.jsp" />		
-	</definition> -->
+<!-- 정보 수정 -->	
+	<definition name="loginModifyForm" extends="main2">		
+		<put-attribute name="body" value="/login/modifyForm.jsp" />		
+	</definition>
+	
+	<definition name="loginModify" extends="main2">		
+		<put-attribute name="body" value="/mypage/pageMain.jsp" />		
+	</definition>
+	
 <!-- 회원탈퇴 -->	
 <!-- <definition name="loginDelete" extends="main2">		
 		<put-attribute name="body" value="/main/main.jsp" />		

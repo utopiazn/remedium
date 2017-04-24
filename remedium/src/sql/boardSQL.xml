@@ -39,5 +39,15 @@
 		VALUES (BOARD_NO_SEQ.nextval, #subject#, #memberID#, #name#, #content#, #ref#, #re_step#, sysdate, #type#)	 	 	
 	</insert>
 	
+	<update id="updateBoard" parameterClass="board">
+		update board set subject = #subject#, content = #content#
+		<include refid="where-boardNo" />
+	</update>
+	
+	<delete id="deleteBoard" parameterClass="board">
+		delete from board
+		<include refid="where-boardNo" />
+	</delete>
+	
 </sqlMap>
 

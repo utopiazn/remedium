@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 	  
 	function button_event(url){
-		var del = confirm("이 회원을 정말로 삭제 하시겠습니까??");
+		var del = confirm("이 글을 정말로 삭제 하시겠습니까??");
 		
 		if(del == true){
 			alert("삭제하였습니다.");			
@@ -51,10 +51,10 @@
 					<s:property value="%{resultClass.no}"/> 
 				</td>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>아이디
+					<font color="#FF0000">* </font>작성자
 				</td>
 				<td bgcolor="#FFFFFF" >
-					<s:property value="%{resultClass.memberID}"/>					 
+					<s:property value="%{resultClass.Name}"/>					 
 				</td>
 			</tr>
 			
@@ -83,7 +83,7 @@
 		<center>
 		
 		<input name="list" type="button" value="글목록" class="inputb" onClick="javascript:location.href='boardList.action'">
-		<s:if test ="resultClass.memberID == ${session.memberId } ">
+		<s:if test ="resultClass.Name == ${session.memberName } ">
     	<input name="modify" type="button" value="글수정" class="inputb" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
 		<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />')">
 		</s:if>
