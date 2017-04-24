@@ -1,24 +1,31 @@
 package room;
 
 import java.sql.Date;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.RoomReservationBean;
+import bean.MemberBean;
 
-public class ReservationAction extends ActionSupport{
+public class ReservationAction extends ActionSupport implements SessionAware {
 	
 	private RoomReservationBean paramClass;
+	private MemberBean paramClassM;
 	
 	private int num;
 	private int no;
 	private String firstDate;
 	private String lastDate;
 	private int room_capacity;
-	private int price;
+	private int cash;
 	private int money;
+	private int price;
 	private String memberID;
 	private int people;
+	private Map session;
 	
 	@Override
 	//객실 예약 처리
@@ -35,7 +42,6 @@ public class ReservationAction extends ActionSupport{
 		paramClass.setMoney(money);
 		paramClass.setMemberID(memberID);
 		
-		
 		System.out.println("---------------------------");
 		System.out.println("no : "+getNo()+" / paramClass.no : "+paramClass.getNo());
 		System.out.println("firstDate : "+getFirstDate()+" / paramClass.firstDate : "+paramClass.getFirstDate());
@@ -44,9 +50,23 @@ public class ReservationAction extends ActionSupport{
 		System.out.println("memberID : "+getMemberID()+" / paramClass.memberID : "+paramClass.getMemberID());
 		System.out.println("---------------------------");
 		
+		
+		paramClassM = new MemberBean();
+		paramClassM.setCash(getCash() - getMoney());
+		paramClassM.setMemberID(memberID);
+
+		System.out.println("---------------------------");
+		System.out.println("객실요금: "+getMoney()+", 보유Cash: "+getCash()
+							+", \n결제후 Cash: "+paramClassM.getCash());
+		System.out.println("---------------------------");
+
+		
+		
 		util.ProjectUtil.sqlMapper.update("roomReservationSQL.insertRes", paramClass);
 		
-		/*util.ProjectUtil.sqlMapper.update("member.", paramClassM);*/
+		util.ProjectUtil.sqlMapper.update("member.pay", paramClassM);
+		
+		session.put("cash", paramClassM.getCash());
 		
 		return SUCCESS;
 	}
@@ -73,12 +93,12 @@ public class ReservationAction extends ActionSupport{
 		this.room_capacity = room_capacity;
 	}
 
-	public int getPrice() {
-		return price;
+	public int getCash() {
+		return cash;
 	}
 
-	public void setPrice(int price) {
-		this.price = price;
+	public void setCash(int cash) {
+		this.cash = cash;
 	}
 
 	public int getMoney() {
@@ -87,6 +107,14 @@ public class ReservationAction extends ActionSupport{
 
 	public void setMoney(int money) {
 		this.money = money;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 	public int getNo() {
@@ -135,6 +163,14 @@ public class ReservationAction extends ActionSupport{
 
 	public void setPeople(int people) {
 		this.people = people;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
 	}
 	
 	

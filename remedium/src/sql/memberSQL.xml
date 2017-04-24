@@ -113,6 +113,11 @@
 	<update id="updateCash" parameterClass="member">
 	 update member set cash = cash + #cash#  where memberID = #memberID#
 	</update>
+	
+	<!-- 캐쉬 결제 -->
+	<update id="pay" parameterClass="member">
+	 update member set cash = #cash#  where memberID = #memberID#
+	</update>
 
 
 </sqlMap>

@@ -12,9 +12,6 @@
 			var m = parseInt(userinput.money.value);
 			var c = parseInt(userinput.cash.value);
 			
-			
-			alert(m + c);
-			
 			if(m > c){
 				alert("현재 충전하신 잔액이 부족합니다.");
 		 		return false;
@@ -32,7 +29,7 @@
 
 <form action="roomReservation.action" method="post" enctype="multipart/form-data" onsubmit="return checkCash(this);">
 	<table width=100% border="1">
-			<img height="400" alt="호텔로고" src="/remedium/image/roomImage/file_${num }.jpg" >
+			<img height="400" alt="객실사진" src="/remedium/image/roomImage/file_${num }.jpg" >
 			<tr>
 				<td colspan=2>객실번호 : ${num }호</td><td colspan=2>객실정원 : ${room_capacity }명</td>
 			</tr>
@@ -43,7 +40,7 @@
 				<td colspan=2>예약금액</td><td colspan=2>${price }원</td>
 			</tr>
 			<tr>
-				<td colspan=2>현재 Cash</td><td colspan=2>${session.cash}원</td>
+				<td colspan=2>충전잔액</td><td colspan=2>${session.cash}원</td>
 			</tr>
 			
 	</table>
