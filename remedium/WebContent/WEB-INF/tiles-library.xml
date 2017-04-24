@@ -94,6 +94,11 @@
 		<put-attribute name="body" value="/admin/memberAdminList.jsp" />
 	</definition>
 	
+	<definition name="eventWriteForm" extends="main2" >
+		<put-attribute name="body" value="/admin/eventInsertForm.jsp" />
+	</definition>
+	
+	
 	
 <!-- Admin 관련 -->
 	
@@ -135,6 +140,10 @@
 <!-- 이벤트 -->
     <definition name="eventList" extends="main2">
 		<put-attribute name="body" value="/service/eventList.jsp" />
+	</definition>
+	
+	<definition name="eventView" extends="main2">
+		<put-attribute name="body" value="/service/eventView.jsp" />
 	</definition>
 	
 <!-- FAQ -->

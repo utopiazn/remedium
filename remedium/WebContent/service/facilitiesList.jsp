@@ -7,7 +7,7 @@
 <title></title>
 </head>
 <body>
-<table width="800" border="0" cellspacing="0" cellpadding="2">
+<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
   		<tr>
   			<td align="center"><h2>편의 시설</h2></td>
   		</tr>
@@ -16,15 +16,15 @@
   		</tr>
   	</table>
 
-	<table width="800" border="0" cellspacing="0" cellpadding="2">
-	      <tr align="center" bgcolor="#C0C0C0">
+	<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
+	      <tr align="center" bgcolor="#F3F3F3">
       		<td width="50"><strong>번호</strong></td>
-		<td width="450"><strong>제목</strong></td>
+		<td width="350"><strong>제목</strong></td>
         		<td width="80"><strong>날짜</strong></td>
 		<td width="50"><strong>조회</strong></td>
       	      </tr>
       	      <tr bgcolor="#777777">
-        		<td height="1" colspan="5"></td>
+        		<td height="1" colspan="4"></td>
       	      </tr>
 
 	      <s:iterator value="list" >
@@ -46,7 +46,7 @@
         		<td><s:property value="readhit" /></td>
       	      </tr>
       	      <tr bgcolor="#777777">
-        		<td height="1" colspan="5"></td>
+        		<td height="1" colspan="4"></td>
       	      </tr>
       
 	      </s:iterator>
@@ -54,13 +54,13 @@
 	      <s:if test="list.size() <= 0">
 				
 	      <tr bgcolor="#777777">
-      		<td height="1" colspan="5"></td>
+      		<td height="1" colspan="4"></td>
     	      </tr>
     		
 	      </s:if>
 			
 	      <tr align="center">
-    		<td colspan="5"><s:property value="pagingHtml"  escape="false" /></td>
+    		<td colspan="4"><s:property value="pagingHtml"  escape="false" /></td>
     	      </tr>
 	</table>
 </body>

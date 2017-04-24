@@ -31,5 +31,16 @@
 				<param name="actionName">memberAdminList</param>
 			</result>
 		</action>
+		
+		<!-- 어드민 이벤트 추가 폼 -->	
+		<action name="eventWriteForm" class="admin.EventAction" method="updForm">
+			<result type="tiles">eventWriteForm</result>
+		</action>
+		
+		<action name="eventWrite" class="admin.EventAction">
+			<result type="redirect-action">
+				<param name="actionName">eventList</param>
+			</result>
+		</action>
 	</package>
 </struts>
