@@ -22,4 +22,9 @@
 		MONEY, MEMBERID) VALUES (ROOM_RESERVATION_NO_SEQ.NEXTVAL, #no#, #firstDate#,
 		#lastDate#, #money#, #memberID#)
 	</insert>
+	
+	<select id="reslist" resultMap="roomReservationRes" parameterClass="roomReservation">
+		<include refid="select-all"/>
+		where memberID = #memberID#
+	</select>
 </sqlMap>

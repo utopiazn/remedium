@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+   <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 
@@ -57,11 +57,11 @@ function open_win_noresizable(url, name) {
  <s:if test="${ session.userAdmin != '1'}">	<!-- 관리자일 경우 보이지 않음 -->
  <div class="mainBox">	
  	<div id="reslist">
- 	<img alt="나의 예약 페이지" src="/remedium/image/reslist.png" width="100%" height="100%"  onclick="location.href='myPageList.action'" > 
+ 	<img alt="나의 예약 페이지" src="/remedium/image/reslist.png" width="100%" height="100%"  onclick="location.href='myPageList.action?memberID=${session.memberId}'" > 
  	</div>
   
  	<div id="cash">
-  	<img alt="캐쉬 충전" src="/remedium/image/cash.png" width="100%" height="100%"  onclick="location.href='myPageCash.action'" > 
+  	<img alt="캐쉬 충전" src="/remedium/image/cash.png" width="100%" height="100%"  onclick="location.href='myPageCashForm.action'" > 
 	</div>
 	
 </div>

@@ -109,6 +109,10 @@
 		select * from member where phone like #phone#
 	</select>
 	
+	<!-- 캐쉬 충전 -->
+	<update id="updateCash" parameterClass="member">
+	 update member set cash = cash + #cash#  where memberID = #memberID#
+	</update>
 
 
 </sqlMap>

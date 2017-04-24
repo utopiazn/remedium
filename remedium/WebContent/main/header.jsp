@@ -84,7 +84,7 @@
     <a href="boardList.action">문의사항</a>
 </div>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
-<div id="res">D
+<div id="res">
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/>
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
 숙박 날짜:
