@@ -95,7 +95,14 @@
 					<font color="#FF0000">* </font>성 별
 				</td>
 				<td width="50" bgcolor="#FFFFFF">
-					<s:property value="%{resultClass.gender}"/>					
+					
+					<s:if test='resultClass.gender.equals("M")'>
+						남자
+					</s:if>
+					<s:else>
+						여자
+					</s:else>	
+								
 				</td>
 					<td width="100" bgcolor="#F4F4F4">
 					<font color="#FF0000">* </font>사용 여부
