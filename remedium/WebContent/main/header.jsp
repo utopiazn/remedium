@@ -83,7 +83,7 @@
 </div>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
-<c:set var="cDate" value="<%=new ProjectUtil()%>"/>
+<c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
 숙박 날짜:
 <input type="date" name="firstDate">

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -39,14 +40,25 @@
 					<s:property value="currentPage"/>
 				</s:param>
 			</s:url>
-			<tr bgcolor="#FFFFFF" align="center"> 
+			<tr bgcolor="#FFFFFF" align="center">
 				<td><s:property value="no"/></td>
-				<td align="center"> 
+				<td align="left"> 
+				<s:if test="re_step != 0">
+					<c:forEach var = "i" begin = "${re_step}" end = "0">&nbsp;</c:forEach>→
+				</s:if>	
 				<s:a href="%{viewURL}"><s:property value="subject"/></s:a></td>
 				<td align="center">
 				<s:a href="%{viewURL}"><s:property value="Name"/></s:a></td>
 				<td align="center"><s:property value="regdate"/></td>
-				<td align="center"><s:property value="type"/></td>
+				<td align="center"><%-- <s:property value="type"/> --%>
+					<s:if test='type.equals("0")'>
+						미답변
+					</s:if>
+					<s:else>
+						답변완료
+					</s:else>	
+				
+				</td>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="7"></td>
@@ -66,8 +78,8 @@
 		</tr>
 		<tr align="right">
 			<td colspan="7" >
-			<s:if test="${session.memberId } != null">
-			<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='boardWriteForm.action'">
+			<s:if test='${session.memberId } != "" '>
+				<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='boardWriteForm.action'">
 			</s:if>
 			</td>
 		</tr>

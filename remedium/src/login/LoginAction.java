@@ -65,6 +65,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			//session.put("memberPasswd", resultClass.getMemberPassword());
 			session.put("userAdmin", resultClass.getUserAdmin());
 			session.put("cash", resultClass.getCash());
+			
 			return SUCCESS;
 		}
 		

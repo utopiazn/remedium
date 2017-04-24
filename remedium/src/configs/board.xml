@@ -23,6 +23,16 @@
 			</result>
 		</action>
 		
+		<action name="boardReplyForm" class="board.WriteAction" method="reply">
+			<result type="tiles">boardWriteForm</result>
+		</action>
+		
+		<action name="boardReply" class="board.WriteAction" >
+			<result type="redirect-action">
+				<param name="actionName">boardList</param>
+			</result>
+		</action>
+	
 		<action name="boardModifyForm" class="board.ModifyAction" method="form">
 			<result type="tiles">boardWriteForm</result>
 		</action>

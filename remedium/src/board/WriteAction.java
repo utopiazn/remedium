@@ -30,6 +30,8 @@ public class WriteAction extends ActionSupport implements SessionAware{
 	private String memberID;
 	private String name;
 	
+	private boolean reply = false;
+	
 	BoardBean resultClass;
 	BoardBean paramClass;
 	
@@ -72,34 +74,56 @@ public class WriteAction extends ActionSupport implements SessionAware{
 		paramClass.setMemberID(result.getMemberID());
 		paramClass.setName(result.getMemberName()); 
 		
-		System.out.println(result.getMemberID());
-		System.out.println(result.getMemberName());
-		
-		
+	
+		System.out.println("ref : "+ref);
 		if(ref==0){
 			paramClass.setRe_step(0);
+			paramClass.setType("0");
 		}
 		
 		else {
-			paramClass.setRef(getRef());		
-			paramClass.setRe_step(getRe_step() + 1);	
+			paramClass.setRef(getRef());
+			paramClass.setRe_step(getRe_step() + 1);
+			paramClass.setRef(getRef());
 			paramClass.setType("1");
-		}
+			
+			sqlMapper.update("board.updateType",paramClass);
 		
+		}
+		System.out.println("type: "+getType());
 		paramClass.setNo(getNo());
 		paramClass.setSubject(getSubject());
-		paramClass.setContent(getContent());
-		paramClass.setRef(getRef());
-		paramClass.setRe_step(getRe_step());			
-		paramClass.setType("0");
+		paramClass.setContent(getContent());		
+	
 		
-		sqlMapper.insert("board.insertBoard",paramClass);
+		if(ref==0){
+			sqlMapper.insert("board.insertBoard",paramClass);
+		}
+		else {
+			sqlMapper.insert("board.insertReplyBoard",paramClass);
+		}
 		
 		resultClass = (BoardBean) paramClass;
 		
 		
 		
 		return SUCCESS;
+		
+	}
+	
+	public String reply() throws Exception {
+		
+		reply = true;
+		
+		resultClass = new BoardBean();
+		
+		resultClass = (BoardBean) sqlMapper.queryForObject("board.selectOne",getNo());
+		resultClass.setSubject("[답변] " + resultClass.getSubject());
+		resultClass.setContent("");
+		resultClass.setName("");
+		
+		return SUCCESS;
+		
 		
 	}
 
@@ -205,6 +229,14 @@ public class WriteAction extends ActionSupport implements SessionAware{
 
 	public void setParam(MemberBean param) {
 		this.param = param;
+	}
+
+	public boolean isReply() {
+		return reply;
+	}
+
+	public void setReply(boolean reply) {
+		this.reply = reply;
 	}
 	
 	

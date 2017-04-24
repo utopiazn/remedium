@@ -35,13 +35,24 @@
 	</select>
 	
 	<insert id="insertBoard" parameterClass="board">
+		   insert into board (no, subject, memberID, name, content, type, re_step, regdate, ref)
+		VALUES (BOARD_NO_SEQ.nextval, #subject#, #memberID#, #name#, #content#, #type#, #re_step#, sysdate, BOARD_NO_SEQ.currval)	 	 	
+	</insert>
+	
+	<insert id="insertReplyBoard" parameterClass="board">
 		   insert into board (no, subject, memberID, name, content, ref, re_step, regdate, type)
 		VALUES (BOARD_NO_SEQ.nextval, #subject#, #memberID#, #name#, #content#, #ref#, #re_step#, sysdate, #type#)	 	 	
 	</insert>
 	
+	
 	<update id="updateBoard" parameterClass="board">
 		update board set subject = #subject#, content = #content#
 		<include refid="where-boardNo" />
+	</update>
+	
+	<update id="updateType" parameterClass="board">
+		update board set type = #type# where ref = #ref#
+
 	</update>
 	
 	<delete id="deleteBoard" parameterClass="board">

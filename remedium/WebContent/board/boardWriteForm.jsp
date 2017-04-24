@@ -45,10 +45,16 @@
 		<form action="boardWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 	</s:if>
 	
+	<s:elseif test="reply">
+		<form action="boardReply.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+			<s:hidden name="ref" value="%{resultClass.ref}" />
+			<s:hidden name="re_step" value="%{resultClass.re_step}" />
+	</s:elseif>
+	
 	<s:else>
 		<form action="boardModify.action" method="post" enctype="multipart/form-data">
 			<s:hidden name="no" value="%{resultClass.no}" />
-			<s:hidden name="no" value="%{resultClass.memberName}" />
+			<s:hidden name="memberName" value="%{resultClass.memberName}" />
 			<s:hidden name="currentPage" value="%{currentPage}" />
 	</s:else> 
 	
