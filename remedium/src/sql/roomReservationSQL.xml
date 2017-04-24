@@ -11,6 +11,7 @@
 		<result property="lastDate" column="lastDate" />
 		<result property="money" column="money" />
 		<result property="memberID" column="memberID" />
+		<result property="reservationCheck" column="reservationCheck" />
 	</resultMap>
 	
 	<sql id="select-all">SELECT * FROM ROOM_RESERVATION</sql>
