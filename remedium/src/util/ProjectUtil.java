@@ -4,15 +4,12 @@ import java.io.IOException;
 import java.io.Reader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
-
-import org.apache.struts2.interceptor.SessionAware;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
-public class ProjectUtil implements SessionAware {
+public class ProjectUtil{
 	
 	
 	//sql문 연동을 위한 구문
@@ -32,22 +29,6 @@ public class ProjectUtil implements SessionAware {
 		}catch(IOException e){}
 	}
 	
-	
-	
-	//공용으로 java에서 사용할 session객체 설정 ( 미완성 )
-	public static Map session;
-	
-	@Override
-	public void setSession(Map session) {
-		this.session = session;
-	}
-	
-	
-	
-	
-	
-	
-
 	// 현재 날짜 : jsp에서 쓰기워한 로직 클래스 객체 생성후 currentDate변수를 그냥 가져다 쓰자.
 	public String currentDate = null; 
 	public ProjectUtil(){
@@ -78,7 +59,8 @@ public class ProjectUtil implements SessionAware {
 		//System.out.println("프로젝트 전까지의 경로: "+sc);
 		
 		return sc;
-	} 
+	}
+	
 	
 	
 	

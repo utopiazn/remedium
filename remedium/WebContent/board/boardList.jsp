@@ -21,7 +21,7 @@
 	    <tr align="center" bgcolor="#F3F3F3">
       		<td width="50"><strong>번 호</strong></td>
 			<td width="100"><strong>제 목</strong></td>
-			<td width="50"><strong>아이디</strong></td>
+			<td width="50"><strong>작성자</strong></td>
         	<td width="50"><strong>날 짜</strong></td>
         	<td width="50"><strong>답변 상태</strong></td>
 			
@@ -44,7 +44,7 @@
 				<td align="center"> 
 				<s:a href="%{viewURL}"><s:property value="subject"/></s:a></td>
 				<td align="center">
-				<s:a href="%{viewURL}"><s:property value="memberID"/></s:a></td>
+				<s:a href="%{viewURL}"><s:property value="Name"/></s:a></td>
 				<td align="center"><s:property value="regdate"/></td>
 				<td align="center"><s:property value="type"/></td>
 			</tr>
@@ -66,7 +66,9 @@
 		</tr>
 		<tr align="right">
 			<td colspan="7" >
+			<s:if test="${session.memberId } != null">
 			<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='boardWriteForm.action'">
+			</s:if>
 			</td>
 		</tr>
 		

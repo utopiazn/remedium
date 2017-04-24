@@ -13,11 +13,11 @@
 		<result property="image" column="image" />
 	</resultMap>
 	
-	<sql id = "select-all">
+	<sql id ="select-all">
 	select * from event
 	</sql>
 	
-	<sql id = "where-no">
+	<sql id ="where-no">
 	WHERE no = #no#
 	</sql>
 	

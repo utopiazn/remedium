@@ -8,5 +8,10 @@
 		<action name="eventList" class="service.EventListAction">
 			<result type="tiles">eventList</result>
 		</action>
+		
+		<action name="eventView" class="service.EventViewAction">
+			<result type="tiles">eventView</result>
+		</action>
+		
 	</package>
 </struts>
