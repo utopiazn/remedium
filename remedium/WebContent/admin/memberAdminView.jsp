@@ -95,11 +95,12 @@
 					<font color="#FF0000">* </font>성 별
 				</td>
 				<td width="50" bgcolor="#FFFFFF">
-					<s:if test="resultClass.gender == W">
-					<s:property value="여자"/>		
+					
+					<s:if test='resultClass.gender.equals("M")'>
+						남자
 					</s:if>
 					<s:else>
-					<s:property value="남자"/>
+						여자
 					</s:else>	
 								
 				</td>
