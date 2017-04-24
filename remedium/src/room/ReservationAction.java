@@ -46,6 +46,8 @@ public class ReservationAction extends ActionSupport{
 		
 		util.ProjectUtil.sqlMapper.update("roomReservationSQL.insertRes", paramClass);
 		
+		/*util.ProjectUtil.sqlMapper.update("member.", paramClassM);*/
+		
 		return SUCCESS;
 	}
 
