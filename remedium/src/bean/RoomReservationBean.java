@@ -10,6 +10,7 @@ public class RoomReservationBean {
 	Date lastDate;		// 퇴실날짜
 	int money;			// 예약금
 	String memberID;	// 회원ID
+	int people;         // 검색시 필요 인원정보
 	
 	public int getReservationNo() {
 		return reservationNo;
@@ -46,6 +47,12 @@ public class RoomReservationBean {
 	}
 	public void setMemberID(String memberID) {
 		this.memberID = memberID;
+	}
+	public int getPeople() {
+		return people;
+	}
+	public void setPeople(int people) {
+		this.people = people;
 	}
 	
 	
