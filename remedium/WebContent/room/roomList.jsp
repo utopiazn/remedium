@@ -25,14 +25,14 @@
 
 	<s:if test="list.size() <= 0">
 		<tr>
-			<td colspan="5" align="center">등록된 객실이 없습니다</td>
+			<td colspan="5" align="center">예약가능한 객실이 없습니다</td>
 		</tr>
 	</s:if>
 	<s:else>
 		<s:iterator value="list">
 		<tr>
-			<td align="right"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>"><s:property value="no"/>호</a></td>
-			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>"><s:property value="name"/></a></td>
+			<td align="right"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>"><s:property value="no"/>호</a></td>
+			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>"><s:property value="name"/></a></td>
 			<td align="center">
 			<s:if test="%{room_class==1}">
 			기본 방
