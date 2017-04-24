@@ -17,9 +17,9 @@ public class LoginModifyAction extends ActionSupport{
 	
 	private String memberID;
 	
-	private String password; 
-	private String memberName;  //회원이름
-	private String gender; 		//회원 성별
+	private String memberPassword; //회원 비밀번호
+	private String memberName;    //회원이름
+	private String gender; 		 //회원 성별
 	private String birthday; 	//회원 생년월일
 	private String phone; 		//회원 전화번호
 	private String email;		//회원 이메일
@@ -33,7 +33,7 @@ public class LoginModifyAction extends ActionSupport{
 	
 	
 	MemberBean paramClass;
-	MemberBean resulteClass;
+	MemberBean resultClass;
 	
 	
 	
@@ -47,17 +47,53 @@ public class LoginModifyAction extends ActionSupport{
 	public String modifyForm() throws Exception {
 		
 		paramClass = new MemberBean();
-		resulteClass = new MemberBean();
+		resultClass = new MemberBean();
 		
 		paramClass.setMemberID(getMemberID());
 		
-		resulteClass = (MemberBean) sqlMapper.queryForObject("member.selectOne",paramClass);
+		resultClass = (MemberBean) sqlMapper.queryForObject("member.selectOne",paramClass);
 		
 		return SUCCESS;
 	}
 	
 	//마이페이지 회원 수정 처리
 	public String execute() throws Exception {
+		
+		paramClass = new MemberBean();
+		
+		System.out.println("111"+getMemberName());
+		
+		paramClass.setMemberID(getMemberID());
+		paramClass.setMemberPassword(getMemberPassword());
+		paramClass.setMemberName(getMemberName());
+		paramClass.setGender(getGender());
+		paramClass.setBirthday(getBirthday());
+		paramClass.setPhone(getPhone());
+		paramClass.setEmail(getEmail());
+		
+		if(!zipcode1.equals("")){
+			zipcode = zipcode1;
+		}
+		
+		if(!addr11.equals("")){
+			addr1 = addr11;
+		}
+		
+		if(!addr22.equals("")){
+			addr2 = addr22;
+		}
+		
+		paramClass.setZipcode(getZipcode()); //회원 우편번호
+		paramClass.setAddr1(getAddr1()); 	 // 회원 주소
+		paramClass.setAddr2(getAddr2());
+		
+		System.out.println("11111");
+		sqlMapper.update("member.updateMember", paramClass);
+		
+		/*resultClass = (MemberBean) paramClass;*/
+		
+		
+		
 		return SUCCESS;
 	}
 
@@ -133,14 +169,6 @@ public class LoginModifyAction extends ActionSupport{
 		this.memberID = memberID;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getZipcode1() {
 		return zipcode1;
 	}
@@ -173,11 +201,19 @@ public class LoginModifyAction extends ActionSupport{
 		this.paramClass = paramClass;
 	}
 
-	public MemberBean getResulteClass() {
-		return resulteClass;
+	public MemberBean getResultClass() {
+		return resultClass;
 	}
 
-	public void setResulteClass(MemberBean resulteClass) {
-		this.resulteClass = resulteClass;
+	public void setResultClass(MemberBean resultClass) {
+		this.resultClass = resultClass;
+	}
+
+	public String getMemberPassword() {
+		return memberPassword;
+	}
+
+	public void setMemberPassword(String memberPassword) {
+		this.memberPassword = memberPassword;
 	}
 }
