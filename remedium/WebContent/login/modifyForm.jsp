@@ -46,7 +46,6 @@
 </head>
 <body>
 
-${resultClass.memberID}
 
 	
 <table width="600" border="0" cellspacing="0" cellpadding="2">
