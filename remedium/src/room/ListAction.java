@@ -11,6 +11,7 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.RoomBean;
+import bean.RoomReservationBean;
 
 public class ListAction extends ActionSupport {
 	
@@ -18,12 +19,11 @@ public class ListAction extends ActionSupport {
 	public static SqlMapClient sqlMapper;
 	
 	private List<RoomBean> list;
-	private RoomBean paramClass;
+	private RoomReservationBean paramClass;
 	
 	private String firstDate;
 	private String lastDate;
 	private int people;
-	
 	
 	
 	public ListAction() throws IOException {
@@ -37,10 +37,12 @@ public class ListAction extends ActionSupport {
 	public String execute() throws Exception {
 		
 		list = new ArrayList<RoomBean>();
-		paramClass = new RoomBean();
-		paramClass.setRoom_capacity(getPeople());
+		paramClass = new RoomReservationBean();
+		paramClass.setFirstDate(java.sql.Date.valueOf(firstDate));
+		paramClass.setLastDate(java.sql.Date.valueOf(lastDate));
+		paramClass.setPeople(people);
 		
-		if(paramClass.getRoom_capacity()==0){
+		if(people==0){
 			list = sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
 		}else{
 			list = sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
@@ -91,11 +93,11 @@ public class ListAction extends ActionSupport {
 		this.people = people;
 	}
 
-	public RoomBean getParamClass() {
+	public RoomReservationBean getParamClass() {
 		return paramClass;
 	}
 
-	public void setParamClass(RoomBean paramClass) {
+	public void setParamClass(RoomReservationBean paramClass) {
 		this.paramClass = paramClass;
 	}
 	
