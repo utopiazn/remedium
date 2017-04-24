@@ -196,10 +196,10 @@
 	<definition name="myPageMain" extends="main2">		
 		<put-attribute name="body" value="/mypage/pageMain.jsp" />		
 	</definition>
-<!-- 회원 정보 수정 -->	
-<!-- <definition name="loginModifyForm" extends="main2">		
-		<put-attribute name="body" value="/main/main.jsp" />		
-	</definition> -->
+<!-- 캐쉬 충전 -->	
+	<definition name="loginModifyForm" extends="main2">		
+		<put-attribute name="body" value="/login/modifyForm.jsp" />		
+	</definition>
 <!-- 회원탈퇴 -->	
 <!-- <definition name="loginDelete" extends="main2">		
 		<put-attribute name="body" value="/main/main.jsp" />		

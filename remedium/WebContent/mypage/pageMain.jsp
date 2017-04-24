@@ -44,8 +44,12 @@ function open_win_noresizable(url, name) {
 
 <div class="mainBox">
 	<div id="modify">
- 	<img alt="회원정보 수정" src="/remedium/image/modify.png" width="100%" height="100%"  onclick="LoginModifyForm.action'" > 
-  
+  	<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
+	<img alt="회원정보 수정" src="/remedium/image/modify2.png" width="100%" height="100%"  onclick="location.href='memberAdminList.action'" > 
+	</s:if>
+	<s:else>
+ 	<img alt="회원정보 수정" src="/remedium/image/modify.png" width="100%" height="100%"  onclick="location.href='loginModifyForm.action'" > 
+	</s:else>
  	</div>
   
  	<div id="out">
@@ -68,4 +72,3 @@ function open_win_noresizable(url, name) {
 </s:if>
 
 </body>
-</html>
