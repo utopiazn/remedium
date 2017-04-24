@@ -32,14 +32,14 @@
 
 	      <s:iterator value="list" status="stat">
 			<s:url id="viewURL" action="boardView">
-				<s:param name="no">
+				<s:param name="no"> 
 					<s:property value="no"/>
 				</s:param>
 				<s:param name="currentPage">
 					<s:property value="currentPage"/>
 				</s:param>
 			</s:url>
-			<tr bgcolor="#FFFFFF" align="center">
+			<tr bgcolor="#FFFFFF" align="center"> 
 				<td><s:property value="no"/></td>
 				<td align="center"> 
 				<s:a href="%{viewURL}"><s:property value="subject"/></s:a></td>
