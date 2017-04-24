@@ -28,20 +28,20 @@
 <body>
 
 	
-	<table width="600" border="0" cellspacing="0" cellpadding="2">
+	<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
 	
 		<tr>
 			<td align="center">
-				<h2>회원 상세 보기</h2>
+				<h2>글 상세 보기</h2>
 			</td>
 		</tr>	
 		
 	
 	</table>
 
-
-	<!-- 로그인폼으로 이동 -->
-		<table width="600" border="1" cellspacing="3" cellpadding="3">	
+ 
+	
+		<table width="600" border="1" cellspacing="3" cellpadding="3" align="center">	
 			<tr>
 				<td width="50" bgcolor="#F4F4F4" >
 					<font color="#FF0000">* </font>글번호 
@@ -58,109 +58,35 @@
 				</td>
 			</tr>
 			
-			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>
+			<tr >
+				<td width="100" bgcolor="#F4F4F4" >
+					<font color="#FF0000">* </font>제 목 
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF" >
-					<s:property value="%{resultClass.memberPassword}"/>					 
+				<td width="50" bgcolor="#FFFFFF" colspan="3" >
+					<s:property value="%{resultClass.subject}"/>					 
 				</td>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>탈퇴일
-				</td>
-				<td bgcolor="#FFFFFF" >
-					<s:property value="%{resultClass.deldate}"/>					 
-				</td>
-			</tr>
+			</tr>		
+		
 			
 			<tr>
 				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>이 름
+					<font color="#FF0000">* </font>내 용
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF" >
-					<s:property value="%{resultClass.memberName}"/>					
-				</td>
-					<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>보유 Cash
-				</td>
-				<td bgcolor="#FFFFFF" >
-					<s:property value="%{resultClass.cash}"/>					 
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>성 별
-				</td>
-				<td width="50" bgcolor="#FFFFFF">
-					<s:property value="%{resultClass.gender}"/>					
-				</td>
-					<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>사용 여부
-				</td>
-				<td bgcolor="#FFFFFF" >
-					<s:property value="%{resultClass.userCheck}"/>					 
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>생년 월일
-				</td>
-			
-				<td width="50" bgcolor="#FFFFFF" colspan="3">
-					<s:property value="%{resultClass.birthday}" />				
-				</td>
-			</tr>
-			
-			
-			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>전화 번호
-				</td>
-			
-				<td width="50" bgcolor="#FFFFFF" colspan="3">
-					<s:property  value="%{resultClass.phone}" /> 			
-				</td>
-			</tr>
-			
-			
-			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>이메일
-				</td>
-			
-				<td width="50" bgcolor="#FFFFFF" colspan="3">
-					<s:property value="%{resultClass.email}"/> 					
-				</td>
-			</tr>
-			
-			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>우편 번호
-				</td>
-				<td width="50" bgcolor="#FFFFFF" colspan="3">
-				<s:property value="%{resultClass.zipcode}" /> 	
-				</td>
-			</tr> 
-			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>주 소
-				</td>
-				<td width="200"bgcolor="#FFFFFF">
-				<s:property value="%{resultClass.addr1}" /> 
-				</td>
-				<td colspan="2">
-				<s:property value="%{resultClass.addr2}" /> 
+				<td width="50" height="300" bgcolor="#FFFFFF" colspan="3">
+					<s:property value="%{resultClass.content}" />				
 				</td>
 			</tr>
 		
-		</table>
-		<input name="list" type="button" value="회원 목록" class="inputb" onClick="javascript:location.href='memberAdminList.action'">
-    	<input name="modify" type="button" value="회원 수정" class="inputb" onClick="javascript:location.href='memberAdminModifyForm.action?memberID=<s:property value="resultClass.memberID" />&currentPage=<s:property value="currentPage" />'"> 
-		<input type="button" value="회원 삭제" class="inputb" onClick="javascript:button_event('memberAdminDelete.action?memberID=<s:property value="resultClass.memberID" />')">
-
+		</table><br/>
+		<center>
+		
+		<input name="list" type="button" value="글목록" class="inputb" onClick="javascript:location.href='boardList.action'">
+		<s:if test ="resultClass.memberID == ${session.memberId } ">
+    	<input name="modify" type="button" value="글수정" class="inputb" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
+		<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />')">
+		</s:if>
+		</center>
 </body>
 </html>

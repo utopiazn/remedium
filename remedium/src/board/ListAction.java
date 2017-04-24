@@ -30,6 +30,7 @@ public class ListAction extends ActionSupport {
 	private String pagingHtml; // 페이징을 구현한 HTML
 	private PagingAction page; // 페이징 클래스
 	private int num = 0;
+	private String url ="boardList.action?";
 	
 	
 	public ListAction() throws IOException {
@@ -40,7 +41,11 @@ public class ListAction extends ActionSupport {
 	
 	// 문의 사항 게시판 리스트 처리
 	public String execute() throws Exception {
-	
+		
+		if(getSearchKey() != null){
+			return search();
+		}
+		
 		System.out.println("list");
 		list = sqlMapper.queryForList("board.selectAll"); // 멤버 회원 전부를 가져옴
 		
@@ -48,8 +53,12 @@ public class ListAction extends ActionSupport {
 	
 		totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
 		
-		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
+		System.out.println("url : " + url);
+		
+		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "", url);
 		pagingHtml = page.getPagingHtml().toString(); 	//페이지 HTML 생성
+		
+		System.out.println("paging : " + pagingHtml);
 		
 		int lastCount = totalCount;
 		
@@ -58,7 +67,11 @@ public class ListAction extends ActionSupport {
 		}
 		
 		list = list.subList(page.getStartCount(), lastCount);
-		
+	
+		return SUCCESS;
+	}
+	
+	public String search() throws Exception {
 		return SUCCESS;
 	}
 
@@ -141,6 +154,15 @@ public class ListAction extends ActionSupport {
 	public void setNum(int num) {
 		this.num = num;
 	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	
 	
 	
 }
