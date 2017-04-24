@@ -115,7 +115,7 @@
 	
 		<tr>
 			<td align="center">
-	q1			<h2>회원 가입</h2>
+				<h2>회원 가입</h2>
 			</td>
 		</tr>	
 		

@@ -26,7 +26,21 @@ font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weigh
 <td width="150"><strong>퇴실 날짜</strong></td>
 <td width="150"><strong>예약금</strong></td>
 <td width="150"><strong>회원 ID</strong></td>
-</tr></table>
+<td width="150"><strong>예약 인원</strong></td>
+</tr>
+
+<s:iterator value="reslist">
+<tr>
+<td><s:property value="reservationNo"/></td>
+<td><s:property value="no"/></td>
+<td><s:property value="firestdate"/></td>
+<td><s:property value="lastdate"/></td>
+<td><s:property value="money"/></td>
+<td><s:property value="memberID"/></td>
+<td><s:property value="people"/></td>
+</s:iterator>
+
+</table>
 
 </body>
 </html>

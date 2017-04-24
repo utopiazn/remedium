@@ -23,15 +23,19 @@
 			</result>
 		</action>
 		
+		<action name="boardModifyForm" class="board.ModifyAction" method="form">
+			<result type="tiles">boardWriteForm</result>
+		</action>
+		
 		<action name="boardModify" class="board.ModifyAction">
-			<result type="tiles">boardModify</result>
+			<result type="tiles">boardView</result>
 		</action>
 		
 		<action name="boardDelete" class="board.DeleteAction">
-			<result type="tiles">boardDelete</result>
+			<result type="redirect-action">
+				<param name="actionName">boardList</param>
+			</result>
 		</action>
-		
-		
 		
 	</package>
 </struts>

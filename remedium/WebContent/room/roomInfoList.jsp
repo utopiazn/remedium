@@ -23,6 +23,17 @@
   	
   	
   	<table width="800" border="0" cellspacing="0" cellpadding="2">
+  	
+  		<tr align="right">
+			<td colspan="7" >
+				<input type="button" value="추가" class="inputb" onClick="">
+			</td>
+		</tr>
+		
+		<tr align="right">
+			<td colspan="7" ></td>
+		</tr>
+		
 	     <tr align="center" bgcolor="#C0C0C0">
       		
       		<td width="100"><strong>객실 종류</strong></td>
@@ -82,11 +93,7 @@
 		</tr>
 		
 		
-		<tr align="right">
-			<td colspan="7" >
-				<input type="button" value="추가" class="inputb" onClick="">
-			</td>
-		</tr>
+
 		
 	</table>  	
 

@@ -51,8 +51,6 @@
 <s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 <a href="myPageMain.action">마이페이지</a>
 &nbsp;
-<a href="loginModifyForm.action">회원수정</a>
-&nbsp;
 <a href="logout.action">로그아웃</a>
 &nbsp;
 </s:if>
@@ -84,7 +82,7 @@
     <a href="boardList.action">문의사항</a>
 </div>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
-<div id="res">D
+<div id="res">
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/>
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
 숙박 날짜:
@@ -92,86 +90,22 @@
 ~
 <input type="date" name="lastDate">
 
-
-<%-- <select name="years">
-<option>2017년</option>
-<option>2016년</option>
-</select>
-
-<select name="month">
-<option>1월</option>
-<option>2월</option>
-<option>3월</option>
-<option>4월</option>
-<option>5월</option>
-<option>6월</option>
-<option>7월</option>
-<option>8월</option>
-<option>9월</option>
-<option>10월</option>
-<option>11월</option>
-<option>12월</option>
-</select>
-
-<select name="day">
-<option>1일</option>
-<option>2일</option>
-<option>3일</option>
-<option>4일</option>
-<option>5일</option>
-<option>6일</option>
-<option>7일</option>
-<option>8일</option>
-<option>9일</option>
-<option>10일</option>
-<option>11일</option>
-<option>12일</option>
-<option>13일</option>
-<option>14일</option>
-<option>15일</option>
-<option>16일</option>
-<option>17일</option>
-<option>18일</option>
-<option>19일</option>
-<option>20일</option>
-<option>21일</option>
-<option>22일</option>
-<option>23일</option>
-<option>24일</option>
-<option>25일</option>
-<option>26일</option>
-<option>27일</option>
-<option>28일</option>
-<option>29일</option>
-<option>30일</option>
-<option>31일</option>
-</select>
-
-숙박일수:
-<select name="sleep">
-<option>1박</option>
-<option>2박</option>
-<option>3박</option>
-<option>4박</option>
-</select> --%>
-
 고객 수:
 <select name="people">
 <option value="1">1명</option>
 <option value="2">2명</option>
 <option value="3">3명</option>
 <option value="4">4명</option>
-<option value="5">5명</option>
-<option value="0">단체</option>
+<option value="0">단체(5인 이상)</option>
 </select>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 <input type="submit" value="검색">
-
+<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <input type="button" value="전체" name="search" onclick="location.href='roomAllList.action'">
-
+</s:if>
 
 
 </div>
