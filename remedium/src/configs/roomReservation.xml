@@ -4,6 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+
 	<package name="roomReservation"  extends="struts-default, tiles-default">
 		
 		<!-- 고객용 객실 에약 폼 -->
@@ -13,7 +14,7 @@
 		
 		<!-- 고객용 객실 에약 -->
 		<action name="roomReservation" class="room.ReservationAction" method="execute">
-			<result>roomList.action</result>
+			<result type="chain">roomList</result>
 		</action>
 		
 	</package>
