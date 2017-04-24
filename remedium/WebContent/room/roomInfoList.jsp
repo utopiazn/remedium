@@ -26,7 +26,7 @@
   	
   		<tr align="right">
 			<td colspan="7" >
-				<input type="button" value="추가" class="inputb" onClick="">
+				<button type="button" onclick="location.href='roomInfoInsertForm.action?roomClass=0'">추가</button>				
 			</td>
 		</tr>
 		
