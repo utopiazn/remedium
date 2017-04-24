@@ -18,6 +18,7 @@ public class ReservationAction extends ActionSupport{
 	private int price;
 	private int money;
 	private String memberID;
+	private int people;
 	
 	@Override
 	//객실 예약 처리
@@ -44,6 +45,8 @@ public class ReservationAction extends ActionSupport{
 		System.out.println("---------------------------");
 		
 		util.ProjectUtil.sqlMapper.update("roomReservationSQL.insertRes", paramClass);
+		
+		/*util.ProjectUtil.sqlMapper.update("member.", paramClassM);*/
 		
 		return SUCCESS;
 	}
@@ -124,6 +127,14 @@ public class ReservationAction extends ActionSupport{
 
 	public void setLastDate(String lastDate) {
 		this.lastDate = lastDate;
+	}
+
+	public int getPeople() {
+		return people;
+	}
+
+	public void setPeople(int people) {
+		this.people = people;
 	}
 	
 	

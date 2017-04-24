@@ -26,9 +26,19 @@
 		</action>
 		
 		<!-- 캐쉬 충전 -->
-		<action name="myPageCash" class="mypage.CashAction">
+		<action name="myPageCashForm" class="mypage.CashAction" method="form">
 			<result type="tiles">myPageCash</result>
 		</action>
+		
+		<action name="myPageCash" class="mypage.CashAction">
+			<result type="chain">myPageMain</result>
+		</action>
+		
+		<!-- 회원정보수정(회원) -->
+		<action name="loginModifyForm" class="login.LoginModifyAction" method="modifyForm">
+		<result type="tiles">loginModifyForm</result>
+		</action>
+		
 		
 		<!-- <action name="loginModifyForm" class="login.LoginModifyAction" >
 			<result type="tiles">modifyForm</result>

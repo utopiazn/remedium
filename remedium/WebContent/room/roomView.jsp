@@ -86,6 +86,7 @@ display:inline;
 <input type="hidden" name="lastDate" value="${lastDate }"/>
 <input type="hidden" name="room_capacity" value="${resultClass.room_capacity}"/>
 <input type="hidden" name="price" value="${resultClass.price}"/>
+<input type="hidden" name="people" value="${people}"/>
 <s:if test="${session.memberId != null}">
 <input type="submit"value="객실예약"/>
 </s:if>
@@ -105,30 +106,5 @@ display:inline;
 </div>
 
 </div>
-
-
-
-
-
-
-
-	<%-- <table>
-	<tr>
-			<td align="right"><s:property value="resultClass.no"/>호</td>
-	</tr>
-	<tr>
-			<td align="center"><s:property value="resultClass.name"/></td>
-	</tr>
-	<tr>
-			<td><s:property value="resultClass.room_class"/></td>
-	</tr>
-	<tr>
-			<td align="right"><s:property value="resultClass.room_capacity"/>명</td>
-	</tr>
-	<tr>
-			<td align="right"><s:property value="resultClass.price"/>원</td>
-	</tr>
-	</table> --%>
-
 </body>
 </html>

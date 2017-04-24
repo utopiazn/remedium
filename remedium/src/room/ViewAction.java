@@ -13,6 +13,7 @@ public class ViewAction extends ActionSupport{
 	private int num;
 	private String firstDate;
 	private String lastDate;
+	private int people;
 	
 	@Override
 	//객실 개별 뷰
@@ -61,6 +62,14 @@ public class ViewAction extends ActionSupport{
 
 	public void setLastDate(String lastDate) {
 		this.lastDate = lastDate;
+	}
+
+	public int getPeople() {
+		return people;
+	}
+
+	public void setPeople(int people) {
+		this.people = people;
 	}
 	
 	

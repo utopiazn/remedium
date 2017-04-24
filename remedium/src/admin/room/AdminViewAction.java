@@ -22,6 +22,10 @@ public class AdminViewAction extends ActionSupport{
 	@Override
 	//고객이 예약한 객실 개별 뷰
 	public String execute() throws Exception {
+		
+		String dd;
+		
+		
 		return SUCCESS;
 	}
 	

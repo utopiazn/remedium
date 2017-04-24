@@ -64,7 +64,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			session.put("memberName", resultClass.getMemberName()); 
 			//session.put("memberPasswd", resultClass.getMemberPassword());
 			session.put("userAdmin", resultClass.getUserAdmin());
-			
+			session.put("cash", resultClass.getCash());
 			return SUCCESS;
 		}
 		
@@ -79,6 +79,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			session.remove("memberName");
 			//session.remove("memberPasswd");
 			session.remove("userAdmin");
+			session.remove("cash");
 			return SUCCESS;
 		}
 		
