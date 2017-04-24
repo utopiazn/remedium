@@ -9,6 +9,7 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.BoardBean;
+import bean.MemberBean;
 
 public class ModifyAction extends ActionSupport {
 	
@@ -16,6 +17,10 @@ public class ModifyAction extends ActionSupport {
 	public static SqlMapClient sqlMapper;
 	
 	private int no;
+	
+	private String subject;
+	private String content;
+	private String name;
 	
 	BoardBean paramClass;
 	BoardBean resultClass;
@@ -42,6 +47,18 @@ public class ModifyAction extends ActionSupport {
 	
 	// 문의사항 게시판 수정 처리
 	public String execute() throws Exception {
+		
+		paramClass = new BoardBean();
+		
+		paramClass.setNo(getNo());
+		paramClass.setSubject(getSubject());
+		paramClass.setName(getName());
+		paramClass.setContent(getContent());
+		
+		sqlMapper.update("board.updateBoard",paramClass);
+		
+		resultClass = (BoardBean) paramClass;
+		
 		return SUCCESS;
 	}
 
@@ -68,6 +85,32 @@ public class ModifyAction extends ActionSupport {
 	public void setResultClass(BoardBean resultClass) {
 		this.resultClass = resultClass;
 	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	
 	
 }
