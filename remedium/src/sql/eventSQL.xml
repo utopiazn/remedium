@@ -21,14 +21,28 @@
 	WHERE no = #no#
 	</sql>
 	
+	<!-- event 테이블 모든 정보를 가져옴 -->
 	<select id = "selectAll" resultMap="eventRes" >
 	<include refid="select-all"/>
 	</select>
 	
-	<select id="selectOne" resultMap="eventRes">
+	<select id="selectOne" resultClass="event">
 	<include refid="select-all"/>
 	<include refid="where-no"/>
 	</select>
+	
+	<!--이벤트 입력-->		
+	<insert id="insertEvent" parameterClass="event">
+	INSERT INTO EVENT (NO, NAME, CONTENT, FIRSTDATE, LASTDATE) 
+		VALUES (event_no_seq.nextval, #name#, #content#, #firstdate#, #lastdate#)
+	</insert>
+	
+	<!--이벤트 수정
+	<insert id="updateEvent" parameterClass="event">
+	INSERT INTO EVENT (NO, NAME, CONTENT, FIRSTDATE, LASTDATE) 
+		VALUES (event_no_seq.nextval, #name#, #content#, #firstdate#, #lastdate#)
+		<include refid="where-no"/>
+	</insert> -->
 
 	
 </sqlMap>

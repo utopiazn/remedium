@@ -44,10 +44,10 @@
 <div id="navi">
 
 
-<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
+<%-- <s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 <a href="memberAdminList.action">회원관리 </a>
 &nbsp;
-</s:if>
+</s:if> --%>
 <s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
 <a href="myPageMain.action">마이페이지</a>
 &nbsp;

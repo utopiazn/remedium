@@ -22,14 +22,25 @@
 				src="/remedium/image/info.jpg" size="100%"><br> 고객 중심의
 				고객을 위한 최고의 서비스와 가치 실현</td>
 		</tr>
-		
 		<tr>
-			<td>CONCEPT
-				<hr align="left" width="100" size="1" color="gray"> : 일상에 지친
+			<td align="center">
+				<table><tr><td>
+				CONCEPT
+				<hr align="left" width="100" size="1" color="gray">&nbsp;일상에 지친
 				당신만을 위한 휴식 공간. 바쁜 일상에서 벗어나 온전한 휴식과 프라이빗한 시간을 즐기실 수 있습니다.
+				</td></tr></table>
 			</td>
 		</tr>
-		
+		<!-- <tr>
+			<td align="center">
+				<iframe width="640" height="360" src="https://www.youtube.com/embed/w4AXnL76iy0?amp;showinfo=0&amp;autoplay=1&amp;loop=1;playlist=w4AXnL76iy0"></iframe>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<iframe width="640" height="360" src="https://www.youtube.com/embed/uLdE2s7PSp8?amp;showinfo=0"></iframe>
+			</td>
+		</tr> -->
 	</table>
 </body>
 </html>
