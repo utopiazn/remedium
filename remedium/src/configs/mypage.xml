@@ -17,12 +17,15 @@
 		</action>
 		
 		<!-- 회원 탈퇴 -->
-		 <action name="loginDeleteForm" class="login.LoginDeleteAction" method="delete" >
-			<result>/mypage/checkPassword.jsp</result>
+		<action name="loginDeleteForm" class="login.LoginDeleteAction" method="delete" >
+			<result type="tiles">loginDeleteForm</result>
 		</action>
 		
-		 <action name="loginDelete" class="login.LoginDeleteAction" method="delete" >
-			<result type="chain">main</result>
+		<action name="loginDelete" class="login.LoginDeleteAction">
+			<result type="redirect-action">
+				<param name="actionName">main</param>
+			</result>
+
 		</action>
 		
 		<!-- 캐쉬 충전 -->
@@ -43,15 +46,8 @@
 		<action name="loginModify" class="login.LoginModifyAction" method="execute">
 			<result type="tiles">loginModify</result>
 		</action>
-	<!-- 	
-		<action name="loginModify" class="login.loginModifyAction">
-			<result type="chain">myPageMain</result>
-		</action> -->
+
 		
-		
-		<!-- <action name="loginModifyForm" class="login.LoginModifyAction" >
-			<result type="tiles">modifyForm</result>
-		</action> -->
 		
 		
 

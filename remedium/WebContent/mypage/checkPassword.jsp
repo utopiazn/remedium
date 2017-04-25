@@ -6,16 +6,35 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title></title>
+<script type="text/javascript">
+function pwd(userinput) {
+	
+	var p = userinput.password.value;
+	var o = userinput.orgpasswd.value
+	
+	
+	if(p != o ){
+	alert("비밀번호가 일치하지 않습니다");
+
+	return false;
+ }
+	else{
+	alert("탈퇴가 완료되었습니다.");		
+	return true;
+	}
+}
+
+</script>
 </head>
 <body>
 
 <h2>비밀번호 확인</h2>
 
-<form action="checkAction.action" method="post">
+<form action="loginDelete.action" method="post" onsubmit="return pwd(this);" enctype="multipart/form-data">
 <s:hidden name="no" value="%{no}"/>
 <s:hidden name="currentPage" value="%{currentPage}"/>
-
+<s:hidden name="orgpasswd" value="%{resultClass.memberPassword}"/>
+<s:hidden name="memberID" value="%{resultClass.memberID}"></s:hidden>
 <table width="250" border="0" cellspacing="0" cellpadding="0">
 
 <tr bgcolor="#777777">
@@ -23,7 +42,7 @@
 </tr>
 
 <tr>
-<td width="100" bgcolor="#F4F4F4">비밀번호 입력</td>
+<td width="150" bgcolor="#F4F4F4">비밀번호 입력</td>
 <td width="150" bgcolor="#FFFFFF">
 &nbsp;&nbsp;<s:textfield name="password" theme="simple" cssStyle="width:100px" maxlength="20"/>
 &nbsp;&nbsp;<input name="submit" type="submit" value="확인" class="inputb"/>
