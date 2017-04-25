@@ -66,10 +66,18 @@
 		</s:iterator>
 	</s:else>
 	</table></td></tr>
+	
+	<tr align="center">
+			<td><s:property value="pagingHtml" escape="false"/></td>
+	</tr>
+	
+	<s:if test="${ session.userAdmin != '1' }">
 	<tr><td align="center">
 	<strong><b>${ firstDate } ~ ${ lastDate }
 	<br> 예약가능 리스트</b></strong>
 	</td></tr>
+	</s:if>
+	
 	<s:if test="${ session.userAdmin == '1' }">
 	<tr><td align="right">
 	<input type="button" value="객실추가" onclick="location.href='/remedium/roomInsertForm.action'"/>

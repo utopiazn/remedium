@@ -2,6 +2,9 @@ package mypage;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -11,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import bean.MemberBean;
 
 
-public class CashAction extends ActionSupport{
+public class CashAction extends ActionSupport implements SessionAware{
 	
 	public static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
@@ -22,6 +25,8 @@ public class CashAction extends ActionSupport{
 	private int cash;
 	
 	private String memberId;
+	
+	private Map session;
 
 	//생성자
 	public CashAction() throws IOException{
@@ -46,6 +51,8 @@ public class CashAction extends ActionSupport{
 		
 		sqlMapper.update("member.updateCash", paramClass);
 		
+		session.put("cash", paramClass.getCash());
+		
 		return SUCCESS;
 	}
 	
@@ -55,22 +62,6 @@ public class CashAction extends ActionSupport{
 		return SUCCESS;
 		
 		
-	}
-
-	public static Reader getReader() {
-		return reader;
-	}
-
-	public static void setReader(Reader reader) {
-		CashAction.reader = reader;
-	}
-
-	public static SqlMapClient getSqlMapper() {
-		return sqlMapper;
-	}
-
-	public static void setSqlMapper(SqlMapClient sqlMapper) {
-		CashAction.sqlMapper = sqlMapper;
 	}
 
 	public MemberBean getParamClass() {
@@ -95,6 +86,14 @@ public class CashAction extends ActionSupport{
 
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
 	}
 	
 	

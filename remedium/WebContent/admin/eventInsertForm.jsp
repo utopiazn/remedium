@@ -15,10 +15,15 @@
 				return false;
 			} 
 			
-			else if(frm.name.value == "") {
-				alert("이름을 입력해주세요.");
-				return false;
-			}
+			else if(frm.content.value == "") {
+				alert("이벤트 시작일을 입력해주세요.");
+				return false;			
+			} 
+			
+			else if(frm.content.value == "") {
+				alert("이벤트 종료일을 입력해주세요.");
+				return false;			
+			} 
 			
 			else if(frm.content.value == "") {
 				alert("내용을 입력해주세요.");
@@ -38,7 +43,7 @@
   	</table>
   
 
-	<form action="eventWriteForm.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+	<form action="eventInsert.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 
        <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
@@ -52,28 +57,20 @@
         <tr>
           <td width="100" bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이벤트 종류</td>
           <td width="500" bgcolor="#FFFFFF">
-            <s:textfield name="subject" theme="simple" value="%{resultClass.subject}" cssStyle="width:370px" maxlength="50"/>
+            <s:textfield name="name" theme="simple" value="%{resultClass.name}" cssStyle="width:370px" maxlength="50"/>
           </td>
         </tr>
         							
         <tr bgcolor="#777777">
           <td height="1" colspan="2"></td>
         </tr>
-        
-        <tr>
-          <td bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이름 </td>
-          <td bgcolor="#FFFFFF">
-            <s:textfield name="name" theme="simple" value="%{resultClass.name}" cssStyle="width:100px" maxlength="20"/>
-          </td>
-        </tr>
-        <tr bgcolor="#777777">
-          <td height="1" colspan="2"></td>	
-        </tr>
-        
+
         <tr>
           <td bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이벤트 시작</td>
           <td bgcolor="#FFFFFF">
-            <s:textfield name="firstdate" theme="simple" value="%{resultClass.firstdate}" cssStyle="width:100px" maxlength="20"/>
+          <input type="date" name="firstdate">
+
+           <%--  <s:textfield name="firstdate" theme="simple" value="%{resultClass.firstdate}" cssStyle="width:100px" maxlength="20"/> --%>
           </td>
         </tr>
         <tr bgcolor="#777777">
@@ -83,7 +80,9 @@
         <tr>
           <td bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이벤트 종료</td>
           <td bgcolor="#FFFFFF">
-            <s:textfield name="lastdate" theme="simple" value="%{resultClass.lastdate}" cssStyle="width:100px" maxlength="20"/>
+           <input type="date" name="lastdate">
+           <%--  <s:textfield name="lastdate" theme="simple" value="%{resultClass.lastdate}" cssStyle="width:100px" maxlength="20"/> --%>
+         
           </td>
         </tr>
         <tr bgcolor="#777777">
@@ -114,7 +113,7 @@
         
         <tr>
           <td align="right" colspan="2">
-          	<input name="submit" type="submit" value="작성완료" class="inputb">
+          	<input type="submit" value="작성완료" >
             <input name="list" type="button" value="목록" class="inputb" onClick="javascript:location.href='eventList.action?currentPage=<s:property value="currentPage" />'">
           </td>
         </tr>

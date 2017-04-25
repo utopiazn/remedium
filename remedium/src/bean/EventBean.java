@@ -1,12 +1,12 @@
 package bean;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class EventBean {
 	private int no; // 이벤트 순서 번호
 	private String name; // 이벤트 이름
 	private String content; // 이벤트 내용
-	private Date firstdate; // 이벤트 시작 날짜
+	private Date firstdate; // s이벤트 시작 날짜
 	private Date lastdate; // 이벤트 종료 날짜
 	private String image; // 이벤트 이미지
 	

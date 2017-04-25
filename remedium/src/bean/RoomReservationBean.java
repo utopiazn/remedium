@@ -4,13 +4,14 @@ import java.sql.Date;
 
 public class RoomReservationBean {
 	
-	int reservationNo;	// 예약번호
-	int no;				// 객실번호
-	Date firstDate;		// 입실날짜
-	Date lastDate;		// 퇴실날짜
-	int money;			// 예약금
-	String memberID;	// 회원ID
-	int people;         // 검색시 필요 인원정보
+	int reservationNo;	     // 예약번호
+	int no;				     // 객실번호
+	Date firstDate;	    	 // 입실날짜
+	Date lastDate;	       	 // 퇴실날짜
+	int money;		       	 // 예약금
+	String memberID;	     // 회원ID
+	int people;              // 검색시 필요 인원정보
+	String reservationCheck; //예약 승인여부
 	
 	public int getReservationNo() {
 		return reservationNo;
@@ -54,10 +55,11 @@ public class RoomReservationBean {
 	public void setPeople(int people) {
 		this.people = people;
 	}
-	
-	
-	
-	
-	
+	public String getReservationCheck() {
+		return reservationCheck;
+	}
+	public void setReservationCheck(String reservationCheck) {
+		this.reservationCheck = reservationCheck;
+	}
 	
 }

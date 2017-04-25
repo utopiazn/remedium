@@ -2,17 +2,23 @@ package mypage;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
+import bean.RoomReservationBean;
+
 
 public class ViewAction extends ActionSupport{
 	
 	public static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
+	
+
 	
 	//생성자
 	public ViewAction() throws IOException{
@@ -27,8 +33,10 @@ public class ViewAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
+		
 		return SUCCESS;
 	}
+
 
 	
 	

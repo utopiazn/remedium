@@ -87,15 +87,17 @@ display:inline;
 <input type="hidden" name="room_capacity" value="${resultClass.room_capacity}"/>
 <input type="hidden" name="price" value="${resultClass.price}"/>
 <input type="hidden" name="people" value="${people}"/>
-<s:if test="${session.memberId != null}">
-<input type="submit"value="객실예약"/>
+<s:if test="${session.memberId == null}">
+<font color="blue">로그인후 이용해 주십시오.</font>
 </s:if>
-</form>
-<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
+<s:elseif test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
 <input type="button" value="객실수정" onclick="location.href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>'" />
 <input type="button" value="객실삭제" onclick="location.href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>'" />
-
-</s:if>
+</s:elseif>
+<s:else>
+<input type="submit"value="객실예약"/>
+</s:else>
+</form>
 </div>
 
  

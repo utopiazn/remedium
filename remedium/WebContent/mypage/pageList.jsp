@@ -17,29 +17,47 @@ font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weigh
  
 </head>
 <body>
+<br>
 
-<table width="70%" border="0" cellspacing="5" cellpadding="0">
+<h2><b>예 약 목 록</b></h2>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="3">
 <tr valign="middle" bgcolor="#F3F3F3">
-<td width="150"><strong>예약 번호</strong></td>
-<td width="150"><strong>객실 번호</strong></td>
-<td width="150"><strong>입실 날짜</strong></td>
-<td width="150"><strong>퇴실 날짜</strong></td>
-<td width="150"><strong>예약금</strong></td>
-<td width="150"><strong>회원 ID</strong></td>
-<td width="150"><strong>예약 인원</strong></td>
+<td><strong>회원 ID</strong></td>
+<td><strong>예약 번호</strong></td>
+<td><strong>객실 번호</strong></td>
+<td><strong>입실 날짜</strong></td>
+<td><strong>퇴실 날짜</strong></td>
+<td><strong>예약 인원</strong></td>
+<td><strong>예약금</strong></td>
+<td><strong>예약완료 여부</strong></td>
 </tr>
 
 <s:iterator value="reslist">
 <tr>
+<td><s:property value="memberID"/></td>
 <td><s:property value="reservationNo"/></td>
 <td><s:property value="no"/></td>
 <td><s:property value="firstDate"/></td>
 <td><s:property value="lastDate"/></td>
-<td><s:property value="money"/></td>
-<td><s:property value="memberID"/></td>
 <td><s:property value="people"/></td>
+<td><s:property value="money"/></td>
+<td>
+<s:if test='%{reservationCheck.equals("n")}'>
+[예약대기중]
+</s:if>
+<s:elseif test='%{reservationCheck.equals("y")}'>
+[예약완료]
+</s:elseif>
+<s:if test="${session.userAdmin=='1'}"><br>
+<input type="button" value="예약확인" onclick="location.href=''">
+<input type="button" value="예약취소" onclick="location.href=''">
+</s:if>
+</td>
 </s:iterator>
-
+<tr align="center">
+	<td colspan="8"><s:property value="pagingHtml" escape="false"/></td>
+</tr>
 </table>
 
 </body>

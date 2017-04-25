@@ -1,15 +1,22 @@
 package util;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
-public class ProjectUtil{
+import bean.ImageBean;
+import bean.RoomBean;
+
+public class ProjectUtil {
 	
 	
 	//sql문 연동을 위한 구문
@@ -36,6 +43,43 @@ public class ProjectUtil{
 	}
 	public String getCurrentDate() { return currentDate;	}
 	public void setCurrentDate(String currentDate){ this.currentDate = currentDate; }
+	
+	
+	
+	
+	//session 설정
+/*	public static Map session;
+	public static Map getSession() { return session; }
+	public void setSession(Map session) { this.session = session; }*/
+	
+	
+	
+	
+	
+	
+	
+	//이미지업로드 설정
+	public void imageUplode(ImageBean paramClass, ImageBean resultClass, String uploadFileName, String fileUploadPath, File upload, String sql) throws IOException, SQLException{
+		
+		try{	
+			//파일을 서버에 저장
+			File destFile = new File(fileUploadPath + uploadFileName);
+		    System.out.println(destFile.getPath());
+		    FileUtils.copyFile(upload, destFile);
+		    System.out.println("서버에 이미지 저장.");
+		    
+		    //파일 정보 설정.
+		    paramClass.setNo(resultClass.getNo());  //번호
+		    paramClass.setImage(uploadFileName);    //이미지 이름
+		    System.out.println("이미지 정보 파라미터 설정.");
+		    
+		    //파일 정보 업데이트.
+		    sqlMapper.update(sql, paramClass);
+		    System.out.println("이미지 정보 업데이트.");
+		}catch(Exception e){}
+	}
+	
+	
 	
 	
 	
