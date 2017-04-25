@@ -94,7 +94,7 @@
 		<put-attribute name="body" value="/admin/memberAdminList.jsp" />
 	</definition>
 	
-	<definition name="eventWriteForm" extends="main2" >
+	<definition name="eventInsertForm" extends="main2" >
 		<put-attribute name="body" value="/admin/eventInsertForm.jsp" />
 	</definition>
 	

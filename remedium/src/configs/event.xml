@@ -5,12 +5,24 @@
 	
 <struts>
 	<package name="eventList"  extends="struts-default, tiles-default">
+	
 		<action name="eventList" class="service.EventListAction">
 			<result type="tiles">eventList</result>
 		</action>
 		
 		<action name="eventView" class="service.EventViewAction">
 			<result type="tiles">eventView</result>
+		</action>
+		
+		<action name="eventInsert" class="admin.EventAction" method="execute">
+			<result type="redirect-action">
+				<param name="actionName">eventList</param>			
+			</result>
+			<!-- <result type="chain">eventList</result> -->
+		</action>
+		
+		<action name="eventInsertForm" class="admin.EventAction" method="insForm">
+			<result type="tiles">eventInsertForm</result>
 		</action>
 		
 	</package>
