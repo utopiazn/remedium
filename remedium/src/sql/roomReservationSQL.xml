@@ -26,10 +26,11 @@
 	
 	<select id="reslist" resultMap="roomReservationRes" parameterClass="roomReservation">
 		<include refid="select-all"/>
-		where memberID = #memberID#
+		where memberID = #memberID# ORDER BY reservationNo DESC 
 	</select>
 	
 	<select id="adminlist" resultMap="roomReservationRes">
 	<include refid="select-all"/>
+	ORDER BY reservationNo DESC
 	</select>
 </sqlMap>

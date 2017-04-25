@@ -17,8 +17,11 @@ font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weigh
  
 </head>
 <body>
+<br>
 
-<table width="100%" border="0" cellspacing="5" cellpadding="0">
+<h2><b>예 약 목 록</b></h2>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="3">
 <tr valign="middle" bgcolor="#F3F3F3">
 <td><strong>회원 ID</strong></td>
 <td><strong>예약 번호</strong></td>
@@ -27,7 +30,7 @@ font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weigh
 <td><strong>퇴실 날짜</strong></td>
 <td><strong>예약 인원</strong></td>
 <td><strong>예약금</strong></td>
-<td><strong>예약 승인여부</strong></td>
+<td><strong>예약완료 여부</strong></td>
 </tr>
 
 <s:iterator value="reslist">
@@ -41,14 +44,20 @@ font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weigh
 <td><s:property value="money"/></td>
 <td>
 <s:if test='%{reservationCheck.equals("n")}'>
-미승인
+[예약대기중]
 </s:if>
 <s:elseif test='%{reservationCheck.equals("y")}'>
-승인
+[예약완료]
 </s:elseif>
+<s:if test="${session.userAdmin=='1'}"><br>
+<input type="button" value="예약확인" onclick="location.href=''">
+<input type="button" value="예약취소" onclick="location.href=''">
+</s:if>
 </td>
 </s:iterator>
-
+<tr align="center">
+	<td colspan="8"><s:property value="pagingHtml" escape="false"/></td>
+</tr>
 </table>
 
 </body>

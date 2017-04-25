@@ -1,13 +1,8 @@
 package room;
 
-import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ibatis.common.resources.Resources;
-import com.ibatis.sqlmap.client.SqlMapClient;
-import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.RoomBean;
@@ -15,9 +10,6 @@ import bean.RoomReservationBean;
 import paging.PagingAction;
 
 public class ListAction extends ActionSupport {
-	
-	public static Reader reader;
-	public static SqlMapClient sqlMapper;
 	
 	private List<RoomBean> list;
 	private RoomReservationBean paramClass;
@@ -37,13 +29,6 @@ public class ListAction extends ActionSupport {
 	private int num = 0;
 	private String url;
 	
-	
-	public ListAction() throws IOException {
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
-		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
-		reader.close();
-	}
-
 	@Override
 	//검색된 객실 리스트
 	public String execute() throws Exception {
@@ -56,9 +41,9 @@ public class ListAction extends ActionSupport {
 		paramClass.setPeople(people);
 		
 		if(people==0){
-			list = sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
+			list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
 		}else{
-			list = sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
+			list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
 		}
 		
 		
@@ -90,7 +75,7 @@ public class ListAction extends ActionSupport {
 		
 		list = new ArrayList<RoomBean>();
 		
-		list = sqlMapper.queryForList("roomSQL.selectAll");
+		list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectAll");
 		
 		
 		//페이징처리
