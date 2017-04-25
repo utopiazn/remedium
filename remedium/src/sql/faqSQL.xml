@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
-<sqlMap>
+<sqlMap namespace="faq">
 	<typeAlias alias="FAQ" type="bean.FAQBean" />
 
 	<resultMap id="FAQRes" class="FAQ">
 		<result property="type" column="type" />
 		<result property="subject" column="subject" />
 		<result property="content" column="content" />
-		</resultMap>
+		<result property="faqId" column="faqId" />
+	</resultMap>
 	
+	<sql id="select-all">
+		select * from faq 
+	</sql>
+	
+	<sql id="where-faqid">
+		 where faqId = #faqId#
+	</sql>
+	
+	<select id="selectAll" resultMap="FAQRes">
+		<include refid="select-all" />
+	
+	</select>
+	
+	<select id="selectOne" resultMap="FAQRes">
+		<include refid="select-all" /> 
+		<include refid="where-faqid" />
+		order by type asc	
+	</select>
 
 </sqlMap>

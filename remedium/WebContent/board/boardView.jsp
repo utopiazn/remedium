@@ -80,12 +80,12 @@
 			</tr>
 		
 		</table><br/>
-		<center>
 		
+		<center>
 		<input name="list" type="button" value="글목록" class="inputb" onClick="javascript:location.href='boardList.action'">
 		<s:if test ="resultClass.Name == '${session.memberName }' || '${ session.userAdmin == '1' }'" >
     		<input name="modify" type="button" value="글수정" class="inputb" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
-			<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />')">
+			<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />&ref=<s:property value="resultClass.ref" />&re_step=<s:property value="resultClass.re_step" />')">
 		</s:if>
 		<s:if test="${ session.userAdmin == '1' }">
 				<input type="button" value="답변" class="inputb" onClick="javascript:location.href='boardReplyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
