@@ -26,7 +26,6 @@
 
 </head>
 <body>
-
 <form action="roomReservation.action" method="post" enctype="multipart/form-data" onsubmit="return checkCash(this);">
 	<table width=100% border="1">
 			<img height="400" alt="객실사진" src="/remedium/image/roomImage/file_${num }.jpg" >

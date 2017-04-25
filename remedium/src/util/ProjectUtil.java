@@ -37,6 +37,16 @@ public class ProjectUtil{
 	public String getCurrentDate() { return currentDate;	}
 	public void setCurrentDate(String currentDate){ this.currentDate = currentDate; }
 	
+	//session 설정
+	
+	
+	
+	
+	//이미지업로드 설정
+	
+	
+	
+	
 	
 	
 	// 현재 날짜 : java에서는 이 함수 호출
