@@ -11,6 +11,7 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.EventBean;
+import bean.RoomBean;
 
 public class EventAction extends ActionSupport{
 	public static Reader reader;
@@ -19,6 +20,7 @@ public class EventAction extends ActionSupport{
 	private int currentPage;
 	
 	
+	private int no;
 	private String name;
 	private String firstdate;
 	private String lastdate;
@@ -81,13 +83,31 @@ public class EventAction extends ActionSupport{
 	//관리자 이벤트 글 수정 폼
 	public String updForm() throws Exception{
 		
+		System.out.println("222222");
+
+		paramClass = new EventBean();
+		resultClass = new EventBean();
+		
+		System.out.println(getNo());
+		paramClass.setNo(getNo());
+		
+		resultClass = (EventBean)sqlMapper.queryForObject("event.selectOne", paramClass);
+
 		return SUCCESS;
 	}	
 	
 	//관리자 이벤트 글 수정 처리
 	public String update() throws Exception{
 		
+		/*paramClass = new EventBean();
+		resultClass = new EventBean();
 		
+		paramClass.setName(getName());
+		paramClass.setFirstdate(java.sql.Date.valueOf(firstdate));
+		paramClass.setLastdate(java.sql.Date.valueOf(lastdate));
+		paramClass.setContent(getContent());
+		
+		sqlMapper.update("eventSQL.updateEvent",paramClass);*/
 		
 		return SUCCESS;
 	}
@@ -145,6 +165,14 @@ public class EventAction extends ActionSupport{
 
 	public void setResultClass(EventBean resultClass) {
 		this.resultClass = resultClass;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
 	}
 
 	
