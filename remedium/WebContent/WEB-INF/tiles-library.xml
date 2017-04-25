@@ -198,13 +198,9 @@
 		<put-attribute name="lefter" value="/main/lefter/roomClassLefter.jsp" />	
 		<put-attribute name="body" value="/room/roomInfoInsertForm.jsp" />		
 	</definition>
-	
-	
-	
 <!-- 객실소개 -->
 
 <!-- 마이페이지 -->  
-
 <!-- 마이페이지메인 --> 
 	<definition name="myPageMain" extends="main2">		
 		<put-attribute name="body" value="/mypage/pageMain.jsp" />		
@@ -213,15 +209,14 @@
 	<definition name="loginModifyForm" extends="main2">		
 		<put-attribute name="body" value="/login/modifyForm.jsp" />		
 	</definition>
-	
+		
 	<definition name="loginModify" extends="main2">		
 		<put-attribute name="body" value="/mypage/pageMain.jsp" />		
-	</definition>
-	
+	</definition>	
 <!-- 회원탈퇴 -->	
-<!-- <definition name="loginDelete" extends="main2">		
-		<put-attribute name="body" value="/main/main.jsp" />		
-	</definition> -->
+	<definition name="loginDeleteForm" extends="main2">		
+		<put-attribute name="body" value="/mypage/checkPassword.jsp" />		
+	</definition>
 <!-- 예약리스트 -->	
 	<definition name="myPageList" extends="main2">		
 		<put-attribute name="body" value="/mypage/pageList.jsp" />		
@@ -229,9 +224,7 @@
 <!-- 캐쉬 충전 -->	
 	<definition name="myPageCash" extends="main2">		
 		<put-attribute name="body" value="/mypage/pageListCash.jsp" />		
-	</definition>
-
-	
+	</definition>	
 <!-- 마이페이지 -->  
 	
 </tiles-definitions>
