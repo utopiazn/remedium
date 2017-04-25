@@ -107,7 +107,7 @@ public class EventAction extends ActionSupport{
 		paramClass.setLastdate(java.sql.Date.valueOf(lastdate));
 		paramClass.setContent(getContent());
 		
-		sqlMapper.update("eventSQL.updateEvent",paramClass);*/
+		sqlMapper.update("event.updateEvent",paramClass);*/
 		
 		return SUCCESS;
 	}
