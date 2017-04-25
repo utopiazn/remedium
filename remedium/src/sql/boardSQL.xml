@@ -34,6 +34,18 @@
 		<include refid="where-boardNo" />
 	</select>
 	
+	<select id="selectName" resultMap="boardRes" parameterClass="string">
+		<include refid="select-all" />
+		 WHERE name like #searchKeyword#
+			ORDER BY ref DESC, re_step ASC
+	</select>
+	
+	<select id="selectSubject" resultMap="boardRes" parameterClass="string">
+		<include refid="select-all" />
+		 WHERE subject like #searchKeyword#
+		 	ORDER BY ref DESC, re_step ASC
+	</select>
+	
 	<insert id="insertBoard" parameterClass="board">
 		   insert into board (no, subject, memberID, name, content, type, re_step, regdate, ref)
 		VALUES (BOARD_NO_SEQ.nextval, #subject#, #memberID#, #name#, #content#, #type#, #re_step#, sysdate, BOARD_NO_SEQ.currval)	 	 	
@@ -56,8 +68,11 @@
 	</update>
 	
 	<delete id="deleteBoard" parameterClass="board">
-		delete from board
-		<include refid="where-boardNo" />
+		delete from board where ref = #ref#
+	</delete>
+	
+	<delete id="deleteReply" parameterClass="board">
+		delete from board where re_step = #re_step#
 	</delete>
 	
 </sqlMap>

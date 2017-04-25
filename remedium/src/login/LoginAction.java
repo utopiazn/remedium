@@ -60,8 +60,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		
 		if(resultClass != null){
 			System.out.println( "resultClass.getMemberID() : " + resultClass.getMemberID());
+			System.out.println( "resultClass.getMemberName() : " + resultClass.getMemberName());
 			session.put("memberId", resultClass.getMemberID()); 
 			session.put("memberName", resultClass.getMemberName()); 
+			
 			//session.put("memberPasswd", resultClass.getMemberPassword());
 			session.put("userAdmin", resultClass.getUserAdmin());
 			session.put("cash", resultClass.getCash());

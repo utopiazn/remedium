@@ -30,18 +30,22 @@
       	      <tr bgcolor="#777777">
         		<td height="1" colspan="5"></td>
       	      </tr>
-
 	      <s:iterator value="list" status="stat">
 			<s:url id="viewURL" action="boardView">
 				<s:param name="no"> 
 					<s:property value="no"/>
+				</s:param>
+				<s:param name="ref"> 
+					<s:property value="ref"/>
 				</s:param>
 				<s:param name="currentPage">
 					<s:property value="currentPage"/>
 				</s:param>
 			</s:url>
 			<tr bgcolor="#FFFFFF" align="center">
-				<td><s:property value="no"/></td>
+				<td><s:property value="no"/>
+		
+				</td>
 				<td align="left"> 
 				<s:if test="re_step != 0">
 					<c:forEach var = "i" begin = "${re_step}" end = "0">&nbsp;</c:forEach>→
@@ -87,11 +91,10 @@
 	</table>
 	
 	<center>
-	<form action="memberAdminList.action">
+	<form action="boardList.action">
 		<select name="searchNum">
 			<option value="0">제 목</option>
-			<option value="1">아이디</option>
-			<option value="2">답변 상태</option>
+			<option value="1">작성자</option>
 		</select>
 		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
 		<input name="submit" type="submit" value="검색" class="inputb">

@@ -9,7 +9,6 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.BoardBean;
-import bean.MemberBean;
 
 public class ViewAction extends ActionSupport {
 	
@@ -18,9 +17,12 @@ public class ViewAction extends ActionSupport {
 	
 	private int no;
 	private int currentPage;
+	private int ref;
 	
 	BoardBean paramClass;
 	BoardBean resultClass;
+	
+	
 	
 	public ViewAction() throws IOException {
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
@@ -35,6 +37,7 @@ public class ViewAction extends ActionSupport {
 		resultClass = new BoardBean();
 		
 		paramClass.setNo(getNo());
+		paramClass.setRef(getRef());
 		
 		System.out.println("ID : "+paramClass.getNo());
 		
@@ -75,6 +78,14 @@ public class ViewAction extends ActionSupport {
 
 	public void setResultClass(BoardBean resultClass) {
 		this.resultClass = resultClass;
+	}
+
+	public int getRef() {
+		return ref;
+	}
+
+	public void setRef(int ref) {
+		this.ref = ref;
 	}
 	
 	

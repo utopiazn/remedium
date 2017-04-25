@@ -8,10 +8,17 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
+import bean.FAQBean;
+
 public class ViewAction extends ActionSupport{
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
+	
+	private String faqId;
+	
+	FAQBean paramClass;
+	FAQBean resultClass;
 
 	
 public ViewAction() throws IOException {
@@ -20,13 +27,48 @@ public ViewAction() throws IOException {
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);	
 		reader.close();
 	}
-
+	
 	//자주묻는 질문 상세보기
 	public String execute() throws Exception{
 		
+		paramClass = new FAQBean();
+		resultClass = new FAQBean();
+		
+		System.out.println(getFaqId());
+		
+		paramClass.setFaqId(getFaqId());
+		
+		resultClass = (FAQBean) sqlMapper.queryForObject("faq.selectOne",getFaqId());
+		
+		
+		
 		return SUCCESS;
+	}
+
+	public String getFaqId() {
+		return faqId;
+	}
+
+	public FAQBean getParamClass() {
+		return paramClass;
+	}
+
+	public FAQBean getResultClass() {
+		return resultClass;
+	}
+
+	public void setFaqId(String faqId) {
+		this.faqId = faqId;
+	}
+
+	public void setParamClass(FAQBean paramClass) {
+		this.paramClass = paramClass;
+	}
+
+	public void setResultClass(FAQBean resultClass) {
+		this.resultClass = resultClass;
 	}
 	
 
-
+	
 }

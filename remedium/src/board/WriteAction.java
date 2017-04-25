@@ -118,7 +118,7 @@ public class WriteAction extends ActionSupport implements SessionAware{
 		resultClass = new BoardBean();
 		
 		resultClass = (BoardBean) sqlMapper.queryForObject("board.selectOne",getNo());
-		resultClass.setSubject("[답변] " + resultClass.getSubject());
+		resultClass.setSubject("Re : " + resultClass.getSubject());
 		resultClass.setContent("");
 		resultClass.setName("");
 		

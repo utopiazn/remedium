@@ -21,94 +21,27 @@
   		</tr>
   	</table>
 		
-<table width="600" border="0" cellspacing="0" cellpadding="0">
+<table width="500" border="1" cellspacing="0" cellpadding="0">
       
-      <tr bgcolor="#777777">
-        <td height="1" colspan="2"></td>
-      </tr>
 			
       <tr>
-        <td bgcolor="#F4F4F4">  번호 </td>
+        <td width="100" bgcolor="#F4F4F4">질문 유형 </td>
+        <td width="100" bgcolor="#FFFFFF">
+          &nbsp;<s:property value="resultClass.type" />
+        </td>
+        
+        <td width="100" bgcolor="#F4F4F4">제 목</td>
         <td bgcolor="#FFFFFF">
-          &nbsp;&nbsp;<s:property value="resultClass.no" />
+          &nbsp;<s:property value="resultClass.subject" />
+        </td>    
+      </tr> 
+      
+      <tr>    
+       	<td  width="100" height="400"bgcolor="#F4F4F4">내 용 </td>
+        <td colspan="3"bgcolor="#FFFFFF">
+          &nbsp;<s:property value="resultClass.content" />
         </td>
-      </tr>
-      <tr bgcolor="#777777">
-        <td height="1" colspan="2"></td>	
-      </tr>
-      
-      <tr>
-        <td width="100" bgcolor="#F4F4F4">  제목</td>
-        <td width="500" bgcolor="#FFFFFF">
-          &nbsp;&nbsp;<s:property value="resultClass.subject" />
-        </td>
-      </tr>
-      							
-      <tr bgcolor="#777777">
-        <td height="1" colspan="2"></td>
-      </tr>
-      
-      <tr>
-        <td bgcolor="#F4F4F4">  글쓴이 </td>
-        <td bgcolor="#FFFFFF">
-          &nbsp;&nbsp;<s:property value="resultClass.name" />
-        </td>
-      </tr>
-      <tr bgcolor="#777777">
-        <td height="1" colspan="2"></td>	
-      </tr>
-      
-      <tr>
-        <td bgcolor="#F4F4F4">  내용 </td>
-        <td bgcolor="#FFFFFF">
-          &nbsp;&nbsp;<s:property value="resultClass.content" />
-        </td>
-      </tr>
-      <tr bgcolor="#777777">
-        <td height="1" colspan="2"></td>
-      </tr>
-      
-      <tr>
-        <td bgcolor="#F4F4F4">  조회수 </td>
-        <td bgcolor="#FFFFFF">
-          &nbsp;&nbsp;<s:property value="resultClass.readhit" />
-        </td>
-      </tr>
-      <tr bgcolor="#777777">
-        <td height="1" colspan="2"></td>	
-      </tr>
-      
-      <tr>
-        <td bgcolor="#F4F4F4">  등록날짜 </td>
-        <td bgcolor="#FFFFFF">
-          &nbsp;&nbsp;<s:property value="resultClass.regdate" />
-        </td>
-      </tr>
-      <tr bgcolor="#777777">
-        <td height="1" colspan="2"></td>	
-      </tr>
-      
-      <tr>
-        <td bgcolor="#F4F4F4">  첨부파일 </td>
-        <td bgcolor="#FFFFFF">
-          &nbsp;&nbsp;
-         </td>
-      </tr>
-      <tr bgcolor="#777777">
-        <td height="1" colspan="2"></td>	
-      </tr>
-      
-      <tr>
-        <td height="10" colspan="2"></td>
-      </tr>
-      
-      
-      <tr>
-        <td align="right" colspan="2">
-       
-        </td>
-      </tr>
-
+       </tr>
   </table>
 </body>
 </html>

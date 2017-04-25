@@ -69,7 +69,7 @@
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>작성자</td>
 			<td bgcolor="#FFFFFF">
-				<s:property value=" ${session.memberName}"/>
+				${session.memberName}
 			</td>
 		</tr>
 		<tr bgcolor="#777777">

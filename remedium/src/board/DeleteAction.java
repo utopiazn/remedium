@@ -16,6 +16,8 @@ public class DeleteAction extends ActionSupport {
 	public static SqlMapClient sqlMapper;
 	
 	private int no;
+	private int ref;
+	private int re_step;
 	
 	BoardBean paramClass;
 	BoardBean resultClass;
@@ -33,8 +35,17 @@ public class DeleteAction extends ActionSupport {
 		resultClass = new BoardBean();
 		
 		paramClass.setNo(getNo());
+		paramClass.setRef(getRef());
+		paramClass.setRe_step(getRe_step());
 		
-		sqlMapper.delete("board.deleteBoard",paramClass);
+		System.out.println(getRe_step());
+		
+		if(re_step != 0){
+			sqlMapper.delete("board.deleteReply",paramClass);
+		}
+		else{
+			sqlMapper.delete("board.deleteBoard",paramClass);
+		}
 		
 		
 		return SUCCESS;
@@ -63,6 +74,25 @@ public class DeleteAction extends ActionSupport {
 	public void setResultClass(BoardBean resultClass) {
 		this.resultClass = resultClass;
 	}
+
+	public int getRef() {
+		return ref;
+	}
+
+	public void setRef(int ref) {
+		this.ref = ref;
+	}
+
+	public int getRe_step() {
+		return re_step;
+	}
+
+	public void setRe_step(int re_step) {
+		this.re_step = re_step;
+	}
+	
+	
+	
 	
 	
 	

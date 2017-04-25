@@ -18,11 +18,9 @@
   	
   
 	<table width="800" border="0" cellspacing="0" cellpadding="2">
-	      <tr align="center" bgcolor="#C0C0C0">
-      		<td width="50"><strong>번호</strong></td>
+	      <tr align="center" bgcolor="#F3F3F3">
+      		<td width="50"><strong>질문유형</strong></td>
 		<td width="450"><strong>제목</strong></td>
-        		<td width="80"><strong>날짜</strong></td>
-		<td width="50"><strong>조회</strong></td>
       	      </tr>
       	      <tr bgcolor="#777777">
         		<td height="1" colspan="5"></td>
@@ -30,9 +28,9 @@
 
 	      <s:iterator value="list" status="stat">
 
-		<s:url id="viewURL" action="viewAction" >
-			<s:param name="no">
-				<s:property value="no" />
+		<s:url id="viewURL" action="faqView" >
+			<s:param name="faqId">
+				<s:property value="faqId" />
 			</s:param>
 			<s:param name="currentPage">
 				<s:property value="currentPage" />
@@ -40,15 +38,10 @@
 		</s:url>
 			
      	      <tr bgcolor="#FFFFFF"  align="center">
-        		<td><s:property value="no" /></td>
-        		<td align="left"> &nbsp;<s:a href="%{viewURL}"><s:property value="subject" /></s:a></td>
-        		<td align="center"><s:property value="name" /></td>
-		<td align="center"><s:property value="regdate" /></td>
-        		<td><s:property value="readhit" /></td>
+        		<td style="border-bottom: 1px solid #666;"><s:property value="type" /></td>
+        		<td style="border-bottom: 1px solid #666;" align="left"> &nbsp;<s:a href="%{viewURL}"><s:property value="subject" /></s:a></td>
       	      </tr>
-      	      <tr bgcolor="#777777">
-        		<td height="1" colspan="5"></td>
-      	      </tr>
+      	   
       
 	      </s:iterator>
 			
@@ -56,7 +49,7 @@
 				
 	      <tr bgcolor="#777777">
       		<td height="1" colspan="5"></td>
-    	      </tr>
+    	  </tr>
     		
 	      </s:if>
 			

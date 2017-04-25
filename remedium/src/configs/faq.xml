@@ -4,8 +4,8 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 <struts>
-	<package name="faqList"  extends="struts-default, tiles-default">
-		<action name="faqList" class="faq.ListAction">
+	<package name="faqList" extends="struts-default, tiles-default">
+		<action name="faqList" class="faq.ListAction" method="execute">
 			<result type="tiles">faqList</result>
 		</action>
 		
