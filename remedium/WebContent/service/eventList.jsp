@@ -30,25 +30,25 @@
 
 	      <s:iterator value="list" >
 
-		<s:url id="viewURL" action="eventView" >
-			<s:param name="no">
-				<s:property value="no" />
-			</s:param>
-			<s:param name="currentPage">
-				<s:property value="currentPage" />
-			</s:param>
-		</s:url>
-			
-     	      <tr bgcolor="#FFFFFF"  align="center">
-        		<td><s:property value="no" /></td>
-        		<td align="center"> &nbsp;<s:a href="%{viewURL}"><s:property value="name" /></s:a></td>
-        		<td align="center"><s:property value="firstdate" /></td>
-		<td align="center"><s:property value="lastdate" /></td>
-        	
-      	      </tr>
-      	      <tr bgcolor="#777777">
-        		<td height="1" colspan="4"></td>
-      	      </tr>
+			<s:url id="viewURL" action="eventView" >
+				<s:param name="no">
+					<s:property value="no" />
+				</s:param>
+				<s:param name="currentPage">
+					<s:property value="currentPage" />
+				</s:param>
+			</s:url>
+				
+	     	      <tr bgcolor="#FFFFFF"  align="center">
+	        		<td><s:property value="no" /></td>
+	        		<td align="center"> &nbsp;<s:a href="%{viewURL}"><s:property value="name" /></s:a></td>
+	        		<td align="center"><s:property value="firstdate" /></td>
+					<td align="center"><s:property value="lastdate" /></td>
+	        	
+	      	      </tr>
+	      	      <tr bgcolor="#777777">
+	        		<td height="1" colspan="4"></td>
+	      	      </tr>
       
 	      </s:iterator>
 			
@@ -66,7 +66,7 @@
     	  
     	  <tr align="right">
     	  	<td colspan="4">
-    	  	<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='eventWriteForm.action'">
+    	  	<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='eventInsertForm.action'">
     	  	</td>
     	  </tr>
 	</table><br/>
