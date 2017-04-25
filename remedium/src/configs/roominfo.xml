@@ -32,7 +32,10 @@
 		
 		<!-- 객실 소개 추가 처리 -->
 		<action name="roomInfoInsert" class="room.InfoAction" method="insert">
-			<result type="chain">roomInfoList</result>
+			<result type="redirect-action">
+				<param name="actionName">roomInfoList?roomClass=0</param>
+			</result>
+			<!-- <result type="chain">roomInfoList</result> -->
 		</action>
 		
 		

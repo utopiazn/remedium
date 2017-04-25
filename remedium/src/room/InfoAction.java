@@ -21,6 +21,9 @@ import org.apache.commons.logging.LogFactory;
 
 import paging.PagingAction;
 
+
+import org.apache.commons.io.FileUtils;
+
 public class InfoAction extends ActionSupport {
 	
 	Log log = LogFactory.getLog(InfoAction.class);
@@ -28,12 +31,8 @@ public class InfoAction extends ActionSupport {
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
+
 	
-	public InfoAction() throws IOException {
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
-		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
-		reader.close();
-	}
 	
 	
 	private int roomClass = -1;  // 서브 메뉴 값.
@@ -45,7 +44,7 @@ public class InfoAction extends ActionSupport {
 	private RoomclassBean resultClass; //객체 반환;
 	
 	private String room_class; 	//객실종류
-	private String image; 		//사진경로(메인)
+	//private String image; 		//사진경로(메인)
 	private String content; 	//내용
 	private String image2; 		//시설정보
 	
@@ -57,6 +56,45 @@ public class InfoAction extends ActionSupport {
 	private String pagingHtml; // 페이징을 구현한 HTML
 	private int num = 0;
 	
+	
+	private List<File> uploads = new ArrayList<File>();
+	private List<String> uploadsFileName = new ArrayList<String>();
+	private List<String> uploadsContentType = new ArrayList<String>();
+
+
+	private String fileUploadPath="c:/java/upload/";
+	
+	
+	public InfoAction() throws IOException {
+		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
+		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
+		reader.close();
+	}
+	
+	
+	
+	
+	public String upload() throws Exception{
+		
+	
+		for (int i = 0; i < uploads.size(); i++) {
+			
+																			 
+	
+
+			System.out.println(uploads.size() +"   " +fileUploadPath +"      " +getUploadsFileName().get(i));
+
+			File destFile = new File(fileUploadPath
+					+ getUploadsFileName().get(i));
+			
+			FileUtils.copyFile(getUploads().get(i), destFile);
+			
+		}
+
+		return SUCCESS;
+		
+		
+	}
 	
 	
 	
@@ -149,6 +187,9 @@ public class InfoAction extends ActionSupport {
 	//객실 클래스를 추가
 	public String insert() throws Exception {
 		
+		System.out.println("ddddddddddddddddddd");
+		upload();
+		System.out.println("sdfdsfsdfdsfdsfdsf");
 		
 		/*
 	    resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
@@ -232,13 +273,13 @@ public class InfoAction extends ActionSupport {
 		this.room_class = room_class;
 	}
 
-	public String getImage() {
+/*	public String getImage() {
 		return image;
 	}
 
 	public void setImage(String image) {
 		this.image = image;
-	}
+	}*/
 
 	public String getContent() {
 		return content;
@@ -291,14 +332,43 @@ public class InfoAction extends ActionSupport {
 		return roomClassNum;
 	}
 
-
-
-
 	public void setRoomClassNum(int roomClassNum) {
 		this.roomClassNum = roomClassNum;
 	}
-	
-	
+
+
+
+
+	public List<File> getUploads() {
+		return uploads;
+	}
+
+
+
+
+	public void setUploads(List<File> uploads) {
+		this.uploads = uploads;
+	}
+
+
+
+
+	public List<String> getUploadsFileName() {
+		return uploadsFileName;
+	}
+
+
+
+
+	public void setUploadsFileName(List<String> uploadsFileName) {
+		this.uploadsFileName = uploadsFileName;
+	}
+
+
+
+
+
+
 	
 	
 }

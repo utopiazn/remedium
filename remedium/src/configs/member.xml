@@ -14,7 +14,11 @@
 
 		<!-- 회원가입 처리 -->
 		<action name="join" class="login.join.JoinAction"  method="execute" >
-			<result type="tiles">loginForm</result>
+		
+			<result type="redirect-action">
+				<param name="actionName">loginForm</param>
+			</result>
+			<!-- <result type="tiles">loginForm</result> -->
 		</action>
 		
 		<!-- id 사용가능 여부 체크 -->
