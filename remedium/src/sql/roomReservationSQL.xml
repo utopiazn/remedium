@@ -28,4 +28,8 @@
 		<include refid="select-all"/>
 		where memberID = #memberID#
 	</select>
+	
+	<select id="adminlist" resultMap="roomReservationRes">
+	<include refid="select-all"/>
+	</select>
 </sqlMap>

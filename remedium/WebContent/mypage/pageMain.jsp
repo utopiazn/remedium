@@ -61,7 +61,12 @@ function open_win_noresizable(url, name) {
 
  <div class="mainBox">	
  	<div id="reslist">
+ 	<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
+ 	<img alt="나의 예약 페이지" src="/remedium/image/reslist.png" width="100%" height="100%"  onclick="location.href='roomAdminList.action'" > 
+ 	</s:if>
+ 	<s:else>
  	<img alt="나의 예약 페이지" src="/remedium/image/reslist.png" width="100%" height="100%"  onclick="location.href='myPageList.action?memberID=${session.memberId}'" > 
+  	</s:else>
  	</div>
   
   	<s:if test="${ session.userAdmin != '1'}">	<!-- 관리자일 경우 보이지 않음 -->
@@ -71,7 +76,7 @@ function open_win_noresizable(url, name) {
 	</s:if>
 	<s:elseif test="${session.userAdmin == '1'}">
 	<div id="cash">
-  	<img alt="객실 리스트" src="/remedium/image/cash.png" width="100%" height="100%"  onclick="location.href='roomAllList.action'" > 
+  	<img alt="객실 리스트" src="/remedium/image/roomlist.png" width="100%" height="100%"  onclick="location.href='roomAllList.action'" > 
 	</div>
 	</s:elseif>
 	
