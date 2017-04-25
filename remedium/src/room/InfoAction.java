@@ -1,5 +1,6 @@
 package room;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
@@ -10,9 +11,11 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
+import bean.RoomBean;
 import bean.RoomclassBean;
 import paging.PagingAction;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -55,12 +58,15 @@ public class InfoAction extends ActionSupport {
 	private int num = 0;
 	
 	
+	
+	
+	//기본 객실 클래스와 객실 뷰 값 설정
 	public String roomClassCtrl() throws Exception {
 		
 		
-		//System.out.println(roomClass);
 		
-		//객실 클래스 리스트/////////////////////////////
+		
+		//객실 클래스 리스트 /////////////////////////////
 		execute();		
 		
 		//객실 클래스 개별 뷰///////////////////////////		
@@ -113,6 +119,8 @@ public class InfoAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
+	
+	//객실 클래스 개별 뷰호출 함수
 	public void roomInfo(int roomClass) throws Exception {
 		
 		
@@ -132,7 +140,8 @@ public class InfoAction extends ActionSupport {
 	//객실 클래스를 추가 폼
 	public String insForm() throws Exception {
 		
-	
+		//객실 클래스 리스트/////////////////////////////
+		execute();		
 		
 		return SUCCESS;
 	}
@@ -141,6 +150,25 @@ public class InfoAction extends ActionSupport {
 	public String insert() throws Exception {
 		
 		
+		/*
+	    resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
+	     
+	    File destFile = new File(fileUploadPath + getUploadFileName()); //경로 + 파일이름
+	 
+	    FileUtils.copyFile(getUpload(), destFile);  // 업로드 파일 , 빈파일
+	  
+	    paramClass.setNo(resultClass.getNo());
+	  
+	    paramClass.setOrgImage(getUploadFileName());    //원래 이미지 이름
+	
+	    sqlMapper.update("roomSQL.updateImage", paramClass);
+		*/
+		
+		
+		
+		
+		//기본 객실 클래스와 객실 뷰 값 설정
+		roomClassCtrl();				
 	
 		
 		

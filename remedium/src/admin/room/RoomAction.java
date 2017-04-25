@@ -73,6 +73,9 @@ public class RoomAction extends ActionSupport{
 
 		if(getUpload() != null){
 		      //등록한 글 번호 가져오기.
+			
+			
+			
 		      resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
 		      System.out.println("등록한 글 번호 가져오기.");
 		      //실제 서버에 저장될 이미지 이름과 확장자 설정.
