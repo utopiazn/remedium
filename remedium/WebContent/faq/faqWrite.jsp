@@ -47,29 +47,49 @@
 		</tr>	
 		
 	
-	</table>
-
- 
-	
-		<table width="1000" border="1" cellspacing="0" cellpadding="0">
-      
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" >
+		<tr>
+			<td align="right" colspan="2"><font color="#FF0000">* </font> 는 필수 입력사항입니다.
+			</td>
+		</tr>
+			<tr bgcolor="#777777">
+			<td height="1" colspan="2"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>질문유형</td>
+			<td bgcolor="#FFFFFF" >
+				<s:textfield name="type" theme="simple" value="%{resultClass.type}" cssStyle="width:470px" maxlength="50"/>
+			</td>
+		</tr>
+		<tr bgcolor="#777777">
+			<td height="1" colspan="2"></td>
+		</tr>
+		
+		<tr>
+			<td  bgcolor="#F4F4F4"><font color="#FF0000">* </font>제 목</td>
+			<td  bgcolor="#FFFFFF">
+				<s:textfield name="subject" theme="simple" value="%{resultClass.subject}" cssStyle="width:470px" maxlength="50"/>
+			</td>
+		</tr>
+		
+		<tr bgcolor="#777777">
+			<td height="1" colspan="2"></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>내 용</td>
+			<td bgcolor="#FFFFFF">
+				<s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="56" rows="10"/>
+			</td>
+		</tr>
+		<tr bgcolor="#777777">
+			<td height="1" colspan="2"></td>
+		</tr>
+		
+		<tr>
+        	<td height="10" colspan="2"></td>
+        </tr>
 			
-      <tr align="center">
-        <td width="100" bgcolor="#F4F4F4">질문 유형 <s:textfield name="type" value="resultClass.type" /> </td>
-       
-        <td width="100" bgcolor="#F4F4F4">제 목</td>
-        <td  bgcolor="#FFFFFF">
-          &nbsp;<s:property value="resultClass.subject" />
-        </td>    
-      </tr> 
-      
-      <tr >    
-       	<td align="center" height="400"bgcolor="#F4F4F4">내 용 </td>
-        <td colspan="3"bgcolor="#FFFFFF">
-          &nbsp;<s:property value="resultClass.content" />
-        </td>
-       </tr>
- 	 </table><br/>
+	</table>
 	<center>
 		<input type="submit" value="작성 완료">
     	<input name="modify" type="button" value="목록" class="inputb" onClick="javascript:location.href='faqList.action'"> 	

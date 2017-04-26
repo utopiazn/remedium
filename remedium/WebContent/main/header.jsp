@@ -12,7 +12,7 @@
 <%-- 	<style type="text/css">
 	#top /* 상단 */
 	{ 
-	width: 100%; height: 100%; /* background-color: #C0C0C0; */
+	width: 100%; height: 100%; background-color: #C0C0C0;
 	}
 	#navi  /* 회원가입 로그인 부분 */
 	{
@@ -21,7 +21,7 @@
 	}
 	#menu /* 메뉴(카테고리) */
 	{
-	/*  background-color:#C0C0C0; */ float: center; text-decoration: none; 
+	 background-color:#C0C0C0; float: center; text-decoration: none; 
 	 font-family: "돋움",sans-serif; color: #FFFFFF; line-height: 3em; text-align: center; font-weight: bolder;
 	}
 	#res /* 예약 부분 */
@@ -112,10 +112,6 @@
 </div>
 </form>
 </div>
-
-
-
-    
 
     
    
