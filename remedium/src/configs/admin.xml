@@ -42,5 +42,28 @@
 				<param name="actionName">eventList</param>
 			</result>
 		</action>
+		
+		<!-- 자주 묻는 질문 추가 폼 -->
+		<action name="faqWriteForm" class="admin.FaqAction" method="insForm">
+			<result type="tiles">faqWriteForm</result>
+		</action>
+		
+		<!-- 자주 묻는 질문 추가 처리-->
+		<action name="faqWrite" class="admin.FaqAction">
+			<result type="redirect-action">
+				<param name="actionName">faqList</param>
+			</result>
+		</action>
+		
+		<action name="faqModifyForm" class="admin.FaqAction" method="updForm">
+			<result type="tiles">faqWriteForm</result>
+		</action>
+		
+		<action name="faqModify" class="admin.FaqAction" method="update">
+			<result type="redirect-action">
+				<param name="actionName">faqList</param>
+			</result>
+		</action>
+		
 	</package>
 </struts>

@@ -37,7 +37,10 @@ image2	시설정보
 		</tr>	
 
 		<!--객실 소개 추가 처리  -->
-		<form  action="roomInfoInsert.action"  method="post" enctype="multipart/form-data" onsubmit="">
+		<%-- <%-- <s:form   action="roomInfoInsert.action"  method="post" enctype="multipart/form-data" >
+		 --%> --%>
+		<s:form action="roomInfoInsert" method="POST" enctype="multipart/form-data">
+	
 		
 		<tr>			
 			<td bgcolor="#F4F4F4" >
@@ -140,10 +143,10 @@ image2	시설정보
 		
 			</table>
 		
-			<input type="submit" value="저장">
+			<s:submit value="저장"/>
 			
 		
-		</form>
+		</s:form> 
 		</td>
 	<tr>	
 	</table>

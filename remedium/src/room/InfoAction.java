@@ -11,7 +11,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
-import bean.RoomBean;
+
 import bean.RoomclassBean;
 import paging.PagingAction;
 
@@ -19,10 +19,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import paging.PagingAction;
 
-
-import org.apache.commons.io.FileUtils;
 
 public class InfoAction extends ActionSupport {
 	
@@ -72,7 +69,15 @@ public class InfoAction extends ActionSupport {
 	}
 	
 	
-	
+
+
+	public File getUpload1() {
+		
+		File a = getUploads().get(0);
+		
+		return a;
+	}
+
 	
 	public String upload() throws Exception{
 		
@@ -80,14 +85,28 @@ public class InfoAction extends ActionSupport {
 		for (int i = 0; i < uploads.size(); i++) {
 			
 																			 
-	
+
 
 			System.out.println(uploads.size() +"   " +fileUploadPath +"      " +getUploadsFileName().get(i));
 
-			File destFile = new File(fileUploadPath
-					+ getUploadsFileName().get(i));
 			
-			FileUtils.copyFile(getUploads().get(i), destFile);
+			
+			if(!getUploadsFileName().get(i).equals("")){
+				
+				File destFile = new File(fileUploadPath	+ getUploadsFileName().get(i));
+				FileUtils.copyFile(getUploads().get(i), destFile);
+			}
+			
+			
+		      
+		    /*File destFile = new File(fileUploadPath
+						+ getUploadsFileName().get(i));
+						
+			System.out.println(destFile.getPath());
+		    System.out.println("getUpload:"+getUploads().get(i));
+				
+			FileUtils.copyFile(getUploads().get(i), destFile);*/
+		
 			
 		}
 
@@ -336,9 +355,9 @@ public class InfoAction extends ActionSupport {
 		this.roomClassNum = roomClassNum;
 	}
 
-
-
-
+	
+	
+	
 	public List<File> getUploads() {
 		return uploads;
 	}
@@ -362,6 +381,34 @@ public class InfoAction extends ActionSupport {
 
 	public void setUploadsFileName(List<String> uploadsFileName) {
 		this.uploadsFileName = uploadsFileName;
+	}
+
+
+
+
+	public List<String> getUploadsContentType() {
+		return uploadsContentType;
+	}
+
+
+
+
+	public String getFileUploadPath() {
+		return fileUploadPath;
+	}
+
+
+
+
+	public void setUploadsContentType(List<String> uploadsContentType) {
+		this.uploadsContentType = uploadsContentType;
+	}
+
+
+
+
+	public void setFileUploadPath(String fileUploadPath) {
+		this.fileUploadPath = fileUploadPath;
 	}
 
 

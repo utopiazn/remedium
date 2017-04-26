@@ -22,9 +22,10 @@
 		
 			<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">				
 				
-				<!-- 아이디가 관리자 아이디일 경우 -->
-				<s:if test="${ session.userAdmin == '1' }"> 
+				<!-- 아이디가 관리자 아이디일 경우 --><%-- 
+				<s:if test='%{ session.userAdmin.equals("1") }'> <!-- 아이디가 관리자 아이디일 경우 --> --%>
 				
+				<s:if test='${ session.userAdmin=="1" }'>
 					<tr height="10%">
 						<td align="center">
 							<a href="roomInfoList.action?roomClass=0">객실 소개  관리 </a>
