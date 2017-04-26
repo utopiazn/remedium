@@ -49,9 +49,14 @@ font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weigh
 <s:elseif test='%{reservationCheck.equals("y")}'>
 [예약완료]
 </s:elseif>
-<s:if test="${session.userAdmin=='1'}"><br>
-<input type="button" value="예약확인" onclick="location.href=''">
-<input type="button" value="예약취소" onclick="location.href=''">
+<s:if test='${session.userAdmin=="1"}'><br>
+<form action="roomAdminReservationCancel.action" method="post" encType="multipart/form-data">
+<s:hidden name="reservationNo" value="%{reservationNo}" />
+<s:hidden name="money" value="%{money}" />
+<s:hidden name="memberID" value="%{memberID}" />
+<input type="button" value="예약확인" onclick="location.href='roomAdminReservation.action?reservationNo=${reservationNo}'">
+<input type="submit" value="예약취소">
+</form>
 </s:if>
 </td>
 </s:iterator>

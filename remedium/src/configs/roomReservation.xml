@@ -17,5 +17,19 @@
 			<result type="chain">roomList</result>
 		</action>
 		
+		<!-- 관리자용 객실 에약승인 -->
+		<action name="roomAdminReservation" class="admin.room.AdminReservationAction" method="execute">
+			<result type="redirect-action">
+				<param name="actionName">roomAdminList</param>
+			</result>
+		</action>
+		
+		<!-- 관리자용 객실 에약취소 -->
+		<action name="roomAdminReservationCancel" class="admin.room.AdminReservationAction" method="cancel">
+			<result type="redirect-action">
+				<param name="actionName">roomAdminList</param>
+			</result>
+		</action>
+		
 	</package>
 </struts>
