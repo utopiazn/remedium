@@ -8,7 +8,8 @@
 <head>
 <meta charset="UTF-8"> 
 <title></title>
-	<style type="text/css">
+<link href="css/main.css" rel="stylesheet" style="text/css">
+<%-- 	<style type="text/css">
 	#top /* 상단 */
 	{ 
 	width: 100%; height: 100%; /* background-color: #C0C0C0; */
@@ -35,7 +36,7 @@
 	a /* 링크 속성 */
 	{text-decoration: none; color: #000000; } 
 	
-	</style>
+	</style> --%>
 </head>
 <body>
 

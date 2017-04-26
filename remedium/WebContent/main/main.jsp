@@ -10,26 +10,17 @@
 	<meta charset="UTF-8">
 	<!-- <title>Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]</title> -->
 	<title><tiles:getAsString name="title" /></title>
+	<link href="css/main.css" rel="stylesheet" style="text/css">
 
 <style type="text/css">
-.header{
-width: 100%; height: 100%; display: table-cell;
-}
+
 .lefter{
 width: 100%; height: 30%; display: table-cell;
 }
-.right{
-width: 80%; height: 800; display: table-cell;
-}
-.footer{
-width: 100%;  height: 20%; display: table-cell;
-}
-
-
 </style>
 </head>
 <body>
-<%-- 
+
 <div class="header">
 <tiles:insertAttribute name="header" />
 </div>
@@ -44,9 +35,9 @@ width: 100%;  height: 20%; display: table-cell;
 
 <div class="footer">
 <tiles:insertAttribute name="footer" />
-</div> --%>
+</div>
 
-	 <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+	<%--  <table width="100%" height="100%" cellpadding="0" cellspacing="0">
 		
 		<tr>		
 			<!-- 헤더 정보--> 			
@@ -74,7 +65,7 @@ width: 100%;  height: 20%; display: table-cell;
 				<tiles:insertAttribute name="footer" /> 
 			</td>
 		</tr>
-	</table> 
+	</table>  --%>
 
  
 
