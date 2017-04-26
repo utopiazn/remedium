@@ -11,8 +11,7 @@
 		<action name="roomInfoList" class="room.InfoAction" method="roomClassCtrl">
 			<result type="tiles">roomInfoList</result>
 		</action>
-		
-		
+				
 		<!-- 롬 소개 리스트 및 개별 정보 호출 -->
 		<action name="roomInfoView" class="room.InfoAction" method="roomClassCtrl">
 			<result type="tiles">roomInfoView</result>
@@ -27,16 +26,23 @@
 		<action name="roomInfoInsertForm" class="room.InfoAction" method="insForm">
 			<result type="tiles">roomInfoInsertForm</result>
 		</action>
-		
-		
-		
+				
 		<!-- 객실 소개 추가 처리 -->
 		<action name="roomInfoInsert" class="room.InfoAction" method="insert">
 			<result type="redirect-action">
 				<param name="actionName">roomInfoList?roomClass=0</param>
 			</result>
+			<!-- <result type="chain">roomInfoList</result> -->		
+		</action>
+		
+		<!-- 객실 소개 추가 처리 -->
+		<action name="roomInfoDelete" class="room.InfoAction" method="delete">
+			<result type="redirect-action">
+				<param name="actionName">roomInfoList?roomClass=0</param>
+			</result>
 			<!-- <result type="chain">roomInfoList</result> -->
 		</action>
+		
 		
 		
 		

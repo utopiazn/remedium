@@ -24,10 +24,26 @@
 	</select>
 	
 	<!-- 객실 소개의 개별 리스트 값  호출 -->
-	<select id="selectRoomClass" resultMap="roomclassRes">
-	
+	<select id="selectRoomClass" resultMap="roomclassRes">	
 		select * from room_class where room_class = #room_class#
 	</select>
+	
+	<!-- 객실소개 추가 -->
+	<insert id="insertRoomClass" parameterClass="roomclass">		
+		INSERT INTO 
+			ROOM_CLASS(ROOM_CLASS, IMAGE, CONTENT, IMAGE2, NAME) 
+		VALUES 
+			(#room_class#, #image#, #content#, #image2#, #name#)
+	</insert>
+	
+	<!-- 회원 삭제 -->
+	<delete id="deleteRoomClass" parameterClass="roomclass">
+		delete 
+			ROOM_CLASS
+		where
+			ROOM_CLASS  = #room_class#		
+	</delete>
+	
 	
 
 </sqlMap>

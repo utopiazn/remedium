@@ -42,6 +42,7 @@ public class InfoAction extends ActionSupport {
 	private RoomclassBean resultClass; //객체 반환;
 	
 	private String room_class; 	//객실종류
+	private String name;
 	//private String image; 		//사진경로(메인)
 	private String content; 	//내용
 	//private String image2; 		//시설정보
@@ -56,15 +57,18 @@ public class InfoAction extends ActionSupport {
 	
 	
 	//파일 업로드 관련 변수
+		
+	//사진경로(메인)
+	private List<File> uploads = new ArrayList<File>();	
+	private List<String> uploadsFileName = new ArrayList<String>();
 	
-	
+	//시설정보				 
 	private File image2;
 	private String image2FileName;
 	
 	
-	private List<File> uploads = new ArrayList<File>();
-	
-	private List<String> uploadsFileName = new ArrayList<String>();	
+
+
 	private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/roomClassImage/";
 	
 	
@@ -74,30 +78,61 @@ public class InfoAction extends ActionSupport {
 		reader.close();
 	}
 	
+	/*단일 업로드*/
+	public String singleUpload() throws Exception{
+		
+		String resultImage2 ="";
+			
+		System.out.println(uploads.size() +"   " +fileUploadPath +"      "+ image2FileName  +" image2:"+ image2);			
+			
+		//이미지가 잇을 경우
+		if(!image2FileName.equals("")){
+		
+			resultImage2  = image2FileName;
+			
+			File fileName = image2;
+			String strDestFile = fileUploadPath	+ image2FileName;  
+			
+			//파일 업로드
+			uploadAdd(fileName,strDestFile);	
+		}
+
+		return resultImage2;
+		
+	}
+	
 	/*다중 없로드*/ 
 	public String multiUpload() throws Exception{
 		
 		//메인이미지 경로
-		String resultImage ="";
+		String resultImage ="";		
+		int icount =0;
 	
 		for (int i = 0; i < uploads.size(); i++) {			 
 
 			System.out.println(uploads.size() +"   " +fileUploadPath +"      " +getUploadsFileName().get(i));			
 						
 			//파일이 선택 되었을 겨우만 업로드 함.
-			if(!getUploadsFileName().get(i).equals("")){
+			if(!getUploadsFileName().get(i).equals("")){			
 				
-				File fileName = getUploads().get(i);
-				String strDestFile = fileUploadPath	+ getUploadsFileName().get(i);
+				// 메인 이미지 경로 리스트 작성  ex) aa.jpg/b.jpg/b.jpg/b.jpg/ddfd.jpg
+				if(icount == 0){
+					resultImage= getUploadsFileName().get(i);
+				}else{
+					
+					resultImage += "/"+ getUploadsFileName().get(i);	
+				}				
+				icount++;
+							
+				File fileName = getUploads().get(i);  //임시 파일 저장 위치 
+				String strDestFile = fileUploadPath	+ getUploadsFileName().get(i);  //이미지 자장 경로 위치 ex)C:/Java/github/remedium/WebContent/image/roomClassImage/Penguins.jpg 
 				
 				//파일 업로드
 				uploadAdd(fileName,strDestFile);				
 			}	
 		}
-
-		return SUCCESS;
 		
-		
+		return resultImage;	
 	}
 	
 	//파일 업로드 
@@ -114,25 +149,18 @@ public class InfoAction extends ActionSupport {
 	}
 	
 	//기본 객실 클래스와 객실 뷰 값 설정
-	public String roomClassCtrl() throws Exception {
-		
-		
-		
+	public String roomClassCtrl() throws Exception {	
 		
 		//객실 클래스 리스트 /////////////////////////////
-		execute();		
-		
+		execute();				
 		//객실 클래스 개별 뷰///////////////////////////		
 		view();
 			
 		return SUCCESS;
 	}
 	
-	
-	
-	
-	@Override
 	//객실 클래스 리스트
+	@Override	
 	public String execute() throws Exception {
 		
 		list = new ArrayList<RoomclassBean>();
@@ -142,32 +170,31 @@ public class InfoAction extends ActionSupport {
 			list = sqlMapper.queryForList("roomclassSQL.selectAll");
 			
 			totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
+			
 			page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
+			
 			pagingHtml = page.getPagingHtml().toString(); 	//페이지 HTML 생성
 			
 			int lastCount = totalCount;
 			
 			if(page.getEndCount() < totalCount) {
+				
 				lastCount = page.getEndCount() + 1;
 			}
 			
 			list = list.subList(page.getStartCount(), lastCount);
 			
-			//System.out.println(list.size());
-		}
-		
+		}		
 		
 		return SUCCESS;
 	}
-	
-	
-	
+		
 	
 	//객실 클래스 개별 뷰
-	public String view() throws Exception {
-		
+	public String view() throws Exception {		
 
-		roomInfo(roomClass);
+		//객실 클래스 개별 뷰호출 함수
+		roomInfo(roomClass);	
 			
 		return SUCCESS;
 	}
@@ -175,9 +202,7 @@ public class InfoAction extends ActionSupport {
 	
 	//객실 클래스 개별 뷰호출 함수
 	public void roomInfo(int roomClass) throws Exception {
-		
-		
-
+	
 		if( roomClass > 0 ){			
 			
 			paramClass = new RoomclassBean();
@@ -189,6 +214,7 @@ public class InfoAction extends ActionSupport {
 		}
 		
 	}
+
 	
 	//객실 클래스를 추가 폼
 	public String insForm() throws Exception {
@@ -199,17 +225,38 @@ public class InfoAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
-	//객실 클래스를 추가
+	//객실 클래스를 추가처리
 	public String insert() throws Exception {
 		
 		//메인이미지 처리
-		multiUpload();
-				
+		String image=multiUpload();				
+		
+		//시설정보
+		String image2=singleUpload();
+		
+		
+		System.out.println("결과:  메인이미지 경로:"+image  +"    "+"시설정보 경로"+image2);	
+		
+		System.out.println("getRoom_class():"+getRoom_class());	
+		System.out.println("getName(): "+getName());	
+		System.out.println("getContent()"+getContent());	
+		System.out.println("image:"+image);	
+		System.out.println("image2"+image2);	
+			
+		
+		paramClass = new RoomclassBean();		
+		
+		paramClass.setRoom_class(getRoom_class());
+		paramClass.setName(getName());
+		paramClass.setContent(getContent());
+		paramClass.setImage(image);
+		paramClass.setImage2(image2);
+		
+		//객실소개 추가
+		sqlMapper.insert("roomclassSQL.insertRoomClass", paramClass);
+
 		//기본 객실 클래스와 객실 뷰 값 설정
-		roomClassCtrl();				
-	
-		
-		
+		roomClassCtrl();					
 		
 		return SUCCESS;
 	}
@@ -233,8 +280,15 @@ public class InfoAction extends ActionSupport {
 	}
 	
 	//객실 클래스를 삭제
-	public String delete() throws Exception {
+	public String delete() throws Exception {		
 		
+		paramClass = new RoomclassBean();				
+		
+		paramClass.setRoom_class(String.valueOf(getRoomClassNum()));
+		
+		//객실소개 삭제
+		sqlMapper.delete("roomclassSQL.deleteRoomClass",paramClass);
+
 		return SUCCESS;
 	}
 
@@ -270,8 +324,6 @@ public class InfoAction extends ActionSupport {
 		this.room_class = room_class;
 	}
 
-
-
 	public String getContent() {
 		return content;
 	}
@@ -280,33 +332,21 @@ public class InfoAction extends ActionSupport {
 		this.content = content;
 	}
 
-
-
 	public RoomclassBean getResultClass() {
 		return resultClass;
 	}
-
-
-
 
 	public void setResultClass(RoomclassBean resultClass) {
 		this.resultClass = resultClass;
 	}
 
-
-
-
 	public String getPagingHtml() {
 		return pagingHtml;
 	}
 
-
-
-
 	public void setPagingHtml(String pagingHtml) {
 		this.pagingHtml = pagingHtml;
 	}
-
 
 	public int getRoomClassNum() {
 		return roomClassNum;
@@ -314,53 +354,55 @@ public class InfoAction extends ActionSupport {
 
 	public void setRoomClassNum(int roomClassNum) {
 		this.roomClassNum = roomClassNum;
-	}
-
-	
-	
+	}	
 	
 	public List<File> getUploads() {
 		return uploads;
 	}
 
-
-
-
 	public void setUploads(List<File> uploads) {
 		this.uploads = uploads;
 	}
-
-
-
 
 	public List<String> getUploadsFileName() {
 		return uploadsFileName;
 	}
 
-
-
-
 	public void setUploadsFileName(List<String> uploadsFileName) {
 		this.uploadsFileName = uploadsFileName;
 	}
 
-
-
 	public String getFileUploadPath() {
 		return fileUploadPath;
 	}
-
-
-
+	
 	public void setFileUploadPath(String fileUploadPath) {
 		this.fileUploadPath = fileUploadPath;
 	}
 
+	public String getName() {
+		return name;
+	}
 
-
-
-
-
+	public void setName(String name) {
+		this.name = name;
+	}
 	
-	
+	public File getImage2() {
+		return image2;
+	}
+
+	public void setImage2(File image2) {
+		this.image2 = image2;
+	}
+
+	public String getImage2FileName() {
+		return image2FileName;
+	}
+
+	public void setImage2FileName(String image2FileName) {
+		this.image2FileName = image2FileName;
+	}
+
+
 }

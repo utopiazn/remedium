@@ -64,8 +64,8 @@
 		 		
 		 		<td align="center">
 		 		
-		 			<a href='roomInfoUpdateForm.action?roomClass=<s:property value="0"/>&roomClassNum=<s:property value="room_class"/>'>수정</a>&nbsp;/ 
-		 			<a href='roomInfoList.action?roomClass=<s:property value="0"/>'>삭제</a>
+		 			<a href='roomInfoUpdateForm.action?roomClass=0&roomClassNum=<s:property value="room_class"/>'>수정</a>&nbsp;/ 
+		 			<a href='roomInfoDelete.action?roomClass=0&roomClassNum=<s:property value="room_class"/>'>삭제</a>
 		 		</td>		
 					
 			</tr>	
