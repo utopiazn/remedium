@@ -38,14 +38,14 @@
       <tr >    
        	<td align="center" height="400"bgcolor="#F4F4F4">내 용 </td>
         <td colspan="3"bgcolor="#FFFFFF">
-          &nbsp;<s:property value="resultClass.content" />
+          &nbsp;A. <s:property value="resultClass.content" />
         </td>
        </tr>
   </table><br/>
- 		 <input name="list" type="button" value="다른 질문" class="inputb" onClick="javascript:location.href='boardList.action'">
+ 		 <input name="list" type="button" value="다른 질문" class="inputb" onClick="javascript:location.href='faqList.action'">
 		<s:if test ="${ session.userAdmin == '1' }">
-    		<input name="modify" type="button" value="글수정" class="inputb" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
-			<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />&ref=<s:property value="resultClass.ref" />&re_step=<s:property value="resultClass.re_step" />')">
+    		<input name="modify" type="button" value="글수정" class="inputb" onClick="javascript:location.href='faqModifyForm.action?faqId=<s:property value="resultClass.faqId" />'"> 
+			<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('faqDelete.action?faqId=<s:property value="resultClass.faqId" />>')">
 		</s:if>
   
 </body>

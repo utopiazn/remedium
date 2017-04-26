@@ -29,5 +29,15 @@
 		<include refid="where-faqid" />
 		order by type asc	
 	</select>
+	
+	<insert id="insertFaq" parameterClass="FAQ">
+		insert into faq (type, subject, content, faqId)
+		VALUES (#type#,#subject#,#content#, (select max(faqId) +1 as faqId from faq))	
+	</insert>
+	
+	<update id="updateFaq" parameterClass="FAQ">
+		update faq set subject = #subject#, content = #content#, type=#type#
+		<include refid="where-faqid" />
+	</update>
 
 </sqlMap>

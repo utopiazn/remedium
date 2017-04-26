@@ -39,7 +39,7 @@
 			
      	      <tr bgcolor="#FFFFFF"  align="center">
         		<td style="border-bottom: 1px solid #666;"><s:property value="type" /></td>
-        		<td style="border-bottom: 1px solid #666;" align="left"> &nbsp;<s:a href="%{viewURL}"><s:property value="subject" /></s:a></td>
+        		<td style="border-bottom: 1px solid #666;" align="left"> &nbsp;<s:a href="%{viewURL}">Q. <s:property value="subject" /></s:a></td>
       	      </tr>
       	   
       
@@ -57,7 +57,10 @@
     		<td colspan="5"><s:property value="pagingHtml"  escape="false" /></td>
     	  </tr>
     	  <tr align="right">
+    	  	<s:if test ="${ session.userAdmin == '1' }">
     	  	<td colspan="5"><input type="button" value="추 가" class="inputb" onClick="javascript:location.href='faqWriteForm.action'"> 
+    	  	</td>
+    	  	</s:if>
     	  </tr>
 	</table> 
 			
