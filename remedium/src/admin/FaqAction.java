@@ -80,7 +80,7 @@ public class FaqAction extends ActionSupport {
 		
 		paramClass.setContent(getContent());
 		paramClass.setFaqId(getFaqId());
-	/*	String Q = getSubject();
+		/*	String Q = getSubject();
 		
 		Q = Q.replace("Q. ", "");*/
 		
@@ -95,8 +95,11 @@ public class FaqAction extends ActionSupport {
 	
 	//관리자 글 삭제
 	public String delete() throws Exception{
+		paramClass = new FAQBean();
 		
+		paramClass.setFaqId(getFaqId());
 		
+		sqlMapper.delete("faq.deleteFaq",paramClass);
 		
 		return SUCCESS;
 	}

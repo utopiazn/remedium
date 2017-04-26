@@ -5,22 +5,7 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="UTF-8" ?>
 <html lang="ko"  xmlns="http://www.w3.org/1999/xhtml" >
-	<script type="text/javascript">
-	  
-	function button_event(url){
-		var del = confirm("이 글을 정말로 삭제 하시겠습니까??");
-		
-		if(del == true){
-			alert("삭제하였습니다.");			
-			document.location.href=url;
-		}
-		else{
-			alert("취소하셧습니다.");
-			return
-		}
-		
-	}
-	</script>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
