@@ -1,6 +1,6 @@
 package bean;
 
-public class FacilitiesBean {
+public class FacilitiesBean extends ImageBean{
 	
 	private int no; //순서번호
 	private String name; //이름

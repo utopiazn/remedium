@@ -31,10 +31,10 @@
 	<td>개장시간</td>
 	<td><s:textfield name="time" theme="simple" value="%{resultClass.time}"/></td>
 	</tr>
-	<!-- <tr>
+	<tr>
 	<td>이미지</td>
-	<td><s:textfield name="image" theme="simple" value="%{resultClass.image}"/></td>
-	</tr> -->
+	<td><s:file name="upload" theme="simple"/></td>
+	</tr>
 	</table>
 	<s:if test="%{resultClass.no != null}">
 	<input type="submit" value="시설수정">

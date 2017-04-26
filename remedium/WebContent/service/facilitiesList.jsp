@@ -14,26 +14,26 @@
 		
 	
 	<tr><td>
-	<table width="600" border="1" cellspacing="0" cellpadding="2" align="center">
-	<tr align="center" bgcolor="#F3F3F3">
-		<td width="20%"><strong>시설이름</strong></td>
-		<td width="50%"><strong>시설정보</strong></td>
-		<td width="30%"><strong>개장시간</strong></td>
-	</tr>
-	
+	<table width="800" border="1" cellspacing="0" cellpadding="0" align="center">
 	
 	<s:iterator value="list" >
-		
-		<tr bgcolor="#FFFFFF"  align="center">
-			<td align="left"><b><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><s:property value="name" /></a></b></td>
-			<td align="left"><s:property value="content" /></td>
-			<td align="center"><s:property value="time" /></td>
-		</tr>
 	
+		<tr height="50">
+		<td><strong>시설이름</strong></td>
+		<td rowspan=4><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><img width="640" height="400" alt="시설사진" src="/remedium/image/facImage/<s:property value='image'/>" ></a></td>
+		</tr>
+		<tr bgcolor="00afff">
+			<td width="20%" align="center"><b><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><s:property value="name" /></a></b></td>
+		</tr>
+		<tr height="50"><td><strong>개장시간</strong></td></tr>
+		<tr bgcolor="00afff">
+			<td width="20%" align="center"><s:property value="time" /></td>
+		</tr>
+		
 	</s:iterator>
 	
 		<tr align="center">
-			<td colspan="3"><s:property value="pagingHtml"  escape="false" /></td>
+			<td colspan="2"><s:property value="pagingHtml"  escape="false" /></td>
 		</tr>
 	</table>
 	</td></tr>

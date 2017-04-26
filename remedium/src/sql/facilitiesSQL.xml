@@ -41,6 +41,11 @@
 		<include refid="where-no"/>
 	</update>
 	
+	<update id="updateImage" parameterClass="facilities"> 
+		UPDATE FACILITIES SET IMAGE = #image#
+		<include refid="where-no"/>
+	</update>
+	
 	<delete id="deleteFac" parameterClass="facilities">
 		DELETE FROM FACILITIES
 		<include refid="where-no"/>
