@@ -11,11 +11,33 @@
 			<result type="tiles">facilitiesList</result>
 		</action>
 		
-		
+		<action name="facilitiesView" class="service.FacilitiesViewAction">
+			<result type="tiles">facilitiesView</result>
+		</action>
 		
 		<action name="facilitiesInsertForm" class="admin.FacilitiesAction" method="insForm">
 			<result type="tiles">facilitiesInsertForm</result>
 		</action>
-
+		
+		<action name="facilitiesInsert" class="admin.FacilitiesAction">
+			<result type="redirect-action">
+				<param name="actionName">facilitiesList</param>
+			</result>
+		</action>
+		
+		<action name="facilitiesModifyForm" class="admin.FacilitiesAction" method="updForm">
+			<result type="tiles">facilitiesInsertForm</result>
+		</action>
+		
+		<action name="facilitiesModifyAction" class="admin.FacilitiesAction" method="update">
+			<result type="chain">facilitiesView</result>
+		</action>
+		
+		<action name="facilitiesDelete" class="admin.FacilitiesAction" method="delete">
+			<result type="redirect-action">
+				<param name="actionName">facilitiesList</param>
+			</result>
+		</action>
+		
 	</package>
 </struts>

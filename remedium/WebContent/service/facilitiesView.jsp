@@ -1,11 +1,17 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<head>
-	<title>편의시설 상세보기</title>
-</head>
   <body>
+
+<s:property value="resultClass.no" /><br/>  
+<s:property value="resultClass.name" /><br/>  
+<s:property value="resultClass.content" /><br/>
+<s:property value="resultClass.time" /><br/>
+
+<input type="button" value="시설정보수정"onClick="location.href='facilitiesModifyForm.action?no=<s:property value="resultClass.no" />'">  
+<input type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />'">
+<input type="button" value="시설목록"onClick="location.href='facilitiesList.action'">
+ 
   </body>
 </html>
