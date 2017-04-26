@@ -9,7 +9,7 @@
 <body>
 	<h1>HOTEL REMEDIUM</h1>
 	
-	<hr align="left" width="100%" size="2" color="gray">
+	<hr align="center" width="100%" size="2" color="gray">
 	
 	<table width=100%>
 		<tr>
@@ -19,10 +19,24 @@
 		
 		<tr>
 			<td align="center"><img alt="호텔정보"
-				src="/remedium/image/info.jpg" size="100%"><br> 고객 중심의
-				고객을 위한 최고의 서비스와 가치 실현</td>
+				src="/remedium/image/info.jpg" size="100%"><br><br><strong>고객 중심의
+				고객을 위한 최고의 서비스와 가치 실현</strong>
+				<hr align="center" width="50%" size="1" color="gray">
+				<br><br></td>
 		</tr>
 		<tr>
+		<td align="center">2017년 5월 HOTEL REMEDIUM 오픈, 최고의 룸 수준과 높은 서비스 정신으로 제주도 최고의 휴양 호텔로서 자리잡고 있습니다.<br>
+			    REMEDIUM 호텔의 모든 객실은 국내외 디자이너들의 합작으로 독특하고 빈티지한 디자인 감성을 느끼실수 있으며, <br>다양한 고객님의 
+			        취향에 맞춰 8개 타입의 객실 중 선택하실 수 있도록 하였습니다. <br>
+			        또한, 다양하고 특화된 편의서비스와 시설 제공으로 고객님만의 아늑한 휴식 공간이 될 수 있도록 하였습니다.
+			    <br><br>
+			    <strong>고객님의 만족, 고객님과의 신뢰를 최우선 가치로 삼고 항상 노력하는 HOTEL REMEDIUM이 되겠습니다.</strong> 
+			      <br><br>
+			    </td>
+			    </tr>
+			  
+		<tr>
+		 
 			<td align="center">
 				<table><tr><td>
 				CONCEPT
