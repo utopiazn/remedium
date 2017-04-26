@@ -74,11 +74,11 @@ public class InfoAction extends ActionSupport {
 		reader.close();
 	}
 	
-	
-	
 	/*다중 없로드*/ 
 	public String multiUpload() throws Exception{
 		
+		//메인이미지 경로
+		String resultImage ="";
 	
 		for (int i = 0; i < uploads.size(); i++) {			 
 
@@ -202,7 +202,8 @@ public class InfoAction extends ActionSupport {
 	//객실 클래스를 추가
 	public String insert() throws Exception {
 		
-		upload();
+		//메인이미지 처리
+		multiUpload();
 				
 		//기본 객실 클래스와 객실 뷰 값 설정
 		roomClassCtrl();				
