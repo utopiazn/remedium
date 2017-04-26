@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
-<sqlMap namespace="facilities">
+<sqlMap namespace="facilitiesSQL">
 	<typeAlias alias="facilities" type="bean.FacilitiesBean" />
 
 	<resultMap id="facilitiesRes" class="facilities">
@@ -13,15 +13,16 @@
 	</resultMap>
 
 	<sql id="select-all">
-		select * from facilities
+		SELECT * FROM FACILITIES
 	</sql>
 
 	<sql id="where-no">
-		WHERE no = #no#
+		WHERE NO = #no#
 	</sql>
 
 	<select id="selectAll" resultMap="facilitiesRes">
 		<include refid="select-all" />
+		ORDER BY NO DESC
 	</select>
 
 	<select id="selectOne" resultMap="facilitiesRes">

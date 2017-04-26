@@ -16,7 +16,7 @@
 	
 	<sql id="select-all">SELECT * FROM ROOM_RESERVATION</sql>
 	
-	<sql id="where-no">WHERE RESERVATIONNO = #ReservationNo#</sql>
+	<sql id="where-no">WHERE RESERVATIONNO = #reservationNo#</sql>
 	
 	<insert id="insertRes" parameterClass="roomReservation">
 		INSERT INTO ROOM_RESERVATION(RESERVATIONNO, NO, FIRSTDATE, LASTDATE,
@@ -26,11 +26,25 @@
 	
 	<select id="reslist" resultMap="roomReservationRes" parameterClass="roomReservation">
 		<include refid="select-all"/>
-		where memberID = #memberID# ORDER BY reservationNo DESC 
+		WHERE MEMBERID = #memberID# ORDER BY RESERVATIONNO DESC 
 	</select>
 	
 	<select id="adminlist" resultMap="roomReservationRes">
 	<include refid="select-all"/>
-	ORDER BY reservationNo DESC
+	ORDER BY RESERVATIONNO DESC
 	</select>
+	
+	<update id="adminReservation" parameterClass="roomReservation">
+		UPDATE ROOM_RESERVATION SET RESERVATIONCHECK = #reservationCheck#
+		<include refid="where-no"/>
+	</update>
+	
+	<update id="ResCancel1" parameterClass="roomReservation">
+		UPDATE MEMBER SET CASH = CASH + #money# WHERE MEMBERID = #memberID#
+	</update>
+	
+	<delete id="ResCancel2" parameterClass="roomReservation">
+		DELETE FROM ROOM_RESERVATION
+		<include refid="where-no"/>
+	</delete>
 </sqlMap>
