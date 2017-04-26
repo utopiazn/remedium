@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8"> 
 <title></title>
-<link href="css/main.css" rel="stylesheet" style="text/css">
+<link href="css/header.css" rel="stylesheet" style="text/css">
 <%-- 	<style type="text/css">
 	#top /* 상단 */
 	{ 
@@ -40,7 +40,7 @@
 </head>
 <body>
 
-<div id="top">
+<div class="top">
 
 <div id="navi">
 
