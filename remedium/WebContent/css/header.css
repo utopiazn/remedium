@@ -10,12 +10,17 @@ font-size: 15px; color: white; float: right; padding-top: 50px; padding-right: 2
 }
 #menu /* ¸Þ´º(Ä«Å×°í¸®) */
 {
- float: center; font-family: "µ¸¿ò",sans-serif; color: white; line-height: 3em; text-align: center; font-weight: bolder; 
+ float: center; font-family: "µ¸¿ò",sans-serif; color: white; line-height: 3em; text-align: center; font-weight: bolder; margin: -10px; padding: -10px;
 }
 #res /* ¿¹¾à ºÎºÐ */
 {
+<<<<<<< HEAD
+height: 50px; background:rgba(0, 0, 0, 0.4); font-family:"µ¸¿ò",sans-serif; 
+color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em; float: center; margin: -10px; padding: -10px;
+=======
 height: 50px; background:rgba(0, 0, 0, 0.4); font-family:"µ¸¿ò",sans-serif;  color: white;
 color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em; float: center; margin-right: 0px; margin-left: 0px;
+>>>>>>> 856d631252228ebdb25c83ba2fd6b341a428bc99
 }
 #logo /* ·Î°í */
 {

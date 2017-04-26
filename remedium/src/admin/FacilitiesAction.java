@@ -1,8 +1,11 @@
 package admin;
 
+import java.io.File;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.FacilitiesBean;
+import util.ProjectUtil;
 
 public class FacilitiesAction extends ActionSupport{
 	
@@ -14,6 +17,11 @@ public class FacilitiesAction extends ActionSupport{
 	private String content;
 	private String time;
 	
+	//업로드 관련
+		private File upload;
+		private String uploadFileName;
+		private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/facImage/";
+
 	//관리자 편의시설 글 쓰기 폼
 	public String insForm() throws Exception{
 		
@@ -30,6 +38,13 @@ public class FacilitiesAction extends ActionSupport{
 		paramClass.setTime(getTime());
 		
 		util.ProjectUtil.sqlMapper.insert("facilitiesSQL.insertFac", paramClass);
+		
+		
+		//이미지 업로드
+		String sql = "facilitiesSQL.updateImage";
+		util.ProjectUtil.imageUplode(paramClass, getNo(), uploadFileName, fileUploadPath, upload, sql);
+		
+		
 		
 		return SUCCESS;
 	}
@@ -63,9 +78,10 @@ public class FacilitiesAction extends ActionSupport{
 		
 		paramClass = new FacilitiesBean();
 		paramClass.setNo(getNo());
-		System.out.println("삭제하잣!");
 		util.ProjectUtil.sqlMapper.update("facilitiesSQL.deleteFac", paramClass);
 		
+		File deleteFile = new File(fileUploadPath + resultClass.getImage());
+		deleteFile.delete();
 		return SUCCESS;
 	}
 
@@ -122,6 +138,22 @@ public class FacilitiesAction extends ActionSupport{
 
 	public void setResultClass(FacilitiesBean resultClass) {
 		this.resultClass = resultClass;
+	}
+
+	public File getUpload() {
+		return upload;
+	}
+
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
 	}
 	
 	
