@@ -21,7 +21,7 @@ width: 100%; height: 30%; display: table-cell;
 </head>
 <body>
 
-<div class="header">
+<div class="header2">
 <tiles:insertAttribute name="header" />
 </div>
 
