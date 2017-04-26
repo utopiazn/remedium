@@ -80,12 +80,11 @@ public class InfoAction extends ActionSupport {
 		for (int i = 0; i < uploads.size(); i++) {
 			
 																			 
-	
 
 			System.out.println(uploads.size() +"   " +fileUploadPath +"      " +getUploadsFileName().get(i));
 
-			File destFile = new File(fileUploadPath
-					+ getUploadsFileName().get(i));
+			File destFile = new File(fileUploadPath + 
+					getUploadsFileName().get(i));
 			
 			FileUtils.copyFile(getUploads().get(i), destFile);
 			
@@ -362,6 +361,34 @@ public class InfoAction extends ActionSupport {
 
 	public void setUploadsFileName(List<String> uploadsFileName) {
 		this.uploadsFileName = uploadsFileName;
+	}
+
+
+
+
+	public List<String> getUploadsContentType() {
+		return uploadsContentType;
+	}
+
+
+
+
+	public String getFileUploadPath() {
+		return fileUploadPath;
+	}
+
+
+
+
+	public void setUploadsContentType(List<String> uploadsContentType) {
+		this.uploadsContentType = uploadsContentType;
+	}
+
+
+
+
+	public void setFileUploadPath(String fileUploadPath) {
+		this.fileUploadPath = fileUploadPath;
 	}
 
 

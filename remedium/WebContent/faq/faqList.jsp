@@ -55,7 +55,11 @@
 			
 	      <tr align="center">
     		<td colspan="5"><s:property value="pagingHtml"  escape="false" /></td>
-    	      </tr>
-	</table>
+    	  </tr>
+    	  <tr align="right">
+    	  	<td colspan="5"><input type="button" value="추 가" class="inputb" onClick="javascript:location.href='faqWriteForm.action'"> 
+    	  </tr>
+	</table> 
+			
 </body>
 </html>
