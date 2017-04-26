@@ -85,6 +85,8 @@ public class RoomAction extends ActionSupport{
 		      //서버에 이미지 저장.
 		      File destFile = new File(fileUploadPath + file_name + "." + file_ext);
 		      System.out.println(destFile.getPath());
+		      
+		      System.out.println("getUpload:"+getUpload());
 		      FileUtils.copyFile(getUpload(), destFile);
 		      System.out.println("서버에 이미지 저장.");
 		      //이미지 정보 파라미터 설정.
