@@ -99,21 +99,36 @@ public class EventAction extends ActionSupport{
 	//관리자 이벤트 글 수정 처리
 	public String update() throws Exception{
 		
-		/*paramClass = new EventBean();
+		paramClass = new EventBean();
 		resultClass = new EventBean();
 		
+		paramClass.setNo(getNo());
 		paramClass.setName(getName());
 		paramClass.setFirstdate(java.sql.Date.valueOf(firstdate));
 		paramClass.setLastdate(java.sql.Date.valueOf(lastdate));
 		paramClass.setContent(getContent());
 		
-		sqlMapper.update("event.updateEvent",paramClass);*/
+		sqlMapper.update("event.updateEvent",paramClass);
+		
+		resultClass = (EventBean) paramClass;
+		
 		
 		return SUCCESS;
 	}
 	
 	//관리자 이벤트 글 삭제
 	public String delete() throws Exception{
+		
+		System.out.println("333333");
+		
+		paramClass = new EventBean();
+		
+		
+		
+		System.out.println(getNo());
+		paramClass.setNo(getNo());
+		
+	    sqlMapper.delete("event.deleteEvent",paramClass);
 		
 		return SUCCESS;
 	}

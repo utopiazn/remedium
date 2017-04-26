@@ -31,7 +31,7 @@
 		</action>
 		
 		<!-- 이벤트 수정 처리 -->
-		<action name="eventModify" class="admin.EventAction" method="execute">
+		<action name="eventModify" class="admin.EventAction" method="update">
 			<result type="redirect-action">
 				<param name="actionName">eventList</param>
 			</result>
@@ -41,6 +41,14 @@
 		<action name="eventModifyForm" class="admin.EventAction" method="updForm">
 			<result type="tiles">eventModifyForm</result>
 		</action>
+		
+		<!-- 이벤트 삭제 -->
+		<action name="eventDelete" class="admin.EventAction" method="delete">
+			<result type="redirect-action">
+				<param name="actionName">eventList</param>
+			</result>
+		</action>
+		
 
 	</package>
 </struts>

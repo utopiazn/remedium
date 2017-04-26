@@ -48,7 +48,7 @@
 	        	    <td align="center">
 		 		
 		 			<a href='eventModifyForm.action?no=<s:property value="no"/>'>수정</a>&nbsp;/ 
-		 			<a href='eventDelete.action?no=<s:property value="0"/>'>삭제</a>
+		 			<a href='eventDelete.action?no=<s:property value="no"/>'>삭제</a>
 		 		</td>		
 	      	      </tr>
 	      	      <tr bgcolor="#777777">
