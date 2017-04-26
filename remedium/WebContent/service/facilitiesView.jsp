@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <body>
-
+<img height="400" alt="시설사진" src="/remedium/image/facImage/<s:property value='resultClass.image'/>" >
 <s:property value="resultClass.no" /><br/>  
 <s:property value="resultClass.name" /><br/>  
 <s:property value="resultClass.content" /><br/>

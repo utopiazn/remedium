@@ -59,7 +59,7 @@ public class ProjectUtil {
 	
 	
 	//이미지업로드 설정
-	public void imageUplode(ImageBean paramClass, ImageBean resultClass, String uploadFileName, String fileUploadPath, File upload, String sql) throws IOException, SQLException{
+	public static void imageUplode(ImageBean paramClass, int no, String uploadFileName, String fileUploadPath, File upload, String sql) throws IOException, SQLException{
 		
 		try{	
 			//파일을 서버에 저장
@@ -69,7 +69,7 @@ public class ProjectUtil {
 		    System.out.println("서버에 이미지 저장.");
 		    
 		    //파일 정보 설정.
-		    paramClass.setNo(resultClass.getNo());  //번호
+		    paramClass.setNo(no);  //번호
 		    paramClass.setImage(uploadFileName);    //이미지 이름
 		    System.out.println("이미지 정보 파라미터 설정.");
 		    
