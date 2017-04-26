@@ -14,6 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import bean.RoomclassBean;
 import paging.PagingAction;
+import util.ProjectUtil;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
@@ -59,7 +60,7 @@ public class InfoAction extends ActionSupport {
 	private List<String> uploadsContentType = new ArrayList<String>();
 
 
-	private String fileUploadPath="c:/java/upload/";
+	private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/roomClassImage/";
 	
 	
 	public InfoAction() throws IOException {

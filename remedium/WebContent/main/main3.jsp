@@ -30,7 +30,11 @@ background-attachment: fixed; background-size: cover; background-image: url("/re
 <body>
 
 <!-- <img alt="메인이미지" src="/remedium/image/hotelbg.jpg" width="100%" height="100%">
- --><div class="header">
+ -->
+ 
+
+ 
+ <div class="header">
 <tiles:insertAttribute name="header" />
 </div>
 
@@ -38,9 +42,11 @@ background-attachment: fixed; background-size: cover; background-image: url("/re
 <tiles:insertAttribute name="body" />
 </div>
 
+ 
 <div class="footer">
 <tiles:insertAttribute name="footer" />
 </div>
+ 
 
 
 </body>
