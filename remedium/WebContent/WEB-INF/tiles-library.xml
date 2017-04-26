@@ -166,6 +166,11 @@
 		<put-attribute name="body" value="/faq/faqView.jsp" />
 	</definition>
 	
+	<definition name="faqWriteForm" extends="main">
+		<put-attribute name="lefter" value="/main/lefter/boardLefter.jsp" />
+		<put-attribute name="body" value="/faq/faqWrite.jsp" />
+	</definition>
+	
 <!-- 문의사항 -->
     <definition name="boardList" extends="main">
    		<put-attribute name="lefter" value="/main/lefter/boardLefter.jsp" />

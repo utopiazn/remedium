@@ -21,27 +21,32 @@
   		</tr>
   	</table>
 		
-<table width="500" border="1" cellspacing="0" cellpadding="0">
+<table width="1000" border="1" cellspacing="0" cellpadding="0">
       
 			
-      <tr>
+      <tr align="center">
         <td width="100" bgcolor="#F4F4F4">질문 유형 </td>
-        <td width="100" bgcolor="#FFFFFF">
+        <td width="150" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.type" />
         </td>
-        
         <td width="100" bgcolor="#F4F4F4">제 목</td>
-        <td bgcolor="#FFFFFF">
+        <td  bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.subject" />
         </td>    
       </tr> 
       
-      <tr>    
-       	<td  width="100" height="400"bgcolor="#F4F4F4">내 용 </td>
+      <tr >    
+       	<td align="center" height="400"bgcolor="#F4F4F4">내 용 </td>
         <td colspan="3"bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.content" />
         </td>
        </tr>
-  </table>
+  </table><br/>
+ 		 <input name="list" type="button" value="다른 질문" class="inputb" onClick="javascript:location.href='boardList.action'">
+		<s:if test ="${ session.userAdmin == '1' }">
+    		<input name="modify" type="button" value="글수정" class="inputb" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
+			<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />&ref=<s:property value="resultClass.ref" />&re_step=<s:property value="resultClass.re_step" />')">
+		</s:if>
+  
 </body>
 </html>
