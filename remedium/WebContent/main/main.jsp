@@ -29,7 +29,7 @@ width: 100%;  height: 20%; display: table-cell;
 </style>
 </head>
 <body>
-
+<%-- 
 <div class="header">
 <tiles:insertAttribute name="header" />
 </div>
@@ -44,9 +44,9 @@ width: 100%;  height: 20%; display: table-cell;
 
 <div class="footer">
 <tiles:insertAttribute name="footer" />
-</div>
+</div> --%>
 
-	<%--  <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+	 <table width="100%" height="100%" cellpadding="0" cellspacing="0">
 		
 		<tr>		
 			<!-- 헤더 정보--> 			
@@ -74,7 +74,7 @@ width: 100%;  height: 20%; display: table-cell;
 				<tiles:insertAttribute name="footer" /> 
 			</td>
 		</tr>
-	</table> --%>
+	</table> 
 
  
 
