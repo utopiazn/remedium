@@ -10,22 +10,13 @@
 	<meta charset="UTF-8">
 	<!-- <title>Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]</title> -->
 	<title><tiles:getAsString name="title" /></title>
-	
+	<link href="css/main.css" rel="stylesheet" style="text/css">
 <style type="text/css">
-.header{
-width: 100%; height: 100%; display: table-cell; float: left; 
-}
-.right{
-width: 100; height:100%; display: table-cell; float: left; 
-}
-.footer{
-width: 100%;  height: 20%; display: table-cell; float: left; 
-}
 body{
 background-attachment: fixed; background-size: cover; background-image: url("/remedium/image/hotelbg.jpg");
 }
-
 </style>
+
 </head>
 <body>
 

@@ -48,22 +48,58 @@ public class FaqAction extends ActionSupport {
 		paramClass.setSubject(getSubject());
 		paramClass.setType(getType());
 		
-		sqlMapper.insert("faq.faqWrite",paramClass);
+		sqlMapper.insert("faq.insertFaq",paramClass);
 		
 		resultClass = (FAQBean) paramClass;
 		
 		return SUCCESS;
 	}
 	
+	//관리자 수정폼	
+	public String updForm() throws Exception{
+		paramClass = new FAQBean();
+		resultClass = new FAQBean();
+		
+		paramClass.setFaqId(getFaqId());
+		
+		resultClass = (FAQBean) sqlMapper.queryForObject("faq.selectOne",paramClass);
+		
+		
+		/*String Q = resultClass.getSubject();
+		
+		Q = Q.replace("Q. ", "");
+		
+		resultClass.setSubject(Q);*/
+		return SUCCESS;
+	}
 	
 	//관리자 글 수정 처리	
 	public String update() throws Exception{
+		paramClass = new FAQBean();
+		resultClass = new FAQBean();
+		
+		paramClass.setContent(getContent());
+		paramClass.setFaqId(getFaqId());
+		/*	String Q = getSubject();
+		
+		Q = Q.replace("Q. ", "");*/
+		
+		paramClass.setSubject(getSubject());
+		paramClass.setType(getType());
+		
+		sqlMapper.update("faq.updateFaq",paramClass);
+		
 		
 		return SUCCESS;
 	}
 	
 	//관리자 글 삭제
 	public String delete() throws Exception{
+		paramClass = new FAQBean();
+		
+		paramClass.setFaqId(getFaqId());
+		
+		sqlMapper.delete("faq.deleteFaq",paramClass);
 		
 		return SUCCESS;
 	}
