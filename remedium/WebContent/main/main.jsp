@@ -14,26 +14,24 @@
 
 <style type="text/css">
 
-.lefter{
-width: 100%; height: 30%; display: table-cell;
-}
+
 </style>
 </head>
 <body>
 
-<div class="header">
+<div class="header2">
 <tiles:insertAttribute name="header" />
 </div>
-
+<div class="main">
 <div class="lefter">
 <tiles:insertAttribute name="lefter" />
-</div>
 
-<div class="right">
+</div>
+<div class="right2">
 <tiles:insertAttribute name="body" />
 </div>
-
-<div class="footer">
+</div>
+<div class="footer2">
 <tiles:insertAttribute name="footer" />
 </div>
 

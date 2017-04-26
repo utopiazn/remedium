@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8"> 
 <title></title>
-<link href="css/main.css" rel="stylesheet" style="text/css">
+<link href="css/header.css" rel="stylesheet" style="text/css">
 <%-- 	<style type="text/css">
 	#top /* 상단 */
 	{ 
@@ -40,7 +40,7 @@
 </head>
 <body>
 
-<div id="top">
+<div class="top">
 
 <div id="navi">
 
@@ -71,22 +71,22 @@
 </div>
 
 <div id="menu" >
-	<a href="info.action">호텔 정보   </a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="info.action">Remedium</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
-    <a href="roomInfoView.action?roomClass=1">객실 소개   </a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="facilitiesList.action">편의 시설   </a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="eventList.action">이 벤 트   </a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="boardList.action">문의사항</a>
+    <a href="roomInfoView.action?roomClass=1">Room</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="facilitiesList.action">Facility</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="eventList.action">Event</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="boardList.action">QnA</a>
 </div>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
-숙박 날짜:
+체크인:
 <input type="date" name="firstDate">
 ~
 <input type="date" name="lastDate">
