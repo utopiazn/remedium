@@ -37,12 +37,18 @@
 		VALUES (event_no_seq.nextval, #name#, #content#, #firstdate#, #lastdate#)
 	</insert>
 	
-	<!--이벤트 수정
-	<insert id="updateEvent" parameterClass="event">
-	INSERT INTO EVENT (NO, NAME, CONTENT, FIRSTDATE, LASTDATE) 
-		VALUES (event_no_seq.nextval, #name#, #content#, #firstdate#, #lastdate#)
+	<!-- 이벤트 수정 -->
+	<update id="updateEvent" parameterClass="event">
+	UPDATE EVENT SET NAME = #name#, CONTENT = #content#, FIRSTDATE = #firstdate#, LASTDATE = #lastdate#
 		<include refid="where-no"/>
-	</insert> -->
+	</update>
+	
+	<delete id="deleteEvent" parameterClass="event">
+	DELETE EVENT
+	<include refid="where-no"/>
+	</delete>
+	
+	
 
 	
 </sqlMap>

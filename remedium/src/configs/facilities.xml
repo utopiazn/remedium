@@ -6,8 +6,15 @@
 <struts>
 	<package name="facilities"  extends="struts-default, tiles-default">
 		
+		
 		<action name="facilitiesList" class="service.FacilitiesListAction">
 			<result type="tiles">facilitiesList</result>
+		</action>
+		
+		
+		
+		<action name="facilitiesInsertForm" class="admin.FacilitiesAction" method="insForm">
+			<result type="tiles">facilitiesInsertForm</result>
 		</action>
 
 	</package>
