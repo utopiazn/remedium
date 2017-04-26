@@ -38,8 +38,8 @@ image2	시설정보
 
 		<!--객실 소개 추가 처리  -->
 		<%-- <%-- <s:form   action="roomInfoInsert.action"  method="post" enctype="multipart/form-data" >
-		 --%> --%>
-		<s:form action="roomInfoInsert" method="POST" enctype="multipart/form-data">
+		 --%> 
+		 <s:form action="roomInfoInsert" method="POST" enctype="multipart/form-data">
 	
 		
 		<tr>			

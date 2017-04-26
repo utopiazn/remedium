@@ -2,33 +2,21 @@
 .header{
 width: 100%; height: 100%; display: table-cell; float: left; font-family: serif; 
 }
+.header2{
+width: 100%; height: 100%; display: table-cell; float: left; font-family: serif; background-color: #202f58;
+}
+.lefter{
+width: 100%; height: 30%; display: table-cell; color: black;
+}
 .right{
-width: 70%; height:900px; display: table-cell; float: left; font-family: '돋움', sans-serif; text-align: center;
+width: 70%; height:900px; display: table-cell; float: left; font-family: '돋움', sans-serif; text-align: center; color:black; 
+}
+.right2{
+width: 70%; height: 900px; display: table-cell; float: left; font-family: '돋움', sans-serif; text-align: center; color:black; padding-left: 15%; text-align: center; color: black;
 }
 .footer{
 width: 100%;  height: 10%; display: table-cell; float: left; font-family: '돋움', sans-serif; color: white; background:rgba(0, 0, 0, 0.4);  margin: -15px; padding: 15px;
 } 
-#top /* 상단 */
-{ 
-width: 100%; height: 100%; /* background-color: #C0C0C0; */
-}
-#navi  /* 회원가입 로그인 부분 */
-{
-margin: 0 10px; font-family: "돋음",sans-serif; 
-font-size: 15px; color: white; float: right; padding-top: 50px; padding-right: 20px; font-weight: bolder;
-}
-#menu /* 메뉴(카테고리) */
-{
- float: center; font-family: "돋움",sans-serif; color: white; line-height: 3em; text-align: center; font-weight: bolder; 
-}
-#res /* 예약 부분 */
-{
-height: 50px; background:rgba(0, 0, 0, 0.4); font-family:"돋움",sans-serif;  
-color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em; float: center; margin-right: 0px; margin-left: 0px;
-}
-#logo /* 로고 */
-{
-margin: 0 auto; float: center; cursor: pointer; padding-left: 350px; 
-}
-a /* 링크 속성 */
-{text-decoration: none; color: white; } 
+.footer2{
+width: 100%;  height: 10%; display: table-cell; float: left; font-family: '돋움', sans-serif; color: white;  margin: -15px; padding: 15px; background-color: #202f58;
+} 

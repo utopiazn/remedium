@@ -14,9 +14,7 @@
 
 <style type="text/css">
 
-.lefter{
-width: 100%; height: 30%; display: table-cell;
-}
+
 </style>
 </head>
 <body>
@@ -33,7 +31,7 @@ width: 100%; height: 30%; display: table-cell;
 <tiles:insertAttribute name="body" />
 </div>
 
-<div class="footer">
+<div class="footer2">
 <tiles:insertAttribute name="footer" />
 </div>
 

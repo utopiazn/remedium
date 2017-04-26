@@ -14,15 +14,15 @@
 </head>
 <body>
 
-<div>
+<div class="header2">
 <tiles:insertAttribute name="header" />
 </div>
 
-<div class="right">
+<div class="right2">
 <tiles:insertAttribute name="body" />
 </div>
 
-<div class="footer">
+<div class="footer2">
 <tiles:insertAttribute name="footer" />
 </div>
 
