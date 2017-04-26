@@ -16,16 +16,18 @@
 	<tr><td>
 	<table width="600" border="1" cellspacing="0" cellpadding="2" align="center">
 	<tr align="center" bgcolor="#F3F3F3">
-		<td width="350"><strong>시설이름</strong></td>
-		<td width="80"><strong>개장시간</strong></td>
+		<td width="20%"><strong>시설이름</strong></td>
+		<td width="50%"><strong>시설정보</strong></td>
+		<td width="30%"><strong>개장시간</strong></td>
 	</tr>
 	
 	
 	<s:iterator value="list" >
 		
 		<tr bgcolor="#FFFFFF"  align="center">
-			<td align="left"><s:property value="name" /></td>
-			<td align="center"><s:property value="regdate" /></td>
+			<td align="left"><b><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><s:property value="name" /></a></b></td>
+			<td align="left"><s:property value="content" /></td>
+			<td align="center"><s:property value="time" /></td>
 		</tr>
 	
 	</s:iterator>
