@@ -57,8 +57,7 @@ public class InfoAction extends ActionSupport {
 	
 	private List<File> uploads = new ArrayList<File>();
 	private List<String> uploadsFileName = new ArrayList<String>();
-	private List<String> uploadsContentType = new ArrayList<String>();
-
+	
 
 	private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/roomClassImage/";
 	
@@ -70,45 +69,24 @@ public class InfoAction extends ActionSupport {
 	}
 	
 	
-
-
-	public File getUpload1() {
-		
-		File a = getUploads().get(0);
-		
-		return a;
-	}
-
 	
+	/*다중 없로드*/ 
 	public String upload() throws Exception{
 		
 	
-		for (int i = 0; i < uploads.size(); i++) {
-			
-																			 
+		for (int i = 0; i < uploads.size(); i++) {			 
 
-
-			System.out.println(uploads.size() +"   " +fileUploadPath +"      " +getUploadsFileName().get(i));
-
-			
-			
+			System.out.println(uploads.size() +"   " +fileUploadPath +"      " +getUploadsFileName().get(i));			
+						
+			//파일이 선택 되었을 겨우만 업로드 함.
 			if(!getUploadsFileName().get(i).equals("")){
 				
-				File destFile = new File(fileUploadPath	+ getUploadsFileName().get(i));
-				FileUtils.copyFile(getUploads().get(i), destFile);
-			}
-			
-			
-		      
-		    /*File destFile = new File(fileUploadPath
-						+ getUploadsFileName().get(i));
-						
-			System.out.println(destFile.getPath());
-		    System.out.println("getUpload:"+getUploads().get(i));
+				File fileName = getUploads().get(i);
+				String strDestFile = fileUploadPath	+ getUploadsFileName().get(i);
 				
-			FileUtils.copyFile(getUploads().get(i), destFile);*/
-		
-			
+				//파일 업로드
+				uploadAdd(fileName,strDestFile);				
+			}	
 		}
 
 		return SUCCESS;
@@ -116,7 +94,14 @@ public class InfoAction extends ActionSupport {
 		
 	}
 	
-	
+	//파일 업로드 
+	public String uploadAdd(File fileName  ,String strDestFile) throws Exception{
+		
+		File destFile = new File(strDestFile);
+		FileUtils.copyFile(fileName, destFile);
+
+		return SUCCESS;
+	}
 	
 	//기본 객실 클래스와 객실 뷰 값 설정
 	public String roomClassCtrl() throws Exception {
@@ -293,13 +278,7 @@ public class InfoAction extends ActionSupport {
 		this.room_class = room_class;
 	}
 
-/*	public String getImage() {
-		return image;
-	}
 
-	public void setImage(String image) {
-		this.image = image;
-	}*/
 
 	public String getContent() {
 		return content;
@@ -346,8 +325,6 @@ public class InfoAction extends ActionSupport {
 	}
 
 
-
-
 	public int getRoomClassNum() {
 		return roomClassNum;
 	}
@@ -386,25 +363,9 @@ public class InfoAction extends ActionSupport {
 
 
 
-
-	public List<String> getUploadsContentType() {
-		return uploadsContentType;
-	}
-
-
-
-
 	public String getFileUploadPath() {
 		return fileUploadPath;
 	}
-
-
-
-
-	public void setUploadsContentType(List<String> uploadsContentType) {
-		this.uploadsContentType = uploadsContentType;
-	}
-
 
 
 
