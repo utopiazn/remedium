@@ -1,29 +1,18 @@
 package service;
 
 
-import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import com.ibatis.common.resources.Resources;
-import com.ibatis.sqlmap.client.SqlMapClient;
-import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
-import bean.EventBean;
 import bean.FacilitiesBean;
 import paging.PagingAction;
 
 
 public class FacilitiesListAction extends ActionSupport{
 	
-	public static Reader reader; //파일 스트림을 위한 reader
-	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
-	
-	
-	private List<FacilitiesBean> list = new ArrayList<FacilitiesBean>();
+	private List<FacilitiesBean> list;
 	private int no;
 	private String name;
 	private String time;
@@ -35,41 +24,43 @@ public class FacilitiesListAction extends ActionSupport{
 	private String pagingHtml;
 	private PagingAction page;
 	private int num;
+	private String url;
 	
-	//생성자
-	public FacilitiesListAction() throws IOException{
-		
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); //sqlMapConfig.xml 파일의 설정 내용을 가져온다
-		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);  //sqlMapConfig.xml 내용을 적용한 sqlMapper 객체 생성
-		
-		reader.close();
-	}
 
 	
 	//편의시설들의 목록
 	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
-		
-        totalCount = list.size();
-		
-		list = sqlMapper.queryForList("facilities.selectAll");
-		System.out.println(list.size());
-				
-		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
-		pagingHtml = page.getPagingHtml().toString();
-		
 
+		list = new ArrayList<FacilitiesBean>();
+		
+		list = util.ProjectUtil.sqlMapper.queryForList("facilitiesSQL.selectAll");
+		
+	
+		//페이징
+		
+		url = "facilitiesList.action?";
+		
+		totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
+		
+		System.out.println("url : " + url);
+		
+		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "", url);
+		pagingHtml = page.getPagingHtml().toString(); 	//페이지 HTML 생성
+		
+		System.out.println("paging : " + pagingHtml);
+		
 		int lastCount = totalCount;
 		
 		if(page.getEndCount() < totalCount) {
 			lastCount = page.getEndCount() + 1;
 		}
-	
-		System.out.println(list.size());
+		
+		list = list.subList(page.getStartCount(), lastCount);
 		
 		return SUCCESS;
 	}
+
 
 
 	public List<FacilitiesBean> getList() {
@@ -77,9 +68,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setList(List<FacilitiesBean> list) {
 		this.list = list;
 	}
+
 
 
 	public int getNo() {
@@ -87,9 +80,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setNo(int no) {
 		this.no = no;
 	}
+
 
 
 	public String getName() {
@@ -97,9 +92,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 
 	public String getTime() {
@@ -107,9 +104,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setTime(String time) {
 		this.time = time;
 	}
+
 
 
 	public int getCurrentPage() {
@@ -117,9 +116,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setCurrentPage(int currentPage) {
 		this.currentPage = currentPage;
 	}
+
 
 
 	public int getTotalCount() {
@@ -127,9 +128,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setTotalCount(int totalCount) {
 		this.totalCount = totalCount;
 	}
+
 
 
 	public int getBlockCount() {
@@ -137,9 +140,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setBlockCount(int blockCount) {
 		this.blockCount = blockCount;
 	}
+
 
 
 	public int getBlockPage() {
@@ -147,9 +152,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setBlockPage(int blockPage) {
 		this.blockPage = blockPage;
 	}
+
 
 
 	public String getPagingHtml() {
@@ -157,9 +164,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setPagingHtml(String pagingHtml) {
 		this.pagingHtml = pagingHtml;
 	}
+
 
 
 	public PagingAction getPage() {
@@ -167,9 +176,11 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setPage(PagingAction page) {
 		this.page = page;
 	}
+
 
 
 	public int getNum() {
@@ -177,13 +188,25 @@ public class FacilitiesListAction extends ActionSupport{
 	}
 
 
+
 	public void setNum(int num) {
 		this.num = num;
 	}
 
+
+
+	public String getUrl() {
+		return url;
+	}
+
+
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	
 	
 	
 	
-	
+
 }
