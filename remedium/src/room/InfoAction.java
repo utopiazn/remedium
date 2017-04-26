@@ -44,7 +44,7 @@ public class InfoAction extends ActionSupport {
 	private String room_class; 	//객실종류
 	//private String image; 		//사진경로(메인)
 	private String content; 	//내용
-	private String image2; 		//시설정보
+	//private String image2; 		//시설정보
 	
 	private int currentPage = 1; // 현재 페이지
 	private int totalCount; // 총 게시글 수
@@ -55,10 +55,16 @@ public class InfoAction extends ActionSupport {
 	private int num = 0;
 	
 	
-	private List<File> uploads = new ArrayList<File>();
-	private List<String> uploadsFileName = new ArrayList<String>();
+	//파일 업로드 관련 변수
 	
-
+	
+	private File image2;
+	private String image2FileName;
+	
+	
+	private List<File> uploads = new ArrayList<File>();
+	
+	private List<String> uploadsFileName = new ArrayList<String>();	
 	private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/roomClassImage/";
 	
 	
@@ -71,7 +77,7 @@ public class InfoAction extends ActionSupport {
 	
 	
 	/*다중 없로드*/ 
-	public String upload() throws Exception{
+	public String multiUpload() throws Exception{
 		
 	
 		for (int i = 0; i < uploads.size(); i++) {			 
@@ -97,7 +103,11 @@ public class InfoAction extends ActionSupport {
 	//파일 업로드 
 	public String uploadAdd(File fileName  ,String strDestFile) throws Exception{
 		
+		
+		//임시 저장 파일 생성 
 		File destFile = new File(strDestFile);
+		
+		//임시 저장된 파일을 지정한 저장위치에  카피
 		FileUtils.copyFile(fileName, destFile);
 
 		return SUCCESS;
@@ -192,27 +202,8 @@ public class InfoAction extends ActionSupport {
 	//객실 클래스를 추가
 	public String insert() throws Exception {
 		
-		System.out.println("ddddddddddddddddddd");
 		upload();
-		System.out.println("sdfdsfsdfdsfdsfdsf");
-		
-		/*
-	    resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
-	     
-	    File destFile = new File(fileUploadPath + getUploadFileName()); //경로 + 파일이름
-	 
-	    FileUtils.copyFile(getUpload(), destFile);  // 업로드 파일 , 빈파일
-	  
-	    paramClass.setNo(resultClass.getNo());
-	  
-	    paramClass.setOrgImage(getUploadFileName());    //원래 이미지 이름
-	
-	    sqlMapper.update("roomSQL.updateImage", paramClass);
-		*/
-		
-		
-		
-		
+				
 		//기본 객실 클래스와 객실 뷰 값 설정
 		roomClassCtrl();				
 	
@@ -287,15 +278,6 @@ public class InfoAction extends ActionSupport {
 	public void setContent(String content) {
 		this.content = content;
 	}
-
-	public String getImage2() {
-		return image2;
-	}
-
-	public void setImage2(String image2) {
-		this.image2 = image2;
-	}
-
 
 
 
