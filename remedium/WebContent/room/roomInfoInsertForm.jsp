@@ -95,7 +95,7 @@ image2	시설정보
 					
 				</tr>
 				
-					<tr>					
+				<tr>					
 					
 					<td bgcolor="#F4F4F4">
 						 <s:file label="이미지2" name="uploads" />

@@ -35,7 +35,7 @@
 			<!-- <result type="chain">roomInfoList</result> -->		
 		</action>
 		
-		<!-- 객실 소개 추가 처리 -->
+		<!-- 객실 소개 삭제 처리 -->
 		<action name="roomInfoDelete" class="room.InfoAction" method="delete">
 			<result type="redirect-action">
 				<param name="actionName">roomInfoList?roomClass=0</param>
@@ -43,8 +43,14 @@
 			<!-- <result type="chain">roomInfoList</result> -->
 		</action>
 		
+		<!-- 객실 소개 수정 처리 -->
+		<action name="roomInfoUpdate" class="room.InfoAction" method="update">
+			<result type="redirect-action">
+				<param name="actionName">roomInfoList?roomClass=0</param>
+			</result>
+			<!-- <result type="chain">roomInfoList</result> -->
+		</action>
 		
-		
-		
+	
 	</package>
 </struts>

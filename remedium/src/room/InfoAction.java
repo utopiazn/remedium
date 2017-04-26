@@ -264,10 +264,12 @@ public class InfoAction extends ActionSupport {
 	//객실 클래스를 수정 폼
 	public String updForm() throws Exception {
 		
+		//객실 클래스 리스트
 		execute();
 		
 		System.out.println(roomClassNum);
 		
+		//객실 클래스 개별 뷰호출 함수
 		roomInfo(roomClassNum);
 		
 		return SUCCESS;
