@@ -1,7 +1,7 @@
 @CHARSET "EUC-KR";
-#top /* 상단 */
+.top /* 상단 */
 { 
-width: 100%; height: 100%; /* background-color: #C0C0C0; */
+width: 100%; height: 20%;  
 }
 #navi  /* 회원가입 로그인 부분 */
 {

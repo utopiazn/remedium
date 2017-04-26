@@ -20,8 +20,8 @@ background-attachment: fixed; background-size: cover; background-image: url("/re
 </head>
 <body>
 
-<!-- <img alt="메인이미지" src="/remedium/image/hotelbg.jpg" width="100%" height="100%">
- --><div class="header">
+<!-- <img alt="메인이미지" src="/remedium/image/hotelbg.jpg" width="100%" height="100%">-->
+<div class="header">
 <tiles:insertAttribute name="header" />
 </div>
 

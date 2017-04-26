@@ -6,13 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-body{
-	width: 100; height: 1000px; background: rgba (0, 0, 0, 100);
-	
-}
 
-</style>
 </head>
 <body>
 
