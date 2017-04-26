@@ -65,5 +65,11 @@
 			</result>
 		</action>
 		
+		<action name="faqDelete" class="admin.FaqAction" method="delete">
+			<result type="redirect-action">
+				<param name="actionName">faqList</param>
+			</result>
+		</action>
+		
 	</package>
 </struts>

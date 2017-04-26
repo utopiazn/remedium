@@ -39,5 +39,10 @@
 		update faq set subject = #subject#, content = #content#, type=#type#
 		<include refid="where-faqid" />
 	</update>
+	
+	<delete id="deleteFaq" parameterClass="FAQ">
+		delete from faq
+		<include refid="where-faqid" />
+	</delete>
 
 </sqlMap>
