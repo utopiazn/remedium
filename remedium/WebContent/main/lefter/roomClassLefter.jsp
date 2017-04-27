@@ -7,11 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-<style type="text/css">
-a{
-text-decoration: none; color: black;
-}
-</style>
+
 </head>
 <body>
 		 
@@ -33,7 +29,7 @@ text-decoration: none; color: black;
 				<s:if test='${ session.userAdmin=="1" }'>
 					<tr height="10%">
 						<td align="center">
-							<a href="roomInfoList.action?roomClass=0">객실 소개  관리 </a>
+							<a href="roomInfoList.action?roomClass=0" >객실 소개  관리 </a>
 						</td>
 					</tr>
 				</s:if>
@@ -45,7 +41,7 @@ text-decoration: none; color: black;
 				 		
 				 		
 				 		<td align="center">
-				 			  <a href='roomInfoView.action?roomClass=<s:property value="room_class"/>'><font size=2><b><s:property value="name"/></b></font></a>
+				 			  <a href='roomInfoView.action?roomClass=<s:property value="room_class"/>'style="color: black;"><font size=2><b><s:property value="name"/></b></font></a>
 				 			
 				 		<td>	
 				 
