@@ -27,7 +27,7 @@
 <tiles:insertAttribute name="lefter" />
 
 </div>
-<div class="right2">
+<div class="right3">
 <tiles:insertAttribute name="body" />
 </div>
 </div>
