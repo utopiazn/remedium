@@ -67,7 +67,7 @@ public class ListAction extends ActionSupport {
 		
 		if(page.getEndCount() < totalCount) {
 			lastCount = page.getEndCount() + 1;
-		}
+		}	
 		
 		list = list.subList(page.getStartCount(), lastCount);
 // 페이징 처리 할때 필요한 부분 

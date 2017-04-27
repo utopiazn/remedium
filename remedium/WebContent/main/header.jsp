@@ -60,7 +60,6 @@
 &nbsp;
 <a href="loginForm.action">로그인</a>
 &nbsp;
-
 </s:else>
 </div>
 
