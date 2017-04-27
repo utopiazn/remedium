@@ -28,7 +28,7 @@
 </SCRIPT>
 <link href="css/main.css" rel="stylesheet" style="text/css">
 </head>
-
+<center>
 <body>
 <form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 		<table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -61,5 +61,6 @@
        	 <a href="findIDForm.action"><font size=2>아이디 찾기</font></a>&nbsp;/
        	 <a href="findPwForm.action"><font size=2>비밀번호 찾기</font></a>
 </form>
+</center>
 </body>
 </html>
