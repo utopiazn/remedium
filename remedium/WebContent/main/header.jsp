@@ -70,11 +70,11 @@ a /* 링크 속성 */
 
 고객 수:
 <select name="people">
-<option value="1">1명</option>
-<option value="2">2명</option>
-<option value="3">3명</option>
-<option value="4">4명</option>
-<option value="0">단체(5인 이상)</option>
+<option value="1" <s:if test="${session.people==1}">selected="selected"</s:if> >1명</option>
+<option value="2" <s:if test="${session.people==2}">selected="selected"</s:if> >2명</option>
+<option value="3" <s:if test="${session.people==3}">selected="selected"</s:if> >3명</option>
+<option value="4" <s:if test="${session.people==4}">selected="selected"</s:if> >4명</option>
+<option value="0" <s:if test="${session.people==0}">selected="selected"</s:if> >단체(5인 이상)</option>
 </select>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

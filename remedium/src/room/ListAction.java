@@ -75,6 +75,7 @@ public class ListAction extends ActionSupport implements SessionAware {
 		
 		session.put("firstDate", getFirstDate());
 		session.put("lastDate", getLastDate());
+		session.put("people", getPeople());
 		
 		return SUCCESS;
 	}
