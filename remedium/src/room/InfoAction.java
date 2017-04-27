@@ -233,6 +233,13 @@ public class InfoAction extends ActionSupport {
 	//메인 이미지를 나누기 위해 사용
 	public void imageSplit(String strImage) throws Exception {
 		
+		if(strImage == null || strImage.equals("")){
+			
+			System.out.println("이미지 자체가 없음"+strImage);
+			
+			return ;
+		}
+		
 		StringTokenizer values = new StringTokenizer(strImage,"/");
 		
 		int i =1;
