@@ -26,6 +26,7 @@
 			return true;
 		}
 </SCRIPT>
+<link href="css/main.css" rel="stylesheet" style="text/css">
 </head>
 
 <body>
