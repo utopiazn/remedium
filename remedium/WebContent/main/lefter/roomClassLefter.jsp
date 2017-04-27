@@ -7,6 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<style type="text/css">
+a{
+text-decoration: none; color: black;
+}
+</style>
 </head>
 <body>
 		 
