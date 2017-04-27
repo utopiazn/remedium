@@ -9,34 +9,11 @@
 <meta charset="UTF-8"> 
 <title></title>
 <link href="css/header.css" rel="stylesheet" style="text/css">
-<%-- 	<style type="text/css">
-	#top /* 상단 */
-	{ 
-	width: 100%; height: 100%; background-color: #C0C0C0;
-	}
-	#navi  /* 회원가입 로그인 부분 */
-	{
-	margin: 0 10px; font-family: "돋음",sans-serif; text-decoration: none; 
-	font-size: 15px; color: #FFFFFF; float: right; padding-top: 50px; padding-right: 20px; font-weight: bolder;
-	}
-	#menu /* 메뉴(카테고리) */
-	{
-	 background-color:#C0C0C0; float: center; text-decoration: none; 
-	 font-family: "돋움",sans-serif; color: #FFFFFF; line-height: 3em; text-align: center; font-weight: bolder;
-	}
-	#res /* 예약 부분 */
-	{
-	height: 50px; background-color:#8EA8DB; font-family:"돋움",sans-serif; 
-	color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em; float: center;
-	}
-	#logo /* 로고 */
-	{
-	margin: 0 auto; float: center; cursor: pointer; padding-left: 350px;
-	}
-	a /* 링크 속성 */
-	{text-decoration: none; color: #000000; } 
+<style type="text/css">
+a /* 링크 속성 */
+	{text-decoration: none; color: white; }  
 	
-	</style> --%>
+	</style>
 </head>
 <body>
 
