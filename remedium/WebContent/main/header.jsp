@@ -64,9 +64,9 @@ a /* 링크 속성 */
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
 체크인:
-<input type="date" name="firstDate">
+<input type="date" name="firstDate" value="${session.firstDate}">
 ~
-<input type="date" name="lastDate">
+<input type="date" name="lastDate" value="${session.lastDate}">
 
 고객 수:
 <select name="people">
@@ -110,17 +110,17 @@ function ReservationCH(userinput){
 	var ld = userinput.lastDate.value;
 	var cd = userinput.curDate.value;
 	if(fd == ld){
-		alert("당일치기금지");
+		alert("최소 1박을 해야합니다.");
 		return false;
 	}
 	
 	if(fd > ld){
-		alert("???");
+		alert("퇴실날짜가 입실날짜보다 이전입니다.");
 		return false;
 	}
 	
 	if(fd < cd){
-		alert("과거로 돌아가지 못해용\n 입력하신 검색날짜:"+fd+" / 현재날짜:"+cd);
+		alert("이미 지난 날짜입니다.\n 입력하신 검색날짜:"+fd+" / 현재날짜:"+cd);
 		return false;
 	}
 }
