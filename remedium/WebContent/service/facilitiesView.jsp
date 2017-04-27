@@ -10,7 +10,7 @@
 <s:property value="resultClass.time" /><br/>
 
 <input type="button" value="시설정보수정"onClick="location.href='facilitiesModifyForm.action?no=<s:property value="resultClass.no" />'">  
-<input type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />'">
+<input type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />&image=<s:property value="resultClass.image" />'">
 <input type="button" value="시설목록"onClick="location.href='facilitiesList.action'">
  
   </body>

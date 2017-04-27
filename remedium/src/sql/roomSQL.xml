@@ -56,15 +56,15 @@
 	
 	<insert id="insertRoom" parameterClass="room">
 		INSERT INTO ROOM(NO, NAME, ROOM_SIZE, ROOM_CAPACITY, CONSTRUCTION, ROOM_COMMENT,
-		ORGIMAGE, SAVIMAGE, PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
-		#room_capacity#, #construction#, #room_comment#, #orgImage#, #savImage#,
+		PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
+		#room_capacity#, #construction#, #room_comment#,
 		#price#, #room_class#)
 	</insert>
 	
 	<update id="updateRoom" parameterClass="room">
 		UPDATE ROOM SET NAME = #name#, ROOM_SIZE = #room_size#, ROOM_CAPACITY = #room_capacity#,
 		CONSTRUCTION = #construction#, ROOM_COMMENT = #room_comment#,
-		ORGIMAGE = #orgImage#, SAVIMAGE = #savImage#, PRICE = #price#, ROOM_CLASS = #room_class# 
+		PRICE = #price#, ROOM_CLASS = #room_class# 
 		<include refid="where-no"/>
 	</update>
 	
