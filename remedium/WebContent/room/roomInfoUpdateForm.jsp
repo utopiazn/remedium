@@ -67,7 +67,7 @@
 				
 					<tr>										
 						<td width="120" bgcolor="#F4F4F4">
-							 <s:file label="이미지1" name="uploads" />
+							 <s:file label="이미지1" name="uploads" value="dasasddas"/>
 						</td>						
 					</tr>
 					
