@@ -9,34 +9,11 @@
 <meta charset="UTF-8"> 
 <title></title>
 <link href="css/header.css" rel="stylesheet" style="text/css">
-<%-- 	<style type="text/css">
-	#top /* 상단 */
-	{ 
-	width: 100%; height: 100%; background-color: #C0C0C0;
-	}
-	#navi  /* 회원가입 로그인 부분 */
-	{
-	margin: 0 10px; font-family: "돋음",sans-serif; text-decoration: none; 
-	font-size: 15px; color: #FFFFFF; float: right; padding-top: 50px; padding-right: 20px; font-weight: bolder;
-	}
-	#menu /* 메뉴(카테고리) */
-	{
-	 background-color:#C0C0C0; float: center; text-decoration: none; 
-	 font-family: "돋움",sans-serif; color: #FFFFFF; line-height: 3em; text-align: center; font-weight: bolder;
-	}
-	#res /* 예약 부분 */
-	{
-	height: 50px; background-color:#8EA8DB; font-family:"돋움",sans-serif; 
-	color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em; float: center;
-	}
-	#logo /* 로고 */
-	{
-	margin: 0 auto; float: center; cursor: pointer; padding-left: 350px;
-	}
-	a /* 링크 속성 */
-	{text-decoration: none; color: #000000; } 
+<style type="text/css">
+a /* 링크 속성 */
+	{text-decoration: none; color: white; }  
 	
-	</style> --%>
+	</style>
 </head>
 <body>
 
@@ -86,17 +63,17 @@
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
 <input type="hidden" name="curDate" value="${cDate.currentDate}">
 체크인:
-<input type="date" name="firstDate">
+<input type="date" name="firstDate" value="${session.firstDate}">
 ~
-<input type="date" name="lastDate">
+<input type="date" name="lastDate" value="${session.lastDate}">
 
 고객 수:
 <select name="people">
-<option value="1">1명</option>
-<option value="2">2명</option>
-<option value="3">3명</option>
-<option value="4">4명</option>
-<option value="0">단체(5인 이상)</option>
+<option value="1" <s:if test="${session.people==1}">selected="selected"</s:if> >1명</option>
+<option value="2" <s:if test="${session.people==2}">selected="selected"</s:if> >2명</option>
+<option value="3" <s:if test="${session.people==3}">selected="selected"</s:if> >3명</option>
+<option value="4" <s:if test="${session.people==4}">selected="selected"</s:if> >4명</option>
+<option value="0" <s:if test="${session.people==0}">selected="selected"</s:if> >단체(5인 이상)</option>
 </select>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -132,17 +109,17 @@ function ReservationCH(userinput){
 	var ld = userinput.lastDate.value;
 	var cd = userinput.curDate.value;
 	if(fd == ld){
-		alert("당일치기금지");
+		alert("최소 1박을 해야합니다.");
 		return false;
 	}
 	
 	if(fd > ld){
-		alert("???");
+		alert("퇴실날짜가 입실날짜보다 이전입니다.");
 		return false;
 	}
 	
 	if(fd < cd){
-		alert("과거로 돌아가지 못해용\n 입력하신 검색날짜:"+fd+" / 현재날짜:"+cd);
+		alert("이미 지난 날짜입니다.\n 입력하신 검색날짜:"+fd+" / 현재날짜:"+cd);
 		return false;
 	}
 }

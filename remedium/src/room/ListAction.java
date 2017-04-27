@@ -2,6 +2,9 @@ package room;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -9,7 +12,7 @@ import bean.RoomBean;
 import bean.RoomReservationBean;
 import paging.PagingAction;
 
-public class ListAction extends ActionSupport {
+public class ListAction extends ActionSupport implements SessionAware {
 	
 	private List<RoomBean> list;
 	private RoomReservationBean paramClass;
@@ -18,6 +21,9 @@ public class ListAction extends ActionSupport {
 	private String firstDate;
 	private String lastDate;
 	private int people;
+	
+	//날짜검색 세션저장
+	private Map session;
 	
 	//페이징처리 변수선언
 	private int currentPage = 1; // 현재 페이지
@@ -66,6 +72,10 @@ public class ListAction extends ActionSupport {
 		}
 		
 		list = list.subList(page.getStartCount(), lastCount);
+		
+		session.put("firstDate", getFirstDate());
+		session.put("lastDate", getLastDate());
+		session.put("people", getPeople());
 		
 		return SUCCESS;
 	}
@@ -205,6 +215,14 @@ public class ListAction extends ActionSupport {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
 	}
 
 	
