@@ -11,11 +11,6 @@
 	<!-- <title>Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]</title> -->
 	<title><tiles:getAsString name="title" /></title>
 	<link href="css/main.css" rel="stylesheet" style="text/css">
-
-<style type="text/css">
-
-
-</style>
 </head>
 <body>
 

@@ -10,11 +10,12 @@
 <title></title>
 <link href="css/header.css" rel="stylesheet" style="text/css">
 <style type="text/css">
-a /* 링크 속성 */
-	{text-decoration: none; color: white; }  
-	
-	</style>
+a{
+text-decoration: none;
+}
+</style>
 </head>
+
 <body>
 
 <div class="top">
@@ -27,15 +28,15 @@ a /* 링크 속성 */
 &nbsp;
 </s:if> --%>
 <s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
-<a href="myPageMain.action">마이페이지</a>
+<a href="myPageMain.action" style="color: white;">마이페이지</a>
 &nbsp;
-<a href="logout.action">로그아웃</a>
+<a href="logout.action" style="color: white;">로그아웃</a>
 &nbsp;
 </s:if>
 <s:else>
-<a href="joinForm.action">회원가입</a>
+<a href="joinForm.action" style="color: white;">회원가입</a>
 &nbsp;
-<a href="loginForm.action">로그인</a>
+<a href="loginForm.action" style="color: white;">로그인</a>
 &nbsp;
 </s:else>
 </div>
@@ -47,16 +48,16 @@ a /* 링크 속성 */
 </div>
 
 <div id="menu" >
-	<a href="info.action">Remedium</a>
+	<a href="info.action" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
-    <a href="roomInfoView.action?roomClass=1">Room</a>
+    <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="facilitiesList.action">Facility</a>
+    <a href="facilitiesList.action" style="color: white;">Facility</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="eventList.action">Event</a>
+    <a href="eventList.action" style="color: white;">Event</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="boardList.action">QnA</a>
+    <a href="boardList.action" style="color: white;">QnA</a>
 </div>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
