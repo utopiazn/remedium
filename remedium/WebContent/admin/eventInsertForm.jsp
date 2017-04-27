@@ -60,7 +60,11 @@
             <s:textfield name="name" theme="simple" value="%{resultClass.name}" cssStyle="width:370px" maxlength="50"/>
           </td>
         </tr>
-        							
+     <tr>
+	<td width="100" bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이미지</td>
+	<td><s:file name="upload" theme="simple"/>
+	</td>
+	</tr> 							
         <tr bgcolor="#777777">
           <td height="1" colspan="2"></td>
         </tr>

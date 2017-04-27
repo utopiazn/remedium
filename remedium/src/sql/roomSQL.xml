@@ -5,6 +5,7 @@
 <sqlMap namespace="roomSQL">
 	<typeAlias alias="room" type="bean.RoomBean" />
 	<typeAlias alias="roomReservation" type="bean.RoomReservationBean" />
+	<typeAlias alias="roomclass" type="bean.RoomclassBean" />
 	
 	<resultMap id="roomRes" class="room">
 		<result property="no" column="no" />
@@ -17,54 +18,67 @@
 		<result property="savImage" column="savImage" />
 		<result property="price" column="price" />
 		<result property="room_class" column="room_class" />
+		<result property="class_name" column="class_name" />
+		
 	</resultMap>
 	
+	<resultMap id="roomclassRes" class="roomclass">
+		<result property="room_class" column="room_class" />
+		<result property="image" column="image" />
+		<result property="content" column="content" />
+		<result property="image2" column="image2" />
+		<result property="name" column="name" />
+	</resultMap>
 	
-	<sql id="select-all">SELECT * FROM ROOM</sql>
+	<sql id="seletClass" >
+	SELECT a.* ,(SELECT NAME from room_class where ROOM_CLASS = a.ROOM_CLASS ) as CLASS_NAME FROM ROOM a
+	</sql>
 	
 	<sql id="where-no">WHERE NO = #no#</sql>
 	
 	<select id="selectAll" resultMap="roomRes">
-		<include refid="select-all"/>
+		<include refid="seletClass"/>
 		ORDER BY no DESC
 	</select>
 	
 	<select id="selectSerch" resultMap="roomRes" parameterClass="roomReservation" >
-		SELECT * FROM ROOM WHERE NO NOT IN   
+		<include refid="seletClass"/>
+		 WHERE NO NOT IN   
 		  (SELECT DISTINCT NO FROM ROOM_RESERVATION  
 		   WHERE 
 		    FIRSTDATE between #firstDate# and #lastDate# or 
 		    LASTDATE between #firstDate# and #lastDate#
-		  ) AND ROOM_CAPACITY >= #people#
-		  ORDER BY NO DESC
+		  ) AND a.ROOM_CAPACITY >= #people#
+		  ORDER BY a.NO DESC
 	</select>
 	
 	<select id="selectSerchGroup" resultMap="roomRes" parameterClass="roomReservation">
-		SELECT * FROM ROOM WHERE NO NOT IN   
+		<include refid="seletClass"/>
+		 WHERE NO NOT IN   
 		  (SELECT DISTINCT NO FROM ROOM_RESERVATION  
 		   WHERE 
 		    FIRSTDATE between #firstDate# and #lastDate# or 
 		    LASTDATE between #firstDate# and #lastDate#
-		  ) AND ROOM_CAPACITY = #people#
-		  ORDER BY NO DESC
+		  ) AND a.ROOM_CAPACITY = #people#
+		  ORDER BY a.NO DESC
 	</select>
 	
 	<select id="selectOne" resultMap="roomRes">
-		<include refid="select-all"/>
-		<include refid="where-no"/>
+		<include refid="seletClass"/>
+		WHERE a.NO = #no#
 	</select>
 	
 	<insert id="insertRoom" parameterClass="room">
 		INSERT INTO ROOM(NO, NAME, ROOM_SIZE, ROOM_CAPACITY, CONSTRUCTION, ROOM_COMMENT,
-		ORGIMAGE, SAVIMAGE, PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
-		#room_capacity#, #construction#, #room_comment#, #orgImage#, #savImage#,
+		PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
+		#room_capacity#, #construction#, #room_comment#,
 		#price#, #room_class#)
 	</insert>
 	
 	<update id="updateRoom" parameterClass="room">
 		UPDATE ROOM SET NAME = #name#, ROOM_SIZE = #room_size#, ROOM_CAPACITY = #room_capacity#,
 		CONSTRUCTION = #construction#, ROOM_COMMENT = #room_comment#,
-		ORGIMAGE = #orgImage#, SAVIMAGE = #savImage#, PRICE = #price#, ROOM_CLASS = #room_class# 
+		PRICE = #price#, ROOM_CLASS = #room_class# 
 		<include refid="where-no"/>
 	</update>
 	

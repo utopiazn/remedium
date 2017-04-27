@@ -64,8 +64,6 @@ public class RoomAction extends ActionSupport{
 		paramClass.setRoom_capacity(getRoom_capacity());
 		paramClass.setConstruction(getConstruction());
 		paramClass.setRoom_comment(getRoom_comment());
-		paramClass.setOrgImage("추가 안함");
-		paramClass.setSavImage("추가 안함");
 		paramClass.setPrice(getPrice());
 		paramClass.setRoom_class(getRoom_class());
 		
@@ -125,35 +123,40 @@ public class RoomAction extends ActionSupport{
 			paramClass.setRoom_capacity(getRoom_capacity());
 			paramClass.setConstruction(getConstruction());
 			paramClass.setRoom_comment(getRoom_comment());
-			paramClass.setOrgImage(getOrgImage());
-			paramClass.setSavImage(getSavImage());
 			paramClass.setPrice(getPrice());
 			paramClass.setRoom_class(getRoom_class());
 			
-			/*File deleteFile = new File(fileUploadPath + resultClass.getSavImage());
-			deleteFile.delete();
-			
-			resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
-		      System.out.println("등록한 글 번호 가져오기.");
-		      //실제 서버에 저장될 이미지 이름과 확장자 설정.
-		      String file_name = "file_"+resultClass.getNo();
-		      String file_ext = getUploadFileName().substring(getUploadFileName().lastIndexOf('.')+1,getUploadFileName().length());
-		      System.out.println("실제 서버에 저장될 이미지 이름과 확장자 설정.");
-		      //서버에 이미지 저장.
-		      File destFile = new File(fileUploadPath + file_name + "." + file_ext);
-		      System.out.println(destFile.getPath());
-		      FileUtils.copyFile(getUpload(), destFile);
-		      System.out.println("서버에 이미지 저장.");
-		      //이미지 정보 파라미터 설정.
-		      paramClass.setNo(resultClass.getNo());
-		      paramClass.setOrgImage(getUploadFileName());    //원래 이미지 이름
-		      paramClass.setSavImage(file_name + "." + file_ext); //서버에 저장한 이미지 이름
-		      System.out.println("이미지 정보 파라미터 설정.");
-		      //파일 정보 업데이트.
-		      sqlMapper.update("roomSQL.updateImage", paramClass);
-		      System.out.println("이미지 정보 업데이트.");*/
 			
 			sqlMapper.update("roomSQL.updateRoom",paramClass);
+			
+			if(getUploadFileName().equals("")){
+				return SUCCESS;
+			}else{
+				resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
+				
+				File deleteFile = new File(fileUploadPath + resultClass.getSavImage());
+				deleteFile.delete();
+			
+				System.out.println("등록한 글 번호 가져오기.");
+				//실제 서버에 저장될 이미지 이름과 확장자 설정.
+				String file_name = "file_"+resultClass.getNo();
+				String file_ext = getUploadFileName().substring(getUploadFileName().lastIndexOf('.')+1,getUploadFileName().length());
+				System.out.println("실제 서버에 저장될 이미지 이름과 확장자 설정.");
+				//서버에 이미지 저장.
+				File destFile = new File(fileUploadPath + file_name + "." + file_ext);
+				System.out.println(destFile.getPath());
+				FileUtils.copyFile(getUpload(), destFile);
+				System.out.println("서버에 이미지 저장.");
+				//이미지 정보 파라미터 설정.
+				paramClass.setNo(resultClass.getNo());
+				paramClass.setOrgImage(getUploadFileName());    //원래 이미지 이름
+				paramClass.setSavImage(file_name + "." + file_ext); //서버에 저장한 이미지 이름
+				System.out.println("이미지 정보 파라미터 설정.");
+				//파일 정보 업데이트.
+				sqlMapper.update("roomSQL.updateImage", paramClass);
+				System.out.println("이미지 정보 업데이트.");
+			}
+			
 			
 			return SUCCESS;
 	}

@@ -29,6 +29,7 @@ public class AdminDeleteAction extends ActionSupport{
 	//회원 탈퇴
 	public String execute() throws Exception{
 		
+		
 		paramClass = new MemberBean();
 		resultClass = new MemberBean();
 		

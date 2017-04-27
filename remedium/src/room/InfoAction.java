@@ -108,7 +108,7 @@ public class InfoAction extends ActionSupport {
 			String strDestFile = fileUploadPath	+ image2FileName;  
 			
 			//파일 업로드
-			uploadAdd(fileName,strDestFile);	
+			uploadAdd(fileName,strDestFile);																																																																																						
 		}
 
 		return resultImage2;

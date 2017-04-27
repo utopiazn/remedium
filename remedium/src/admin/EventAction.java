@@ -1,9 +1,10 @@
 package admin;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.Date;
-import java.util.Map;
+
+import org.apache.commons.io.FileUtils;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -11,7 +12,7 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.EventBean;
-import bean.RoomBean;
+import util.ProjectUtil;
 
 public class EventAction extends ActionSupport{
 	public static Reader reader;
@@ -26,6 +27,11 @@ public class EventAction extends ActionSupport{
 	private String lastdate;
 	private String content;
 	
+	
+	private File upload;
+	private String uploadFileName;;
+	
+	private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/eventImage/";
 
 	EventBean resultClass;
 	EventBean paramClass;
@@ -54,15 +60,16 @@ public class EventAction extends ActionSupport{
 		paramClass = new EventBean();
 		resultClass = new EventBean();
 		
+		if(!uploadFileName.equals("")){
+			System.out.println("경로1"+this.getClass().getResource("/").getPath());
+			
+			File destFile = new File(fileUploadPath + uploadFileName);
+			System.out.println("222222");	
+			FileUtils.copyFile(upload, destFile); 
+			System.out.println("33333333");	
+		}
 		
-		System.out.println(getName());
-		System.out.println(getFirstdate());
-		System.out.println(getLastdate());
-		System.out.println(getContent()); 		
-		System.out.println(firstdate);
-		System.out.println(lastdate);
-		
-		
+		paramClass.setImage(getUploadFileName());	
 		paramClass.setName(getName());
 		paramClass.setFirstdate(java.sql.Date.valueOf(firstdate));
 		paramClass.setLastdate(java.sql.Date.valueOf(lastdate));
@@ -73,7 +80,6 @@ public class EventAction extends ActionSupport{
 			
 			sqlMapper.insert("event.insertEvent", paramClass);
 		}
-		
 		
 		
 		return SUCCESS;
@@ -107,10 +113,23 @@ public class EventAction extends ActionSupport{
 		paramClass.setFirstdate(java.sql.Date.valueOf(firstdate));
 		paramClass.setLastdate(java.sql.Date.valueOf(lastdate));
 		paramClass.setContent(getContent());
+			
+		
+		if(!uploadFileName.equals("")){
+			
+			resultClass = (EventBean)sqlMapper.queryForObject("event.selectOne", paramClass);
+			
+			File deleteFile = new File(fileUploadPath + resultClass.getImage());
+			deleteFile.delete();
+			
+			File destFile = new File(fileUploadPath + uploadFileName);
+			FileUtils.copyFile(upload, destFile); 
+		
+			
+			paramClass.setImage(getUploadFileName());	
+		}
 		
 		sqlMapper.update("event.updateEvent",paramClass);
-		
-		resultClass = (EventBean) paramClass;
 		
 		
 		return SUCCESS;
@@ -122,11 +141,17 @@ public class EventAction extends ActionSupport{
 		System.out.println("333333");
 		
 		paramClass = new EventBean();
-		
+		resultClass = new EventBean();
 		
 		
 		System.out.println(getNo());
 		paramClass.setNo(getNo());
+		
+		resultClass = (EventBean)sqlMapper.queryForObject("event.selectOne", paramClass);
+		
+		File deleteFile = new File(fileUploadPath + resultClass.getImage());
+		deleteFile.delete();
+		
 		
 	    sqlMapper.delete("event.deleteEvent",paramClass);
 		
@@ -188,6 +213,41 @@ public class EventAction extends ActionSupport{
 
 	public void setNo(int no) {
 		this.no = no;
+	}
+
+
+
+	public File getUpload() {
+		return upload;
+	}
+
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+
+	public String getFileUploadPath() {
+		return fileUploadPath;
+	}
+
+	public EventBean getParamClass() {
+		return paramClass;
+	}
+
+
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+
+	public void setFileUploadPath(String fileUploadPath) {
+		this.fileUploadPath = fileUploadPath;
+	}
+
+	public void setParamClass(EventBean paramClass) {
+		this.paramClass = paramClass;
 	}
 
 	

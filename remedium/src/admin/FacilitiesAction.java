@@ -70,6 +70,18 @@ public class FacilitiesAction extends ActionSupport{
 		
 		util.ProjectUtil.sqlMapper.update("facilitiesSQL.updateFac", paramClass);
 		
+		if(getUploadFileName().equals("")){
+			return SUCCESS;
+		}else{
+			resultClass = new FacilitiesBean();
+			resultClass = (FacilitiesBean)util.ProjectUtil.sqlMapper.queryForObject("facilitiesSQL.selectOne", paramClass);
+
+			File deleteFile = new File(fileUploadPath + resultClass.getImage());
+			deleteFile.delete();
+			
+			String sql = "facilitiesSQL.updateImage";
+			util.ProjectUtil.imageUplode(paramClass, getNo(), uploadFileName, fileUploadPath, upload, sql);
+		}
 		return SUCCESS;
 	}
 	
@@ -78,10 +90,14 @@ public class FacilitiesAction extends ActionSupport{
 		
 		paramClass = new FacilitiesBean();
 		paramClass.setNo(getNo());
-		util.ProjectUtil.sqlMapper.update("facilitiesSQL.deleteFac", paramClass);
-		
+		resultClass = new FacilitiesBean();
+		resultClass = (FacilitiesBean)util.ProjectUtil.sqlMapper.queryForObject("facilitiesSQL.selectOne", paramClass);
+
 		File deleteFile = new File(fileUploadPath + resultClass.getImage());
 		deleteFile.delete();
+		
+		util.ProjectUtil.sqlMapper.delete("facilitiesSQL.deleteFac", paramClass);		
+		
 		return SUCCESS;
 	}
 
@@ -155,8 +171,7 @@ public class FacilitiesAction extends ActionSupport{
 	public void setUploadFileName(String uploadFileName) {
 		this.uploadFileName = uploadFileName;
 	}
-	
-	
+
 	
 	
 	

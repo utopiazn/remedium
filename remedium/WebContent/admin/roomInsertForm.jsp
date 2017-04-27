@@ -19,7 +19,6 @@
 	<table>
 			<tr>
 				<s:hidden name="no" value="%{resultClass.no}" />
-				<s:hidden name="orgImage" value="%{resultClass.orgImage}" />
 				<s:hidden name="savImage" value="%{resultClass.savImage}" />
 				<td>객실번호&nbsp;</td><td>${resultClass.no}호</td>
 			</tr>
@@ -44,15 +43,15 @@
 				<td>객실소개&nbsp;</td><td> 
 				<s:textarea name="room_comment" theme="simple" value="%{resultClass.room_comment}"/></td>
 			</tr>
-			<s:if test="resultClass.orgImage != NULL">
 			
-			</s:if>
-			<s:else>
 			<tr>
 				<td>객실사진&nbsp;</td>
-				<td><s:file name="upload" theme="simple"/></td>
+				<td><s:file name="upload" theme="simple"/>
+				<s:if test="%{resultClass.savImage!=null}"><br/>
+				<small>사진이 등록되어있습니다. ${resultClass.savImage}</small>
+				</s:if></td>
 			</tr>
-			</s:else>
+			
 			<tr>
 				<td>객실요금</td><td> 
 				<s:textfield name="price" theme="simple" value="%{resultClass.price}"/></td>

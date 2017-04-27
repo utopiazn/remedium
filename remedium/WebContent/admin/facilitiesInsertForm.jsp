@@ -14,7 +14,7 @@
 <s:else>
 <form action="facilitiesInsert.action" method="post" enctype="multipart/form-data">
 </s:else>
-	<table>
+	<table border=0>
 	<tr>
 	<td>번호</td>
 	<td><s:textfield name="no" theme="simple" value="%{resultClass.no}"/></td>
@@ -33,7 +33,12 @@
 	</tr>
 	<tr>
 	<td>이미지</td>
-	<td><s:file name="upload" theme="simple"/></td>
+	<td><s:file name="upload" theme="simple"/>
+	<s:if test="%{resultClass.image!=null}"><br/>
+	<small>사진이 등록되어있습니다. ${resultClass.image}</small>
+	<s:hidden name="image" value="%{resultClass.image}"/>
+	</s:if>
+	</td>
 	</tr>
 	</table>
 	<s:if test="%{resultClass.no != null}">

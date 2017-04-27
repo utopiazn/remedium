@@ -11,6 +11,7 @@ public class RoomBean {
 	private String savImage; // 객실 사진 저장본
 	private int price; // 객실 요금
 	private String room_class; // 객실 종류
+	private String class_name;  // 객실 클래스 이름
 	
 	public int getNo() {
 		return no;
@@ -71,6 +72,12 @@ public class RoomBean {
 	}
 	public void setRoom_class(String room_class) {
 		this.room_class = room_class;
+	}
+	public String getClass_name() {
+		return class_name;
+	}
+	public void setClass_name(String class_name) {
+		this.class_name = class_name;
 	}
 	
 	
