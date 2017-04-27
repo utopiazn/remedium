@@ -33,24 +33,7 @@
 		<tr>
 			<td align="right"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>"><s:property value="no"/>호</a></td>
 			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>"><s:property value="name"/></a></td>
-			<td align="center">
-			<s:if test="%{room_class==1}">
-			기본 방
-			</s:if>
-			<s:elseif test="%{room_class==2}">
-			좋은 방
-			</s:elseif>
-			<s:elseif test="%{room_class==3}">
-			독방...?
-			</s:elseif>
-			<s:elseif test="%{room_class==4}">
-			사막ㅠㅠ
-			</s:elseif>
-			<s:elseif test="%{room_class==5}">
-			툰드라 ㄷㄷ
-			</s:elseif>
-			<s:else>여기가 그유명한 지옥이라네요!</s:else>
-			</td>
+			<td align="center"><s:property value="class_name"/></td>
 			<td align="left"><s:property value="construction"/></td>
 			<td align="right">
 			<s:if test="%{room_capacity == 0}">
