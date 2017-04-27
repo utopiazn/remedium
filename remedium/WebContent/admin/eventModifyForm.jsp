@@ -60,7 +60,15 @@
             <s:textfield name="name" theme="simple" value="%{resultClass.name}" cssStyle="width:370px" maxlength="50"/>
           </td>
         </tr>
-        							
+          <tr>
+	<td width="100" bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이미지</td>
+	<td><s:file name="upload" theme="simple"/>
+	<s:if test="%{resultClass.image!=null}"><br/>
+	<small>사진이 등록되어있습니다. ${resultClass.image}</small>
+	<s:hidden name="image" value="%{resultClass.image}"/>
+	</s:if>
+	</td>
+	</tr> 							
         <tr bgcolor="#777777">
           <td height="1" colspan="2"></td>
         </tr>

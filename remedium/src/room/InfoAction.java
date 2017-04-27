@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -56,6 +57,16 @@ public class InfoAction extends ActionSupport {
 	private int num = 0;
 	
 	
+	private String room_class_Old;  //수정폼에서 기존 room_class id 임시 저장. 
+	
+
+	private String image_01;
+	private String image_02;
+	private String image_03;
+	private String image_04;
+	private String image_05;
+	
+	
 	//파일 업로드 관련 변수
 		
 	//사진경로(메인)
@@ -80,6 +91,9 @@ public class InfoAction extends ActionSupport {
 	
 	/*단일 업로드*/
 	public String singleUpload() throws Exception{
+	
+				
+		
 		
 		String resultImage2 ="";
 			
@@ -94,7 +108,7 @@ public class InfoAction extends ActionSupport {
 			String strDestFile = fileUploadPath	+ image2FileName;  
 			
 			//파일 업로드
-			uploadAdd(fileName,strDestFile);	
+			uploadAdd(fileName,strDestFile);																																																																																						
 		}
 
 		return resultImage2;
@@ -211,10 +225,29 @@ public class InfoAction extends ActionSupport {
 			paramClass.setRoom_class(String.valueOf(roomClass));		
 	
 			resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
+			
+			
 		}
 		
 	}
-
+	
+	//메인 이미지를 나누기 위해 사용
+	public void imageSplit(String strImage) throws Exception {
+		
+		StringTokenizer values = new StringTokenizer(strImage,"/");
+		
+		while(values.hasMoreElements()){
+			System.out.println(values.nextToken());
+			
+			
+			
+			
+			
+		}
+		
+		
+	}
+	
 	
 	//객실 클래스를 추가 폼
 	public String insForm() throws Exception {
@@ -229,7 +262,9 @@ public class InfoAction extends ActionSupport {
 	public String insert() throws Exception {
 		
 		//메인이미지 처리
-		String image=multiUpload();				
+		String image=multiUpload();		
+		
+		imageSplit(image);
 		
 		//시설정보
 		String image2=singleUpload();

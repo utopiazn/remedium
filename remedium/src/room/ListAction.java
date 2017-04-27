@@ -54,7 +54,7 @@ public class ListAction extends ActionSupport implements SessionAware {
 		
 		
 		//페이징처리
-		url = "roomList.action?";
+		url = "roomList.action?firstDate="+getFirstDate()+"&lastDate="+getLastDate()+"&people="+getPeople()+"&";
 		
 		totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
 		
@@ -75,6 +75,7 @@ public class ListAction extends ActionSupport implements SessionAware {
 		
 		session.put("firstDate", getFirstDate());
 		session.put("lastDate", getLastDate());
+		session.put("people", getPeople());
 		
 		return SUCCESS;
 	}

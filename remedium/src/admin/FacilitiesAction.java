@@ -96,7 +96,7 @@ public class FacilitiesAction extends ActionSupport{
 		File deleteFile = new File(fileUploadPath + resultClass.getImage());
 		deleteFile.delete();
 		
-		util.ProjectUtil.sqlMapper.update("facilitiesSQL.deleteFac", paramClass);		
+		util.ProjectUtil.sqlMapper.delete("facilitiesSQL.deleteFac", paramClass);		
 		
 		return SUCCESS;
 	}

@@ -94,6 +94,7 @@
        
         </td>
       </tr>
+      <img height="400" alt="이벤트사진" src="/remedium/image/eventImage/<s:property value='resultClass.image'/>" >
 
   </table>
 </body>
