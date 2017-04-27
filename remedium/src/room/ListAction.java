@@ -206,6 +206,7 @@ public class ListAction extends ActionSupport {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+
 	
 }
 
