@@ -4,10 +4,53 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title></title>
+
+<link href="css/main.css" rel="stylesheet" style="text/css">
+<style type="text/css">
+.h1{
+width:300px; float:left; 
+}
+.h2{
+width:700px; float:left; 
+}
+.h3{
+width:700px; float:left; clear: left; 
+}
+</style>
+
+
 </head>
 <body>
-	<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
+	<div>
+	<h2>편의 시설</h2>
+	</div>
+	<div>
+	<s:iterator value="list" >
+		<div class="h1">
+		<div><strong>시설이름</strong></div>
+		<div>
+			<b><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><s:property value="name" /></a></b>
+		</div>
+		<div><strong>개장시간</strong></div>
+		<div><s:property value="time" /></div>
+		</div>
+		
+		<div class="h2">
+		<div><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><img width="640" height="400" alt="시설사진" src="/remedium/image/facImage/<s:property value='image'/>" ></a></div>
+		</div>
+		<div class="h3"></div>
+	</s:iterator>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<%-- <table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
 		<tr>
 			<td align="center"><h2>편의 시설</h2></td>
 		</tr>
@@ -43,7 +86,7 @@
 	<input type="button" value="시설추가"onClick="location.href='facilitiesInsertForm.action'">
 	</s:if>
 	</td></tr>
-	</table>
+	</table> --%>
 </body>
 </html>
 
