@@ -7,11 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-<style type="text/css">
-a{
-text-decoration: none; color: black;
-}
-</style>
+
 </head>
 <body>
 
@@ -19,14 +15,14 @@ text-decoration: none; color: black;
 	<table width="100%" height="100%" border="0" cellspacing="0"	cellpadding="0">
 		<tr height="50%">
 			<td> -->
-				<table width="100%" height="1300px" border="0" cellspacing="0"
+				<table width="100%" height="200px" border="0" cellspacing="0"
 					cellpadding="0">
-					<tr height="10%">
-						<td align="center"><a href="boardList.action">문의 게시판 </a></td>
+					<tr height="100px">
+						<td align="center"><a href="boardList.action" style="color: black;">문의 게시판 </a></td>
 					</tr>
 
-					<tr height="10%">
-						<td align="center"><a href="faqList.action">자주 묻는 질문 </a></td>
+					<tr height="100px">
+						<td align="center"><a href="faqList.action" style="color: black;">자주 묻는 질문 </a></td>
 					</tr>
 				</table>
 		<!-- 	</td>
