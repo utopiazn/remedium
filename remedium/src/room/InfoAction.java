@@ -67,7 +67,7 @@ public class InfoAction extends ActionSupport {
 	private String image_05;
 	
 	
-	//파일 업로드 관련 변수
+	
 		
 	//사진경로(메인)
 	private List<File> uploads = new ArrayList<File>();	
@@ -75,11 +75,9 @@ public class InfoAction extends ActionSupport {
 	
 	//시설정보				 
 	private File image2;
-	private String image2FileName;
-	
-	
+	private String image2FileName;	
 
-
+	//파일 업로드 관련 변수
 	private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/roomClassImage/";
 	
 	
@@ -226,7 +224,8 @@ public class InfoAction extends ActionSupport {
 	
 			resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
 			
-			
+			//메인 이미지를 나누기 위해 사용
+			//imageSplit(resultClass.getImage());
 		}
 		
 	}
@@ -236,15 +235,24 @@ public class InfoAction extends ActionSupport {
 		
 		StringTokenizer values = new StringTokenizer(strImage,"/");
 		
+		int i =1;
+		
 		while(values.hasMoreElements()){
 			System.out.println(values.nextToken());
 			
+			String image =values.nextToken();
 			
-			
-			
-			
+			switch (i) {
+			case 1:	this.image_01 =image; break;
+			case 2:	this.image_02 =image; break;
+			case 3:	this.image_03 =image; break;
+			case 4:	this.image_04 =image; break;
+			case 5:	this.image_05 =image; break;
+			default:
+				break;
+			}			
+			i++;
 		}
-		
 		
 	}
 	
@@ -253,6 +261,8 @@ public class InfoAction extends ActionSupport {
 	public String insForm() throws Exception {
 		
 		//객실 클래스 리스트/////////////////////////////
+		
+		roomInfo(roomClass);	
 		execute();		
 		
 		return SUCCESS;
@@ -264,7 +274,7 @@ public class InfoAction extends ActionSupport {
 		//메인이미지 처리
 		String image=multiUpload();		
 		
-		imageSplit(image);
+		//imageSplit(image);
 		
 		//시설정보
 		String image2=singleUpload();
@@ -298,15 +308,15 @@ public class InfoAction extends ActionSupport {
 	
 	//객실 클래스를 수정 폼
 	public String updForm() throws Exception {
-		
-		//객실 클래스 리스트
-		execute();
-		
-		System.out.println(roomClassNum);
+			
+
+		System.out.println("객실 클래스를 수정 폼:"+roomClassNum);
 		
 		//객실 클래스 개별 뷰호출 함수
 		roomInfo(roomClassNum);
-		
+				
+		//객실 클래스 리스트
+				
 		return SUCCESS;
 	}
 	
