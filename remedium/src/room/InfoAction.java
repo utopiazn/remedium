@@ -12,7 +12,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
-
+import bean.EventBean;
 import bean.RoomclassBean;
 import paging.PagingAction;
 import util.ProjectUtil;
@@ -59,15 +59,15 @@ public class InfoAction extends ActionSupport {
 	
 	private String room_class_Old;  //수정폼에서 기존 room_class id 임시 저장. 
 	
-
-	private String image_01;
-	private String image_02;
-	private String image_03;
-	private String image_04;
-	private String image_05;
+	//이미지 메인
+	private String image_01 ="";
+	private String image_02 ="";
+	private String image_03 ="";
+	private String image_04 ="";
+	private String image_05 ="";	
 	
-	
-	
+	//시설정보
+	private String image_06 ="";		
 		
 	//사진경로(메인)
 	private List<File> uploads = new ArrayList<File>();	
@@ -88,10 +88,7 @@ public class InfoAction extends ActionSupport {
 	}
 	
 	/*단일 업로드*/
-	public String singleUpload() throws Exception{
-	
-				
-		
+	public String singleUpload() throws Exception{	
 		
 		String resultImage2 ="";
 			
@@ -107,6 +104,12 @@ public class InfoAction extends ActionSupport {
 			
 			//파일 업로드
 			uploadAdd(fileName,strDestFile);																																																																																						
+		}else{
+			
+			if(!image_06.equals("")){
+				resultImage2  = image_06;
+			}
+			
 		}
 
 		return resultImage2;
@@ -118,17 +121,18 @@ public class InfoAction extends ActionSupport {
 		
 		//메인이미지 경로
 		String resultImage ="";		
-		int icount =0;
+		int icount =1;
 	
 		for (int i = 0; i < uploads.size(); i++) {			 
 
 			System.out.println(uploads.size() +"   " +fileUploadPath +"      " +getUploadsFileName().get(i));			
 						
 			//파일이 선택 되었을 겨우만 업로드 함.
+			
 			if(!getUploadsFileName().get(i).equals("")){			
 				
 				// 메인 이미지 경로 리스트 작성  ex) aa.jpg/b.jpg/b.jpg/b.jpg/ddfd.jpg
-				if(icount == 0){
+				if(icount == 1){
 					resultImage= getUploadsFileName().get(i);
 				}else{
 					
@@ -141,7 +145,33 @@ public class InfoAction extends ActionSupport {
 				
 				//파일 업로드
 				uploadAdd(fileName,strDestFile);				
-			}	
+			}else{
+				
+				if(icount == 1 && !image_01.equals("")){
+					
+					resultImage=  image_01;
+					
+				}else if(icount == 2 && !image_02.equals("")){
+				
+					resultImage += "/"+image_02;
+				
+				}else if(icount == 3 && !image_03.equals("")){
+				
+					resultImage += "/"+image_03;
+				
+				}else if(icount == 4 && !image_04.equals("")){
+				
+					resultImage += "/"+image_04;
+				
+				}else if(icount == 5 && !image_05.equals("")){
+				
+					resultImage += "/"+image_05;
+				}
+				
+				icount++;
+				
+				
+			}
 		}
 		
 		return resultImage;	
@@ -212,7 +242,7 @@ public class InfoAction extends ActionSupport {
 	}
 	
 	
-	//객실 클래스 개별 뷰호출 함수
+	//객실 클래스 개별 뷰 호출 함수
 	public void roomInfo(int roomClass) throws Exception {
 	
 		if( roomClass > 0 ){			
@@ -224,8 +254,26 @@ public class InfoAction extends ActionSupport {
 	
 			resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
 			
+			
+			System.out.println("--------------객실 클래스 개별 뷰---------------------");
+			System.out.println("객실 종류" +resultClass.getRoom_class());
+			System.out.println("객실 종류 이름" +resultClass.getName());
+			System.out.println("사진경로(메인)" +resultClass.getImage());
+			System.out.println("내용" +resultClass.getContent());
+			System.out.println("시설정보" +resultClass.getImage2());
+			System.out.println("------------------------------------------------");
+			
 			//메인 이미지를 나누기 위해 사용
-			//imageSplit(resultClass.getImage());
+			imageSplit(resultClass.getImage());
+			
+			System.out.println("--------------사진 이미지 메인---------------------");
+			System.out.println("사진1" +getImage_01());
+			System.out.println("사진2" +getImage_02());
+			System.out.println("사진3" +getImage_03());
+			System.out.println("사진4" +getImage_04());
+			System.out.println("사진5" +getImage_05());
+			System.out.println("------------------------------------------------");
+			
 		}
 		
 	}
@@ -240,14 +288,18 @@ public class InfoAction extends ActionSupport {
 			return ;
 		}
 		
-		StringTokenizer values = new StringTokenizer(strImage,"/");
+		StringTokenizer values = new StringTokenizer(strImage+"/","/");
 		
 		int i =1;
 		
 		while(values.hasMoreElements()){
-			System.out.println(values.nextToken());
+			
+		
 			
 			String image =values.nextToken();
+		
+			
+			System.out.println( i+ ":"+ image);
 			
 			switch (i) {
 			case 1:	this.image_01 =image; break;
@@ -315,20 +367,63 @@ public class InfoAction extends ActionSupport {
 	
 	//객실 클래스를 수정 폼
 	public String updForm() throws Exception {
-			
+					
 
 		System.out.println("객실 클래스를 수정 폼:"+roomClassNum);
+	
+		
+		//객실 클래스 리스트
+		execute();		
 		
 		//객실 클래스 개별 뷰호출 함수
 		roomInfo(roomClassNum);
-				
-		//객실 클래스 리스트
-				
+		
+		
+		
+		
+		
 		return SUCCESS;
 	}
 	
 	//객실 클래스를 수정
 	public String update() throws Exception {
+		
+		
+		/*다중 없로드*/ 
+		//메인이미지 처리
+		String image=multiUpload();	
+		//imageSplit(image);		
+		//시설정보
+		String image2=singleUpload();
+		
+		
+		System.out.println("Room_class_Old"+getRoom_class_Old());
+		System.out.println("Room_class"+getRoom_class());
+		System.out.println("Name"+getName());
+		System.out.println("Content"+getContent());
+		System.out.println("image"+image);
+		System.out.println("image2"+image2);
+		
+		
+		paramClass = new RoomclassBean();		
+		
+		
+		paramClass.setRoom_class(getRoom_class());
+		paramClass.setName(getName());
+		paramClass.setContent(getContent());
+		paramClass.setImage(image);
+		paramClass.setImage2(image2);
+		
+		
+		sqlMapper.update("roomclassSQL.updateRoomClass",paramClass);
+		
+		
+		//classID 가 변경되었을 경우
+		if(!getRoom_class_Old().equals(getRoomClass())){
+			
+			paramClass.setRoom_class(getRoom_class());
+			sqlMapper.update("roomclassSQL.updateRoomClass2",paramClass);
+		}
 		
 		return SUCCESS;
 	}
@@ -384,6 +479,14 @@ public class InfoAction extends ActionSupport {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getRoom_class_Old() {
+		return room_class_Old;
+	}
+
+	public void setRoom_class_Old(String room_class_Old) {
+		this.room_class_Old = room_class_Old;
 	}
 
 	public RoomclassBean getResultClass() {
@@ -456,6 +559,54 @@ public class InfoAction extends ActionSupport {
 
 	public void setImage2FileName(String image2FileName) {
 		this.image2FileName = image2FileName;
+	}
+
+	public String getImage_01() {
+		return image_01;
+	}
+
+	public void setImage_01(String image_01) {
+		this.image_01 = image_01;
+	}
+
+	public String getImage_02() {
+		return image_02;
+	}
+
+	public void setImage_02(String image_02) {
+		this.image_02 = image_02;
+	}
+
+	public String getImage_03() {
+		return image_03;
+	}
+
+	public void setImage_03(String image_03) {
+		this.image_03 = image_03;
+	}
+
+	public String getImage_04() {
+		return image_04;
+	}
+
+	public void setImage_04(String image_04) {
+		this.image_04 = image_04;
+	}
+
+	public String getImage_05() {
+		return image_05;
+	}
+
+	public void setImage_05(String image_05) {
+		this.image_05 = image_05;
+	}
+
+	public String getImage_06() {
+		return image_06;
+	}
+
+	public void setImage_06(String image_06) {
+		this.image_06 = image_06;
 	}
 
 

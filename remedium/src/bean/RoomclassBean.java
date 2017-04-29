@@ -7,6 +7,7 @@ public class RoomclassBean {
 	private String content;    // 내용
 	private String image2; 	   // 시설정보
 	private String name;       // 객실종류 이름
+	           
 	
 	public String getRoom_class() {
 		return room_class;

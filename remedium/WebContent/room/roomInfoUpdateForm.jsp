@@ -7,13 +7,7 @@
 </head>
 <body>
 
-	${resultClass.room_class}<br>
-	${resultClass.image}<br>
-	${resultClass.content}<br>
-	${resultClass.name}<br>
-	${resultClass.image2}<br>
-
-
+	<br/>
 	<table width="450" border="0" cellspacing="0" cellpadding="2">
 	
 		<tr>
@@ -21,15 +15,28 @@
 				<h2>객실 소개 클래스 수정</h2>
 			</td>
 		</tr>	
+	</table>	
+		
+	<br/><br/>
+
+	<table width="450" border="0" cellspacing="0" cellpadding="2">
+	
+		
 		
 		 <s:form action="roomInfoUpdate" method="POST" enctype="multipart/form-data">
-	
+		 	<s:hidden name="room_class_Old" value="${resultClass.room_class}"/>
+			<s:hidden name="image_01" value="${image_01}"/>
+			<s:hidden name="image_02" value="${image_02}"/>
+			<s:hidden name="image_03" value="${image_03}"/>
+			<s:hidden name="image_04" value="${image_04}"/>	
+			<s:hidden name="image_05" value="${image_05}"/>
+			<s:hidden name="image_06" value="${resultClass.image2}"/>
 	
 		<tr>			
 			<td bgcolor="#F4F4F4" >
 			
 				<table width="480" border="0" cellspacing="0" cellpadding="0">
-				
+					
 				
 					<tr>
 						<td width="100" >
@@ -37,7 +44,7 @@
 						</td>
 						
 						<td width="50" >
-							 <input type="text" name="room_class" size="20" >			
+							 <input type="text" name="room_class" value='<s:property value="resultClass.room_class"/>'  size="20" >			
 						</td>
 					</tr>
 					
@@ -47,7 +54,7 @@
 						</td>
 						
 						<td width="50" bgcolor="#F4F4F4">
-							 <input type="text" name="name" size="20" >			
+							 <input type="text" name="name"  value='<s:property value="resultClass.name"/>'  size="20" >			
 						</td>
 					</tr>
 			
@@ -57,7 +64,8 @@
 						</td>
 						
 						<td width="50" bgcolor="#F4F4F4">
-							 <textarea name="content" rows="5" cols="40"></textarea>			
+						   <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="50" rows="10" />
+    			
 						</td>
 					</tr>				
 				
@@ -65,59 +73,97 @@
 				
 				<table width="480" border="0" cellspacing="0" cellpadding="0">
 				
-					<tr>										
-						<td width="120" bgcolor="#F4F4F4">
-							 <s:file label="이미지1" name="uploads" value="dasasddas"/>
+				 	<s:if test='%{!image_01.equals("")}'>
+						<tr>
+							<td  colspan="2" align="center">								
+								 	사진이 등록되어있습니다. ${image_01}						
+							</td>						
+						</tr>
+					</s:if>	
+					
+					<tr>		
+																
+						<td width="120" bgcolor="#F4F4F4">													
+							 <s:file label="이미지1" name="uploads"/>
 						</td>						
 					</tr>
+					
+					<s:if test='%{!image_02.equals("")}'>
+						<tr>
+							<td  colspan="2" align="center">								
+								 	사진이 등록되어있습니다.. ${image_02}						
+							</td>						
+						</tr>
+					</s:if>					
 					
 					<tr>	
 						<td bgcolor="#F4F4F4">
-							 <s:file label="이미지2" name="uploads" />
+							 <s:file label="이미지2" name="uploads" />							
+ 						</td>						
+					</tr>
+					
+					<s:if test='%{!image_03.equals("")}'>
+						<tr>
+							<td  colspan="2" align="center">						
+								 	사진이 등록되어있습니다.. ${image_03}						
+							</td>						
+						</tr>
+					</s:if>				
+				
+					<tr>											
+						<td bgcolor="#F4F4F4">
+							<s:file label="이미지3" name="uploads" />
 						</td>						
 					</tr>
 				
 				
+					<s:if test='%{!image_04.equals("")}'>
+						<tr>
+							<td  colspan="2" align="center">						
+								 	사진이 등록되어있습니다.. ${image_04}						
+							</td>						
+						</tr>
+					</s:if>	
+					
 					<tr>					
-						
 						<td bgcolor="#F4F4F4">
-							<s:file label="이미지3" name="uploads" />
-						</td>
-						
-					</tr>
-				
-				
-				
-					<tr>					
-						
+							 <s:file label="이미지4" name="uploads" />							
+						</td>						
+					</tr>				
+					
+					<s:if test='%{!image_05.equals("")}'>
+						<tr>
+							<td  colspan="2" align="center">			
+								 	사진이 등록되어있습니다.. ${image_05}						
+							</td>						
+						</tr>
+					</s:if>	
+									
+					<tr>							
 						<td bgcolor="#F4F4F4">
-							 <s:file label="이미지4" name="uploads" />
-						</td>
-						
+							<s:file label="이미지5" name="uploads" />								
+						</td>						
 					</tr>
-				
-				
-					<tr>					
-						
-						<td bgcolor="#F4F4F4">
-								<s:file label="이미지5" name="uploads" />
-						</td>
-						
-					</tr>
-				
+					
+					
+					<s:if test='%{!resultClass.image2.equals("")}'>
+						<tr>
+							<td  colspan="2" align="center">			
+								 	사진이 등록되어있습니다.. ${resultClass.image2}						
+							</td>						
+						</tr>
+					</s:if>				
 		
 				
-					<tr>
-					
+					<tr>					
 						<td bgcolor="#F4F4F4">
-							<s:file label="시설정보" name="image2" value='sdfdsdf'/>
+							<s:file label="시설정보" name="image2" />
+							
 						</td>
-					</tr>
-				
-					
+					</tr>				
 						
 				</table>
-			<s:submit value="저장"/>
+			<s:submit value="수정"/>
 		
 		</s:form>
 			</td>		

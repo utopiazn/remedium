@@ -11,6 +11,7 @@
 		<result property="image2" column="image2" />
 		<result property="name" column="name" />
 		
+		
 	</resultMap>
 	
 	
@@ -44,6 +45,29 @@
 			ROOM_CLASS  = #room_class#		
 	</delete>
 	
+	<update id="updateRoomClass" parameterClass="roomclass">
+		update 
+			ROOM_CLASS 
+		set 
+			IMAGE =#image#,
+			CONTENT = #content#,
+			IMAGE2 = #image2#,
+			NAME =  #name#
+		where	
+			ROOM_CLASS = #room_class# 			
+	</update>
 	
+	
+	<update id="updateRoomClass2" parameterClass="roomclass">
+		update 
+			ROOM_CLASS 
+		set 
+			ROOM_CLASS = #room_class# 	
+		where	
+			IMAGE =#image# and
+			CONTENT = #content# and
+			IMAGE2 = #image2# and
+			NAME =  #name#			
+	</update>
 
 </sqlMap>
