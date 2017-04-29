@@ -20,7 +20,17 @@
 		</tr>
 	</table>
 	
+	/remedium/image/roomClassImage/${image_01}
+	
+	
+	<a href='/remedium/facilitiesView.action?no=2'><img width="640" height="400" alt="시설사진" src="/remedium/image/roomClassImage/${image_01}" ></a>
+	
 
+	<img height="100" alt="호텔로고" src="/remedium/image/roomClassImage/${image_01}" >
+	<img height="100" alt="호텔로고" src="/remedium/image/roomClassImage/${image_02}" >
+	<img height="100" alt="호텔로고" src="/remedium/image/roomClassImage/${image_03}" >
+	<img height="100" alt="호텔로고" src="/remedium/image/roomClassImage/${image_04}" >
+	<img height="100" alt="호텔로고" src="/remedium/image/roomClassImage/${image_05}" >
 
 </body>
 </html>
