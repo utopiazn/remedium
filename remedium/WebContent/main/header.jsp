@@ -78,11 +78,12 @@ text-decoration: none;
 </select>
 
 Room Class:
-<select name="RC">
-<option value="0" selected="selected">전체</option>
+<select name="rcType">
+<option value="0" <s:if test="${session.rcType==0 && session.rcType==null}">selected="selected"</s:if>>전체</option>
 
 <s:iterator value="%{session.RClist}">
-<option value='<s:property value="room_class"/>'><s:property value="name"/></option>
+<option value='<s:property value="room_class"/>'
+ <s:if test='${session.rcType==room_class}'>selected="selected"</s:if> ><s:property value="name"/></option>
 </s:iterator>
 
 
