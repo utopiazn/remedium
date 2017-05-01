@@ -18,10 +18,10 @@ padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
 width:25%; float:left; background-size: cover; background-color: #E2FFAF;
 }
 .h2{
-width:100%; float:left; margin:5px; border:1px solid black;
+width:95%; float:left; margin:5px; border:1px solid black;
 }
 .h3{
-width:100%; float:left; clear: left;
+width:95%; float:left; clear: left;
 }
 </style>
 </head>
