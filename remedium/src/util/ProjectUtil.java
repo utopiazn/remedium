@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -22,25 +23,40 @@ import bean.RoomclassBean;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProjectUtil extends ActionSupport{
+public class ProjectUtil extends ActionSupport implements SessionAware{
 	
 	
 	//sql문 연동을 위한 구문
 	private static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
 	
+	
+	
+	
+	//static영역 sqlMapper 생성
 	private static ProjectUtil projectUtil = new ProjectUtil("sql"); 
 	
 	public static ProjectUtil InterfaceAction(){
 		return projectUtil;
 	}
 	private ProjectUtil(String a){
+		createXML();
+	}
+	
+	private void createXML(){
 		try{	
 			reader = Resources.getResourceAsReader("sqlMapConfig.xml"); //sqlMapConfig.xml 파일의 설정 내용을 가져온다
 			sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);  //sqlMapConfig.xml 내용을 적용한 sqlMapper 객체 생성
 			reader.close();
 		}catch(IOException e){}
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	// 현재 날짜 : jsp에서 쓰기워한 로직 클래스 객체 생성후 currentDate변수를 그냥 가져다 쓰자.
 	public String currentDate = null; 
@@ -84,6 +100,45 @@ public class ProjectUtil extends ActionSupport{
 	
 	
 	
+	
+	//객실 소개 이름 리스트 session 저장로직///////////////////////////
+	
+	private Map session;
+	private List<RoomclassBean> list2;
+	
+	
+	@Override
+	public void setSession(Map session) {
+		// TODO Auto-generated method stub
+		this.session =session;
+	} 
+	
+	public ProjectUtil(Map session) throws IOException {		
+		
+		createXML();
+		/*reader = Resources.getResourceAsReader("sqlMapConfig.xml");
+		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);	
+		reader.close();*/		
+		this.session =session;
+	}
+	
+	
+	public void roomClassSession() throws Exception{
+		
+		list2 = new ArrayList<RoomclassBean>();
+		
+		list2 = sqlMapper.queryForList("roomclassSQL.selectAll");
+			
+		
+		System.out.println(list2.size());
+		this.session.put("RClist", list2);	
+		
+		
+	}
+	
+	
+	
+	////////////////////////////////////////////////////////////
 	
 	
 	//이미지업로드 설정
