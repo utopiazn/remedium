@@ -12,7 +12,6 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
-import bean.EventBean;
 import bean.RoomclassBean;
 import paging.PagingAction;
 import util.ProjectUtil;
@@ -35,7 +34,7 @@ public class InfoAction extends ActionSupport {
 	
 	
 	private int roomClass = -1;  // 서브 메뉴 값.
-	private int roomClassNum=0;
+	private int roomClassNum=0;  
 		
 	private List<RoomclassBean> list;  //객실 종류 리스트
 	
@@ -59,6 +58,12 @@ public class InfoAction extends ActionSupport {
 	
 	private String room_class_Old;  //수정폼에서 기존 room_class id 임시 저장. 
 	
+	
+	private String imageMain="";
+	private int imageNum =1;
+	
+	
+
 	//이미지 메인
 	private String image_01 ="";
 	private String image_02 ="";
@@ -265,6 +270,21 @@ public class InfoAction extends ActionSupport {
 			
 			//메인 이미지를 나누기 위해 사용
 			imageSplit(resultClass.getImage());
+			
+		
+			switch (imageNum) {
+			case 1:	imageMain = this.image_01;	break;
+			case 2:	imageMain = this.image_02;	break;
+			case 3:	imageMain = this.image_03;	break;
+			case 4:	imageMain = this.image_04;	break;
+			case 5:	imageMain = this.image_05;	break;
+
+			default: imageMain = ""; break;
+			}
+			
+		
+			
+			
 			
 			System.out.println("--------------사진 이미지 메인---------------------");
 			System.out.println("사진1" +getImage_01());
@@ -607,7 +627,18 @@ public class InfoAction extends ActionSupport {
 
 	public void setImage_06(String image_06) {
 		this.image_06 = image_06;
+	}	
+
+	public int getImageNum() {
+		return imageNum;
 	}
 
+	public void setImageNum(int imageNum) {
+		this.imageNum = imageNum;
+	}
+
+	public String getImageMain() {
+		return imageMain;
+	}
 
 }
