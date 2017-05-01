@@ -7,44 +7,51 @@
 
 <link href="css/main.css" rel="stylesheet" style="text/css">
 <style type="text/css">
+.s{
+width:95%; background-size: cover; padding-top:5px; padding-bottom:5px; border:1px solid black;  margin:5px;
+}
+.c{
+padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
+}
+
 .h1{
-width:300px; float:left; 
+width:25%; float:left; background-size: cover;
 }
 .h2{
-width:700px; float:left; 
+width:70%; float:left; margin:5px;
 }
 .h3{
-width:700px; float:left; clear: left; 
+width:100%; float:left; clear: left;
 }
+
+
 </style>
 
 
 </head>
 <body>
-	<div>
+	<div class="s">
 	<h2>편의 시설</h2>
 	</div>
-	<div>
 	<s:iterator value="list" >
 		<div class="h1">
-		<div><strong>시설이름</strong></div>
-		<div>
+		<div class="c"><strong>시설이름</strong></div>
+		<div class="c">
 			<b><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><s:property value="name" /></a></b>
 		</div>
-		<div><strong>개장시간</strong></div>
-		<div><s:property value="time" /></div>
+		<div class="c"><strong>개장시간</strong></div>
+		<div class="c"><s:property value="time" /></div>
 		</div>
 		
 		<div class="h2">
-		<div><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><img width="640" height="400" alt="시설사진" src="/remedium/image/facImage/<s:property value='image'/>" ></a></div>
+		<div><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><img width="100%" height="600" alt="시설사진" src="/remedium/image/facImage/<s:property value='image'/>" ></a></div>
 		</div>
-		<div class="h3"></div>
+		<div class="h3">&nbsp;</div>
 	</s:iterator>
-	</div>
+<s:if test="${session.userAdmin == 1 }">
 	
-	
-	
-	
+	<input type="button" value="시설추가"onClick="location.href='facilitiesInsertForm.action'">
+	</s:if>
 	
 	
 	
