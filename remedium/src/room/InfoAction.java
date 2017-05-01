@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 import com.ibatis.common.resources.Resources;
@@ -19,10 +20,13 @@ import util.ProjectUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.struts2.interceptor.SessionAware;
 
 
 
-public class InfoAction extends ActionSupport {
+public class InfoAction extends ActionSupport  implements SessionAware {
+	
+	private Map session;
 	
 	Log log = LogFactory.getLog(InfoAction.class);
 
@@ -240,6 +244,7 @@ public class InfoAction extends ActionSupport {
 	//객실 클래스 개별 뷰
 	public String view() throws Exception {		
 
+		
 		//객실 클래스 개별 뷰호출 함수
 		roomInfo(roomClass);	
 			
@@ -344,6 +349,8 @@ public class InfoAction extends ActionSupport {
 		roomInfo(roomClass);	
 		execute();		
 		
+		
+		
 		return SUCCESS;
 	}
 	
@@ -381,6 +388,10 @@ public class InfoAction extends ActionSupport {
 
 		//기본 객실 클래스와 객실 뷰 값 설정
 		roomClassCtrl();					
+		
+		ProjectUtil rcs = new ProjectUtil(session);		
+		rcs.roomClassSession();
+		
 		
 		return SUCCESS;
 	}
@@ -445,6 +456,10 @@ public class InfoAction extends ActionSupport {
 			sqlMapper.update("roomclassSQL.updateRoomClass2",paramClass);
 		}
 		
+		ProjectUtil rcs = new ProjectUtil(session);		
+		rcs.roomClassSession();
+		
+		
 		return SUCCESS;
 	}
 	
@@ -458,6 +473,9 @@ public class InfoAction extends ActionSupport {
 		//객실소개 삭제
 		sqlMapper.delete("roomclassSQL.deleteRoomClass",paramClass);
 
+		ProjectUtil rcs = new ProjectUtil(session);		
+		rcs.roomClassSession();
+		
 		return SUCCESS;
 	}
 
@@ -641,4 +659,11 @@ public class InfoAction extends ActionSupport {
 		return imageMain;
 	}
 
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 }
