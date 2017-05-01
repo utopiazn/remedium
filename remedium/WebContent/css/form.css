@@ -1,5 +1,5 @@
-@CHARSET "EUC-KR";
-.join/* È¸¿ø°¡ÀÔ ºÎºĞ */
+@CHARSET "UTF-8";
+.join/* íšŒì›ê°€ì… ë¶€ë¶„ */
 {
 text-align: center; margin: 5% auto; width: 41%;
 }
@@ -7,7 +7,7 @@ text-align: center; margin: 5% auto; width: 41%;
 {
 text-align: center; margin: 5% auto; width: 41%;
 }
-.pwch /* ºñ¹Ğ¹øÈ£ È®ÀÎ */
+.pwch /* ë¹„ë°€ë²ˆí˜¸ í™•ì¸ */
 {
 text-align: center; margin: 13% auto; width: 21%;
 }
