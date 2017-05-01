@@ -40,13 +40,4 @@ public class MainAction extends ActionSupport implements SessionAware {
 		return session;
 	}
 	
-	/*public Map getSession() {
-		return session;
-	}
-
-	public void setSession(Map session) {
-		this.session = session;
-	}
-*/
-	
 }
