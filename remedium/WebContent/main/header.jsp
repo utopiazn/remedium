@@ -77,6 +77,17 @@ text-decoration: none;
 <option value="0" <s:if test="${session.people==0}">selected="selected"</s:if> >단체(5인 이상)</option>
 </select>
 
+Room Class:
+<select name="RC">
+<option value="0" selected="selected">전체</option>
+
+<s:iterator value="%{session.RClist}">
+<option value='<s:property value="room_class"/>'><s:property value="name"/></option>
+</s:iterator>
+
+
+</select>
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 

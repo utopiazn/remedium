@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.io.Reader;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 
@@ -15,8 +18,11 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 import bean.ImageBean;
 import bean.RoomBean;
+import bean.RoomclassBean;
 
-public class ProjectUtil {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ProjectUtil extends ActionSupport{
 	
 	
 	//sql문 연동을 위한 구문
@@ -48,9 +54,31 @@ public class ProjectUtil {
 	
 	
 	//session 설정
-/*	public static Map session;
-	public static Map getSession() { return session; }
-	public void setSession(Map session) { this.session = session; }*/
+	/*private Map session;
+	
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
+	}*/
+	
+	
+	/*private List<RoomclassBean> list;
+	
+	public void  putRC() throws Exception{
+		
+	 list = new ArrayList<RoomclassBean>();
+		
+		list = sqlMapper.queryForList("roomclassSQL.selectAll");
+		
+		
+		
+		this.session.put("RClist", list);
+		
+		
+	}*/
 	
 	
 	
