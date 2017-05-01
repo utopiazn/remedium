@@ -21,7 +21,7 @@ width:25%; float:left; background-size: cover;
 width:70%; float:left; margin:5px;
 }
 .h3{
-width:100%; float:left; clear: left;
+width:95%; float:left; clear: left; text-align: right; margin: 5px; 
 }
 
 
@@ -32,6 +32,12 @@ width:100%; float:left; clear: left;
 <body>
 	<div class="s">
 	<h2>편의 시설</h2>
+	</div>
+	<div class="h3">
+	<s:if test="${session.userAdmin == 1 }">	
+	<input type="button" value="시설추가"onClick="location.href='facilitiesInsertForm.action'">
+	
+	</s:if>
 	</div>
 	<s:iterator value="list" >
 		<div class="h1">
@@ -48,10 +54,8 @@ width:100%; float:left; clear: left;
 		</div>
 		<div class="h3">&nbsp;</div>
 	</s:iterator>
-<s:if test="${session.userAdmin == 1 }">
 	
-	<input type="button" value="시설추가"onClick="location.href='facilitiesInsertForm.action'">
-	</s:if>
+
 	
 	
 	
