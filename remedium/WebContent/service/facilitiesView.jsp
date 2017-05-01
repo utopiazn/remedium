@@ -8,7 +8,7 @@
 <link href="css/main.css" rel="stylesheet" style="text/css">
 <style type="text/css">
 .s{
-width:100%; background-size: cover; padding-top:5px; padding-bottom:5px; border:1px solid black;  margin:5px;
+width:95%; background-size: cover; padding-top:5px; padding-bottom:5px; border:1px solid black;  margin:5px;
 }
 .c{
 padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
