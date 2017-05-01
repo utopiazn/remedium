@@ -31,6 +31,7 @@
 		<td align="center" width="650px" style="width: 100%; border: 1px solid #bcbcbc; text-align:center; table-layout:fixed; word-break:break-all;">
 		        2017년 5월 HOTEL REMEDIUM 오픈, 최고의 룸 수준과 높은 서비스 정신으로 제주도 최고의 휴양 호텔로서 자리잡고 있습니다.
 			    REMEDIUM 호텔의 모든 객실은 국내외 디자이너들의 합작으로 독특하고 빈티지한 디자인 감성을 느끼실수 있으며,다양한 고객님의 
+			      
 			        취향에 맞춰 8개 타입의 객실 중 선택하실 수 있도록 하였습니다.
 			        또한, 다양하고 특화된 편의서비스와 시설 제공으로 고객님만의 아늑한 휴식 공간이 될 수 있도록 하였습니다.
 			    <br>
