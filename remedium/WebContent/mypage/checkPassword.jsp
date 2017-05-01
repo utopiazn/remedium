@@ -6,6 +6,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<link href="css/form.css" rel="stylesheet" style="text/css">
 <script type="text/javascript">
 function pwd(userinput) {
 	
@@ -27,6 +28,7 @@ function pwd(userinput) {
 </script>
 </head>
 <body>
+<div class="pwch">
 
 <h2>비밀번호 확인</h2>
 
@@ -42,18 +44,20 @@ function pwd(userinput) {
 </tr>
 
 <tr>
-<td width="150" bgcolor="#F4F4F4">비밀번호 입력</td>
-<td width="150" bgcolor="#FFFFFF">
+<td width="150" bgcolor="#F4F4F4" >비밀번호 입력</td>
+</tr>
+<tr>
+<td width="150" bgcolor="#FFFFFF" align="center">
 &nbsp;&nbsp;<s:textfield name="password" theme="simple" cssStyle="width:100px" maxlength="20"/>
-&nbsp;&nbsp;<input name="submit" type="submit" value="확인" class="inputb"/>
 </td>
 </tr>
 
-<tr bgcolor="#777777">
-<td height="1" colspan="2"></td>
+
+<tr>
+<td height="1" colspan="2"><br><input name="submit" type="submit" value="확인" class="inputb"/></td>
 </tr>
 </table>
 </form>
-
+</div>
 </body>
 </html>
