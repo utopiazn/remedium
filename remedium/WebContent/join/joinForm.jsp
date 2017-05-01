@@ -8,9 +8,10 @@
 <html lang="ko"  xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="css/form.css" rel="stylesheet" style="text/css">
+
+
 	
-
-
 	<script type="text/javascript">		
 	
 		function setChildValue(name){	
@@ -104,12 +105,12 @@
 	
 	</script>
 	
-	
-	
+
 	
 </head>
 <body>
 
+<DIV class="join">
 	
 	<table width="600" border="0" cellspacing="0" cellpadding="2">
 	
@@ -138,7 +139,7 @@
 					<font color="#FF0000">*</font>아이디
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF">
+				<td width="50" bgcolor="#FFFFFF" align="left">
 				
 					<%-- <s:textfield name="memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/> --%>
 					<s:textfield name="memberID" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
@@ -155,8 +156,8 @@
 					<font color="#FF0000">*</font>비밀번호
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF">
-					<s:textfield name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50"/>					 
+				<td width="50" bgcolor="#FFFFFF" align="left">
+					<s:textfield name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50" />					 
 					
 					
 					
@@ -168,7 +169,7 @@
 					<font color="#FF0000">*</font>비밀번호 확인
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF">
+				<td width="50" bgcolor="#FFFFFF" align="left">
 					<s:textfield name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
@@ -178,7 +179,7 @@
 					<font color="#FF0000">*</font>이름
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF">
+				<td width="50" bgcolor="#FFFFFF" align="left">
 					<s:textfield name="memberName" theme="simple" value="%{paramClass.memberName}" cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
@@ -190,7 +191,7 @@
 				
 			
 			
-				<td width="50" bgcolor="#FFFFFF">
+				<td width="50" bgcolor="#FFFFFF" align="left">
 									
 					<input type="radio" name="gender" value="M"  checked="checked" />남자
 					<input type="radio" name="gender" value="W"/>여자
@@ -204,7 +205,7 @@
 					<font color="#FF0000">*</font>생년월일
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF">
+				<td width="50" bgcolor="#FFFFFF" align="left">
 					<s:textfield name="birthday" theme="simple" value="%{paramClass.birthday}" cssStyle="width:270px" maxlength="50"/> 예)20140407					
 				</td>
 			</tr>
@@ -215,7 +216,7 @@
 					<font color="#FF0000">*</font>전화 번호
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF">
+				<td width="50" bgcolor="#FFFFFF" align="left">
 					<s:textfield name="phone" theme="simple" value="%{resultClass.phone}" cssStyle="width:270px" maxlength="50"/> 	'-' 제외				
 				</td>
 			</tr>
@@ -226,7 +227,7 @@
 					<font color="#FF0000">*</font>이메일
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF">
+				<td width="50" bgcolor="#FFFFFF" align="left">
 					<s:textfield name="email" theme="simple" value="%{resultClass.email}" cssStyle="width:270px" maxlength="50"/> 					
 				</td>
 			</tr>
@@ -237,7 +238,7 @@
 				</td>
 			
 			
-				<td width="50" bgcolor="#FFFFFF">
+				<td width="50" bgcolor="#FFFFFF" align="left"> 
 				
 					<input type="text" id="sample6_postcode" name="zipcode" placeholder="우편번호">
 					<input type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
@@ -254,7 +255,7 @@
 		<button type="button" onclick="location.href='loginForm.action' ">취소</button>
 	</form>
 	
-	
+</DIV>	
 
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
