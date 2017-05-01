@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+	<link href="css/mypage.css" rel="stylesheet" style="text/css">
 
 <%-- <script type="text/javascript">
 function open_win_noresizable(url, name) {
@@ -16,33 +17,10 @@ function open_win_noresizable(url, name) {
 }
 </script> --%>
 
- <style type="text/css">
- #reslist /* 예약리스트 */
- {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px;  display:table-cell; border-radius: 5px;  margin-left:200px;
- }
-  #cash /* 캐쉬 충전 */
- {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px; margin-left: 200px;
- }
-  #modify /* 정보 수정*/
- {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px;  margin-left:200px;
- }
-  #out /*회원 탈퇴*/
- {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px; margin-left: 200px;
-}
-.mainBox{width: 700px; margin: 0 auto; display: table-row; float: center;} 
- 
-
- 
- </style>
-
 </head>
 <body>
 
-<div class="mainBox">
+<div id="mainBox">
 	<div id="modify">
   	<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
 	<img alt="회원정보 수정" src="/remedium/image/modify2.png" width="100%" height="100%"  onclick="location.href='memberAdminList.action'" > 
@@ -59,7 +37,7 @@ function open_win_noresizable(url, name) {
 </div>
  	
 
- <div class="mainBox">	
+ <div id="mainBox">	
  	<div id="reslist">
  	<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 관리자 아이디일 경우 -->
  	<img alt="나의 예약 페이지" src="/remedium/image/reslist.png" width="100%" height="100%"  onclick="location.href='roomAdminList.action'" > 

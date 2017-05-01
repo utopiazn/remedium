@@ -12,7 +12,7 @@
 	<constant name="struts.action.extension" value="action" />
 	
 	<package name="tiles"  extends="struts-default, tiles-default">       
-	    <action name="main" class="main.MainAction" >
+	    <action name="main" class="main.MainAction" method="main">
 			<result type="tiles">main3</result>
 		</action>    	
 

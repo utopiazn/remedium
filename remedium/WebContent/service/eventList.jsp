@@ -5,11 +5,28 @@
 <head>
 <meta charset="UTF-8">
 <title>EVENT</title>
+<link href="css/board.css" rel="stylesheet" style="text/css">
+<style type="text/css">
+
+body {
+margin-left: 0px;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+color : #787878;
+line-height: normal;
+text-decoration: underline;
+}
+
+</style>
 </head>
 <body>
-<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" >
   		<tr>
-  			<td align="center"><h2>EVENT＊PROMOTION</h2></td>
+  			<td align="center"><h2>EVENT＊PROMOTION</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			</td>
   		</tr>
   		<tr>
   			<td height="20"></td>
@@ -17,12 +34,12 @@
   	</table>
   	
   
-	<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
-	      <tr align="center" bgcolor="#F3F3F3">
-      		<td width="50"><strong>번호</strong></td>
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+	      <tr align="center" bgcolor="#A2D5FF">
+      		<td width="50"><strong>NO</strong></td>
 		<td width="350"><strong>이벤트</strong></td>
-        		<td width="120"><strong>이벤트 시작</strong></td>
-				<td width="120"><strong>이벤트 종료</strong></td>
+        		<td width="140"><strong>이벤트 시작</strong></td>
+				<td width="140"><strong>이벤트 종료</strong></td>
 				<td width="130"><strong>수정 / 삭제</strong></td>
       	      </tr>
       	      <tr bgcolor="#777777">

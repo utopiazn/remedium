@@ -25,10 +25,13 @@ public class ListAction extends ActionSupport implements SessionAware {
 	//날짜검색 세션저장
 	private Map session;
 	
+	//객실클래스검색관련
+	private int rcType;
+	
 	//페이징처리 변수선언
 	private int currentPage = 1; // 현재 페이지
 	private int totalCount; // 총 게시글 수
-	private int blockCount = 5; // 한 페이지 게시글 수
+	private int blockCount = 8; // 한 페이지 게시글 수
 	private int blockPage = 5; // 한 화면에 보여줄 페이지 수
 	private String pagingHtml; // 페이징을 구현한 HTML
 	private PagingAction page; // 페이징 클래스
@@ -46,12 +49,23 @@ public class ListAction extends ActionSupport implements SessionAware {
 		paramClass.setLastDate(java.sql.Date.valueOf(lastDate));
 		paramClass.setPeople(people);
 		
-		if(people==0){
-			list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
-		}else{
-			list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
-		}
 		
+		if(rcType==0){
+		
+			if(people==0){
+				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
+			}else{
+				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
+			}
+		
+		}else{
+			paramClass.setRcType(rcType);
+			if(people==0){
+				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup_typeC", paramClass);
+			}else{
+				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch_typeC", paramClass);
+			}
+		}
 		
 		//페이징처리
 		url = "roomList.action?firstDate="+getFirstDate()+"&lastDate="+getLastDate()+"&people="+getPeople()+"&";
@@ -76,6 +90,7 @@ public class ListAction extends ActionSupport implements SessionAware {
 		session.put("firstDate", getFirstDate());
 		session.put("lastDate", getLastDate());
 		session.put("people", getPeople());
+		session.put("rcType", getRcType());
 		
 		return SUCCESS;
 	}
@@ -84,9 +99,9 @@ public class ListAction extends ActionSupport implements SessionAware {
 	public String all() throws Exception {
 		
 		list = new ArrayList<RoomBean>();
-		
+
 		list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectAll");
-		
+
 		
 		//페이징처리
 		url = "roomAllList.action?";
@@ -223,6 +238,14 @@ public class ListAction extends ActionSupport implements SessionAware {
 
 	public void setSession(Map session) {
 		this.session = session;
+	}
+
+	public int getRcType() {
+		return rcType;
+	}
+
+	public void setRcType(int rcType) {
+		this.rcType = rcType;
 	}
 
 	

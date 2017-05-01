@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 import com.ibatis.common.resources.Resources;
@@ -12,7 +13,6 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
-import bean.EventBean;
 import bean.RoomclassBean;
 import paging.PagingAction;
 import util.ProjectUtil;
@@ -20,10 +20,13 @@ import util.ProjectUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.struts2.interceptor.SessionAware;
 
 
 
-public class InfoAction extends ActionSupport {
+public class InfoAction extends ActionSupport  implements SessionAware {
+	
+	private Map session;
 	
 	Log log = LogFactory.getLog(InfoAction.class);
 
@@ -35,7 +38,7 @@ public class InfoAction extends ActionSupport {
 	
 	
 	private int roomClass = -1;  // 서브 메뉴 값.
-	private int roomClassNum=0;
+	private int roomClassNum=0;  
 		
 	private List<RoomclassBean> list;  //객실 종류 리스트
 	
@@ -59,6 +62,12 @@ public class InfoAction extends ActionSupport {
 	
 	private String room_class_Old;  //수정폼에서 기존 room_class id 임시 저장. 
 	
+	
+	private String imageMain="";
+	private int imageNum =1;
+	
+	
+
 	//이미지 메인
 	private String image_01 ="";
 	private String image_02 ="";
@@ -235,6 +244,7 @@ public class InfoAction extends ActionSupport {
 	//객실 클래스 개별 뷰
 	public String view() throws Exception {		
 
+		
 		//객실 클래스 개별 뷰호출 함수
 		roomInfo(roomClass);	
 			
@@ -265,6 +275,21 @@ public class InfoAction extends ActionSupport {
 			
 			//메인 이미지를 나누기 위해 사용
 			imageSplit(resultClass.getImage());
+			
+		
+			switch (imageNum) {
+			case 1:	imageMain = this.image_01;	break;
+			case 2:	imageMain = this.image_02;	break;
+			case 3:	imageMain = this.image_03;	break;
+			case 4:	imageMain = this.image_04;	break;
+			case 5:	imageMain = this.image_05;	break;
+
+			default: imageMain = ""; break;
+			}
+			
+		
+			
+			
 			
 			System.out.println("--------------사진 이미지 메인---------------------");
 			System.out.println("사진1" +getImage_01());
@@ -324,6 +349,8 @@ public class InfoAction extends ActionSupport {
 		roomInfo(roomClass);	
 		execute();		
 		
+		
+		
 		return SUCCESS;
 	}
 	
@@ -361,6 +388,10 @@ public class InfoAction extends ActionSupport {
 
 		//기본 객실 클래스와 객실 뷰 값 설정
 		roomClassCtrl();					
+		
+		ProjectUtil rcs = new ProjectUtil(session);		
+		rcs.roomClassSession();
+		
 		
 		return SUCCESS;
 	}
@@ -425,6 +456,10 @@ public class InfoAction extends ActionSupport {
 			sqlMapper.update("roomclassSQL.updateRoomClass2",paramClass);
 		}
 		
+		ProjectUtil rcs = new ProjectUtil(session);		
+		rcs.roomClassSession();
+		
+		
 		return SUCCESS;
 	}
 	
@@ -438,6 +473,9 @@ public class InfoAction extends ActionSupport {
 		//객실소개 삭제
 		sqlMapper.delete("roomclassSQL.deleteRoomClass",paramClass);
 
+		ProjectUtil rcs = new ProjectUtil(session);		
+		rcs.roomClassSession();
+		
 		return SUCCESS;
 	}
 
@@ -607,7 +645,25 @@ public class InfoAction extends ActionSupport {
 
 	public void setImage_06(String image_06) {
 		this.image_06 = image_06;
+	}	
+
+	public int getImageNum() {
+		return imageNum;
 	}
 
+	public void setImageNum(int imageNum) {
+		this.imageNum = imageNum;
+	}
 
+	public String getImageMain() {
+		return imageMain;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 }

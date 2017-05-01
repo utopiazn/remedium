@@ -33,8 +33,6 @@ display:inline;
 
 </head>
 <body>
-
-
 <div id="image">
 
 <img height="400" alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" >

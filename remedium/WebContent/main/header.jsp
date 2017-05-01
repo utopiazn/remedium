@@ -77,6 +77,41 @@ text-decoration: none;
 <option value="0" <s:if test="${session.people==0}">selected="selected"</s:if> >단체(5인 이상)</option>
 </select>
 
+Room Class:
+<%-- 
+<s:if test="session.RClist.size() == 0"> 
+	값이 없어 ㅠㅠ
+</s:if>
+
+<s:if test="session.RClist.size() != 0"> 
+	값이 있더 ㅠㅠ
+</s:if>
+
+
+<s:if test="session.RClist == null"> 
+	너너너널임 ㅡ,ㅡ^
+</s:if>
+ --%>
+<select name="rcType">
+
+
+
+<option value="0" <s:if test="${session.rcType==0 && session.rcType==null}">selected="selected"</s:if>>전체</option>
+
+
+<s:iterator value="%{session.RClist}">
+<option value='<s:property value="room_class"/>' 
+
+<s:if test="${session.rcType==room_class}"> 
+	selected="selected"
+</s:if> >
+
+  <s:property value="name"/></option>
+</s:iterator>
+
+
+</select>
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 

@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+ #reslist /* 예약리스트 */
+ {
+ background-color:#FFFFF; float: left; width: 15%; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px;  display:table-cell; border-radius: 5px;  margin-left:400px;
+ }
+  #cash /* 캐쉬 충전 */
+ {
+ background-color:#FFFFF; float: left; width: 15%; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px; margin-right:200px;
+ }
+  #modify /* 정보 수정*/
+ {
+ background-color:#FFFFF; float: left; width: 15%; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px;  margin-left:400px;
+ }
+  #out /*회원 탈퇴*/
+ {
+ background-color:#FFFFF; float: left; width: 15%; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px; margin-right: 200px;
+}
+#mainBox{width:100%; margin: 20%  auto; display: table-row; } 
+ 
