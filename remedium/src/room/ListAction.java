@@ -26,7 +26,7 @@ public class ListAction extends ActionSupport implements SessionAware {
 	private Map session;
 	
 	//객실클래스검색관련
-	private int RC;
+	private int rcType;
 	
 	//페이징처리 변수선언
 	private int currentPage = 1; // 현재 페이지
@@ -49,7 +49,8 @@ public class ListAction extends ActionSupport implements SessionAware {
 		paramClass.setLastDate(java.sql.Date.valueOf(lastDate));
 		paramClass.setPeople(people);
 		
-		if(RC==0){
+		
+		if(rcType==0){
 		
 			if(people==0){
 				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
@@ -58,7 +59,12 @@ public class ListAction extends ActionSupport implements SessionAware {
 			}
 		
 		}else{
-			
+			paramClass.setRcType(rcType);
+			if(people==0){
+				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup_typeC", paramClass);
+			}else{
+				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch_typeC", paramClass);
+			}
 		}
 		
 		//페이징처리
@@ -84,6 +90,7 @@ public class ListAction extends ActionSupport implements SessionAware {
 		session.put("firstDate", getFirstDate());
 		session.put("lastDate", getLastDate());
 		session.put("people", getPeople());
+		session.put("rcType", getRcType());
 		
 		return SUCCESS;
 	}
@@ -92,12 +99,9 @@ public class ListAction extends ActionSupport implements SessionAware {
 	public String all() throws Exception {
 		
 		list = new ArrayList<RoomBean>();
-		
-		if(RC==0){
+
 		list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectAll");
-		}else{
-			
-		}
+
 		
 		//페이징처리
 		url = "roomAllList.action?";
@@ -236,12 +240,12 @@ public class ListAction extends ActionSupport implements SessionAware {
 		this.session = session;
 	}
 
-	public int getRC() {
-		return RC;
+	public int getRcType() {
+		return rcType;
 	}
 
-	public void setRC(int rC) {
-		RC = rC;
+	public void setRcType(int rcType) {
+		this.rcType = rcType;
 	}
 
 	

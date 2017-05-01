@@ -63,6 +63,28 @@
 		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 	</select>
 	
+	<select id="selectSerch_typeC" resultMap="roomRes" parameterClass="roomReservation" >
+		SELECT a.* ,(SELECT NAME from room_class where ROOM_CLASS = a.ROOM_CLASS ) as CLASS_NAME FROM ROOM a
+		 WHERE NO NOT IN   
+		  (SELECT DISTINCT NO FROM ROOM_RESERVATION  
+		   WHERE 
+		    FIRSTDATE between #firstDate# and #lastDate# or 
+		    LASTDATE between #firstDate# and #lastDate#
+		  ) AND a.ROOM_CAPACITY >= #people# AND a.ROOM_CLASS = #rcType# 
+		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
+	</select>
+	
+	<select id="selectSerchGroup_typeC" resultMap="roomRes" parameterClass="roomReservation" >
+		SELECT a.* ,(SELECT NAME from room_class where ROOM_CLASS = a.ROOM_CLASS ) as CLASS_NAME FROM ROOM a
+		 WHERE NO NOT IN   
+		  (SELECT DISTINCT NO FROM ROOM_RESERVATION  
+		   WHERE 
+		    FIRSTDATE between #firstDate# and #lastDate# or 
+		    LASTDATE between #firstDate# and #lastDate#
+		  ) AND a.ROOM_CAPACITY = #people# AND a.ROOM_CLASS = #rcType# 
+		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
+	</select>
+	
 	<select id="selectOne" resultMap="roomRes">
 		<include refid="seletClass"/>
 		WHERE a.NO = #no#

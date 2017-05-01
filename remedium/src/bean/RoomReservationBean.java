@@ -12,6 +12,7 @@ public class RoomReservationBean {
 	String memberID;	     // 회원ID
 	int people;              // 검색시 필요 인원정보
 	String reservationCheck; //예약 승인여부
+	int rcType;
 	
 	public int getReservationNo() {
 		return reservationNo;
@@ -60,6 +61,12 @@ public class RoomReservationBean {
 	}
 	public void setReservationCheck(String reservationCheck) {
 		this.reservationCheck = reservationCheck;
+	}
+	public int getRcType() {
+		return rcType;
+	}
+	public void setRcType(int rcType) {
+		this.rcType = rcType;
 	}
 	
 }

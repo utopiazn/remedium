@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/form.css" rel="stylesheet" style="text/css">
 <SCRIPT type="text/javascript">
 		
 		function validation(userinput) {
@@ -26,16 +27,18 @@
 			return true;
 		}
 </SCRIPT>
-<link href="css/main.css" rel="stylesheet" style="text/css">
+<!-- <link href="css/main.css" rel="stylesheet" style="text/css"> -->
 </head>
-<center>
+
 <body>
+<div class="join">
+<center>
 <form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 		<table width="600" border="0" cellspacing="0" cellpadding="2">
 	
 		<tr>
 			<td align="center">
-				<h2>로 그 인</h2>
+				<h2> 로 그 인 </h2>
 			</td>
 		</tr>		
 	</table>
@@ -62,5 +65,7 @@
        	 <a href="findPwForm.action"><font size=2>비밀번호 찾기</font></a>
 </form>
 </center>
+</div>
+
 </body>
 </html>

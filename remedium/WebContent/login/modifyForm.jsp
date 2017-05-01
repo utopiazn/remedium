@@ -7,6 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<link href="css/form.css" rel="stylesheet" style="text/css">
+
 <script type="text/javascript">	
 		function validation2(userinput){
 
@@ -45,6 +47,7 @@
 </script>	
 </head>
 <body>
+<div class="form">
 
 
 	
@@ -133,7 +136,9 @@
 		
 <input type="submit" value="수 정" >	
 		
-</form> 
+	
+</form>
+</div> 
 	
 	
 
