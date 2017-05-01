@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+	<link href="css/mypage.css" rel="stylesheet" style="text/css">
 
 <%-- <script type="text/javascript">
 function open_win_noresizable(url, name) {
@@ -15,29 +16,6 @@ function open_win_noresizable(url, name) {
 	
 }
 </script> --%>
-
- <style type="text/css">
- #reslist /* 예약리스트 */
- {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px;  display:table-cell; border-radius: 5px;  margin-left:200px;
- }
-  #cash /* 캐쉬 충전 */
- {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px; margin-left: 200px;
- }
-  #modify /* 정보 수정*/
- {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px;  margin-left:200px;
- }
-  #out /*회원 탈퇴*/
- {
- background-color:#FFFFF; float: left; width: 200px; height: 200px; border: 1px solid #000000; margin: 100px 50px 50px; display:table-cell; border-radius: 5px; margin-left: 200px;
-}
-.mainBox{width: 700px; margin: 0 auto; display: table-row; float: center;} 
- 
-
- 
- </style>
 
 </head>
 <body>
