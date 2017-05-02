@@ -10,7 +10,7 @@ width:95%; background-size: cover; padding-top:10px; padding-bottom:5px; magin:5
 }
 
 .c1{
-width:95%;padding-top:10px; padding-bottom:5px;
+width:95%;padding-top:10px; padding-bottom:5px; text-align:left;
 }
 .c2{
 width:95%;padding-top:10px; padding-bottom:5px;
@@ -41,10 +41,13 @@ width:95%;padding-top:10px; padding-bottom:5px;
 		</tr>
 		<tr>
 		<td>정보 :</td>
-		<td><s:textfield name="content" theme="simple" value="%{resultClass.content}"/></td>
+		<td>
+		<s:textarea name="content" cols="50" rows="5" theme="simple" value="%{resultClass.content}"></s:textarea>
+		<%-- <s:textfield name="content" theme="simple" value="%{resultClass.content}"/>--%>
+		</td> 
 		</tr>
 		<tr>
-		<td>개장시간 :</td>
+		<td>운영시간 :</td>
 		<td><s:textfield name="time" theme="simple" value="%{resultClass.time}"/></td>
 		</tr>
 		<tr>

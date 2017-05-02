@@ -14,7 +14,6 @@
 		<result property="room_capacity" column="room_capacity" />
 		<result property="construction" column="construction" />
 		<result property="room_comment" column="room_comment" />
-		<result property="orgImage" column="orgImage" />
 		<result property="savImage" column="savImage" />
 		<result property="price" column="price" />
 		<result property="room_class" column="room_class" />
@@ -105,7 +104,7 @@
 	</update>
 	
 	<update id="updateImage" parameterClass="room"> 
-		UPDATE ROOM SET ORGIMAGE = #orgImage#, SAVIMAGE = #savImage#
+		UPDATE ROOM SET SAVIMAGE = #savImage#
 		<include refid="where-no"/>
 	</update>
 	

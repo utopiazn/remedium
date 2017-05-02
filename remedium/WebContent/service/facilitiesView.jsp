@@ -38,7 +38,7 @@ width:95%; float:left; clear: left; margin:5px; text-align:center;
 	
 <div class="h3">
 <s:property value="resultClass.content" /><br/>
-개장시간 : <s:property value="resultClass.time" /><br/>
+운영시간 : <s:property value="resultClass.time" /><br/>
 </div>
 	
 <div class="h3">

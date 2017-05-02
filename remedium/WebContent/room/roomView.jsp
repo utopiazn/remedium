@@ -34,8 +34,8 @@ display:inline;
 </head>
 <body>
 <div id="image">
-
-<img height="400" alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" >
+<img height="400" alt="호텔로고" src="/remedium/image/roomClassImage/<s:property value='resultClass.savImage'/>" >
+<%-- <img height="400" alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" > --%>
 </div>
 
 
@@ -77,6 +77,7 @@ display:inline;
 <s:elseif test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
 <input type="button" value="객실수정" onclick="location.href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>'" />
 <input type="button" value="객실삭제" onclick="location.href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>'" />
+<input type="button" value="객실목록" onclick="javascript:history.back()" />
 </s:elseif>
 <s:else>
 <input type="submit"value="객실예약"/>
