@@ -112,7 +112,7 @@ Room Class:
 
 </select>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 
 <input type="submit" value="검색">
