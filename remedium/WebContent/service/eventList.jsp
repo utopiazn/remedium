@@ -25,7 +25,7 @@ text-decoration: underline;
 <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" >
   		<tr>
   		<br>
-  		<br>
+  		<br> 
   			<td align="center"><h2>EVENT＊PROMOTION</h2>
   			<hr align="center" width="50%" size="1" color="gray">
   			<br>
