@@ -22,7 +22,7 @@
 
 	<select id="selectAll" resultMap="facilitiesRes">
 		<include refid="select-all" />
-		ORDER BY NO DESC
+		ORDER BY NO ASC
 	</select>
 
 	<select id="selectOne" resultMap="facilitiesRes">
