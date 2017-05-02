@@ -6,20 +6,57 @@
 <head>
 <meta charset="UTF-8">
 <title>QnA</title>
+<style type="text/css">
+a{
+color: black;
+}
+.event{
+margin : 5% auto; 
+line-height: 2em;
+color: black;
+}
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+}
+.bottom{
+  padding-left: 46%;
+  padding-top: 3%;
+}
+.top{
+	background-color:#202f58;
+	color: white;
+}
+
+</style>
 </head>
 <body>
-<table width="800" border="0" cellspacing="0" cellpadding="2" align="center">
+<div class="event">
+<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
   		<tr>
-  			<td align="center"><h2>QnA</h2></td>
+  			<td align="center" ><h2>QnA</h2>
+  			<hr align="center" width="60%" size="1" color="gray">
+  			<br/>
+  			</td>
+  			
   		</tr>
   		<tr>
+  		
   			<td height="20"></td>
+  				
   		</tr>
   	</table>
   	
   
-	<table width="800" border="0" cellspacing="0" cellpadding="2" align="center">
-	    <tr align="center" bgcolor="#F3F3F3">
+	<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+
+	    <tr class="top" align="center" bgcolor="#A2D5FF">
       		<td width="50"><strong>번 호</strong></td>
 			<td width="100"><strong>제 목</strong></td>
 			<td width="50"><strong>작성자</strong></td>
@@ -91,14 +128,15 @@
 	</table>
 	
 	<center>
-	<form action="boardList.action">
+	<form action="boardList.action" class="bottom">
 		<select name="searchNum">
 			<option value="0">제 목</option>
 			<option value="1">작성자</option>
 		</select>
 		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
-		<input name="submit" type="submit" value="검색" class="inputb">
+		<input class="button" name="submit" type="submit" value="검색" class="inputb">
 		</form>
 	</center>
+	</div>
 </body>
 </html>

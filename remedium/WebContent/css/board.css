@@ -1,12 +1,24 @@
 @CHARSET "UTF-8";
-
-body {
-margin-left: 0px;
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-color : #787878;
-line-height: normal;
-text-decoration: underline;
+.event{
+margin : 5% auto; 
+line-height: 2em;
+color: black;
 }
 
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+}
+.bottom{
+  padding-left: 36%;
+  padding-top: 3%;
+}
+.top{
+	background-color:#202f58;
+	color: white;
+}

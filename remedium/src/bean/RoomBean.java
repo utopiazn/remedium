@@ -7,7 +7,6 @@ public class RoomBean {
 	private int room_capacity; // 객실정원
 	private String construction; // 객실 구성
 	private String room_comment; // 객실 소개
-	private String orgImage; // 객실 사진 원본
 	private String savImage; // 객실 사진 저장본
 	private int price; // 객실 요금
 	private String room_class; // 객실 종류
@@ -30,9 +29,6 @@ public class RoomBean {
 	}
 	public String getRoom_comment() {
 		return room_comment;
-	}
-	public String getOrgImage() {
-		return orgImage;
 	}
 	public String getSavImage() {
 		return savImage;
@@ -60,9 +56,6 @@ public class RoomBean {
 	}
 	public void setRoom_comment(String room_comment) {
 		this.room_comment = room_comment;
-	}
-	public void setOrgImage(String orgImage) {
-		this.orgImage = orgImage;
 	}
 	public void setSavImage(String savImage) {
 		this.savImage = savImage;

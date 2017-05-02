@@ -5,16 +5,34 @@
 <head>
 <meta charset="UTF-8">
 <title>FAQ</title>
+<link href="css/board.css" rel="stylesheet" style="text/css">
+<style type="text/css">
+a{
+color: black;
+}
+.event{
+margin : 5% auto; 
+line-height: 2em;
+color: black;
+}
+
+.top{
+	background-color:#202f58;
+	color: white;
+}
+
+</style>
 </head>
 <body>
-<table width="800" border="0" cellspacing="0" cellpadding="2">
+<div class="event">
+<table width="900" border="0" cellspacing="0" cellpadding="2">
   		<tr>
-  		<br>
-  		<br>
+  		
   			<td align="center"><h2>FAQ</h2>
-  		<br>
-  		<br>
+ 			<hr align="center" width="60%" size="1" color="gray">
+  			<br/>
   			</td>
+  			
   		</tr>
   		<tr>
   			<td height="20"></td>
@@ -22,8 +40,8 @@
   	</table>
   	
   
-	<table width="800" border="0" cellspacing="0" cellpadding="2">
-	      <tr align="center" bgcolor="#F3F3F3">
+	<table width="900" border="0" cellspacing="0" cellpadding="0">
+	      <tr class="top" align="center" bgcolor="#A2D5FF">
       		<td width="50"><strong>질문유형</strong></td>
 		<td width="450"><strong>제목</strong></td>
       	      </tr>
@@ -63,11 +81,11 @@
     	  </tr>
     	  <tr align="right">
     	  	<s:if test ="${ session.userAdmin == '1' }">
-    	  	<td colspan="5"><input type="button" value="추 가" class="inputb" onClick="javascript:location.href='faqWriteForm.action'"> 
+    	  	<td colspan="5"><input class="button" type="button" value="추 가" class="inputb" onClick="javascript:location.href='faqWriteForm.action'"> 
     	  	</td>
     	  	</s:if>
     	  </tr>
 	</table> 
-			
+			</div>
 </body>
 </html>
