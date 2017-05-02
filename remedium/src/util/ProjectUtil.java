@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.interceptor.SessionAware;
@@ -21,6 +22,7 @@ import bean.ImageBean;
 import bean.RoomBean;
 import bean.RoomclassBean;
 
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ProjectUtil extends ActionSupport implements SessionAware{
@@ -31,7 +33,8 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
 	
 	
-	
+	private RoomclassBean paramClass;  //객체 받기
+	private RoomclassBean resultClass; //객체 반환;
 	
 	//static영역 sqlMapper 생성
 	private static ProjectUtil projectUtil = new ProjectUtil("sql"); 
@@ -133,6 +136,70 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 		System.out.println(list2.size());
 		this.session.put("RClist", list2);	
 		
+		
+	}
+	
+	
+	public String getRoomClassImage(String room_class) throws Exception{
+		
+		String result="";
+		
+		createXML();
+		
+		 
+		paramClass = new RoomclassBean();
+		resultClass = new RoomclassBean();	
+		
+		paramClass.setRoom_class(room_class);
+		 
+
+		resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
+		
+		
+		System.out.println("이미지"+resultClass.getImage());
+		
+		System.out.println("값"+imageSplit(resultClass.getImage(),1));
+		
+		return imageSplit(resultClass.getImage(),1);
+	}
+	
+	
+	public String imageSplit(String strImage,int idx) throws Exception {
+		
+		if(strImage == null || strImage.equals("")){
+			
+			//System.out.println("이미지 자체가 없음"+strImage);
+			
+			return "";
+		}
+		
+		StringTokenizer values = new StringTokenizer(strImage+"/","/");
+		
+		int i =1;
+		
+		while(values.hasMoreElements()){
+						
+			String image =values.nextToken();
+					
+			//System.out.println( i+ ":"+ image);
+			
+			if(i== idx){
+				return image;
+			}
+			
+			/*switch (i) {
+			case 1:	this.image_01 =image; break;
+			case 2:	this.image_02 =image; break;
+			case 3:	this.image_03 =image; break;
+			case 4:	this.image_04 =image; break;
+			case 5:	this.image_05 =image; break;
+			default:
+				break;
+			}*/			
+			i++;
+		}
+		
+		return "";
 		
 	}
 	
