@@ -7,20 +7,47 @@
 <title>EVENT</title>
 <link href="css/board.css" rel="stylesheet" style="text/css">
 <style type="text/css">
-
-body {
-margin-left: 0px;
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-color : #787878;
-line-height: normal;
-text-decoration: underline;
+a{
+color: black;
 }
+.event{
+margin : 5% auto; line-height: normal;
+}
+
+.button{
+    display: inline-block;
+    zoom: 1;
+    vertical-align: baseline;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    font-size: 11px;
+    padding: .2em 1em .275em;
+    }
+ .blue {
+    color: #d9eef7;
+    border: solid 1px #0076a3;
+    background: #0095cd;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+    background: -moz-linear-gradient(top, #00adee, #0078a5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}  
+    
 
 </style>
 </head>
 <body>
+<div class="event">
 
 <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" >
   		<tr>
@@ -88,11 +115,11 @@ text-decoration: underline;
     	  
     	  <tr align="right">
     	  	<td colspan="5">
-    	  	<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='eventInsertForm.action'">
+    	  	<input class="button blue" type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='eventInsertForm.action'">
     	  	</td>
     	  </tr>
 	</table><br/>
 	
-	
+</div>
 </body>
 </html>
