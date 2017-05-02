@@ -44,7 +44,7 @@
 			<s:property value="room_capacity"/>명<br>
 			</s:else></td>
 			
-			<td align="right"><s:property value="price"/>원</td>
+			<td align="left">1일  <s:property value="price"/>원</td>
 		</tr>
 		</s:iterator>
 	</s:else>
