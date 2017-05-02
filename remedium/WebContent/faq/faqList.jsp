@@ -29,7 +29,7 @@ color: black;
   		<tr>
   		
   			<td align="center"><h2>FAQ</h2>
- 			<hr align="center" width="70%" size="1" color="gray">
+ 			<hr align="center" width="60%" size="1" color="gray">
   			<br/>
   			</td>
   			
