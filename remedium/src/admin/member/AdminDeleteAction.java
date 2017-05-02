@@ -2,6 +2,9 @@ package admin.member;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -9,8 +12,10 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.MemberBean;
-
-public class AdminDeleteAction extends ActionSupport{
+import org.apache.struts2.interceptor.SessionAware;
+public class AdminDeleteAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -59,7 +64,13 @@ public class AdminDeleteAction extends ActionSupport{
 		this.resultClass = resultClass;
 	}
 	
-	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 	
 }
 

@@ -2,6 +2,9 @@ package admin;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -9,8 +12,10 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.FAQBean;
-
-public class FaqAction extends ActionSupport {
+import org.apache.struts2.interceptor.SessionAware;
+public class FaqAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -150,6 +155,14 @@ public class FaqAction extends ActionSupport {
 
 	public void setResultClass(FAQBean resultClass) {
 		this.resultClass = resultClass;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
 	}
 	
 	

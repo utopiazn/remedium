@@ -9,9 +9,12 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.MemberBean;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+public class JoinAction extends ActionSupport  implements SessionAware {
 
-public class JoinAction extends ActionSupport {
-
+	private Map session;
+	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
 	
@@ -201,6 +204,12 @@ public class JoinAction extends ActionSupport {
 		this.paramClass = paramClass;
 	}
 	
+	public void setSession(Map session) {
+		this.session = session;
+	}
 
+	public Map getSession() {
+		return session;
+	}
 
 }

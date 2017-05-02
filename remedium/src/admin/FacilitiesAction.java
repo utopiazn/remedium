@@ -1,13 +1,18 @@
 package admin;
 
 import java.io.File;
+import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.FacilitiesBean;
 import util.ProjectUtil;
 
-public class FacilitiesAction extends ActionSupport{
+import org.apache.struts2.interceptor.SessionAware;
+
+public class FacilitiesAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	private FacilitiesBean paramClass;
 	private FacilitiesBean resultClass;
@@ -170,6 +175,14 @@ public class FacilitiesAction extends ActionSupport{
 
 	public void setUploadFileName(String uploadFileName) {
 		this.uploadFileName = uploadFileName;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
 	}
 
 	

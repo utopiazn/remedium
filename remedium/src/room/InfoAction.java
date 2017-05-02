@@ -24,7 +24,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 
 
-public class InfoAction extends ActionSupport  implements SessionAware {
+public class InfoAction extends ActionSupport implements SessionAware {
 	
 	private Map session;
 	

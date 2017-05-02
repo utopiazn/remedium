@@ -14,7 +14,13 @@ import com.opensymphony.xwork2.ActionSupport;
 import bean.RoomBean;
 import util.ProjectUtil;
 
-public class RoomAction extends ActionSupport{
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
+
+public class RoomAction extends ActionSupport  implements SessionAware {
+	
+	private Map session;
 	
 	private RoomBean paramClass;
 	private RoomBean resultClass; 
@@ -299,5 +305,14 @@ public class RoomAction extends ActionSupport{
 		this.uploadFileName = uploadFileName;
 	}
 	
+	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
 	
 }

@@ -10,8 +10,13 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.MemberBean;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
-public class MemberIdCheckAction extends ActionSupport {
+public class MemberIdCheckAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
+
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -87,6 +92,12 @@ public class MemberIdCheckAction extends ActionSupport {
 		this.check = check;
 	}
 	
-	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 	
 }

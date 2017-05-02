@@ -9,8 +9,13 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.FAQBean;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
-public class ViewAction extends ActionSupport{
+
+public class ViewAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -21,8 +26,7 @@ public class ViewAction extends ActionSupport{
 	FAQBean resultClass;
 
 	
-public ViewAction() throws IOException {
-		
+	public ViewAction() throws IOException {		
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); 
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);	
 		reader.close();
@@ -34,13 +38,12 @@ public ViewAction() throws IOException {
 		paramClass = new FAQBean();
 		resultClass = new FAQBean();
 		
-		System.out.println(getFaqId());
+		//System.out.println(getFaqId());
 		
 		paramClass.setFaqId(getFaqId());
 		
 		resultClass = (FAQBean) sqlMapper.queryForObject("faq.selectOne",getFaqId());
-		
-		
+			
 		
 		return SUCCESS;
 	}
@@ -69,6 +72,13 @@ public ViewAction() throws IOException {
 		this.resultClass = resultClass;
 	}
 	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 
 	
 }

@@ -4,7 +4,13 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import bean.RoomReservationBean;
 
-public class AdminReservationAction extends ActionSupport{
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
+
+public class AdminReservationAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	private RoomReservationBean paramClass;
 	
@@ -64,5 +70,14 @@ public class AdminReservationAction extends ActionSupport{
 	public void setMemberID(String memberID) {
 		this.memberID = memberID;
 	}
+	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
 	
 }

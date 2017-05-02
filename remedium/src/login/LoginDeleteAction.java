@@ -10,7 +10,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import bean.MemberBean;
 
-public class LoginDeleteAction extends ActionSupport{
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
+public class LoginDeleteAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -70,9 +75,14 @@ public class LoginDeleteAction extends ActionSupport{
 	public void setResultClass(MemberBean resultClass) {
 		this.resultClass = resultClass;
 	}
-	
-	
-	
+		
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 	
 
 }

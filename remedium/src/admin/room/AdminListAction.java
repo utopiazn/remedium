@@ -8,8 +8,14 @@ import com.opensymphony.xwork2.ActionSupport;
 import bean.RoomReservationBean;
 import paging.PagingAction;
 
-public class AdminListAction extends ActionSupport{
-		
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
+
+public class AdminListAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
+	
 	private List<RoomReservationBean> reslist;
 	
 	//페이징처리 변수선언
@@ -126,4 +132,14 @@ public class AdminListAction extends ActionSupport{
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	
 }

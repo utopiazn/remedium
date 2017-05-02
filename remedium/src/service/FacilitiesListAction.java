@@ -8,9 +8,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import bean.FacilitiesBean;
 import paging.PagingAction;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
-
-public class FacilitiesListAction extends ActionSupport{
+public class FacilitiesListAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	private List<FacilitiesBean> list;
 	private int no;
@@ -205,7 +208,14 @@ public class FacilitiesListAction extends ActionSupport{
 		this.url = url;
 	}
 	
-	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
 	
 	
 

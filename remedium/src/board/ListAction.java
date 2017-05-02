@@ -14,7 +14,13 @@ import bean.BoardBean;
 import bean.MemberBean;
 import paging.PagingAction;
 
-public class ListAction extends ActionSupport {
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
+
+public class ListAction extends ActionSupport  implements SessionAware {
+	
+	private Map session;
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -186,6 +192,13 @@ public class ListAction extends ActionSupport {
 		this.url = url;
 	}
 	
-	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
 	
 }

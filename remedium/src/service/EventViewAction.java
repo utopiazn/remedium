@@ -12,10 +12,14 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import bean.EventBean;
 
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
 
+public class EventViewAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 
-public class EventViewAction extends ActionSupport{
 	
 	public static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
@@ -109,6 +113,13 @@ public class EventViewAction extends ActionSupport{
 		this.paramClass = paramClass;
 	}
 	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 	
 
 }

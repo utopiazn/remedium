@@ -3,9 +3,13 @@ package service;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.FacilitiesBean;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
 
-public class FacilitiesViewAction extends ActionSupport{
+public class FacilitiesViewAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	private FacilitiesBean paramClass;
 	private FacilitiesBean resultClass;
@@ -48,6 +52,14 @@ public class FacilitiesViewAction extends ActionSupport{
 
 	public void setNo(int no) {
 		this.no = no;
+	}
+	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
 	}
 	
 	

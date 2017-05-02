@@ -3,6 +3,7 @@ package admin;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 
@@ -13,8 +14,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import bean.EventBean;
 import util.ProjectUtil;
+import org.apache.struts2.interceptor.SessionAware;
 
-public class EventAction extends ActionSupport{
+public class EventAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
+	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
 	
@@ -248,6 +253,14 @@ public class EventAction extends ActionSupport{
 
 	public void setParamClass(EventBean paramClass) {
 		this.paramClass = paramClass;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
 	}
 
 	

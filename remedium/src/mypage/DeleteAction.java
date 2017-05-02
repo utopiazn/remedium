@@ -8,8 +8,12 @@ import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 
-public class DeleteAction extends ActionSupport{
+public class DeleteAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	public static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
@@ -31,6 +35,13 @@ public class DeleteAction extends ActionSupport{
 		return SUCCESS;
 	}
 
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 
 	
 	

@@ -5,7 +5,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import bean.RoomBean;
 
-public class ViewAction extends ActionSupport{
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
+public class ViewAction extends ActionSupport implements SessionAware {
+	
+	private Map session;
 	
 	private RoomBean paramClass = new RoomBean();
 	private RoomBean resultClass = new RoomBean();
@@ -72,7 +77,14 @@ public class ViewAction extends ActionSupport{
 		this.people = people;
 	}
 	
-	
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
 	
 	
 }
