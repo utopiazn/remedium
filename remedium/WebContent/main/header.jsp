@@ -28,10 +28,15 @@ text-decoration: none;
 &nbsp;
 </s:if> --%>
 <s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
+<s:property value="session.memberName" />님 로그인 하셨습니다.<br>
+현재 Cash <s:property value="session.cash" />원<br>
+
 <a href="myPageMain.action" style="color: white;">마이페이지</a>
 &nbsp;
 <a href="logout.action" style="color: white;">로그아웃</a>
 &nbsp;
+
+
 </s:if>
 <s:else>
 <a href="joinForm.action" style="color: white;">회원가입</a>
@@ -78,37 +83,17 @@ text-decoration: none;
 </select>
 
 Room Class:
-<%-- 
-<s:if test="session.RClist.size() == 0"> 
-	값이 없어 ㅠㅠ
-</s:if>
-
-<s:if test="session.RClist.size() != 0"> 
-	값이 있더 ㅠㅠ
-</s:if>
-
-
-<s:if test="session.RClist == null"> 
-	너너너널임 ㅡ,ㅡ^
-</s:if>
- --%>
 <select name="rcType">
-
-
-
 <option value="0" <s:if test="${session.rcType==0 && session.rcType==null}">selected="selected"</s:if>>전체</option>
-
 
 <s:iterator value="%{session.RClist}">
 <option value='<s:property value="room_class"/>' 
-
 <s:if test="${session.rcType==room_class}"> 
 	selected="selected"
-</s:if> >
-
+</s:if>
+>
   <s:property value="name"/></option>
 </s:iterator>
-
 
 </select>
 

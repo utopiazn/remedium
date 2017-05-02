@@ -9,7 +9,12 @@
 <body>
 <table width="800" border="0" cellspacing="0" cellpadding="2">
   		<tr>
-  			<td align="center"><h2>FAQ</h2></td>
+  		<br>
+  		<br>
+  			<td align="center"><h2>FAQ</h2>
+  		<br>
+  		<br>
+  			</td>
   		</tr>
   		<tr>
   			<td height="20"></td>
