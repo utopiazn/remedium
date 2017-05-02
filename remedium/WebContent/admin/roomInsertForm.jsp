@@ -43,26 +43,19 @@
 				<td>객실소개&nbsp;</td><td> 
 				<s:textarea name="room_comment" theme="simple" value="%{resultClass.room_comment}"/></td>
 			</tr>
-			
-			<tr>
-				<td>객실사진&nbsp;</td>
-				<td><s:file name="upload" theme="simple"/>
-				<s:if test="%{resultClass.savImage!=null}"><br/>
-				<small>사진이 등록되어있습니다. ${resultClass.savImage}</small>
-				</s:if></td>
-			</tr>
-			
 			<tr>
 				<td>객실요금</td><td> 
 				<s:textfield name="price" theme="simple" value="%{resultClass.price}"/></td>
 			</tr>
 			<tr>
 				<td>객실종류</td><td> <select name="room_class">
-						<option value="1">기본 방</option>
-						<option value="2">좋은 방</option>
-						<option value="3">독방...?</option>
-						<option value="4">사막ㅠㅠ</option>
-						<option value="5">툰드라 ㄷㄷ</option>
+						<s:iterator value="%{session.RClist}">
+						<option value='<s:property value="room_class"/>'
+						<s:if test="${resultClass.room_class==room_class}"> 
+						selected="selected"
+						</s:if>
+						><s:property value="name"/></option>
+						</s:iterator>
 					  </select></td>
 			</tr>
 			<tr>		  

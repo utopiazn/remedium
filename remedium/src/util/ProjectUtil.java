@@ -32,10 +32,6 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 	private static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체	
 	
-	
-	private RoomclassBean paramClass;  //객체 받기
-	private RoomclassBean resultClass; //객체 반환;
-	
 	//static영역 sqlMapper 생성
 	private static ProjectUtil projectUtil = new ProjectUtil("sql"); 
 	
@@ -138,33 +134,31 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 		
 		
 	}
+	/////////////////////////////////////////////////////////////
 	
 	
-	public String getRoomClassImage(String room_class) throws Exception{
+	//클래스에 저장된 이미지 첫번째거 가져오기
+	
+	public static String getRoomClassImage(String room_class) throws Exception{
 		
 		String result="";
 		
-		createXML();
-		
-		 
-		paramClass = new RoomclassBean();
-		resultClass = new RoomclassBean();	
+		RoomclassBean paramClass = new RoomclassBean();
+		RoomclassBean resultClass = new RoomclassBean();	
 		
 		paramClass.setRoom_class(room_class);
 		 
 
 		resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
 		
-		
-		System.out.println("이미지"+resultClass.getImage());
-		
-		System.out.println("값"+imageSplit(resultClass.getImage(),1));
+		/*System.out.println("이미지"+resultClass.getImage());
+		System.out.println("값"+imageSplit(resultClass.getImage(),1));*/
 		
 		return imageSplit(resultClass.getImage(),1);
 	}
 	
 	
-	public String imageSplit(String strImage,int idx) throws Exception {
+	public static String imageSplit(String strImage,int idx) throws Exception {
 		
 		if(strImage == null || strImage.equals("")){
 			

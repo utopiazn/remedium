@@ -25,9 +25,6 @@ public class MainAction extends ActionSupport implements SessionAware {
 	//사이트 메인 페이지
 	public String main() throws Exception{
 		
-		ProjectUtil rcs2 = new ProjectUtil();			
-		rcs2.getRoomClassImage("1");
-		
 		//객실소개 이름 리스트 가져오기
 		ProjectUtil rcs = new ProjectUtil(session);		
 		rcs.roomClassSession();

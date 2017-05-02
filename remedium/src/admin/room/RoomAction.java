@@ -1,14 +1,9 @@
 package admin.room;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
 
 import org.apache.commons.io.FileUtils;
 
-import com.ibatis.common.resources.Resources;
-import com.ibatis.sqlmap.client.SqlMapClient;
-import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.RoomBean;
@@ -31,7 +26,6 @@ public class RoomAction extends ActionSupport  implements SessionAware {
 	private int room_capacity; // 객실정원
 	private String construction; // 객실 구성
 	private String room_comment; // 객실 소개
-	private String orgImage; // 객실 사진 원본
 	private String savImage; // 객실 사진 저장본
 	private int price; // 객실 요금
 	private String room_class; // 객실 종류
@@ -42,15 +36,6 @@ public class RoomAction extends ActionSupport  implements SessionAware {
 	private String uploadFileName;
 	
 	private String fileUploadPath=(new ProjectUtil().getPath())+"remedium/WebContent/image/roomImage/";
-	
-	public static Reader reader;
-	public static SqlMapClient sqlMapper;
-	
-	public RoomAction() throws IOException {
-		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
-		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
-		reader.close();
-	}
 	
 	//객실정보 추가 폼
 		public String insForm() throws Exception {
@@ -73,36 +58,10 @@ public class RoomAction extends ActionSupport  implements SessionAware {
 		paramClass.setPrice(getPrice());
 		paramClass.setRoom_class(getRoom_class());
 		
-		sqlMapper.insert("roomSQL.insertRoom", paramClass);
-
-		if(getUpload() != null){
-		      //등록한 글 번호 가져오기.
-			
-			
-			
-		      resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
-		      System.out.println("등록한 글 번호 가져오기.");
-		      //실제 서버에 저장될 이미지 이름과 확장자 설정.
-		      String file_name = "file_"+resultClass.getNo();
-		      String file_ext = getUploadFileName().substring(getUploadFileName().lastIndexOf('.')+1,getUploadFileName().length());
-		      System.out.println("실제 서버에 저장될 이미지 이름과 확장자 설정.");
-		      //서버에 이미지 저장.
-		      File destFile = new File(fileUploadPath + file_name + "." + file_ext);
-		      System.out.println(destFile.getPath());
-		      
-		      System.out.println("getUpload:"+getUpload());
-		      FileUtils.copyFile(getUpload(), destFile);
-		      System.out.println("서버에 이미지 저장.");
-		      //이미지 정보 파라미터 설정.
-		      paramClass.setNo(resultClass.getNo());
-		      paramClass.setOrgImage(getUploadFileName());    //원래 이미지 이름
-		      paramClass.setSavImage(file_name + "." + file_ext); //서버에 저장한 이미지 이름
-		      System.out.println("이미지 정보 파라미터 설정.");
-		      //파일 정보 업데이트.
-		      sqlMapper.update("roomSQL.updateImage", paramClass);
-		      System.out.println("이미지 정보 업데이트.");
-		    }
+		util.ProjectUtil.sqlMapper.insert("roomSQL.insertRoom", paramClass);
 		
+		paramClass.setSavImage(util.ProjectUtil.getRoomClassImage(getRoom_class()));
+		util.ProjectUtil.sqlMapper.update("roomSQL.updateImage", paramClass);
 		return SUCCESS;
 	}
 	
@@ -112,7 +71,7 @@ public class RoomAction extends ActionSupport  implements SessionAware {
 		paramClass = new RoomBean();
 		resultClass = new RoomBean();
 		
-		resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
+		resultClass = (RoomBean)util.ProjectUtil.sqlMapper.queryForObject("roomSQL.selectOne", getNo());
 		
 		return SUCCESS;
 	}
@@ -132,38 +91,10 @@ public class RoomAction extends ActionSupport  implements SessionAware {
 			paramClass.setPrice(getPrice());
 			paramClass.setRoom_class(getRoom_class());
 			
-			
-			sqlMapper.update("roomSQL.updateRoom",paramClass);
-			
-			if(getUploadFileName().equals("")){
-				return SUCCESS;
-			}else{
-				resultClass = (RoomBean)sqlMapper.queryForObject("roomSQL.selectOne", getNo());
-				
-				File deleteFile = new File(fileUploadPath + resultClass.getSavImage());
-				deleteFile.delete();
-			
-				System.out.println("등록한 글 번호 가져오기.");
-				//실제 서버에 저장될 이미지 이름과 확장자 설정.
-				String file_name = "file_"+resultClass.getNo();
-				String file_ext = getUploadFileName().substring(getUploadFileName().lastIndexOf('.')+1,getUploadFileName().length());
-				System.out.println("실제 서버에 저장될 이미지 이름과 확장자 설정.");
-				//서버에 이미지 저장.
-				File destFile = new File(fileUploadPath + file_name + "." + file_ext);
-				System.out.println(destFile.getPath());
-				FileUtils.copyFile(getUpload(), destFile);
-				System.out.println("서버에 이미지 저장.");
-				//이미지 정보 파라미터 설정.
-				paramClass.setNo(resultClass.getNo());
-				paramClass.setOrgImage(getUploadFileName());    //원래 이미지 이름
-				paramClass.setSavImage(file_name + "." + file_ext); //서버에 저장한 이미지 이름
-				System.out.println("이미지 정보 파라미터 설정.");
-				//파일 정보 업데이트.
-				sqlMapper.update("roomSQL.updateImage", paramClass);
-				System.out.println("이미지 정보 업데이트.");
-			}
-			
-			
+			util.ProjectUtil.sqlMapper.update("roomSQL.updateRoom",paramClass);
+
+			paramClass.setSavImage(util.ProjectUtil.getRoomClassImage(getRoom_class()));
+			util.ProjectUtil.sqlMapper.update("roomSQL.updateImage", paramClass);
 			return SUCCESS;
 	}
 	
@@ -173,14 +104,11 @@ public class RoomAction extends ActionSupport  implements SessionAware {
 		paramClass = new RoomBean();
 		resultClass = new RoomBean();
 		
-		resultClass = (RoomBean) sqlMapper.queryForObject("roomSQL.selectOne", getNo());
-		
-		File deleteFile = new File(fileUploadPath + resultClass.getSavImage());
-		deleteFile.delete();
+		resultClass = (RoomBean) util.ProjectUtil.sqlMapper.queryForObject("roomSQL.selectOne", getNo());
 		
 		paramClass.setNo(getNo());
 		
-		sqlMapper.update("roomSQL.deleteRoom",paramClass);
+		util.ProjectUtil.sqlMapper.update("roomSQL.deleteRoom",paramClass);
 		
 		return SUCCESS;
 	}
@@ -247,14 +175,6 @@ public class RoomAction extends ActionSupport  implements SessionAware {
 
 	public void setRoom_comment(String room_comment) {
 		this.room_comment = room_comment;
-	}
-
-	public String getOrgImage() {
-		return orgImage;
-	}
-
-	public void setOrgImage(String orgImage) {
-		this.orgImage = orgImage;
 	}
 
 	public String getSavImage() {
