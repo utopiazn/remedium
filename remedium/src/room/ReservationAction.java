@@ -1,6 +1,7 @@
 package room;
 
 import java.sql.Date;
+import java.util.Calendar;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -73,6 +74,29 @@ public class ReservationAction extends ActionSupport implements SessionAware {
 
 	//객실 예약 폼
 	public String roomRes() throws Exception {
+		
+		
+		//일수별로 가격증가
+		Date firstDateD = Date.valueOf(getFirstDate());
+		Date lastDateD = Date.valueOf(getLastDate());
+		
+		Calendar calf = Calendar.getInstance ( );
+		calf.setTime(firstDateD);// 입실날짜 
+
+		Calendar call = Calendar.getInstance ( );
+		call.setTime(lastDateD); // 퇴실날짜
+
+		int count = 0;
+		while (!calf.after(call))
+		{
+		count++;
+		calf.add ( Calendar.DATE, 1 ); // 다음날로 바뀜
+		}
+		count--; //하루 오버되서 날짜 재조정
+		System.out.println (count + "박 예정" );
+		
+		price = price * count;
+		
 		
 		return SUCCESS;
 	}

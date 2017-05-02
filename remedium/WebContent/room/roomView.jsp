@@ -61,7 +61,7 @@ display:inline;
 객실 소개:<br>
 <s:property value="resultClass.room_comment"/><br>
 이용 요금:
-<s:property value="resultClass.price"/>원
+1일 <s:property value="resultClass.price"/>원
 
 <br>
 <form action="roomReservationForm.action" method="post" enctype="multipart/form-data">

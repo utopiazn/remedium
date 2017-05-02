@@ -27,7 +27,12 @@
 	
 		<tr>
 			<td align="center">
+			
+		<br>
+  		<br>
 				<h2>자주 묻는 질문 쓰기</h2>
+		<br>
+  		<br>
 			</td>
 		</tr>	
 		
