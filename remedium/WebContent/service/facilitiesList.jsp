@@ -8,7 +8,7 @@
 <link href="css/main.css" rel="stylesheet" style="text/css">
 <style type="text/css">
 .s{
-width:95%; background-size: cover; padding-top:5px; padding-bottom:5px; border:1px solid black;  margin:5px;
+width:95%; background-size: cover; padding-top:10px; padding-bottom:5px; magin:5px;
 }
 .c{
 padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
@@ -31,7 +31,7 @@ width:95%; float:left; clear: left; text-align: right; margin: 5px;
 </head>
 <body>
 	<div class="s">
-	<h2>편의 시설</h2>
+	<h1>편의시설</h1>
 	</div>
 	<div class="h3">
 	<s:if test="${session.userAdmin == 1 }">	
