@@ -35,7 +35,7 @@ public class InfoAction extends ActionSupport implements SessionAware {
 	public static SqlMapClient sqlMapper;
 
 	
-	
+	private String url ="roomInfoList.action?roomClass=0&"; // 기본적으로 실행되는 URL 입력
 	
 	private int roomClass = -1;  // 서브 메뉴 값.
 	private int roomClassNum=0;  
@@ -222,7 +222,10 @@ public class InfoAction extends ActionSupport implements SessionAware {
 			
 			totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
 			
-			page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
+			
+			page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "",url);
+			
+			//page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
 			
 			pagingHtml = page.getPagingHtml().toString(); 	//페이지 HTML 생성
 			
@@ -666,4 +669,10 @@ public class InfoAction extends ActionSupport implements SessionAware {
 	public Map getSession() {
 		return session;
 	}
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
+	}
+	
+	
 }

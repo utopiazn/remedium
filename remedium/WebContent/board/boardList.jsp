@@ -98,7 +98,7 @@
 		</select>
 		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
 		<input name="submit" type="submit" value="검색" class="inputb">
-	</form>
+		</form>
 	</center>
 </body>
 </html>
