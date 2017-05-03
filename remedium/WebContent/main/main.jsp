@@ -6,29 +6,40 @@
 
 
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<!-- <title>Remedium Hotel[당신만을 위한 오리엔탈 프리미엄 에디션]</title> -->
 	<title><tiles:getAsString name="title" /></title>
 	<link href="css/main.css" rel="stylesheet" style="text/css">
 </head>
+
 <body>
 
-<div class="header2">
-<tiles:insertAttribute name="header" />
-</div>
-<div class="main">
-<div class="lefter">
-<tiles:insertAttribute name="lefter" />
+	<div class="header2">
+		<tiles:insertAttribute name="header" />
+	</div>
 
-</div>
-<div class="right3">
-<tiles:insertAttribute name="body" />
-</div>
-</div>
-<div class="footer2">
-<tiles:insertAttribute name="footer" />
-</div>
+	<div class="main">
+	
+		<div class="lefter">
+			<tiles:insertAttribute name="lefter" />	
+		</div>
+		
+		<div class="right3">
+			<tiles:insertAttribute name="body" />
+		</div>
+	
+	</div>
+
+	<div class="footer2">
+		<tiles:insertAttribute name="footer" />
+	</div>
+	
+	
+	
+	
+	
 
 	<%--  <table width="100%" height="100%" cellpadding="0" cellspacing="0">
 		
