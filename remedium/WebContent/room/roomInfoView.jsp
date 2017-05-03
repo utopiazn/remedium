@@ -18,7 +18,7 @@
 			
 	
 		
-		#SubImage a img{
+	/* 	#SubImage a img{
 			
 			float: left;			
 			width: 10%;
@@ -27,7 +27,7 @@
 			display: block;
 			
 		}
-		
+		 */
 		#InfoImage img{
 		
 			width: 10%;
@@ -35,8 +35,38 @@
 			clear: both;
 		}
 		
+		.container{
+			display: table;
+			width:100%;
+			height: 10%;			
+			margin: 40px auto;
+		}
+		
+		.outer{
+			display: table;
+			width:100%;
+			height: 100%;
+			
+		}
 	
+		.inner{
+			display: table-cell;
+			vertical-align: middle;
+			text-align:center;
+		
+			
+		}
 	
+		.inner a img{
+			
+						
+			width: 10%;
+			height: 10%;			
+			margin: 1PX;
+			
+			
+		}
+		
 	</style>
 
 </head>
@@ -45,11 +75,58 @@
 <p><h3>${resultClass.name}</h3></p>
 
 
-<div id="MainImage">
+ <div id="MainImage">
 
 	<img alt="메인 이미지" src="/remedium/image/roomClassImage/${imageMain}" >
 
 </div>
+
+
+<div class="container">
+<div class="outer">
+<div class="inner">
+
+		<a href="roomInfoView.action?roomClass=${roomClass}&imageNum=1">
+			<img  alt="메인 이미지1" src="/remedium/image/roomClassImage/${image_01}">
+		</a>
+	
+		<a href="roomInfoView.action?roomClass=${roomClass}&imageNum=1">
+			<img  alt="메인 이미지1" src="/remedium/image/roomClassImage/${image_02}">
+		</a>
+		
+		<a href="roomInfoView.action?roomClass=${roomClass}&imageNum=1">
+			<img  alt="메인 이미지1" src="/remedium/image/roomClassImage/${image_03}">
+		</a>
+		
+		<a href="roomInfoView.action?roomClass=${roomClass}&imageNum=1">
+			<img  alt="메인 이미지1" src="/remedium/image/roomClassImage/${image_04}">
+		</a>
+		
+		<a href="roomInfoView.action?roomClass=${roomClass}&imageNum=1">
+			<img  alt="메인 이미지1" src="/remedium/image/roomClassImage/${image_05}">
+		</a>	
+</div>
+</div>
+</div>
+
+
+ <div id="MainImage">
+
+	<img alt="메인 이미지" src="/remedium/image/roomClassImage/${resultClass.image2}" >
+
+</div>
+
+
+
+
+<%-- <div id="MainImage">
+
+	<img alt="메인 이미지" src="/remedium/image/roomClassImage/${imageMain}" >
+
+</div>
+ --%>
+
+<%-- 
 
 	<div id="SubImage">
 	
@@ -72,7 +149,7 @@
 		
 		
 	</div> 
-<%-- 	
+ --%><%-- 	
 	<div id="SubImage">
 	
 		<a href="roomInfoView.action?roomClass=${roomClass}&imageNum=1">
