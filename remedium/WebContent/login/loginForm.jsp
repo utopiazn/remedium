@@ -27,12 +27,61 @@
 			return true;
 		}
 </SCRIPT>
-<!-- <link href="css/main.css" rel="stylesheet" style="text/css"> -->
+<%-- <style type="text/css">
+.login{
+width:95%; background-size: cover; padding-top:10px; padding-bottom:5px; margin:5px; text-align:center;
+}
+.c{
+padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
+}
+
+.h1{
+width:25%; float:left; background-size: cover; background-color: #E2FFAF;
+}
+.h2{
+width:95%; float:left; margin:5px; border:1px solid black;
+}
+.h3{
+width:95%; float:left; clear: left; margin:5px; text-align:center;
+}
+
+</style> --%>
 </head>
 
 <body>
-<div class="join">
+<div class="login">
+<h2> 로 그 인 </h2>
+
 <center>
+<form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
+	
+	<table>
+		<tr>
+			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>아이디</td>
+			<td bgcolor="#FFFFFF">
+				<s:textfield name="memberId" theme="simple" cssStyle="width:100px" maxlength="20"/>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>비밀번호</td>
+			<td bgcolor="#FFFFFF">
+				<s:password name="memberPasswd"  theme="simple" cssStyle="width:100px" maxlength="20"/>
+			</td>
+			
+		</tr>
+		<tr align="center">
+			<td colspan="3">
+				 <input name="submit" type="submit" value="로그인" style="width: 185.2px" >
+			</td>
+		</tr>
+	</table>	
+		 <a href="joinForm.action"><font size=2>회원 가입</font></a>&nbsp;/
+       	 <a href="findIDForm.action"><font size=2>아이디 찾기</font></a>&nbsp;/
+       	 <a href="findPwForm.action"><font size=2>비밀번호 찾기</font></a>
+</form>
+</center>
+</div>
+<%-- <center>
 <form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 		<table width="600" border="0" cellspacing="0" cellpadding="2">
 	
@@ -64,8 +113,8 @@
        	 <a href="findIDForm.action"><font size=2>아이디 찾기</font></a>&nbsp;/
        	 <a href="findPwForm.action"><font size=2>비밀번호 찾기</font></a>
 </form>
-</center>
-</div>
+</center> --%>
+
 
 </body>
 </html>

@@ -112,7 +112,7 @@
 
 <DIV class="join">
 	
-	<table width="600" border="0" cellspacing="0" cellpadding="2">
+	<table width="500" border="0" cellspacing="0" cellpadding="2">
 	
 		<tr>
 			<td align="center">
