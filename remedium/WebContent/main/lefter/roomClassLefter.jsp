@@ -14,21 +14,21 @@
 
 	
 	/*초기화와 메뉴폭 지정*/
-	 #navi{
+	 #navi2{
 	 	padding: 0;
-	 	margin: 20PX;
+	 	margin: 40PX;
 	 	width: 80%;	 	
 	 	text-align: center;	 
 	 }
 	 
 	  
-	 #navi h2{
+	 #navi2 h2{
 	 	margin: 0;
 	 	padding:0;		
 	}
 	
 	/*메인메뉴 스타일 지정*/	
-	 #navi h2 a{
+	 #navi2 h2 a{
 	 	display: block;
 	 	font-weight: bold;
 	 	text-decoration: none;
@@ -36,7 +36,7 @@
 	 	padding: 10px;
 	 	font-family: '돋음', sans-serif;
 	 	font-size: 14px;
-	 	color:#ccc;
+	 	color: #ffffff;
 	 	text-shadow: 0 1px 1px #000;	 	
 	 	
 	 	background: #1d4ab3; 
@@ -61,7 +61,7 @@
 	
 	</style>
 	
-
+</head>
 
  <s:if test="list.size() <= 0">				
 		객실 클래스 정보가 없습니다					
@@ -71,7 +71,7 @@
 	
 	<s:if test='%{ session.userAdmin.equals("1") }'>
 	
-		<div id="navi">
+		<div id="navi2">
 			<h2>
 				<a href="roomInfoList.action?roomClass=0" >객실 소개  관리 </a>
 			</h2>
@@ -81,7 +81,7 @@
 	
 	<s:iterator value="list">
 	
-		<div id="navi">
+		<div id="navi2">
 			<h2>
 				 <a href='roomInfoView.action?roomClass=<s:property value="room_class"/>'><s:property value="name"/></a>
 			</h2>
