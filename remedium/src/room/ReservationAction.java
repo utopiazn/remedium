@@ -27,6 +27,7 @@ public class ReservationAction extends ActionSupport implements SessionAware {
 	private String memberID;
 	private int people;
 	private Map session;
+	private String image;
 	
 	@Override
 	//객실 예약 처리
@@ -37,11 +38,12 @@ public class ReservationAction extends ActionSupport implements SessionAware {
 		Date lastDateD = Date.valueOf(getLastDate());
 		
 		paramClass = new RoomReservationBean();
-		paramClass.setNo(no);
+		paramClass.setNo(getNo());
 		paramClass.setFirstDate(firstDateD);
 		paramClass.setLastDate(lastDateD);
-		paramClass.setMoney(money);
-		paramClass.setMemberID(memberID);
+		paramClass.setMoney(getMoney());
+		paramClass.setMemberID(getMemberID());
+		paramClass.setPeople(getPeople());
 		
 		System.out.println("---------------------------");
 		System.out.println("no : "+getNo()+" / paramClass.no : "+paramClass.getNo());
@@ -197,5 +199,12 @@ public class ReservationAction extends ActionSupport implements SessionAware {
 		this.session = session;
 	}
 	
-	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 }

@@ -8,10 +8,20 @@
 <link href="css/main.css" rel="stylesheet" style="text/css">
 <style type="text/css">
 .s{
-width:95%; background-size: cover; padding-top:10px; padding-bottom:5px; magin:5px;
+margin : 5% auto; 
+line-height: 2em;
+color: black;
 }
 .c{
 padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
+	display: block;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: '돋음', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 0 1px 1px #000;
+    background: linear-gradient(#1d4ab3 0%, #163887 100%);
 }
 
 .h1{
@@ -32,7 +42,7 @@ width:95%; float:left; clear: left; text-align: right; margin: 5px;
     text-decoration: none;
     color: white;
  
-} 
+}
 
 </style>
 
@@ -40,7 +50,8 @@ width:95%; float:left; clear: left; text-align: right; margin: 5px;
 </head>
 <body>
 	<div class="s">
-	<h1>편의시설</h1>
+	<h2 align="center" >편의시설</h2>
+	<hr align="center" width="60%" size="1" color="gray">
 	</div>
 	<div class="h3">
 	<s:if test="${session.userAdmin == 1 }">	
