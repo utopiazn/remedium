@@ -89,7 +89,7 @@ color: black;
           </td>
         </tr>
      <tr>
-	<td width="100" bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이미지</td>
+	<td align="left" width="100" bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이미지</td>
 	<td align="left"><s:file name="upload" theme="simple"/>
 	</td>
 	</tr> 							
