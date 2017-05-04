@@ -3,8 +3,34 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<style type="text/css">
+a{
+color: black;
+}
+.event{
+margin : 20px; 
+line-height: 2em;
+color: black;
+text-align: center;
+}
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+}  
+.top{
+	background-color:#202f58;
+	color: white;
+}
+</style>
 <meta charset="UTF-8">
-<title>FAQ * 문의사항 상세보기</title>
+<title>FAQ 상세보기</title>
 	<script type="text/javascript">
 	  
 	function button_event(url){
@@ -23,46 +49,43 @@
 	</script>
 </head>
 <body>
-<table width="600" border="0" cellspacing="0" cellpadding="2">
-  		<tr>
-  		<br>
-  		<br>
-  			<td align="center"><h2>FAQ * 문의사항</h2>
-  		<br>
-  		<br>
+<div class="event">
+<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
+  	<tr>
+  			<td align="center" ><h2>게시글 보기</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			<br/>
   			</td>
-  		</tr>
-  		<tr>
-  			<td height="20"></td>
-  		</tr>
+  			
+  	</tr>
   	</table>
 		
-<table width="1000" border="1" cellspacing="0" cellpadding="0">
+<table width="700" border="1" cellspacing="0" cellpadding="0" align="center">
       
 			
-      <tr align="center">
-        <td width="100" bgcolor="#F4F4F4">질문 유형 </td>
-        <td width="150" bgcolor="#FFFFFF">
+ 
+        <td width="100" bgcolor="#202f58"><font color="white">* 질문 유형</font> </td>
+        <td align="left" width="100" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.type" />
         </td>
-        <td width="100" bgcolor="#F4F4F4">제 목</td>
-        <td  bgcolor="#FFFFFF">
+        <td width="100" bgcolor="#202f58"><font color="white">* 제 목</font></td>
+        <td align="left" width="100" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.subject" />
         </td>    
       </tr> 
       
       <tr >    
-       	<td align="center" height="400"bgcolor="#F4F4F4">내 용 </td>
+       	<td width="100" height="300" bgcolor="#202f58"><font color="white">* 내 용 </font></td>
         <td colspan="3"bgcolor="#FFFFFF">
           &nbsp;A. <s:property value="resultClass.content" />
         </td>
        </tr>
   </table><br/>
- 		 <input name="list" type="button" value="다른 질문" class="inputb" onClick="javascript:location.href='faqList.action'">
+ 		 <input name="list" type="button" value="다른 질문" class="button" onClick="javascript:location.href='faqList.action'">
 		<s:if test ="${ session.userAdmin == '1' }">
-    		<input name="modify" type="button" value="글수정" class="inputb" onClick="javascript:location.href='faqModifyForm.action?faqId=<s:property value="resultClass.faqId" />'"> 
-			<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('faqDelete.action?faqId=<s:property value="resultClass.faqId" />')">
+    		<input name="modify" type="button" value="글수정" class="button" onClick="javascript:location.href='faqModifyForm.action?faqId=<s:property value="resultClass.faqId" />'"> 
+			<input type="button" value="글삭제" class="button" onClick="javascript:button_event('faqDelete.action?faqId=<s:property value="resultClass.faqId" />')">
 		</s:if>
-  
+  </div>
 </body>
 </html>
