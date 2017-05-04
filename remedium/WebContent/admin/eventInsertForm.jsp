@@ -11,7 +11,7 @@ a{
 color: black;
 }
 .event{
-margin : 5% auto; 
+margin : 20px; 
 line-height: 2em;
 color: black;
 }

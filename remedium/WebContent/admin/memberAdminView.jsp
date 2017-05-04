@@ -56,7 +56,7 @@ color: black;
 <body>
 <div class="event">
 	
-	<table align="center" width="600" border="0" cellspacing="0" cellpadding="2">
+	<table align="center" width="600" border="0" cellspacing="0" cellpadding="0">
 	
 		<tr>
 			<td align="center">
@@ -71,7 +71,7 @@ color: black;
 
 
 	<!-- 로그인폼으로 이동 -->
-		<table align="center" width="600" border="1" cellspacing="3" cellpadding="3">	
+		<table align="center" width="600" border="1" cellspacing="0" cellpadding="0">	
 			<tr>
 				<td width="50" bgcolor="#202f58"><font color="white">* 아이디</font>
 				</td>
@@ -90,7 +90,7 @@ color: black;
 				<td width="100" bgcolor="#202f58"><font color="white">* 비밀 번호</font>
 				</td>
 			
-				<td width="50" bgcolor="#FFFFFF" colspan=>
+				<td width="50" bgcolor="#FFFFFF" colspan="0">
 					<s:property value="%{resultClass.memberPassword}"/>					 
 				</td>
 				<td width="100" bgcolor="#202f58"><font color="white">* 탈퇴일</font>
@@ -188,5 +188,7 @@ color: black;
     	<input class="button" name="modify" type="button" value="회원 수정" class="inputb" onClick="javascript:location.href='memberAdminModifyForm.action?memberID=<s:property value="resultClass.memberID" />&currentPage=<s:property value="currentPage" />'"> 
 		<input class="button" type="button" value="회원 삭제" class="inputb" onClick="javascript:button_event('memberAdminDelete.action?memberID=<s:property value="resultClass.memberID" />')">
 </div>
+
+
 </body>
 </html>

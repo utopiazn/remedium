@@ -132,65 +132,79 @@
 	<!-- 로그인폼으로 이동 -->
 	<form name="myForm" action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
 
-		<table width="600" border="0" cellspacing="0" cellpadding="2">
+		<table width="550" border="0" cellspacing="0" cellpadding="0">
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4" align="left">
-					<font color="#FF0000">*</font>아이디
+				<td width="100" bgcolor="#202f58" align="left">
+					<font color="#FFFFFF">* 아이디</font>
 				<br/>
 				</td>
+				
 				
 				<td width="50" bgcolor="#FFFFFF" align="left">
 				
 					<%-- <s:textfield name="memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/> --%>
-					<s:textfield name="memberID" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
+					&nbsp;<s:textfield name="memberID" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
 					<!-- <input type="text" name="memberID" size="40" > -->
 			
-					<input class="button" type="button" name="confirm_id" value="ID중복확인"  onclick="openConfirmid(this.form)">
+					&nbsp;<input height="10px" type="button" name="confirm_id" value="ID중복확인"  onclick="openConfirmid(this.form)">
 			
 					
 				</td>
 			</tr>
+			 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4"align="left">
-					<font color="#FF0000">*</font>비밀번호
+				<td width="100" bgcolor="#202f58"align="left">
+					<font color="#FFFFFF">* 비밀번호</font>
 					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
-					<s:textfield name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50" />					 
+					&nbsp;<s:textfield name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50" />					 
 					
 					
 					
 				</td>
 			</tr>
-			
+			 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 			<tr>
-				<td width="100" bgcolor="#F4F4F4"align="left">
-					<font color="#FF0000">*</font>비밀번호 확인
+				<td width="100" bgcolor="#202f58"align="left">
+					<font color="#FFFFFF">* 비밀번호 확인</font>
 					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
-					<s:textfield name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
+					&nbsp;<s:textfield name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
-			
+			 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 			<tr>
-				<td width="100" bgcolor="#F4F4F4"align="left">
-					<font color="#FF0000">*</font>이름
+				<td width="100" bgcolor="#202f58"align="left">
+					<font color="#FFFFFF">* 이름</font>
 					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
-					<s:textfield name="memberName" theme="simple" value="%{paramClass.memberName}" cssStyle="width:270px" maxlength="50"/>					
+					&nbsp;<s:textfield name="memberName" theme="simple" value="%{paramClass.memberName}" cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
-			
+			 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 			<tr>
-				<td width="100" bgcolor="#F4F4F4"align="left">
-					<font color="#FF0000">*</font>성별
+				<td width="100" bgcolor="#202f58"align="left">
+					<font color="#FFFFFF">* 성별</font>
 					<br/>
 				</td>
 				
@@ -204,57 +218,73 @@
 				
 				</td>
 			</tr>
-			
+			 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 			<tr>
-				<td width="100" bgcolor="#F4F4F4"align="left">
-					<font color="#FF0000">*</font>생년월일
+				<td width="100" bgcolor="#202f58"align="left">
+					<font color="#FFFFFF">* 생년월일</font>
 					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
-					<s:textfield name="birthday" theme="simple" value="%{paramClass.birthday}" cssStyle="width:270px" maxlength="50"/> 예)20140407					
+					&nbsp;<s:textfield name="birthday" theme="simple" value="%{paramClass.birthday}" cssStyle="width:270px" maxlength="50"/> 예)20140407					
 				</td>
 			</tr>
-			
+			 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4"align="left">
-					<font color="#FF0000">*</font>전화 번호
+				<td width="100" bgcolor="#202f58"align="left">
+					<font color="#FFFFFF">* 전화 번호</font>
 					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
-					<s:textfield name="phone" theme="simple" value="%{resultClass.phone}" cssStyle="width:270px" maxlength="50"/> 	'-' 제외				
+					&nbsp;<s:textfield name="phone" theme="simple" value="%{resultClass.phone}" cssStyle="width:270px" maxlength="50"/> 	'-' 제외				
 				</td>
 			</tr>
 			
-			
+			 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 			<tr>
-				<td width="100" bgcolor="#F4F4F4"align="left">
-					<font color="#FF0000">*</font>이메일
+				<td width="100" bgcolor="#202f58"align="left">
+					<font color="#FFFFFF">* 이메일</font>
 					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
-					<s:textfield name="email" theme="simple" value="%{resultClass.email}" cssStyle="width:270px" maxlength="50"/> 					
+					&nbsp;<s:textfield name="email" theme="simple" value="%{resultClass.email}" cssStyle="width:270px" maxlength="50"/> 					
 				</td>
 			</tr>
-			
+			 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 			<tr>
-				<td width="100" bgcolor="#F4F4F4"align="left">
-					<font color="#FF0000">*</font>주소
+				<td width="100" bgcolor="#202f58"align="left">
+					<font color="#FFFFFF">* 주소</font>
 					<br/>
 				</td>
 			
 			
 				<td width="50" bgcolor="#FFFFFF" align="left"> 
 				
-					<input style="width: 240px" type="text" id="sample6_postcode" name="zipcode" placeholder="우편번호" >
-					<input class="button" type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
-					<input type="text" id="sample6_address" name="addr1"  placeholder="주소">
-					<input type="text" id="sample6_address2" name="addr2" placeholder="상세주소">
+					&nbsp;<input style="width: 240px" type="text" id="sample6_postcode" name="zipcode" placeholder="우편번호" >
+					&nbsp;<input type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
+					&nbsp;<input type="text" id="sample6_address" name="addr1"  placeholder="주소">
+					&nbsp;<input type="text" id="sample6_address2" name="addr2" placeholder="상세주소">
 				</td>
 			</tr>
+				 <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
+        
 		
 		</table>	
 		
