@@ -7,12 +7,12 @@ width: 100%; height: 100%; display: table-cell; float: left; font-family: serif;
 }
 .lefter{ /*  main1 왼쪽 카테고리 */
 /* width: 200px; height: 1500px; display: table-cell; float: left; color: black; padding-left: 100px; font: bold; */
-	width: 20%; 
+	width: 19%; 
 	height: 1500px; 
 	display: table-cell; 
 	float: left; 
 	color: black; 
-	
+	/* border: 1px solid black; */
 	font: bold;
 }
 .right{ /* main 3 body부분 */
