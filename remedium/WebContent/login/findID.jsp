@@ -6,6 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>아이디 찾기</title>
+<style type="text/css">
+.id
+{
+text-align: center; 
+margin: 10% auto; 
+width: 41%;
+}
+</style>
+<link href="css/board.css" rel="stylesheet" style="text/css">
 </head>
 <SCRIPT type="text/javascript">
 	function validation() {
@@ -25,7 +34,11 @@
 		return true;
 	}
 </SCRIPT>
-<body><br/><br/><br/>
+
+<body>
+
+<div class="id">
+<br/><br/><br/>
 	<table width="600" border="0" cellspacing="0" cellpadding="2">
 
 		<tr>
@@ -35,18 +48,24 @@
 		</tr>
 	</table>
 	<form action="findIDAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
-		<table>
+		<center>
+		<table width="300">
+		
 			<tr>
 				<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 이 름</td>
-				<td bgcolor="#FFFFFF"><s:textfield name="memberName" theme="simple" cssStyle="width:100px" maxlength="20" /></td>
+				<td bgcolor="#FFFFFF" style="padding: 3%"><s:textfield name="memberName" theme="simple" cssStyle="width:150px" maxlength="20"/></td>
 			</tr>
+			
 			<tr>
 				<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 생년 월일</td>
-				<td bgcolor="#FFFFFF"><s:textfield name="birthday" theme="simple" cssStyle="width:100px" maxlength="20" /></td>
+				<td bgcolor="#FFFFFF" style="padding: 3%"><s:textfield name="birthday" theme="simple" cssStyle="width:150px" maxlength="20" /></td>
 			</tr>
 		</table> 
-		<input name="submit" type="submit" value="찾기" class="inputb">
-		<button type="button" onclick="location.href='main.action' ">취소</button>
+		</center>
+		<br/>
+		<input class="button" name="submit" type="submit" value="찾기" class="inputb" size="10">
+		<button class="button" type="button" onclick="location.href='main.action' " size="10">취소</button>
 	</form>
+	</div>
 </body>
 </html>
