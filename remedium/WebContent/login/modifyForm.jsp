@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link href="css/form.css" rel="stylesheet" style="text/css">
+<link href="css/board.css" rel="stylesheet" style="text/css">
 
 <script type="text/javascript">	
 		function validation2(userinput){
@@ -47,7 +48,7 @@
 </script>	
 </head>
 <body>
-<div class="form">
+<div class="join">
 
 
 	
@@ -55,9 +56,12 @@
 <tr>
 <td align="center">
 <h2>회원 정보 수정</h2>
+<hr align="center" width="50%" size="1" color="gray">
 </td>
 </tr>		
 </table>
+
+<br>
 
 <form action="loginModify.action"  method="post" enctype="multipart/form-data">
 	<s:hidden name="memberID" value="${memberID}" />
@@ -68,73 +72,95 @@
 	<s:hidden name="currentPage" value="%{currentPage}" />
 	<s:hidden name="memberName" value="%{resultClass.memberName}" />
 	<s:hidden name="gender" value="%{resultClass.gender}" />
-<table width="600" border="0" cellspacing="0" cellpadding="0">
+<table width="550" border="0" cellspacing="0" cellpadding="0">
  <tr>
- <td width="100" bgcolor="#F4F4F4">
- <font color="#FF0000">* </font>새 비밀번호
+ <td width="100" bgcolor="#202f58" align="left">
+ <font color="#FFFFFF">* 새 비밀번호</font>
 </td>
 			
-<td width="50" bgcolor="#FFFFFF">
-<s:textfield name="memberPassword" theme="simple" value="%{resultClass.memberPassword}" cssStyle="width:270px" maxlength="50"/>										
+<td width="60" bgcolor="#FFFFFF"align="left">
+&nbsp;<s:textfield name="memberPassword" theme="simple" value="%{resultClass.memberPassword}" cssStyle="width:270px" maxlength="50"/>										
 </td></tr>
-			
+
+ <tr bgcolor="#777777">
+<td height="1" colspan="2"></td>	
+  </tr>
 <tr>
-<td width="100" bgcolor="#F4F4F4">
-<font color="#FF0000">* </font>새 비밀번호 확인
+<td width="100" bgcolor="#202f58" align="left">
+<font color="#FFFFFF">* 새 비밀번호 확인</font>
 </td>
 			
-<td width="50" bgcolor="#FFFFFF">
-<s:textfield name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
+<td width="50" bgcolor="#FFFFFF"align="left">
+
+&nbsp;<s:textfield name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
+</td>
+</tr>
+ <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>			
+<tr>
+<td width="100" bgcolor="#202f58" align="left">
+<font color="#FFFFFF">* 생년 월일 </font>
+</td>
+			
+<td width="50" bgcolor="#FFFFFF"align="left">
+
+&nbsp;<s:textfield name="birthday" theme="simple" value="%{resultClass.birthday}" cssStyle="width:270px" maxlength="50"/> 예)20140407					
+</td>
+</tr>
+ <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>			
+<tr>
+<td width="100" bgcolor="#202f58" align="left">
+<font color="#FFFFFF">* 전화 번호</font>
+</td>
+			
+<td width="50" bgcolor="#FFFFFF"align="left">
+
+&nbsp;<s:textfield name="phone" theme="simple" value="%{resultClass.phone}" cssStyle="width:270px" maxlength="50"/> 	'-' 제외				
 </td>
 </tr>
 			
+ <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>			
 <tr>
-<td width="100" bgcolor="#F4F4F4">
-<font color="#FF0000">* </font>생년 월일
+<td width="100" bgcolor="#202f58" align="left">
+<font color="#FFFFFF">* 이메일</font>
 </td>
 			
-<td width="50" bgcolor="#FFFFFF">
-<s:textfield name="birthday" theme="simple" value="%{resultClass.birthday}" cssStyle="width:270px" maxlength="50"/> 예)20140407					
+<td width="50" bgcolor="#FFFFFF" align="left">
+
+&nbsp;<s:textfield name="email" theme="simple" value="%{resultClass.email}" cssStyle="width:270px" maxlength="50"/> 					
 </td>
 </tr>
-			
+ <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>			
 <tr>
-<td width="100" bgcolor="#F4F4F4">
-<font color="#FF0000">* </font>전화 번호
-</td>
-			
-<td width="50" bgcolor="#FFFFFF">
-<s:textfield name="phone" theme="simple" value="%{resultClass.phone}" cssStyle="width:270px" maxlength="50"/> 	'-' 제외				
-</td>
-</tr>
-			
-			
-<tr>
-<td width="100" bgcolor="#F4F4F4">
-<font color="#FF0000">* </font>이메일
-</td>
-			
-<td width="50" bgcolor="#FFFFFF">
-<s:textfield name="email" theme="simple" value="%{resultClass.email}" cssStyle="width:270px" maxlength="50"/> 					
-</td>
-</tr>
-			
-<tr>
-<td width="100" bgcolor="#F4F4F4">
-<font color="#FF0000">* </font>주 소
+<td width="100" bgcolor="#202f58" align="left">
+<font color="#FFFFFF">* 주 소</font>
 </td>
 			
 			
-<td width="50" bgcolor="#FFFFFF">
- <input type="text" id="sample6_postcode" name="zipcode1" placeholder="${resultClass.zipcode}">
- <input type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
- <input type="text" id="sample6_address" name="addr11"  placeholder="${resultClass.addr1}">
- <input type="text" id="sample6_address2" name="addr22" placeholder="${resultClass.addr2}">
+<td width="50" bgcolor="#FFFFFF"align="left">
+ 
+&nbsp;<input type="text" id="sample6_postcode" name="zipcode1" placeholder="${resultClass.zipcode}">
+
+&nbsp; <input type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
+
+&nbsp;<input type="text" id="sample6_address" name="addr11"  placeholder="${resultClass.addr1}">
+ 
+&nbsp;<input type="text" id="sample6_address2" name="addr22" placeholder="${resultClass.addr2}">
 </td></tr>
+ <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
 </table>	
 <br/>
 		
-<input type="submit" value="수 정" >	
+<input type="submit" value="수 정" class="button">	
 		
 	
 </form>
