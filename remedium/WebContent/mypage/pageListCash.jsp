@@ -5,13 +5,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/board.css" rel="stylesheet" style="text/css">
 <style type="text/css">
-.cash
+.cash {
+    margin-top: 103px;
+    width: 100%;
+    height: 140px;
+    line-height: 67px;
+    font-family: '맑은 고딕', sans-serif;
+    font-size: 17px;
+    font-weight: bolder;
+    border: 2px solid #202f58;
+}
+
+.info/* 회원가입 부분 */
 {
-float: center; margin-top: 200px; width: 1200px; height: 150px;  line-height: 100px;
-font-family: '돋움', sans-serif; font-size: 20px; font-weight: bolder;
+text-align: center; 
+margin: 5% auto; 
+width:70%; 
+font-weight: bold;
+font-size: 22px;
 }
 </style>
+
 <script type="text/javascript">
 function cashok(userinput) {
 	if(userinput.cash.value != 0){
@@ -26,9 +42,9 @@ function cashok(userinput) {
 </head>
 <body>
 
-<div>
-캐쉬 충전
-</div>
+<div class="info">
+캐쉬 충전<br/><br/>
+<hr align="center" width="50%" size="1" color="gray">
 
 <div class="cash">
 
@@ -36,18 +52,19 @@ function cashok(userinput) {
 <input type="radio" name="cash" value="50000"/> 50,000 CASH
 <input type="radio" name="cash" value="100000"/> 100,000 CASH
 <input type="radio" name="cash" value="200000"/> 200,000 CASH
-<input type="radio" name="cash" value="300000"/> 300,000 CASH
-<input type="radio" name="cash" value="300000"/>
+<input type="radio" name="cash" value="300000"/> 300,000 CASH<br>
+기타 : 
+<!-- <input type="radio" name="cash" value="300000"/> -->
 <input type="hidden" value="${session.memberId }" name="memberId">
 <input type="text" name="cash"/><br>
-<input type="submit" value="충전하기">
+<input class="button" type="submit" value="충전하기">
 <!-- <input type="radio" name="cash" value="500000CASH"/> 500,000 CASH
 <input type="radio" name="cash" value="100000CASH"/> 1000,000 CASH
  -->
  </form>
 </div>
 
-
+</div>
 
 </body>
 

@@ -10,7 +10,7 @@
 .id
 {
 text-align: center; 
-margin: 10% auto; 
+margin: 1% auto; 
 width: 41%;
 }
 </style>
@@ -53,18 +53,18 @@ width: 41%;
 		
 			<tr>
 				<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 이 름</td>
-				<td bgcolor="#FFFFFF" style="padding: 3%"><s:textfield name="memberName" theme="simple" cssStyle="width:150px" maxlength="20"/></td>
+				<td bgcolor="#FFFFFF"><s:textfield name="memberName" theme="simple" cssStyle="width:170px" maxlength="20"/></td>
 			</tr>
 			
 			<tr>
 				<td bgcolor="#F4F4F4"><font color="#FF0000">*</font> 생년 월일</td>
-				<td bgcolor="#FFFFFF" style="padding: 3%"><s:textfield name="birthday" theme="simple" cssStyle="width:150px" maxlength="20" /></td>
+				<td bgcolor="#FFFFFF"><s:textfield name="birthday" theme="simple" cssStyle="width:170px" maxlength="20" /></td>
 			</tr>
 		</table> 
 		</center>
 		<br/>
-		<input class="button" name="submit" type="submit" value="찾기" class="inputb" size="10">
-		<button class="button" type="button" onclick="location.href='main.action' " size="10">취소</button>
+		<input class="button" name="submit" type="submit" value="찾기" class="inputb" style="width: 130px;">&nbsp;
+		<button class="button" type="button" onclick="location.href='main.action' " style="width: 130px;">취소</button>
 	</form>
 	</div>
 </body>

@@ -6,8 +6,17 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<link href="css/form.css" rel="stylesheet" style="text/css">
+<!-- <link href="css/form.css" rel="stylesheet" style="text/css"> -->
 <link href="css/board.css" rel="stylesheet" style="text/css">
+<style type="text/css">
+.pwch /* 비밀번호 확인 */
+{
+text-align: center; 
+margin: 5% auto; 
+width: 19%;
+}
+
+</style>
 <script type="text/javascript">
 function pwd(userinput) {
 	
@@ -29,6 +38,7 @@ function pwd(userinput) {
 </script>
 </head>
 <body>
+
 <div class="pwch">
 
 <h2>비밀번호 확인</h2>
@@ -38,6 +48,7 @@ function pwd(userinput) {
 <s:hidden name="currentPage" value="%{currentPage}"/>
 <s:hidden name="orgpasswd" value="%{resultClass.memberPassword}"/>
 <s:hidden name="memberID" value="%{resultClass.memberID}"></s:hidden>
+
 <table width="250" border="0" cellspacing="0" cellpadding="0">
 
 <tr>
@@ -48,13 +59,13 @@ function pwd(userinput) {
 <td width="150" bgcolor="#F4F4F4" >비밀번호 입력</td>
 
 
-<td width="150" bgcolor="#FFFFFF" align="center"><s:textfield name="password" theme="simple" cssStyle="width:100px" maxlength="20"/>
+<td width="150" bgcolor="#FFFFFF" align="center"><s:textfield name="password" theme="simple" cssStyle="width:130px" maxlength="20"/>
 </td>
 </tr>
 
 
 <tr>
-<td height="1" colspan="2"><br><input class="button" name="submit" type="submit" value="확인" class="inputb"/></td>
+<td align="center" height="1" colspan="2"><br><input class="button" name="submit" type="submit" value="확인" class="inputb"  style="width: 150px;"/></td>
 </tr>
 </table>
 </form>

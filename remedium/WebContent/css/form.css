@@ -2,6 +2,7 @@
 .join/* 회원가입 부분 */
 {
 text-align: center; margin: 5% auto; width: 41%;
+line-height: 2em;
 }
 .login
 {
@@ -9,12 +10,6 @@ text-align: center; margin: 5% auto; width: 41%;
 }
 .pwch /* 비밀번호 확인 */
 {
-text-align: center; margin: 13% auto; width: 21%;
-}
-.id/* 회원가입 부분 */
-{
-text-align: center; 
-margin: 10% auto; 
-width: 41%;
+text-align: center; margin: 1% auto; width: 21%;
 }
 
