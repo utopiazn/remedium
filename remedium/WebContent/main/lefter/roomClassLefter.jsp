@@ -46,14 +46,14 @@
 	}
 	
 	  /*메인 메뉴에 대한 마우스 이벤트에 대한 효과 지정*/
-	 #navi h2 a,
-	 #navi h2 a:focus,
-	 #navi h2 a:hover,
-	 #navi he a:active{
+	 #navi2 h2 a,
+	 #navi2 h2 a:focus,
+	 #navi2 h2 a:hover,
+	 #navi2 he a:active{
 	 
-	 	background: $rgba(0, 0, 0, 0.4);	 	 
-	 	background: linear-gradient(#1a1a1a 0%,#rgba(0, 0, 0, 0.4) 100%);
-	 	color:#eee;
+	 	background: #202f58;	 	 
+	 	background: linear-gradient(#1a1a1a 0%,##202f58 100%);
+	 	color:#ffffff;
 	 	text-shadow: 0 1px 1px #000;
 	 
 	}	
@@ -62,6 +62,8 @@
 	</style>
 	
 </head>
+<!-- <body style="background-color: black;" > -->
+<body>
 
  <s:if test="list.size() <= 0">				
 		객실 클래스 정보가 없습니다					
