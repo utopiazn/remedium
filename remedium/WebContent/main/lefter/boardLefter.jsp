@@ -48,11 +48,11 @@
 	 #navi3 h2 a,
 	 #navi3 h2 a:focus,
 	 #navi3 h2 a:hover,
-	 #navi3 h2 a:active{
+	 #navi3 he a:active{
 	 
-	 	background: rgba(0, 0, 0, 0.4);	 	 
-	 	background: linear-gradient(#1a1a1a 0%,#rgba(0, 0, 0, 0.4) 100%);
-	 	color:#eee;
+	 	background: #202f58;	 	 
+	 	background: linear-gradient(#1a1a1a 0%,##202f58 100%);
+	 	 color: #ffffff;
 	 	text-shadow: 0 1px 1px #000;
 	 
 	}	

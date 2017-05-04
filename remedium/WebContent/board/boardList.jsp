@@ -11,8 +11,8 @@ a{
 color: black;
 }
 .event{
-margin : 5% auto; 
-line-height: 2em;
+margin : 20px; 
+line-height: 2.5em;
 color: black;
 text-align: center;
 }
@@ -39,7 +39,7 @@ text-align: center;
 </head>
 <body>
 <div class="event">
-<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+<table width="1000" border="0" cellspacing="0" cellpadding="0" align="center">
   		<tr>
   			<td align="center" ><h2>QnA</h2>
   			<hr align="center" width="60%" size="1" color="gray">
@@ -47,15 +47,10 @@ text-align: center;
   			</td>
   			
   		</tr>
-  		<tr>
-  		
-  			<td height="20"></td>
-  				
-  		</tr>
   	</table>
   	
   
-	<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+	<table width="1000" border="0" cellspacing="0" cellpadding="0" align="center">
 
 	    <tr class="top" align="center" bgcolor="#A2D5FF">
       		<td width="50"><strong>번 호</strong></td>
@@ -121,23 +116,23 @@ text-align: center;
 		<tr align="right">
 			<td colspan="7" >
 			<s:if test='${session.memberId } != "" '>
-				<input type="button" value="글쓰기" class="inputb" onClick="javascript:location.href='boardWriteForm.action'">
+				<input class="button" type="button" value="글쓰기" onClick="javascript:location.href='boardWriteForm.action'">
 			</s:if>
 			</td>
 		</tr>
 		
 	</table>
-	
-	<center>
+	</div>
+	<table align="center">
 	<form action="boardList.action" class="bottom">
-		<select name="searchNum">
+		<select name="searchNum" >
 			<option value="0">제 목</option>
 			<option value="1">작성자</option>
 		</select>
 		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
 		<input class="button" name="submit" type="submit" value="검색" class="inputb">
-		</form>
-	</center>
-	</div>
+	</form>
+	</table>
+	
 </body>
 </html>

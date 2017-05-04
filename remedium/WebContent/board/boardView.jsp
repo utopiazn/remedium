@@ -22,49 +22,68 @@
 	}
 	</script>
 <head>
+<style type="text/css">
+a{
+color: black;
+}
+.event{
+margin : 20px; 
+line-height: 2em;
+color: black;
+text-align: center;
+}
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+}  
+.top{
+	background-color:#202f58;
+	color: white;
+}
+</style>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
 </head>
 <body>
-
-	
-	<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
-	
-		<tr>
-			<td align="center">
-				<h2>글 상세 보기</h2>
-			</td>
-		</tr>	
-		
-	
+<div class="event">
+	<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
+	<tr>
+  			<td align="center" ><h2>문의 글 쓰기</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			<br/>
+  			</td>
+  			
+  	</tr>
 	</table>
 
  
 	
-		<table width="600" border="1" cellspacing="3" cellpadding="3" align="center">	
+		<table width="700" border="1" cellspacing="3" cellpadding="3" align="center">	
 			<tr>
-				<td width="50" bgcolor="#F4F4F4" >
-					<font color="#FF0000">* </font>글번호 
-				</td>
+				<td width="100" bgcolor="#202f58"><font color="white">* 글번호</font></td>
 			
-				<td  bgcolor="#FFFFFF" >
-					<s:property value="%{resultClass.no}"/> 
+				<td align="left" width="100" bgcolor="#FFFFFF">
+				&nbsp; <s:property value="%{resultClass.no}"/> 
 				</td>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>작성자
-				</td>
-				<td bgcolor="#FFFFFF" >
-					<s:property value="%{resultClass.Name}"/>					 
+				
+				<td width="100" bgcolor="#202f58"><font color="white">* 작성자</font></td>
+
+				<td align="left" width="100" bgcolor="#FFFFFF">
+				&nbsp; <s:property value="%{resultClass.name}"/> 
 				</td>
 			</tr>
 			
-			<tr >
-				<td width="100" bgcolor="#F4F4F4" >
-					<font color="#FF0000">* </font>제 목 
-				</td>
-			
-				<td width="50" bgcolor="#FFFFFF" colspan="3" >
-					<s:property value="%{resultClass.subject}"/>					 
+			<tr>
+				<td width="100" bgcolor="#202f58"><font color="white">* 제 목</font></td>
+				<td colspan="3" align="left" width="500" bgcolor="#FFFFFF">
+				&nbsp; <s:property value="%{resultClass.subject}"/>					 
 				</td>
 			</tr>		
 		
@@ -91,5 +110,6 @@
 				<input type="button" value="답변" class="inputb" onClick="javascript:location.href='boardReplyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
 		</s:if>
 		</center>
+</div>
 </body>
 </html>

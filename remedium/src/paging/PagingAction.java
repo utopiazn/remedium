@@ -137,16 +137,14 @@ public class PagingAction {
 			pagingHtml = new StringBuffer();
 			
 			if(currentPage > blockPage){
-				if(searchKey != ""){
-					pagingHtml.append("<a href='"+url+"currentPage="+(startPage - 1) + "&searchKeyword="+searchKey+"&searchNum="+searchNum+">");
-				}
-				else{
-					pagingHtml.append("<a href='"+url+"currentPage="+(startPage - 1) + ">");
-				}
+				if(searchKey != "")
+					pagingHtml.append("<a href='"+url+"currentPage="+(startPage - 1) + "&searchKeyword="+searchKey+"&searchNum="+searchNum+"'>");
+				else
+					pagingHtml.append("<a href='"+url+"currentPage="+(startPage - 1) + "'>");
 				pagingHtml.append("이전");
 				pagingHtml.append("</a>");
 			}
-			pagingHtml.append("&nbsp|");
+			pagingHtml.append("&nbsp;|&nbsp;");
 			
 			
 			for(int i = startPage; i<=endPage; i++){

@@ -5,6 +5,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+a{
+color: black;
+}
+.event{
+margin : 20px; 
+line-height: 2em;
+color: black;
+text-align: center;
+}
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+}  
+.top{
+	background-color:#202f58;
+	color: white;
+}
+</style>
 <SCRIPT type="text/javascript">
 		function validation() {
 		
@@ -34,11 +60,17 @@
 		}
 	</SCRIPT>
 </head>
+
 <body>
-	<table width="600" border="0" cellspacing="0" cellpadding="2">
+<div class="event">
+	<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
 		<tr>
-			<td align="center"><h2>게시판 상세보기</h2></td>
-		</tr>
+  			<td align="center" ><h2>문의 글 쓰기</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			<br/>
+  			</td>
+  			
+  		</tr>
 	</table>
 	
 	<s:if test="resultClass == NULL">
@@ -58,28 +90,26 @@
 			<s:hidden name="currentPage" value="%{currentPage}" />
 	</s:else> 
 	
-	<table width="600" border="0" cellspacing="0" cellpadding="0">
+	<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 		<tr>
-			<td align="right" colspan="2"><font color="#FF0000">* </font> 는 필수 입력사항입니다.
-			</td>
+			  <th align="right" colspan="2" class="info"><font color="#FF0000">*</font>는 필수 입력사항입니다.</th>
 		</tr>
-			<tr bgcolor="#777777">
+		
+		<tr bgcolor="#777777">
 			<td height="1" colspan="2"></td>
 		</tr>
 		<tr>
-			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>작성자</td>
-			<td bgcolor="#FFFFFF">
-				${session.memberName}
-			</td>
+			<td width="100" bgcolor="#202f58"><font color="white">* 작성자</font></td>
+			<td align="left" width="500" bgcolor="#FFFFFF">   &nbsp; ${session.memberName}</td>
 		</tr>
 		<tr bgcolor="#777777">
 			<td height="1" colspan="2"></td>
 		</tr>
 		
 		<tr>
-			<td  bgcolor="#F4F4F4"><font color="#FF0000">* </font>제 목</td>
-			<td  bgcolor="#FFFFFF">
-				<s:textfield name="subject" theme="simple" value="%{resultClass.subject}" cssStyle="width:372px" maxlength="50"/>
+			<td width="100" bgcolor="#202f58"><font color="white">* 제 목</font></td>
+			<td align="left" width="500" bgcolor="#FFFFFF">
+			  &nbsp; <s:textfield name="subject" theme="simple" value="%{resultClass.subject}" cssStyle="width:372px" maxlength="50"/>
 			</td>
 		</tr>
 		
@@ -87,9 +117,9 @@
 			<td height="1" colspan="2"></td>
 		</tr>
 		<tr>
-			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>내 용</td>
-			<td bgcolor="#FFFFFF">
-				<s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="56" rows="10"/>
+			<td bgcolor="#202f58"><font color="white">* 내 용</font></td>
+			<td align="left" bgcolor="#FFFFFF">
+			&nbsp; <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="56" rows="10"/>
 			</td>
 		</tr>
 		<tr bgcolor="#777777">
@@ -102,11 +132,12 @@
 			
 		<tr>
      		<td align="right" colspan="2">
-     		   <input name="submit" type="submit" value="작성완료" class="inputb">
-     		    <input name="list" type="button" value="글목록" class="inputb" onClick="javascript:location.href='boardList.action'">
+     		   <input type="submit" value="작성완료" class="button">
+     		    <input name="list" type="button" value="글목록" class="button" onClick="javascript:location.href='boardList.action'">
       		</td>
         </tr>	
 	</table>
 	</form>
+	</div>
 </body>
 </html>
