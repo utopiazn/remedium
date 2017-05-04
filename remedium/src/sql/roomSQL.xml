@@ -112,4 +112,21 @@
 		DELETE FROM ROOM
 		<include refid="where-no"/>
 	</delete>
+	
+	<!-- 룸복제sql -->
+	<!-- DECLARE
+ 	V_CNT NUMBER(5) := 111;
+	BEGIN
+ 	LOOP
+  	EXIT WHEN V_CNT = 222;
+  
+  	INSERT INTO ROOM(NO, NAME, ROOM_SIZE, ROOM_CAPACITY, CONSTRUCTION, ROOM_COMMENT,
+		PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
+		#room_capacity#, #construction#, #room_comment#,
+		#price#, #room_class#);
+ 	V_CNT := V_CNT +1;
+  
+ 	END LOOP;
+	END; -->
+	
 </sqlMap>
