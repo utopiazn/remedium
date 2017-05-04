@@ -87,7 +87,7 @@ color: black;
         </tr>
     
      <tr>
-          <td width="100" bgcolor="#202f58"><font color="white">*  이벤트 종류</font></td>
+          <td width="200" bgcolor="#202f58"><font color="white">*  이벤트 종류</font></td>
           <td align="left" width="500" bgcolor="#FFFFFF">
            &nbsp; <s:textfield name="name" theme="simple" value="%{resultClass.name}"/>
           </td>
@@ -98,7 +98,7 @@ color: black;
         </tr>
         
      <tr>
-	<td align="left" width="100" bgcolor="#202f58"><font color="white">&nbsp;*  이미지</font></td>
+	<td align="center" width="100" bgcolor="#202f58"><font color="white">*  이미지</font></td>
 	<td align="left">&nbsp; <s:file name="upload" theme="simple"/>
 	</td>
 	</tr> 							

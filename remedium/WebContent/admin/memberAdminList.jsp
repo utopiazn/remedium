@@ -5,21 +5,53 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>스트럿츠2 게시판</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>회원 리스트</title>
+<link href="css/board.css" rel="stylesheet" style="text/css">
+<style type="text/css">
+a{
+color: black;
+}
+.event{
+margin : 5% auto; 
+line-height: 2em; 
+color: black;
+
+} 
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+}  
+.top{
+	background-color:#202f58;
+	color: white;
+}
+
+
+</style>
 </head>
 <body>
-	<table width="600" border="0" cellspacing="0" cellpadding="2">
+<div class="event">
+	<table align="center" width="900" border="0" cellspacing="0" cellpadding="0">
 		<tr>
-			<td align="center"><h2>회원 리스트</h2></td>
+			<td align="center"><h2>회원 리스트</h2>
+			<hr align="center" width="50%" size="1" color="gray">
+			</td>
 		</tr>
 		<tr>
 			<td height="20"></td>
 		</tr> 
 	</table>
 	 
-	<table align="center" width="800" border="0" cellspacing="0" cellpadding="2">
-		<tr align="center" bgcolor="#F3F3F3">
+	<table align="center" width="900" border="0" cellspacing="0" cellpadding="0">
+		<tr align="center" bgcolor="#202f58" class="top">
 			<td width="80"><strong>가입일</strong></td>
 			<td width="50"><strong>아이디</strong></td>
 			<td width="50"><strong>이 름</strong></td>
@@ -79,8 +111,9 @@
 			<option value="2">핸드폰</option>
 		</select>
 		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
-		<input name="submit" type="submit" value="검색" class="inputb">
+		<input class="button" name="submit" type="submit" value="검색" class="inputb">
 		</form>
 	</center>
+	</div>
 </body>
 </html>
