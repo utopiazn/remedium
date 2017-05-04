@@ -31,7 +31,25 @@
 				<br><br></td>
 		</tr>
 		
+			<tr>
+		 
+			<td align="center">
+				<table><tr><td>
+				<strong>CONCEPT</strong>
+				<hr align="left" width="80" size="2" color="#202f58" >&nbsp;일상에 지친
+				당신만을 위한 휴식 공간. 바쁜 일상에서 벗어나 온전한 휴식과 프라이빗한 시간을 즐기실 수 있습니다.
+				<br>
+			    <br>
+			    <br>
+			    <br>
+				</td></tr>
+				
+				</table>
+			</td>
+		</tr>
+
 		<tr>
+		
 		<td align="center" width="650px" style="width: 100%; border: 1px solid #bcbcbc; text-align:center; table-layout:fixed; word-break:break-all;">
 		        2017년 5월 HOTEL REMEDIUM 오픈, 최고의 룸 수준과 높은 서비스 정신으로 제주도 최고의 휴양 호텔로서 자리잡고 있습니다.
 			    REMEDIUM 호텔의 모든 객실은 국내외 디자이너들의 합작으로 독특하고 빈티지한 디자인 감성을 느끼실수 있으며,다양한 고객님의 
@@ -45,20 +63,7 @@
 			    </td>
 			    </tr>
 			  
-		<tr>
-		 
-			<td align="center">
-				<table><tr><td>
-				<br>
-			    <br>
-			    <br>
-			  
-				<strong>CONCEPT</strong>
-				<hr align="left" width="80" size="2" color="#202f58" >&nbsp;일상에 지친
-				당신만을 위한 휴식 공간. 바쁜 일상에서 벗어나 온전한 휴식과 프라이빗한 시간을 즐기실 수 있습니다.
-				</td></tr></table>
-			</td>
-		</tr>
+	
 		<!-- <tr>
 			<td align="center">
 				<iframe width="640" height="360" src="https://www.youtube.com/embed/w4AXnL76iy0?amp;showinfo=0&amp;autoplay=1&amp;loop=1;playlist=w4AXnL76iy0"></iframe>
