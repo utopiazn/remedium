@@ -70,7 +70,7 @@ color: black;
 
 	<form action="eventModify.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 			<s:hidden name="no" value="%{resultClass.no}" />
-       <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+       <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
           <td align="right" colspan="2"><font color="#FF0000">*</font>는 필수 입력사항입니다.</td>
         </tr>
@@ -80,13 +80,17 @@ color: black;
         </tr>
 				
         <tr>
-          <td width="100" bgcolor="#202f58"><font color="white">*  이벤트 종류</font></td>
+          <td width="200" bgcolor="#202f58"><font color="white">*  이벤트 종류</font></td>
           <td align="left" width="500" bgcolor="#FFFFFF">
            &nbsp; <s:textfield name="name" theme="simple" value="%{resultClass.name}" cssStyle="width:370px" maxlength="50"/>
           </td>
         </tr>
+        
+         <tr bgcolor="#777777">
+          <td height="1" colspan="2"></td>	
+        </tr>
           <tr>
-	<td align="left" width="100" bgcolor="#202f58"><font color="white">*  이미지 </font></td>
+	<td align="center" width="100" bgcolor="#202f58"><font color="white">*  이미지 </font></td>
 	<td align="left"> &nbsp; <s:file name="upload" theme="simple"/>
 	<s:if test="%{resultClass.image!=null}"><br/>
 	<small>사진이 등록되어있습니다. ${resultClass.image}</small>

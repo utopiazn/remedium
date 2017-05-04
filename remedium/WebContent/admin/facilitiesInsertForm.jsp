@@ -5,16 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
-.s{
-width:95%; background-size: cover; padding-top:10px; padding-bottom:5px; magin:5px;
+
+.content{ margin-top: 20px;  
+line-height: 2em;
+color: black;
 }
 
-.c1{
-width:95%;padding-top:10px; padding-bottom:5px; text-align:left;
-}
-.c2{
-width:95%;padding-top:10px; padding-bottom:5px;
-}
 .button{
     border: 3px solid #202f58;
     background-color : #202f58;
@@ -23,14 +19,30 @@ width:95%;padding-top:10px; padding-bottom:5px;
     font-size: 13px;
     text-decoration: none;
     color: white;
- 
 }
+.bottom{
+  padding-left: 46%;
+  padding-top: 3%;
+}
+.top{
+	background-color:#202f58;
+	color: white;
+}
+
 </style>
 </head>
 <body>
-	<div class="s">
-	<h3>편의시설 추가</h3>
-	</div>
+<div class="content">
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  		<tr>
+  			<th align="center"><h2>편의시설 추가</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			</th>
+  		</tr>
+  		<tr>
+  			<td height="20"></td>
+  		</tr>
+</table>
 	
 <s:if test="%{resultClass.no != null}">
 <form action="facilitiesModifyAction.action" method="post" enctype="multipart/form-data">
@@ -38,39 +50,53 @@ width:95%;padding-top:10px; padding-bottom:5px;
 <s:else>
 <form action="facilitiesInsert.action" method="post" enctype="multipart/form-data">
 </s:else>
-	<div class="c1">
-		<center>
-		<table border=0>
+		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+		<tr bgcolor="#777777">
+       		<td height="1" colspan="2"></td>	
+       	</tr>
 		<tr>
-		<td>번호 :</td>
-		<td><s:textfield name="no" theme="simple" value="%{resultClass.no}"/></td>
+		<td width="100" bgcolor="#202f58"><font color="white">번호</font></td>
+		<td align="left">&nbsp;<s:textfield name="no" theme="simple" value="%{resultClass.no}"/></td>
 		</tr>
+		<tr bgcolor="#777777">
+       		<td height="1" colspan="2"></td>	
+       	</tr>
 		<tr>
-		<td>시설이름 :</td>
-		<td><s:textfield name="name" theme="simple" value="%{resultClass.name}"/></td>
+		<td width="100" bgcolor="#202f58"><font color="white">시설이름</font></td>
+		<td align="left">&nbsp;<s:textfield name="name" theme="simple" value="%{resultClass.name}"/></td>
 		</tr>
+		<tr bgcolor="#777777">
+       		<td height="1" colspan="2"></td>	
+       	</tr>
 		<tr>
-		<td>정보 :</td>
-		<td>
-		<s:textarea name="content" cols="50" rows="5" theme="simple" value="%{resultClass.content}"></s:textarea>
-		<%-- <s:textfield name="content" theme="simple" value="%{resultClass.content}"/>--%>
+		<td width="100" bgcolor="#202f58"><font color="white">정보</font></td>
+		<td align="left">&nbsp;<s:textarea name="content" cols="50" rows="5" theme="simple" value="%{resultClass.content}"></s:textarea>
 		</td> 
 		</tr>
+		<tr bgcolor="#777777">
+       		<td height="1" colspan="2"></td>	
+       	</tr>
 		<tr>
-		<td>운영시간 :</td>
-		<td><s:textfield name="time" theme="simple" value="%{resultClass.time}"/></td>
+		<td width="100" bgcolor="#202f58"><font color="white">운영시간</font></td>
+		<td align="left">&nbsp;<s:textfield name="time" theme="simple" value="%{resultClass.time}"/></td>
 		</tr>
+		<tr bgcolor="#777777">
+       		<td height="1" colspan="2"></td>	
+       	</tr>
 		<tr>
-		<td>이미지 :</td>
-		<td><s:file name="upload" theme="simple"/>
+		<td width="100" bgcolor="#202f58"><font color="white">이미지</font></td>
+		<td align="left">&nbsp;<s:file name="upload" theme="simple"/>
 		<s:if test="%{resultClass.image!=null}"><br/>
 		<small>사진이 등록되어있습니다. ${resultClass.image}</small>
 		<s:hidden name="image" value="%{resultClass.image}"/>
 		</s:if>
 		</td>
 		</tr>
+		<tr bgcolor="#777777">
+       		<td height="1" colspan="2"></td>	
+       	</tr>
 		<tr>
-		<td colspan="2"><br>
+		<td colspan="2" align="right">
 		<s:if test="%{resultClass.no != null}">
 		<input class="button" type="submit" value="시설수정">
 		</s:if>
@@ -80,9 +106,7 @@ width:95%;padding-top:10px; padding-bottom:5px;
 		</td>
 		</tr>
 		</table>
-	</div>
-	
 </form>
-
+</div>
 </body>
 </html>

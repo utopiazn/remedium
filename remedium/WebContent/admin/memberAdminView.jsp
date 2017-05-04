@@ -23,16 +23,46 @@
 	</script>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+	<link href="css/board.css" rel="stylesheet" style="text/css">
+<style type="text/css">
+a{
+color: black;
+}
+.event{
+margin : 5% auto; 
+line-height: 2em; 
+color: black;
+
+} 
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+}  
+.top{
+	background-color:#202f58;
+	color: white;
+}
+
+
+</style>
 </head>
 <body>
-
+<div class="event">
 	
-	<table width="600" border="0" cellspacing="0" cellpadding="2">
+	<table align="center" width="600" border="0" cellspacing="0" cellpadding="2">
 	
 		<tr>
 			<td align="center">
 				<h2>회원 상세 보기</h2>
+				<hr align="center" width="50%" size="1" color="gray">
+				<br>
 			</td>
 		</tr>	
 		
@@ -41,17 +71,15 @@
 
 
 	<!-- 로그인폼으로 이동 -->
-		<table width="600" border="1" cellspacing="3" cellpadding="3">	
+		<table align="center" width="600" border="1" cellspacing="3" cellpadding="3">	
 			<tr>
-				<td width="50" bgcolor="#F4F4F4" >
-					<font color="#FF0000">* </font>아이디
+				<td width="50" bgcolor="#202f58"><font color="white">* 아이디</font>
 				</td>
 			
 				<td  bgcolor="#FFFFFF" >
 					<s:property value="%{resultClass.memberID}"/> 
 				</td>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>가입일
+				<td width="100" bgcolor="#202f58"><font color="white">* 가입일</font>
 				</td>
 				<td bgcolor="#FFFFFF" >
 					<s:property value="%{resultClass.regdate}"/>					 
@@ -59,15 +87,13 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>비밀 번호
+				<td width="100" bgcolor="#202f58"><font color="white">* 비밀 번호</font>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" colspan=>
 					<s:property value="%{resultClass.memberPassword}"/>					 
 				</td>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>탈퇴일
+				<td width="100" bgcolor="#202f58"><font color="white">* 탈퇴일</font>
 				</td>
 				<td bgcolor="#FFFFFF" >
 					<s:property value="%{resultClass.deldate}"/>					 
@@ -75,15 +101,13 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>이 름
+				<td width="100" bgcolor="#202f58"><font color="white">* 이 름</font>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" >
 					<s:property value="%{resultClass.memberName}"/>					
 				</td>
-					<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>보유 Cash
+					<td width="100" bgcolor="#202f58"><font color="white">* 보유 Cash</font>
 				</td>
 				<td bgcolor="#FFFFFF" >
 					<s:property value="%{resultClass.cash}"/>					 
@@ -91,8 +115,7 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>성 별
+				<td width="100" bgcolor="#202f58"><font color="white">* 성 별</font>
 				</td>
 				<td width="50" bgcolor="#FFFFFF">
 					
@@ -104,8 +127,7 @@
 					</s:else>	
 								
 				</td>
-					<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>사용 여부
+					<td width="100" bgcolor="#202f58"><font color="white">* 사용 여부</font>
 				</td>
 				<td bgcolor="#FFFFFF" >
 					<s:property value="%{resultClass.userCheck}"/>					 
@@ -113,8 +135,7 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>생년 월일
+				<td width="100" bgcolor="#202f58"><font color="white">* 생년 월일</font>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" colspan="3">
@@ -124,8 +145,7 @@
 			
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>전화 번호
+				<td width="100" bgcolor="#202f58"><font color="white">* 전화 번호</font>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" colspan="3">
@@ -135,8 +155,7 @@
 			
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>이메일
+				<td width="100" bgcolor="#202f58"><font color="white">* 이메일</font>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" colspan="3">
@@ -145,16 +164,14 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>우편 번호
+				<td width="100" bgcolor="#202f58"><font color="white">* 우편 번호</font>
 				</td>
 				<td width="50" bgcolor="#FFFFFF" colspan="3">
 				<s:property value="%{resultClass.zipcode}" /> 	
 				</td>
 			</tr> 
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>주 소
+				<td width="100" bgcolor="#202f58"><font color="white">* 주 소</font>
 				</td>
 				<td width="200"bgcolor="#FFFFFF">
 				<s:property value="%{resultClass.addr1}" /> 
@@ -165,9 +182,11 @@
 			</tr>
 		
 		</table>
-		<input name="list" type="button" value="회원 목록" class="inputb" onClick="javascript:location.href='memberAdminList.action'">
-    	<input name="modify" type="button" value="회원 수정" class="inputb" onClick="javascript:location.href='memberAdminModifyForm.action?memberID=<s:property value="resultClass.memberID" />&currentPage=<s:property value="currentPage" />'"> 
-		<input type="button" value="회원 삭제" class="inputb" onClick="javascript:button_event('memberAdminDelete.action?memberID=<s:property value="resultClass.memberID" />')">
-
+		<br>
+		<br>
+		<input class="button" name="list" type="button" value="회원 목록" class="inputb" onClick="javascript:location.href='memberAdminList.action'">
+    	<input class="button" name="modify" type="button" value="회원 수정" class="inputb" onClick="javascript:location.href='memberAdminModifyForm.action?memberID=<s:property value="resultClass.memberID" />&currentPage=<s:property value="currentPage" />'"> 
+		<input class="button" type="button" value="회원 삭제" class="inputb" onClick="javascript:button_event('memberAdminDelete.action?memberID=<s:property value="resultClass.memberID" />')">
+</div>
 </body>
 </html>
