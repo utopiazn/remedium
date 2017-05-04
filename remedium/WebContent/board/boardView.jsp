@@ -55,7 +55,7 @@ text-align: center;
 <div class="event">
 	<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
 	<tr>
-  			<td align="center" ><h2>문의 글 쓰기</h2>
+  			<td align="center" ><h2>게시글 보기</h2>
   			<hr align="center" width="50%" size="1" color="gray">
   			<br/>
   			</td>
@@ -87,27 +87,25 @@ text-align: center;
 				</td>
 			</tr>		
 		
-			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
-					<font color="#FF0000">* </font>내 용
+				<td width="100" bgcolor="#202f58"><font color="white">* 내 용</font>
 				</td>
 			
-				<td width="50" height="300" bgcolor="#FFFFFF" colspan="3">
-					<s:property value="%{resultClass.content}" />				
+				<td colspan="3" align="left" height="300" width="500" bgcolor="#FFFFFF">
+				&nbsp;	<s:property value="%{resultClass.content}" />				
 				</td>
 			</tr>
 		
 		</table><br/>
 		
 		<center>
-		<input name="list" type="button" value="글목록" class="inputb" onClick="javascript:location.href='boardList.action'">
+		<input name="list" type="button" value="글목록" class="button" onClick="javascript:location.href='boardList.action'">
 		<s:if test ="resultClass.Name == '${session.memberName }' || '${ session.userAdmin == '1' }'" >
-    		<input name="modify" type="button" value="글수정" class="inputb" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
-			<input type="button" value="글삭제" class="inputb" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />&ref=<s:property value="resultClass.ref" />&re_step=<s:property value="resultClass.re_step" />')">
+    		<input name="modify" type="button" value="글수정" class="button" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
+			<input type="button" value="글삭제" class="button" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />&ref=<s:property value="resultClass.ref" />&re_step=<s:property value="resultClass.re_step" />')">
 		</s:if>
 		<s:if test="${ session.userAdmin == '1' }">
-				<input type="button" value="답변" class="inputb" onClick="javascript:location.href='boardReplyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
+				<input type="button" value="답변" class="button" onClick="javascript:location.href='boardReplyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
 		</s:if>
 		</center>
 </div>
