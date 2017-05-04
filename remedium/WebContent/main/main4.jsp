@@ -22,11 +22,11 @@
 
 	<div class="main">
 	
-		<div class="lefter4">
+		<div class="lefter">
 			<tiles:insertAttribute name="lefter" />	
 		</div>
 		
-		<div class="right4">
+		<div class="right3">
 			<tiles:insertAttribute name="body" />
 		</div>
 	
