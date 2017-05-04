@@ -23,6 +23,16 @@ width:95%; float:left; margin:5px; border:1px solid black;
 .h3{
 width:95%; float:left; clear: left; margin:5px; text-align:center;
 }
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+}
 
 </style>
 </head>
@@ -42,9 +52,9 @@ width:95%; float:left; clear: left; margin:5px; text-align:center;
 </div>
 	
 <div class="h3">
-<input type="button" value="시설정보수정"onClick="location.href='facilitiesModifyForm.action?no=<s:property value="resultClass.no" />'">  
-<input type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />&image=<s:property value="resultClass.image" />'">
-<input type="button" value="시설목록"onClick="location.href='facilitiesList.action'">
+<input class="button" type="button" value="시설정보수정"onClick="location.href='facilitiesModifyForm.action?no=<s:property value="resultClass.no" />'">  
+<input class="button" type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />&image=<s:property value="resultClass.image" />'">
+<input class="button" type="button" value="시설목록"onClick="location.href='facilitiesList.action'">
 </div>
 
 

@@ -12,9 +12,10 @@ color: black;
 }
 .event{
 margin : 5% auto; 
-line-height: 2em;
+line-height: 2em; 
 color: black;
-}
+
+} 
 
 .button{
     border: 3px solid #202f58;
