@@ -21,7 +21,7 @@
 .info/* 회원가입 부분 */
 {
 text-align: center; 
-margin: 5% auto; 
+margin: 3% auto; 
 width:70%; 
 font-weight: bold;
 font-size: 22px;
