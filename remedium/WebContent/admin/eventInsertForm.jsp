@@ -85,12 +85,12 @@ color: black;
         <tr>
           <td width="100" bgcolor="#202f58"><font color="white">*  이벤트 종류</font></td>
           <td align="left" width="500" bgcolor="#FFFFFF">
-            <s:textfield name="name" theme="simple" value="%{resultClass.name}" cssStyle="width:370px" maxlength="50"/>
+           &nbsp; <s:textfield name="name" theme="simple" value="%{resultClass.name}" cssStyle="width:370px" maxlength="50"/>
           </td>
         </tr>
      <tr>
 	<td align="left" width="100" bgcolor="#202f58"><font color="white">*  이미지</font></td>
-	<td align="left"><s:file name="upload" theme="simple"/>
+	<td align="left">&nbsp; <s:file name="upload" theme="simple"/>
 	</td>
 	</tr> 							
         <tr bgcolor="#777777">
@@ -100,7 +100,7 @@ color: black;
         <tr>
           <td bgcolor="#202f58"><font color="white">*  이벤트 시작</font></td>
           <td align="left" bgcolor="#FFFFFF">
-          <input type="date" name="firstdate">
+         &nbsp; <input type="date" name="firstdate">
 
            <%--  <s:textfield name="firstdate" theme="simple" value="%{resultClass.firstdate}" cssStyle="width:100px" maxlength="20"/> --%>
           </td>
@@ -112,7 +112,7 @@ color: black;
         <tr>
           <td bgcolor="#202f58"><font color="white">* 이벤트 종료</font></td>
           <td align="left" bgcolor="#FFFFFF">
-           <input type="date" name="lastdate">
+          &nbsp; <input type="date" name="lastdate">
            <%--  <s:textfield name="lastdate" theme="simple" value="%{resultClass.lastdate}" cssStyle="width:100px" maxlength="20"/> --%>
          
           </td>
@@ -125,7 +125,7 @@ color: black;
 	<tr>
           <td bgcolor="#202f58"><font color="white">*  내용</font> </td>
           <td align="left" bgcolor="#FFFFFF">
-            <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="50" rows="10" />
+           &nbsp; <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="50" rows="10" />
           </td>
         </tr>
         <tr bgcolor="#777777">
