@@ -14,6 +14,7 @@ color: black;
 margin : 5% auto; 
 line-height: 2em;
 color: black;
+text-align: center;
 }
 
 .button{
