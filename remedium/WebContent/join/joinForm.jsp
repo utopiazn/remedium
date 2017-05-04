@@ -9,7 +9,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="css/form.css" rel="stylesheet" style="text/css">
-
+	<link href="css/board.css" rel="stylesheet" style="text/css">
 
 	
 	<script type="text/javascript">		
@@ -116,7 +116,7 @@
 	
 		<tr>
 			<td align="center">
-				<h2>회원 가입</h2>
+				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원 가입</h2>
 			</td>
 		</tr>	
 		
@@ -132,28 +132,30 @@
 	<!-- 로그인폼으로 이동 -->
 	<form name="myForm" action="join.action"  method="post" enctype="multipart/form-data" onsubmit="return validation2(this);">
 
-		<table width="600" border="0" cellspacing="0" cellpadding="0">
+		<table width="600" border="0" cellspacing="0" cellpadding="2">
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4" align="left">
 					<font color="#FF0000">*</font>아이디
+				<br/>
 				</td>
-			
+				
 				<td width="50" bgcolor="#FFFFFF" align="left">
 				
 					<%-- <s:textfield name="memberID" theme="simple" value="%{resultClass.memberID}" cssStyle="width:270px" maxlength="50"/> --%>
 					<s:textfield name="memberID" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
 					<!-- <input type="text" name="memberID" size="40" > -->
 			
-					<input type="button" name="confirm_id" value="ID중복확인"  onclick="openConfirmid(this.form)">
+					<input class="button" type="button" name="confirm_id" value="ID중복확인"  onclick="openConfirmid(this.form)">
 			
 					
 				</td>
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4"align="left">
 					<font color="#FF0000">*</font>비밀번호
+					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
@@ -165,8 +167,9 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4"align="left">
 					<font color="#FF0000">*</font>비밀번호 확인
+					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
@@ -175,8 +178,9 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4"align="left">
 					<font color="#FF0000">*</font>이름
+					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
@@ -185,8 +189,9 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4"align="left">
 					<font color="#FF0000">*</font>성별
+					<br/>
 				</td>
 				
 			
@@ -201,8 +206,9 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4"align="left">
 					<font color="#FF0000">*</font>생년월일
+					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
@@ -212,8 +218,9 @@
 			
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4"align="left">
 					<font color="#FF0000">*</font>전화 번호
+					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
@@ -223,8 +230,9 @@
 			
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4"align="left">
 					<font color="#FF0000">*</font>이메일
+					<br/>
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
@@ -233,15 +241,16 @@
 			</tr>
 			
 			<tr>
-				<td width="100" bgcolor="#F4F4F4">
+				<td width="100" bgcolor="#F4F4F4"align="left">
 					<font color="#FF0000">*</font>주소
+					<br/>
 				</td>
 			
 			
 				<td width="50" bgcolor="#FFFFFF" align="left"> 
 				
-					<input type="text" id="sample6_postcode" name="zipcode" placeholder="우편번호">
-					<input type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
+					<input style="width: 240px" type="text" id="sample6_postcode" name="zipcode" placeholder="우편번호" >
+					<input class="button" type="button" onclick="sample6_execDaumPostcode()"  value="우편번호 찾기"><br>
 					<input type="text" id="sample6_address" name="addr1"  placeholder="주소">
 					<input type="text" id="sample6_address2" name="addr2" placeholder="상세주소">
 				</td>
@@ -251,8 +260,8 @@
 		
 		<br/>
 		
-		<input type="submit" value="가입" >	
-		<button type="button" onclick="location.href='loginForm.action' ">취소</button>
+		<input type="submit" style="width: 15%"  value="가입" class="button" >	
+		<button class="button"  style="width: 15%" type="button" onclick="location.href='loginForm.action' ">취소</button>
 	</form>
 	
 </DIV>	

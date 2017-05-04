@@ -6,6 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>비밀번호 찾기</title>
+	<link href="css/board.css" rel="stylesheet" style="text/css">
+	<style type="text/css">
+	.pw
+{
+text-align: center; 
+margin: 10% auto; 
+width: 41%;
+}
+	</style>
 </head>
 <SCRIPT type="text/javascript">
 		function validation() {
@@ -29,7 +38,8 @@
 					
 			return true;
 		}
-	</SCRIPT> 
+	</SCRIPT>
+	 
 <body><br/><br/><br/>
 	<table width="600" border="0" cellspacing="0" cellpadding="2">
 
@@ -61,8 +71,8 @@
 			</td>
 		</tr>
 	</table>
-	<input name="submit" type="submit" value="찾기" class="inputb" >	
-	<button type="button" onclick="location.href='main.action' ">취소</button> 
+	<input class="button" name="submit" type="submit" value="찾기" class="inputb" >	
+	<button class="button" type="button" onclick="location.href='main.action' ">취소</button> 
 </form>
 </body>
 </html>
