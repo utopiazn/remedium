@@ -56,7 +56,7 @@ width:95%; float:left; clear: left; margin:5px; text-align:center;
 <center>
 <form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 	
-	<table cellpadding="2px">
+	<table cellpadding="4">
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>아이디</td>
 			<td bgcolor="#FFFFFF">
@@ -71,12 +71,14 @@ width:95%; float:left; clear: left; margin:5px; text-align:center;
 			</td>
 			
 		</tr>
+		<br>
 		<tr align="center">
 			<td colspan="3">
 				 <input class="button" name="submit" type="submit" value="로그인" style="width: 263.2px;" >
 			</td>
 		</tr>
 	</table>	
+	<br>
 		 <a href="joinForm.action"><font size=2>회원 가입</font></a>&nbsp;/
        	 <a href="findIDForm.action"><font size=2>아이디 찾기</font></a>&nbsp;/
        	 <a href="findPwForm.action"><font size=2>비밀번호 찾기</font></a>

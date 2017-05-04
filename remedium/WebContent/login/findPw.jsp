@@ -11,7 +11,7 @@
 	.pw
 {
 text-align: center; 
-margin: 10% auto; 
+margin: 8% auto; 
 width: 41%;
 }
 	</style>
@@ -40,7 +40,9 @@ width: 41%;
 		}
 	</SCRIPT>
 	 
-<body><br/><br/><br/>
+<body>
+<div class="pw">
+<br/><br/><br/>
 	<table width="600" border="0" cellspacing="0" cellpadding="2">
 
 		<tr>
@@ -50,29 +52,33 @@ width: 41%;
 		</tr>
 	</table>
 	  <form action="findPwAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
-	<table>
+	<center>
+	<table cellpadding="2" >
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>아이디</td>
 			<td bgcolor="#FFFFFF">
-				<s:textfield name="memberId" theme="simple" cssStyle="width:100px" maxlength="20"/>
+				<s:textfield name="memberId" theme="simple" cssStyle="width:130px" maxlength="20"/>
 			</td>
 		</tr>
 		
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>이	름</td>
 			<td bgcolor="#FFFFFF">
-				<s:textfield name="memberName" theme="simple" cssStyle="width:100px" maxlength="20"/>
+				<s:textfield name="memberName" theme="simple" cssStyle="width:130px" maxlength="20"/>
 			</td>
 		</tr>
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>생년월일</td>
 			<td bgcolor="#FFFFFF">
-				<s:textfield name="birthday" theme="simple" cssStyle="width:100px" maxlength="20"/>
+				<s:textfield name="birthday" theme="simple" cssStyle="width:130px" maxlength="20"/>
 			</td>
 		</tr>
 	</table>
+	</center>
+	<br/>
 	<input class="button" name="submit" type="submit" value="찾기" class="inputb" >	
 	<button class="button" type="button" onclick="location.href='main.action' ">취소</button> 
 </form>
+</div>
 </body>
 </html>

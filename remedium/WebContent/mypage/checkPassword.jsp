@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="css/form.css" rel="stylesheet" style="text/css">
+<link href="css/board.css" rel="stylesheet" style="text/css">
 <script type="text/javascript">
 function pwd(userinput) {
 	
@@ -39,22 +40,21 @@ function pwd(userinput) {
 <s:hidden name="memberID" value="%{resultClass.memberID}"></s:hidden>
 <table width="250" border="0" cellspacing="0" cellpadding="0">
 
-<tr bgcolor="#777777">
+<tr>
 <td height="1" colspan="2"></td>
 </tr>
 
 <tr>
 <td width="150" bgcolor="#F4F4F4" >비밀번호 입력</td>
-</tr>
-<tr>
-<td width="150" bgcolor="#FFFFFF" align="center">
-&nbsp;&nbsp;<s:textfield name="password" theme="simple" cssStyle="width:100px" maxlength="20"/>
+
+
+<td width="150" bgcolor="#FFFFFF" align="center"><s:textfield name="password" theme="simple" cssStyle="width:100px" maxlength="20"/>
 </td>
 </tr>
 
 
 <tr>
-<td height="1" colspan="2"><br><input name="submit" type="submit" value="확인" class="inputb"/></td>
+<td height="1" colspan="2"><br><input class="button" name="submit" type="submit" value="확인" class="inputb"/></td>
 </tr>
 </table>
 </form>
