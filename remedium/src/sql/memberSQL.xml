@@ -36,6 +36,7 @@
 	<!-- member 테이블 모든 정보를 가져옴 -->
 	<select id="selectAll" resultMap="memberRes" parameterClass="String">
 		<include refid="select-all" />
+		order by userAdmin asc, regdate asc
 	</select>
 	
 	<!-- 아이디 의 해당하는 정보를 모두 가져옴  -->

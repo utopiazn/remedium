@@ -58,7 +58,7 @@ color: black;
 			<td width="60"><strong>생년 월일</strong></td>
 			<td width="50"><strong>핸드폰</strong></td>
 			<td width="50"><strong>캐 쉬</strong></td>
-			<td width="50"><strong>사용 여부</strong></td>
+			<td width="50"><strong>권한여부</strong></td>
 		</tr>
 		<tr bgcolor="#777777">
 			<td height="1" colspan="7"></td>
@@ -73,7 +73,12 @@ color: black;
 					<s:property value="currentPage"/>
 				</s:param>
 			</s:url>
+			<s:if test="%{userAdmin == 1}">
+			<tr bgcolor="#DCDCDC" align="center">
+			</s:if>
+			<s:else>
 			<tr bgcolor="#FFFFFF" align="center">
+			</s:else>
 				<td><s:property value="regdate"/></td>
 				<td align="center"> 
 				<s:a href="%{viewURL}"><s:property value="memberID"/></s:a></td>
@@ -82,7 +87,12 @@ color: black;
 				<td align="center"><s:property value="birthday"/></td>
 				<td align="center"><s:property value="phone"/></td>
 				<td align="center"><s:property value="cash"/></td>
-				<td align="center"><s:property value="userCheck"/></td>
+				<s:if test="%{userAdmin == 1}">
+				<td align="center">관계자</td>
+				</s:if>
+				<s:else>
+				<td align="center">고객</td>
+				</s:else>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="7"></td>
