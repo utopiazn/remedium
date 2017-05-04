@@ -32,24 +32,14 @@ text-align: center;
 }
 </style>
 <SCRIPT type="text/javascript">
-		function validation() {
+		function validation(frm) {
 		
-			var frm = document.forms(0);
+			
 			
 			if(frm.subject.value == "") {
 				alert("제목을 입력해주세요.");
 				return false;
 			} 
-			
-			else if(frm.name.value == "") {
-				alert("이름을 입력해주세요.");
-				return false;
-			}
-			
-			else if(frm.password.value == "") {
-				alert("비밀번호를 입력해주세요.");
-				return false;
-			}
 			
 			else if(frm.content.value == "") {
 				alert("내용을 입력해주세요.");
@@ -74,11 +64,11 @@ text-align: center;
 	</table>
 	
 	<s:if test="resultClass == NULL">
-		<form action="boardWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+		<form action="boardWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 	</s:if>
 	
 	<s:elseif test="reply">
-		<form action="boardReply.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+		<form action="boardReply.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 			<s:hidden name="ref" value="%{resultClass.ref}" />
 			<s:hidden name="re_step" value="%{resultClass.re_step}" />
 	</s:elseif>

@@ -31,6 +31,28 @@ text-align: center;
 	color: white;
 }
 </style>
+<SCRIPT type="text/javascript">
+		function validation(frm) {
+					
+			if(frm.type.value == "") {
+				alert("유형을 입력해주세요.");
+				return false;
+			} 
+			
+			else if(frm.subject.value == "") {
+				alert("제목을 입력해주세요.");
+				return false;
+			}
+			
+			else if(frm.content.value == "") {
+				alert("내용을 입력해주세요.");
+				return false;
+			}
+		
+			
+			return true;
+		}
+	</SCRIPT>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
@@ -50,7 +72,7 @@ text-align: center;
 </table>
 
 	<s:if test="resultClass == NULL">
-		<form action="faqWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+		<form action="faqWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 	</s:if>
 	
 	<s:else>
