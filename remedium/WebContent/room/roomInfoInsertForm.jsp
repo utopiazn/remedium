@@ -8,7 +8,47 @@
 
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
+
+<style type="text/css">
+
+
+a{
+color: black;
+}
+.roomInfoInsertFormTitle{
+margin : 20px; 
+line-height: 2.5em;
+color: black;
+text-align: center;
+}
+
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.bottom{
+  padding-left: 46%;
+  padding-top: 3%;
+}
+.top{
+	background-color:#202f58;
+	color: white;
+}
+
+
+</style>
+
+
+
 </head>
 <body>
 <!-- 
@@ -27,33 +67,41 @@ image2	시설정보
 	${resultClass.name}<br>
  --%>
 
-
-	<table width="450" border="0" cellspacing="0" cellpadding="2">
+<div class="roomInfoInsertFormTitle">
 	
+	<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
 		<tr>
-			<td align="center">
-				<h2>객실 소개 클래스 추가</h2>
-			</td>
-		</tr>	
-
-		<!--객실 소개 추가 처리  -->
-		<%-- <%-- <s:form   action="roomInfoInsert.action"  method="post" enctype="multipart/form-data" >
-		 --%> 
-		 <s:form action="roomInfoInsert" method="POST" enctype="multipart/form-data">
+  			<td align="center"><h2>객실 소개 클래스 추가</h2>
+ 			<hr align="center" width="60%" size="1" color="gray">
+  			<br/>
+  			</td>  			
+  		</tr>		
+  		
+  	</table>
+ 	
+  	
 	
-		
-		<tr>			
-			<td bgcolor="#F4F4F4" >
-			<!-- <input type="hidden" name ="roomClass" value="0"> -->		
+	<!--객실 소개 추가 처리  -->
+ 	<s:form action="roomInfoInsert" method="POST" enctype="multipart/form-data">
+	
+		<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 
-			<table width="480" border="0" cellspacing="0" cellpadding="0">
+		
+			<tr>			
+			<td bgcolor="#F4F4F4" >
+			
+
+				<table width="480" border="0" cellspacing="0" cellpadding="0" align="center">
 				
 				<tr>
-					<td width="100" >
-						<font color="#FF0000"></font>객실 종류:
-					</td>
+				
+					  <td width="200" bgcolor="#202f58">
+					  	<font color="white">* 객실 종류:
+					  	</font>
+					  </td>
 					
-					<td width="50" >
+					
+					<td align="left" width="500" bgcolor="#FFFFFF">
 						 <input type="text" name="room_class" size="20" >			
 					</td>
 				</tr>
@@ -143,7 +191,7 @@ image2	시설정보
 		
 			</table>
 		
-			<s:submit value="저장"/>
+			<s:submit  value="저장"/>
 			
 		
 		</s:form> 
@@ -152,7 +200,7 @@ image2	시설정보
 	</table>
 
 
-
+</div>
 
 
 

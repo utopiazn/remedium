@@ -5,28 +5,67 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+
+a{
+color: black;
+}
+.roomInfoListTitle{
+margin : 20px; 
+line-height: 2.5em;
+color: black;
+text-align: center;
+}
+
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.bottom{
+  padding-left: 46%;
+  padding-top: 3%;
+}
+.top{
+	background-color:#202f58;
+	color: white;
+}
+
+
+</style>
+
 </head>
 <body>
 
 <%-- <a href='roomInfoList.action?roomClass=<s:property value="0"/>'></a> --%>
-	<table width="800" border="0" cellspacing="0" cellpadding="2">
+
+<div class="roomInfoListTitle">
+
+	<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
   		
   		<tr>
-  			<td align="center"><h2>객실클래스 리스트</h2></td>
-  		</tr>
-  		
-  		<tr>
-  			<td height="20"></td>
-  		</tr>
+  			<td align="center"><h2>객실클래스 리스트</h2>
+ 			<hr align="center" width="60%" size="1" color="gray">
+  			<br/>
+  			</td>  			
+  		</tr>		
   		
   	</table>
+ 	
   	
-  	
-  	<table width="800" border="0" cellspacing="0" cellpadding="2">
+  	<table width="800" border="0" cellspacing="0" cellpadding="0" align="center">
   	
   		<tr align="right">
 			<td colspan="7" >
-				<button type="button" onclick="location.href='roomInfoInsertForm.action?roomClass=0'">추가</button>				
+				<button class="button" type="button" onclick="location.href='roomInfoInsertForm.action?roomClass=0'">추가</button>				
 			</td>
 		</tr>
 		
@@ -34,7 +73,7 @@
 			<td colspan="7" ></td>
 		</tr>
 		
-	     <tr align="center" bgcolor="#C0C0C0">
+	     <tr class="top" align="center" bgcolor="#A2D5FF">
       		
       		<td width="100"><strong>객실 종류</strong></td>
 			
@@ -60,7 +99,7 @@
 				 		
 		 		<td align="left"><s:property value="name"/></td>		
 		 		
-		 		<td align="left"><s:property value="content"/></td>		
+		 		<td align="left" ><s:property value="content"/></td>		
 		 		
 		 		<td align="center">
 		 		
@@ -96,6 +135,6 @@
 
 		
 	</table>  	
-
+</div> 
 </body>
 </html>
