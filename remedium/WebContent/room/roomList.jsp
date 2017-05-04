@@ -72,7 +72,7 @@ color: black;
 			<td align="left"><s:property value="construction"/></td>
 			<td align="center">
 			<s:if test="%{room_capacity == 0}">
-			단체(5~20명 수용가능)
+			단체(5~10명 수용가능)
 			</s:if>
 			
 			<s:else>
