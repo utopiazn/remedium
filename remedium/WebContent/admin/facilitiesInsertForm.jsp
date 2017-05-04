@@ -15,6 +15,16 @@ width:95%;padding-top:10px; padding-bottom:5px; text-align:left;
 .c2{
 width:95%;padding-top:10px; padding-bottom:5px;
 }
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+}
 </style>
 </head>
 <body>
@@ -62,10 +72,10 @@ width:95%;padding-top:10px; padding-bottom:5px;
 		<tr>
 		<td colspan="2"><br>
 		<s:if test="%{resultClass.no != null}">
-		<input type="submit" value="시설수정">
+		<input class="button" type="submit" value="시설수정">
 		</s:if>
 		<s:else>
-		<input type="submit" value="시설추가">
+		<input class="button" type="submit" value="시설추가">
 		</s:else>
 		</td>
 		</tr>

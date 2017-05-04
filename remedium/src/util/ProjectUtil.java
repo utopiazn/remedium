@@ -136,6 +136,23 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 	}
 	/////////////////////////////////////////////////////////////
 	
+	//클래스에 저장된 시설정보이미지 가져오기
+	public static String getRoomClassInfo(String room_class) throws Exception{
+		
+		RoomclassBean paramClass = new RoomclassBean();
+		RoomclassBean resultClass = new RoomclassBean();	
+		
+		paramClass.setRoom_class(room_class);
+		 
+
+		resultClass = (RoomclassBean)sqlMapper.queryForObject("roomclassSQL.selectRoomClass", paramClass);
+		
+		return resultClass.getImage2();
+	}
+	
+	
+	
+	
 	
 	//클래스에 저장된 이미지 첫번째거 가져오기
 	
