@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/form.css" rel="stylesheet" style="text/css">
+<link href="css/board.css" rel="stylesheet" style="text/css">
 <SCRIPT type="text/javascript">
 		
 		function validation(userinput) {
@@ -55,23 +56,24 @@ width:95%; float:left; clear: left; margin:5px; text-align:center;
 <center>
 <form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 	
-	<table>
+	<table cellpadding="2px">
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>아이디</td>
 			<td bgcolor="#FFFFFF">
-				<s:textfield name="memberId" theme="simple" cssStyle="width:100px" maxlength="20"/>
+				<s:textfield name="memberId" theme="simple" cssStyle="width:180px" maxlength="20"/>
+				<br>
 			</td>
 		</tr>
 		<tr>
 			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>비밀번호</td>
 			<td bgcolor="#FFFFFF">
-				<s:password name="memberPasswd"  theme="simple" cssStyle="width:100px" maxlength="20"/>
+				<s:password name="memberPasswd"  theme="simple" cssStyle="width:180px" maxlength="20"/>
 			</td>
 			
 		</tr>
 		<tr align="center">
 			<td colspan="3">
-				 <input name="submit" type="submit" value="로그인" style="width: 185.2px" >
+				 <input class="button" name="submit" type="submit" value="로그인" style="width: 263.2px;" >
 			</td>
 		</tr>
 	</table>	

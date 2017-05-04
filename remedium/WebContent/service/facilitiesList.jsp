@@ -7,12 +7,12 @@
 
 <link href="css/main.css" rel="stylesheet" style="text/css">
 <style type="text/css">
-.s{
-margin : 5% auto; 
+.subject{
+margin-top: 40px; 
 line-height: 2em;
 color: black;
 }
-.c{
+.content{
 padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
 	display: block;
     font-weight: bold;
@@ -24,13 +24,13 @@ padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
     background: linear-gradient(#1d4ab3 0%, #163887 100%);
 }
 
-.h1{
+.line1{
 width:25%; float:left; background-size: cover;
 }
-.h2{
+.line2{
 width:70%; float:left; margin:5px;
 }
-.h3{
+.line3{
 width:95%; float:left; clear: left; text-align: right; margin: 5px; 
 }
 .button{
@@ -43,36 +43,40 @@ width:95%; float:left; clear: left; text-align: right; margin: 5px;
     color: white;
  
 }
+ 
+.content b a{
+color: white;
+}
 
 </style>
 
 
 </head>
 <body>
-	<div class="s">
+	<div class="subject">
 	<h2 align="center" >편의시설</h2>
 	<hr align="center" width="60%" size="1" color="gray">
 	</div>
-	<div class="h3">
+	<div class="line3">
 	<s:if test="${session.userAdmin == 1 }">	
 	<input class="button" type="button" value="시설추가"onClick="location.href='facilitiesInsertForm.action'">
 	
 	</s:if>
 	</div>
 	<s:iterator value="list" >
-		<div class="h1">
-		<div class="c"><strong>시설이름</strong></div>
-		<div class="c">
+		<div class="line1">
+		<div class="content"><strong>시설이름</strong></div>
+		<div class="content">
 			<b><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><s:property value="name" /></a></b>
 		</div>
-		<div class="c"><strong>개장시간</strong></div>
-		<div class="c"><s:property value="time" /></div>
+		<div class="content"><strong>개장시간</strong></div>
+		<div class="content"><s:property value="time" /></div>
 		</div>
 		
-		<div class="h2">
+		<div class="line2">
 		<div><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><img width="100%" height="600" alt="시설사진" src="/remedium/image/facImage/<s:property value='image'/>" ></a></div>
 		</div>
-		<div class="h3">&nbsp;</div>
+		<div class="line3">&nbsp;</div>
 	</s:iterator>
 	
 
