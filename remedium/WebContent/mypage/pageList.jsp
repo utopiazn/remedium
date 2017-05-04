@@ -13,7 +13,7 @@ a{
 color: black;
 }
 .content{
-margin : 5% auto; 
+margin-top: 20px;  
 line-height: 2em;
 color: black;
 }
