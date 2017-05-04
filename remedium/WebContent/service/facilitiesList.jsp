@@ -23,7 +23,16 @@ width:70%; float:left; margin:5px;
 .h3{
 width:95%; float:left; clear: left; text-align: right; margin: 5px; 
 }
-
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+} 
 
 </style>
 
@@ -35,7 +44,7 @@ width:95%; float:left; clear: left; text-align: right; margin: 5px;
 	</div>
 	<div class="h3">
 	<s:if test="${session.userAdmin == 1 }">	
-	<input type="button" value="시설추가"onClick="location.href='facilitiesInsertForm.action'">
+	<input class="button" type="button" value="시설추가"onClick="location.href='facilitiesInsertForm.action'">
 	
 	</s:if>
 	</div>
