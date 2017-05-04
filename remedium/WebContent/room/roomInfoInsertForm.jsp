@@ -84,7 +84,7 @@ image2	시설정보
 	<!--객실 소개 추가 처리  -->
  	<s:form action="roomInfoInsert" method="POST" enctype="multipart/form-data">
 
-		<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+		<table width="400" border="0" cellspacing="0" cellpadding="0" align="center">
 				
 			<tr>				
 				<td width="100" bgcolor="#202f58">
@@ -193,20 +193,73 @@ image2	시설정보
 			<tr bgcolor="#777777">
          			<td height="1" colspan="2"></td>	
        		</tr>
-	
-	
+       		
+       		
+       		<tr>					
+				<td width="100" bgcolor="#202f58">
+					<font color="white">이미지4:
+					</font>
+				</td>
+							
 			
-				<tr>
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="uploads" theme="simple" />
+				</td>
 				
-					<td bgcolor="#F4F4F4">
-						<s:file label="시설정보" name="image2" />
-					</td>
-				</tr>
+			</tr>
 			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+	
+	
+			<tr>						
+				<td width="100" bgcolor="#202f58">
+					<font color="white">이미지5:
+					</font>
+				</td>
+							
+			
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="uploads" theme="simple" />
+				</td>
+				
+			</tr>
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+       		
+       		
+       		<tr>		
+				
+				<td width="100" bgcolor="#202f58">
+					<font color="white">시설정보:
+					</font>
+				</td>
+							
+			
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="image2" theme="simple" />
+				</td>
+				
+			</tr>
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2" ></td>	
+       		</tr>
+       		
+       			
+		
+			<tr>
+				<td align="right" colspan="2">
+	          		<input class="button" type="submit" value="작성완료" >
+	            	<input class="button" name="list" type="button" value="목록" class="inputb" onClick="javascript:location.href='roomInfoList.action?roomClass=0'">
+	          	</td>
+			</tr>
 		
 			</table>
 		
-			<s:submit  value="저장"/>
 			
 		
 		</s:form> 

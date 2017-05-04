@@ -99,7 +99,13 @@ text-align: center;
 				 		
 		 		<td align="left"><s:property value="name"/></td>		
 		 		
-		 		<td align="left" ><s:property value="content"/></td>		
+		 		
+		 		
+		 		<td align="left" style="white-space: normal; line-height: 1.2; height: 3.6em; ">
+	 		
+		 			<font ></font><s:property value="content"/>
+		 		
+		 		</td>		
 		 		
 		 		<td align="center">
 		 		

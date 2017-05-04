@@ -4,174 +4,307 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+
+<style type="text/css">
+
+
+a{
+color: black;
+}
+.roomInfoUpdateFormTitle{
+margin : 20px; 
+line-height: 2.5em;
+color: black;
+text-align: center;
+}
+
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+}
+
+</style>
+
 </head>
 <body>
 
-	<br/>
-	<table width="450" border="0" cellspacing="0" cellpadding="2">
-	
-		<tr>
-			<td align="center">
-				<h2>객실 소개 클래스 수정</h2>
-			</td>
-		</tr>	
-	</table>	
-		
-	<br/><br/>
 
-	<table width="450" border="0" cellspacing="0" cellpadding="2">
+
+
+<div class="roomInfoUpdateFormTitle">
 	
+	<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+		<tr>
+  			<td align="center"><h2>객실 소개 클래스 수정</h2>
+ 			<hr align="center" width="60%" size="1" color="gray">
+  			<br/>
+  			</td>  			
+  		</tr>		
+  		
+  	</table>
+ 	
+  	
+  	
+  	 <s:form action="roomInfoUpdate" method="POST" enctype="multipart/form-data">
+		 	
+	 	<s:hidden name="room_class_Old" value="${resultClass.room_class}"/>
+		<s:hidden name="image_01" value="${image_01}"/>
+		<s:hidden name="image_02" value="${image_02}"/>
+		<s:hidden name="image_03" value="${image_03}"/>
+		<s:hidden name="image_04" value="${image_04}"/>	
+		<s:hidden name="image_05" value="${image_05}"/>
+		<s:hidden name="image_06" value="${resultClass.image2}"/>
+
+
+		<table width="500" border="0" cellspacing="0" cellpadding="0" align="center">
 		
-		
-		 <s:form action="roomInfoUpdate" method="POST" enctype="multipart/form-data">
-		 	<s:hidden name="room_class_Old" value="${resultClass.room_class}"/>
-			<s:hidden name="image_01" value="${image_01}"/>
-			<s:hidden name="image_02" value="${image_02}"/>
-			<s:hidden name="image_03" value="${image_03}"/>
-			<s:hidden name="image_04" value="${image_04}"/>	
-			<s:hidden name="image_05" value="${image_05}"/>
-			<s:hidden name="image_06" value="${resultClass.image2}"/>
-	
-		<tr>			
-			<td bgcolor="#F4F4F4" >
 			
-				<table width="480" border="0" cellspacing="0" cellpadding="0">
-					
-				
-					<tr>
-						<td width="100" >
-							<font color="#FF0000"></font>객실 종류:
-						</td>
-						
-						<td width="50" >
-							 <input type="text" name="room_class" value='<s:property value="resultClass.room_class"/>'  size="20" >			
-						</td>
-					</tr>
-					
-					<tr>
-						<td>
-							<font color="#FF0000"></font>객실 종류 이름:
-						</td>
-						
-						<td width="50" bgcolor="#F4F4F4">
-							 <input type="text" name="name"  value='<s:property value="resultClass.name"/>'  size="20" >			
-						</td>
-					</tr>
 			
-					<tr>
-						<td width="100" bgcolor="#F4F4F4">
-							<font color="#FF0000"></font>내용:
-						</td>
-						
-						<td width="50" bgcolor="#F4F4F4">
-						   <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="50" rows="10" />
-    			
-						</td>
-					</tr>				
+			<tr>				
+				<td width="150" bgcolor="#202f58">
+					<font color="white">
+						*객실 종류:
+				  	</font>
+				</td>
+										
+				<td width="50" bgcolor="#FFFFFF" align="left">					
+					&nbsp;<s:textfield name="room_class" value="${resultClass.room_class}" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
+					
+				</td>
+			</tr>	
 				
-				</table>
+			<tr bgcolor="#777777">
+          		<td height="1" colspan="2"></td>	
+        	</tr>
 				
-				<table width="480" border="0" cellspacing="0" cellpadding="0">
+					
+			
+			<tr>
+				<td width="150" bgcolor="#202f58">
+					<font color="white">
+						*객실 종류 이름:
+					</font>
+				</td>
+				<td width="50" bgcolor="#FFFFFF" align="left">					
+					&nbsp;<s:textfield name="name" theme="simple" value="${resultClass.name}"  cssStyle="width:270px" maxlength="50"/>				
+				</td>
+					
+			</tr>
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+			
+			<tr>
+				<td width="150" bgcolor="#202f58">
+					<font color="white">내용:
+					</font>
+				</td>
 				
-				 	<s:if test='%{!image_01.equals("")}'>
-						<tr>
-							<td  colspan="2" align="center">								
-								 	사진이 등록되어있습니다. ${image_01}						
-							</td>						
-						</tr>
-					</s:if>	
-					
-					<tr>		
-																
-						<td width="120" bgcolor="#F4F4F4">													
-							 <s:file label="이미지1" name="uploads"/>
-						</td>						
-					</tr>
-					
-					<s:if test='%{!image_02.equals("")}'>
-						<tr>
-							<td  colspan="2" align="center">								
-								 	사진이 등록되어있습니다.. ${image_02}						
-							</td>						
-						</tr>
-					</s:if>					
-					
-					<tr>	
-						<td bgcolor="#F4F4F4">
-							 <s:file label="이미지2" name="uploads" />							
- 						</td>						
-					</tr>
-					
-					<s:if test='%{!image_03.equals("")}'>
-						<tr>
-							<td  colspan="2" align="center">						
-								 	사진이 등록되어있습니다.. ${image_03}						
-							</td>						
-						</tr>
-					</s:if>				
-				
-					<tr>											
-						<td bgcolor="#F4F4F4">
-							<s:file label="이미지3" name="uploads" />
-						</td>						
-					</tr>
-				
-				
-					<s:if test='%{!image_04.equals("")}'>
-						<tr>
-							<td  colspan="2" align="center">						
-								 	사진이 등록되어있습니다.. ${image_04}						
-							</td>						
-						</tr>
-					</s:if>	
-					
-					<tr>					
-						<td bgcolor="#F4F4F4">
-							 <s:file label="이미지4" name="uploads" />							
-						</td>						
-					</tr>				
-					
-					<s:if test='%{!image_05.equals("")}'>
-						<tr>
-							<td  colspan="2" align="center">			
-								 	사진이 등록되어있습니다.. ${image_05}						
-							</td>						
-						</tr>
-					</s:if>	
-									
-					<tr>							
-						<td bgcolor="#F4F4F4">
-							<s:file label="이미지5" name="uploads" />								
-						</td>						
-					</tr>
-					
-					
-					<s:if test='%{!resultClass.image2.equals("")}'>
-						<tr>
-							<td  colspan="2" align="center">			
-								 	사진이 등록되어있습니다.. ${resultClass.image2}						
-							</td>						
-						</tr>
-					</s:if>				
+				<td width="50" bgcolor="#FFFFFF" align="left"  >			
+					 &nbsp;<s:textarea name="content"  value="${resultClass.content}" theme="simple" cssStyle="width:270px;"  rows="10" cols="40"/>			
+				</td>
+			</tr>			
 		
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+       		
+       			
+       		<tr>		
 				
-					<tr>					
-						<td bgcolor="#F4F4F4">
-							<s:file label="시설정보" name="image2" />
+				<td width="150" bgcolor="#202f58">
+					<font color="white">이미지1:
+					</font>
+				</td>
 							
-						</td>
-					</tr>				
-						
-				</table>
-			<s:submit value="수정"/>
+			
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="uploads" theme="simple" />
+					  
+					  <s:if test='%{!image_01.equals("")}'>
+					  
+					  	<br/>&nbsp;
+					  	<font size="2">
+					  	사진이 등록되어있습니다.${image_01}	
+					  	</font>
+					  </s:if>
+					  
+				</td>
+				
+			</tr>
+			
+       			
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+       		
+       			
+       		<tr>		
+				
+				<td width="150" bgcolor="#202f58">
+					<font color="white">이미지2:
+					</font>
+				</td>
+							
+			
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="uploads" theme="simple" />
+					  
+					  <s:if test='%{!image_02.equals("")}'>
+					  
+					  	<br/>&nbsp;
+					  	<font size="2">
+					  	사진이 등록되어있습니다.${image_02}	
+					  	</font>
+					  </s:if>
+					  
+				</td>
+				
+			</tr>
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+       		
+       			
+       		<tr>		
+				
+				<td width="150" bgcolor="#202f58">
+					<font color="white">이미지3:
+					</font>
+				</td>
+							
+			
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="uploads" theme="simple" />
+					  
+					  <s:if test='%{!image_03.equals("")}'>
+					  
+					  	<br/>&nbsp;
+					  	<font size="2">
+					  	사진이 등록되어있습니다.${image_03}	
+					  	</font>
+					  </s:if>
+					  
+				</td>
+				
+			</tr>
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+       		
+       			
+       		<tr>		
+				
+				<td width="150" bgcolor="#202f58">
+					<font color="white">이미지4:
+					</font>
+				</td>
+							
+			
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="uploads" theme="simple" />
+					  
+					  <s:if test='%{!image_04.equals("")}'>
+					  
+					  	<br/>&nbsp;
+					  	<font size="2">
+					  	사진이 등록되어있습니다.${image_04}	
+					  	</font>
+					  </s:if>
+					  
+				</td>
+				
+			</tr>
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+       		
+       			
+       		<tr>					
+				<td width="150" bgcolor="#202f58">
+					<font color="white">이미지5:
+					</font>
+				</td>
+							
+			
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="uploads" theme="simple" />
+					  
+					  <s:if test='%{!image_05.equals("")}'>
+					  
+					  	<br/>&nbsp;
+					  	<font size="2">
+					  	사진이 등록되어있습니다.${image_05}	
+					  	</font>
+					  </s:if>
+					  
+				</td>
+				
+			</tr>
+			
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+       		
+       			
+       		<tr>		
+				
+				<td width="150" bgcolor="#202f58">
+					<font color="white">시설정보:
+					</font>
+				</td>
+							
+			
+				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+					  &nbsp;<s:file  name="image2" theme="simple" />
+					  
+					  <s:if test='%{!resultClass.image2.equals("")}'>
+					  
+					  	<br/>&nbsp;
+					  	<font size="2">
+					  		사진이 등록되어있습니다.${resultClass.image2}	
+					  	</font>
+					  </s:if>
+					  
+				</td>
+				
+			</tr>
+			
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="2"></td>	
+       		</tr>
+       		
+			
+			
+			<tr>
+				<td align="right" colspan="2">
+	          		<input class="button" type="submit" value="작성완료" >
+	            	<input class="button" name="list" type="button" value="목록" class="inputb" onClick="javascript:location.href='roomInfoList.action?roomClass=0'">
+	          	</td>
+			</tr>
+			
+			
+					
+		
+		</table>
+		
 		
 		</s:form>
-			</td>		
-	
-		</tr>
 		
-	</table>	
-
+</div>
 	
 </body>
 </html>
