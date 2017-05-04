@@ -7,12 +7,12 @@
 <style type="text/css">
 #image /* 사진 이미지 */
 {
-	width:600px; height:420px; text-align:center;
+	width:600px; height:470px; text-align:center;
 }
 #room /* 객실 정보 */
 {
- width: 600px; font-family: "돋움", sans-serif; text-align: left; line-height: 1.7em; display:inline-block;  float: left;
-clear: left;
+ width: 700px; font-family: "돋움", sans-serif; text-align: left; line-height: 1.7em; display:inline-block;  float: left;
+clear: left; margin-bottom: 30px;
 }
 #semi /* 객실 구성 */
 {
@@ -71,7 +71,7 @@ color: black;
 
 <div id="image">
 
-<img height="400" alt="호텔로고" src="/remedium/image/roomClassImage/<s:property value='resultClass.savImage'/>" >
+<img width="600" height="450" alt="호텔로고" src="/remedium/image/roomClassImage/<s:property value='resultClass.savImage'/>" >
 <%-- <img height="400" alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" > --%>
 </div>
 
@@ -85,7 +85,7 @@ color: black;
 <s:property value="resultClass.class_name"/><br>
 객실 정원 :
 <s:if test="%{resultClass.room_capacity==0}">
-단체(5~20명 수용가능)<br>
+단체(5~10명 수용가능)<br>
 </s:if>
 <s:else>
 <s:property value="resultClass.room_capacity"/>명<br>
@@ -109,11 +109,11 @@ color: black;
 <s:elseif test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
 <input class="button" type="button" value="객실수정" onclick="location.href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>'" />
 <input class="button" type="button" value="객실삭제" onclick="location.href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>'" />
-<input class="button" type="button" value="객실목록" onclick="javascript:history.back()" />
 </s:elseif>
 <s:else>
 <input class="button" type="submit" value="객실예약"/>
 </s:else>
+<input class="button" type="button" value="객실목록" onclick="javascript:history.back()" />
 </form>
 </div>
 
