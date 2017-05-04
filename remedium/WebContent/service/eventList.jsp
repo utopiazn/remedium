@@ -12,9 +12,10 @@ color: black;
 }
 .event{
 margin : 5% auto; 
-line-height: 2em;
+line-height: 2em; 
 color: black;
-}
+
+} 
 
 .button{
     border: 3px solid #202f58;
@@ -36,10 +37,16 @@ color: black;
 </head>
 <body>
 <div class="event">
+
 <table width="900" border="0" cellspacing="0" cellpadding="0" align="center" >
   		<tr>
+  		<br>
+  		<br> 
   			<td align="center"><h2>EVENT＊PROMOTION</h2>
   			<hr align="center" width="50%" size="1" color="gray">
+  		
+  			<br>
+  			
   			</td>
   		</tr>
   		<tr>

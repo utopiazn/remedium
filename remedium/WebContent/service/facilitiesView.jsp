@@ -7,22 +7,15 @@
 
 <link href="css/main.css" rel="stylesheet" style="text/css">
 <style type="text/css">
-.s{
-width:95%; background-size: cover; padding-top:10px; padding-bottom:5px; margin:5px; text-align:center;
+
+.line3{
+width:99%; float:left; clear: left; margin:5px; text-align:center;
 }
-.c{
-padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
+.content{ margin-top: 20px;  
+line-height: 2em;
+color: black;
 }
 
-.h1{
-width:25%; float:left; background-size: cover; background-color: #E2FFAF;
-}
-.h2{
-width:95%; float:left; margin:5px; border:1px solid black;
-}
-.h3{
-width:95%; float:left; clear: left; margin:5px; text-align:center;
-}
 .button{
     border: 3px solid #202f58;
     background-color : #202f58;
@@ -31,27 +24,41 @@ width:95%; float:left; clear: left; margin:5px; text-align:center;
     font-size: 13px;
     text-decoration: none;
     color: white;
- 
+}
+.bottom{
+  padding-left: 46%;
+  padding-top: 3%;
+}
+.top{
+	background-color:#202f58;
+	color: white;
 }
 
 </style>
 </head>
 <body>
 
-<div class="s">
-<h1><b><s:property value="resultClass.name" /></b></h1>
+<div class="content">
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+	<tr>
+		<td align="center"><h2>${resultClass.name}</h2>
+		<hr align="center" width="60%" size="1" color="gray">
+		<br/>
+		</td>
+	</tr>
+</table>
 </div>
 
-<div class="h3">
+<div class="line3">
 <img width="600" height="500" alt="시설사진" src="/remedium/image/facImage/<s:property value='resultClass.image'/>" >
 </div>
 	
-<div class="h3">
+<div class="line3">
 <s:property value="resultClass.content" /><br/>
 운영시간 : <s:property value="resultClass.time" /><br/>
 </div>
 	
-<div class="h3">
+<div class="line3">
 <input class="button" type="button" value="시설정보수정"onClick="location.href='facilitiesModifyForm.action?no=<s:property value="resultClass.no" />'">  
 <input class="button" type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />&image=<s:property value="resultClass.image" />'">
 <input class="button" type="button" value="시설목록"onClick="location.href='facilitiesList.action'">

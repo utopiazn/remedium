@@ -9,20 +9,47 @@
 <title></title>
 
  <style type="text/css">
-table
-{
-font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weight: bolder;  text-decoration: none;
- }
- </style>
+a{
+color: black;
+}
+.content{
+margin-top: 20px;  
+line-height: 2em;
+color: black;
+}
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+}
+.bottom{
+  padding-left: 46%;
+  padding-top: 3%;
+}
+.top{
+	background-color:#202f58;
+	color: white;
+}
+</style>
  
 </head>
 <body>
-<br>
-
-<h2><b>예 약 목 록</b></h2>
-
-<table width="100%" border="1" cellspacing="0" cellpadding="3">
-<tr valign="middle" bgcolor="#F3F3F3">
+<div class="content">
+<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+	<tr>
+		<td align="center"><h2>객실 예약 리스트</h2>
+		<hr align="center" width="60%" size="1" color="gray">
+		<br/>
+		</td>
+	</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr class="top" align="center">
 <td><strong>회원 ID</strong></td>
 <td><strong>예약 번호</strong></td>
 <td><strong>객실 번호</strong></td>
@@ -32,7 +59,15 @@ font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weigh
 <td><strong>예약금</strong></td>
 <td><strong>예약완료 여부</strong></td>
 </tr>
-
+<s:if test="reslist.size() <= 0">
+	<tr>
+		<td colspan="8" align="center">예약된 객실이 없습니다</td>
+	</tr>
+	<tr bgcolor="#777777">
+		<td height="1" colspan="8"></td>
+	</tr>
+</s:if>
+<s:else>
 <s:iterator value="reslist">
 <tr>
 <td><s:property value="memberID"/></td>
@@ -54,16 +89,23 @@ font-family: "돋움",sans-serif; color: #000000; text-align: center; font-weigh
 <s:hidden name="reservationNo" value="%{reservationNo}" />
 <s:hidden name="money" value="%{money}" />
 <s:hidden name="memberID" value="%{memberID}" />
-<input type="button" value="예약확인" onclick="location.href='roomAdminReservation.action?reservationNo=${reservationNo}'">
-<input type="submit" value="예약취소">
+<s:if test='%{reservationCheck.equals("n")}'>
+<input class="button" type="button" value="예약확인" onclick="location.href='roomAdminReservation.action?reservationNo=${reservationNo}'">
+</s:if>
+<input class="button" type="submit" value="예약취소">
 </form>
 </s:if>
 </td>
+</tr>
+<tr bgcolor="#777777">
+	<td height="1" colspan="8"></td>
+</tr>
 </s:iterator>
+</s:else>
 <tr align="center">
 	<td colspan="8"><s:property value="pagingHtml" escape="false"/></td>
 </tr>
 </table>
-
+</div>
 </body>
 </html>

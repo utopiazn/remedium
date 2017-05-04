@@ -14,6 +14,7 @@ color: black;
 margin : 5% auto; 
 line-height: 2em;
 color: black;
+text-align: center;
 }
 
 .button{
@@ -98,7 +99,7 @@ color: black;
 					<s:else>
 						답변완료
 					</s:else>	
-				
+					
 				</td>
 			</tr>
 			<tr bgcolor="#777777">

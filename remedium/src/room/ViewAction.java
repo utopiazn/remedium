@@ -19,12 +19,15 @@ public class ViewAction extends ActionSupport implements SessionAware {
 	private String firstDate;
 	private String lastDate;
 	private int people;
+	private String classInfo;
 	
 	@Override
 	//객실 개별 뷰
 	public String execute() throws Exception {
 		
 		resultClass = (RoomBean)util.ProjectUtil.sqlMapper.queryForObject("roomSQL.selectOne", getNum());
+		
+		classInfo = util.ProjectUtil.getRoomClassInfo(resultClass.getRoom_class());
 		
 		return SUCCESS;
 	}
@@ -83,6 +86,14 @@ public class ViewAction extends ActionSupport implements SessionAware {
 
 	public Map getSession() {
 		return session;
+	}
+
+	public String getClassInfo() {
+		return classInfo;
+	}
+
+	public void setClassInfo(String classInfo) {
+		this.classInfo = classInfo;
 	}
 
 	
