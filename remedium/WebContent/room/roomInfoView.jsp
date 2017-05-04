@@ -55,30 +55,33 @@
 			
 		}
 	
-		.inner a img{
-			
+		.inner a img{		
 						
 			width: 10%;
 			height: 10%;			
-			margin: 1PX;
-			
+			margin: 1PX;			
 			
 		}
-		
-	
-		
-		
-		.info2 img{			
-						
 			
+		
+		.info2 img{		
 		
 			width: 60%;
 			height: 80%;	
 			text-align: center;	 	
 			/*  clear: both; */
+			
+			
+		}
 		
-			
-			
+		
+		
+		
+		
+		
+		.content1 p{
+			padding: 0px 18%;
+			text-align: left;	
 		}
 		
 	</style>
@@ -149,6 +152,21 @@
 </div>
 </div>
 
+
+
+<div class="content1">
+	
+	<p>
+	${resultClass.content}
+	</p>
+	
+	
+</div>
+
+
+
+
+<br/><br/>
 
 <div class="info2">
 

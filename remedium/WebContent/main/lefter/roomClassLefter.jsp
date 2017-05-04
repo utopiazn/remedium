@@ -52,7 +52,7 @@
 	 #navi2 he a:active{
 	 
 	 	background: #202f58;	 	 
-	 	background: linear-gradient(#1a1a1a 0%,##202f58 100%);
+	 	background: linear-gradient(#1a1a1a 0%,#202f58 100%);
 	 	color:#ffffff;
 	 	text-shadow: 0 1px 1px #000;
 	 
