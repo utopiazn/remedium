@@ -80,13 +80,13 @@ color: black;
         </tr>
 				
         <tr>
-          <td width="100" bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이벤트 종류</td>
+          <td width="100" bgcolor="#202f58"><font color="white">*  이벤트 종류</font></td>
           <td align="left" width="500" bgcolor="#FFFFFF">
             <s:textfield name="name" theme="simple" value="%{resultClass.name}" cssStyle="width:370px" maxlength="50"/>
           </td>
         </tr>
           <tr>
-	<td align="left" width="100" bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이미지</td>
+	<td align="left" width="100" bgcolor="#202f58"><font color="white">*  이미지 </font></td>
 	<td align="left"><s:file name="upload" theme="simple"/>
 	<s:if test="%{resultClass.image!=null}"><br/>
 	<small>사진이 등록되어있습니다. ${resultClass.image}</small>
@@ -99,7 +99,7 @@ color: black;
         </tr>
 
         <tr>
-          <td bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이벤트 시작</td>
+          <td bgcolor="#202f58"><font color="white">*  이벤트 시작</font></td>
           <td align="left" bgcolor="#FFFFFF">
           <input type="date" name="firstdate">
 
@@ -111,7 +111,7 @@ color: black;
         </tr>
         
         <tr>
-          <td bgcolor="#F4F4F4"><font color="#FF0000">*</font>  이벤트 종료</td>
+          <td bgcolor="#202f58"><font color="white">*  이벤트 종료</font></td>
           <td align="left" bgcolor="#FFFFFF">
            <input type="date" name="lastdate">
            <%--  <s:textfield name="lastdate" theme="simple" value="%{resultClass.lastdate}" cssStyle="width:100px" maxlength="20"/> --%>
@@ -124,7 +124,7 @@ color: black;
         
         
 	<tr>
-          <td bgcolor="#F4F4F4"><font color="#FF0000">*</font>  내용 </td>
+          <td bgcolor="#202f58"><font color="white">*  내용</font></td>
           <td align="left" bgcolor="#FFFFFF">
             <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="50" rows="10" />
           </td>
