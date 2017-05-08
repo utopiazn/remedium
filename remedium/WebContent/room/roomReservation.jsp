@@ -66,35 +66,61 @@ color: black;
 <form action="roomReservation.action" method="post" enctype="multipart/form-data" onsubmit="return checkCash(this);">
 	<table width="600" border="0" align="center" cellspacing="0" cellpadding="0">
 			<img height="400" alt="객실사진" src="/remedium/image/roomClassImage/${image}" >
-			<tr>
-				<td colspan=2>객실번호 : ${num }호</td>
-				<td>객실정원 : ${room_capacity}명</td>
-				<td>예약인원 : ${session.people}명</td>
-			</tr>
-			<tr bgcolor="#777777">
-				<td height="1" colspan="4"></td>
-			</tr>
-			<tr>
-				<td bgcolor="#202f58"><font color="white">입실날짜</font></td><td>${firstDate }</td>
-				<td bgcolor="#202f58"><font color="white">퇴실날짜</font></td><td>${lastDate }</td>
-			</tr>
-			<tr bgcolor="#777777">
-				<td height="1" colspan="4"></td>
-			</tr>	
-			<tr>
-				<td bgcolor="#202f58" colspan=2><font color="white">예약금액</font></td><td colspan=2>${price }원</td>
-			</tr>
-			<tr bgcolor="#777777">
-				<td height="1" colspan="4"></td>
-			</tr>
-			<tr>
-				<td bgcolor="#202f58" colspan=2><font color="white">충전잔액</font></td><td colspan=2>${session.cash}원</td>
-			</tr>
-			<tr bgcolor="#777777">
-				<td height="1" colspan="4"></td>
-			</tr>
 			
+			<tr bgcolor="#777777">
+				<td height="1" colspan="2"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#202f58"><font color="white">객실번호</font></td>
+				<td>${num }호</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="2"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#202f58"><font color="white">객실정원</font></td>
+				<td>${room_capacity}명</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="2"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#202f58"><font color="white">예약인원</font></td>
+				<td>${session.people}명</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="2"></td>
+			</tr>			
+			<tr>
+				<td bgcolor="#202f58"><font color="white">입실날짜</font></td>
+				<td>${firstDate }</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="2"></td>
+			</tr>			
+			<tr>
+				<td bgcolor="#202f58"><font color="white">퇴실날짜</font></td>
+				<td>${lastDate }</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="2"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#202f58"><font color="white">예약금액</font></td>
+				<td>${price }원</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="2"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#202f58"><font color="white">충전잔액</font></td>
+				<td>${session.cash}원</td>
+			</tr>
+			<tr bgcolor="#777777">
+				<td height="1" colspan="2"></td>
+			</tr>			
 	</table>
+	
 	<br>
 <input type="hidden" name="no" value="${num}">
 <input type="hidden" name="firstDate" value="${firstDate}">

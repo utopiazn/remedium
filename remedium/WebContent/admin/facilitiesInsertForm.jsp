@@ -70,7 +70,7 @@ color: black;
        	</tr>
 		<tr>
 		<td width="100" bgcolor="#202f58"><font color="white">정보</font></td>
-		<td align="left">&nbsp;<s:textarea name="content" cols="50" rows="5" theme="simple" value="%{resultClass.content}"></s:textarea>
+		<td align="left" style="padding-top:10px;" >&nbsp;<s:textarea name="content" cols="50" rows="5" theme="simple" value="%{resultClass.content}"></s:textarea>
 		</td> 
 		</tr>
 		<tr bgcolor="#777777">

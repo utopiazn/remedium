@@ -28,8 +28,8 @@ text-decoration: none;
 &nbsp;
 </s:if> --%>
 <s:if test="${session.memberId != null}"> <!-- 아이디가 null이 아닌 경우 -->
-<s:property value="session.memberName" />님 로그인 하셨습니다.<br>
-현재 Cash <s:property value="session.cash" />원<br>
+<%-- <s:property value="session.memberName" />님 로그인 하셨습니다.<br>
+현재 Cash <s:property value="session.cash" />원<br> --%>
 
 <a href="myPageMain.action" style="color: white;">마이페이지</a>
 &nbsp;
