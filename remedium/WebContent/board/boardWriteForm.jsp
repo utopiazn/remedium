@@ -80,7 +80,7 @@ text-align: center;
 	<s:else>
 		<form action="boardModify.action" method="post" enctype="multipart/form-data">
 			<s:hidden name="no" value="%{resultClass.no}" />
-			<s:hidden name="memberName" value="%{resultClass.memberName}" />
+			<s:hidden name="name" value="%{resultClass.name}" />
 			<s:hidden name="currentPage" value="%{currentPage}" />
 	</s:else> 
 	
