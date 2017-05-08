@@ -11,7 +11,7 @@ color: black;
 margin : 20px; 
 line-height: 2em;
 color: black;
-text-align: center;
+
 }
 
 .button{
@@ -41,7 +41,7 @@ text-align: center;
 			document.location.href=url;
 		}
 		else{
-			alert("취소하셧습니다.");
+			alert("취소하셨습니다.");
 			return
 		}
 		
@@ -60,23 +60,23 @@ text-align: center;
   	</tr>
   	</table>
 		
-<table width="700" border="1" cellspacing="0" cellpadding="0" align="center">
+<table width="900" border="1" cellspacing="0" cellpadding="0" align="center">
       
 			
- 
-        <td width="100" bgcolor="#202f58"><font color="white"> 질문 유형</font> </td>
-        <td align="left" width="100" bgcolor="#FFFFFF">
+ 	<tr>
+        <td width="30" bgcolor="#202f58"><font color="white"> 질문 유형</font> </td>
+        <td align="left" width="50" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.type" />
         </td>
         <td width="40" bgcolor="#202f58"><font color="white"> 제 목</font></td>
-        <td align="left" width="100" bgcolor="#FFFFFF">
+        <td align="left" width="200" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.subject" />
         </td>    
       </tr> 
       
-      <tr >    
+      <tr>    
        	<td width="100" height="300" bgcolor="#202f58"><font color="white"> 내 용 </font></td>
-        <td colspan="3"bgcolor="#FFFFFF">
+        <td colspan="3"bgcolor="#FFFFFF" style="margin-top: 0px;">
           &nbsp;A. <s:property value="resultClass.content" />
         </td>
        </tr>
