@@ -35,8 +35,10 @@ text-decoration: none;
 &nbsp;
 <a href="logout.action" style="color: white;">로그아웃</a>
 &nbsp;
-
-
+<br/>
+<s:property value="session.memberName" />님 로그인 하셨습니다.
+<br/>
+Cash point: <s:property value="session.cash" />
 </s:if>
 <s:else>
 <a href="joinForm.action" style="color: white;">회원가입</a>
