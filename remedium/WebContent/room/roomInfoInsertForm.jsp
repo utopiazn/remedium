@@ -45,6 +45,11 @@ text-align: center;
 }
 
 
+.textarea_td{
+	padding-top: 10px;
+}
+
+
 </style>
 
 
@@ -84,172 +89,145 @@ image2	시설정보
 	<!--객실 소개 추가 처리  -->
  	<s:form action="roomInfoInsert" method="POST" enctype="multipart/form-data">
 
-		<table width="400" border="0" cellspacing="0" cellpadding="0" align="center">
+		<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+				
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="4"></td>	
+       		</tr>	
 				
 			<tr>				
-				<td width="100" bgcolor="#202f58">
-					<font color="white">
-						*객실 종류:
+				<td width="80" bgcolor="#202f58">
+					<font color="white" >
+						객실 종류:
 				  	</font>
 				</td>
 										
 				<td width="50" bgcolor="#FFFFFF" align="left">					
 					&nbsp;<s:textfield name="room_class" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
 				</td>
-			</tr>
 				
-			<tr bgcolor="#777777">
-          		<td height="1" colspan="2"></td>	
-        	</tr>
-			
-			<tr>
-				<td width="100" bgcolor="#202f58">
+				<td width="80" bgcolor="#202f58">
 					<font color="white">
-						*객실 종류 이름:
+						객실 종류 이름:
 					</font>
 				</td>
 				<td width="50" bgcolor="#FFFFFF" align="left">					
 					&nbsp;<s:textfield name="name" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
 				</td>
-					
+				
+			</tr>
+				
+			
 			</tr>
 			
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
+         			<td height="1" colspan="4"></td>	
        		</tr>
 		
 			<tr>
-				<td width="100" bgcolor="#202f58">
+				<td width="80" bgcolor="#202f58">
 					<font color="white">내용:
 					</font>
 				</td>
 				
-				<td width="50" bgcolor="#FFFFFF" align="left"  >			
-					 &nbsp;<s:textarea name="content" theme="simple" cssStyle="width:270px;"  rows="5" cols="40"/>			
+				<td class="textarea_td" width="50" bgcolor="#FFFFFF" align="left" colspan="3" >			
+					 &nbsp;<s:textarea name="content" theme="simple" cssStyle="width:600px;"  rows="5" cols="40"/>			
 				</td>
 			</tr>			
 		
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
+         		<td height="1" colspan="4"></td>	
        		</tr>
 		
 
 	
 			<tr>		
 				
-				<td width="100" bgcolor="#202f58">
+				<td width="80" bgcolor="#202f58">
 					<font color="white">이미지1:
 					</font>
 				</td>
 							
 			
-				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+				<td width="80" bgcolor="#FFFFFF" align="left"  >	
 					  &nbsp;<s:file  name="uploads" theme="simple" />
 				</td>
 				
-			</tr>
-			
-			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
-       		</tr>
-		
-		
-		
-			
-			<tr>		
-				
-				<td width="100" bgcolor="#202f58">
+				<td width="80" bgcolor="#202f58">
 					<font color="white">이미지2:
 					</font>
 				</td>
 							
 			
-				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+				<td width="80" bgcolor="#FFFFFF" align="left"  >	
 					  &nbsp;<s:file  name="uploads" theme="simple" />
 				</td>
-				
+								
 			</tr>
 			
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
-       		</tr>
-		
+         		<td height="1" colspan="4"></td>	
+       		</tr>		
 	
 		
 			<tr>		
 				
-				<td width="100" bgcolor="#202f58">
+				<td width="80" bgcolor="#202f58">
 					<font color="white">이미지3:
 					</font>
 				</td>
 							
 			
-				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+				<td width="80" bgcolor="#FFFFFF" align="left"  >	
 					  &nbsp;<s:file  name="uploads" theme="simple" />
 				</td>
 				
-			</tr>
-			
-			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
-       		</tr>
-       		
-       		
-       		<tr>					
-				<td width="100" bgcolor="#202f58">
+				<td width="80" bgcolor="#202f58">
 					<font color="white">이미지4:
 					</font>
 				</td>
 							
 			
-				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+				<td width="80" bgcolor="#FFFFFF" align="left"  >	
 					  &nbsp;<s:file  name="uploads" theme="simple" />
 				</td>
 				
 			</tr>
 			
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
+         			<td height="1" colspan="4"></td>	
        		</tr>
-	
-	
+       		
+       		
+       		
 			<tr>						
-				<td width="100" bgcolor="#202f58">
+				<td width="80" bgcolor="#202f58">
 					<font color="white">이미지5:
 					</font>
 				</td>
 							
 			
-				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+				<td width="80" bgcolor="#FFFFFF" align="left"  >	
 					  &nbsp;<s:file  name="uploads" theme="simple" />
 				</td>
 				
-			</tr>
-			
-			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
-       		</tr>
-       		
-       		
-       		<tr>		
-				
-				<td width="100" bgcolor="#202f58">
+				<td width="80" bgcolor="#202f58">
 					<font color="white">시설정보:
 					</font>
 				</td>
 							
 			
-				<td width="50" bgcolor="#FFFFFF" align="left"  >	
+				<td width="80" bgcolor="#FFFFFF" align="left"  >	
 					  &nbsp;<s:file  name="image2" theme="simple" />
 				</td>
 				
 			</tr>
 			
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2" ></td>	
+         			<td height="1" colspan="4"></td>	
        		</tr>
-       		
-       			
+       		  		
+
 		
 			<tr>
 				<td align="right" colspan="2">

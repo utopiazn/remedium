@@ -13,15 +13,19 @@ line-height: 2em;
 color: black;
 }
 .content{
-padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
-	display: block;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: '돋음', sans-serif;
-    font-size: 14px;
-    color: #ffffff;
-    text-shadow: 0 1px 1px #000;
-    background: linear-gradient(#1d4ab3 0%, #163887 100%);
+padding-top:5px; padding-bottom:5px;
+		display: block;
+	 	font-weight: bold;
+	 	text-decoration: none;
+	 	margin: 5px;
+	 	padding: 10px;
+	 	font-family: '돋음', sans-serif;
+	 	font-size: 14px;
+	 	color: #ffffff;
+	 	text-shadow: 0 1px 1px #000;	 	
+	 	
+	 	background: #202f58;	 	 
+	 	background: linear-gradient(#1a1a1a 0%,#202f58 100%); 
 }
 
 .line1{

@@ -28,25 +28,7 @@
 			return true;
 		}
 </SCRIPT>
-<%-- <style type="text/css">
-.login{
-width:95%; background-size: cover; padding-top:10px; padding-bottom:5px; margin:5px; text-align:center;
-}
-.c{
-padding-top:5px; padding-bottom:5px; border:1px solid black; margin:5px;
-}
 
-.h1{
-width:25%; float:left; background-size: cover; background-color: #E2FFAF;
-}
-.h2{
-width:95%; float:left; margin:5px; border:1px solid black;
-}
-.h3{
-width:95%; float:left; clear: left; margin:5px; text-align:center;
-}
-
-</style> --%>
 </head>
 
 <body>
@@ -58,14 +40,14 @@ width:95%; float:left; clear: left; margin:5px; text-align:center;
 	
 	<table cellpadding="4">
 		<tr>
-			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>아이디</td>
+			<td ><font color="#FF0000">* </font>아이디</td>
 			<td bgcolor="#FFFFFF">
-				<s:textfield name="memberId" theme="simple" cssStyle="width:180px" maxlength="20"/>
+				<s:textfield name="memberId" theme="simple" cssStyle="width:180px " maxlength="20"/>
 				<br>
 			</td>
 		</tr>
 		<tr>
-			<td bgcolor="#F4F4F4"><font color="#FF0000">* </font>비밀번호</td>
+			<td><font color="#FF0000">* </font>비밀번호</td>
 			<td bgcolor="#FFFFFF">
 				<s:password name="memberPasswd"  theme="simple" cssStyle="width:180px" maxlength="20"/>
 			</td>

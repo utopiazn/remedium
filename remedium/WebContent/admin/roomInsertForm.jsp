@@ -91,7 +91,7 @@ color: black;
         	</tr>
 			<tr>
 				<td width="100" bgcolor="#202f58"><font color="white">객실소개</font></td>
-				<td align="left">&nbsp;<s:textarea name="room_comment" cols="50" rows="5" theme="simple" value="%{resultClass.room_comment}"/></td>
+				<td align="left" style="padding-top:10px;" >&nbsp;<s:textarea name="room_comment" cols="50" rows="5" theme="simple" value="%{resultClass.room_comment}"/></td>
 			</tr>
 			<tr bgcolor="#777777">
         		<td height="1" colspan="2"></td>	
