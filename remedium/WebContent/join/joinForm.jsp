@@ -134,6 +134,10 @@
 
 		<table width="550" border="0" cellspacing="0" cellpadding="0">
 			
+			<tr bgcolor="#777777">
+	          <td height="1" colspan="2"></td>	
+	        </tr>
+			
 			<tr>
 				<td width="100" bgcolor="#202f58" align="left">
 					<font color="#FFFFFF">* 아이디</font>
@@ -202,23 +206,23 @@
           <td height="1" colspan="2"></td>	
         </tr>
         
-			<tr>
-				<td width="100" bgcolor="#202f58"align="left">
-					<font color="#FFFFFF">* 성별</font>
-					<br/>
-				</td>
+		<tr>
+			<td width="100" bgcolor="#202f58"align="left">
+				<font color="#FFFFFF">* 성별</font>
+				<br/>
+			</td>
 				
 			
 			
-				<td width="50" bgcolor="#FFFFFF" align="left">
-									
-					<input type="radio" name="gender" value="M"  checked="checked" />남자
-					<input type="radio" name="gender" value="W"/>여자
+			<td width="50" bgcolor="#FFFFFF" align="left">
+								
+				<input type="radio" name="gender" value="M"  checked="checked" />남자
+				<input type="radio" name="gender" value="W"/>여자
 
-				
-				</td>
-			</tr>
-			 <tr bgcolor="#777777">
+			
+			</td>
+		</tr>
+		<tr bgcolor="#777777">
           <td height="1" colspan="2"></td>	
         </tr>
         
