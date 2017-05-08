@@ -9,6 +9,7 @@ public class EventBean {
 	private Date firstdate; // s이벤트 시작 날짜
 	private Date lastdate; // 이벤트 종료 날짜
 	private String image; // 이벤트 이미지
+	private int listNo;
 	
 	public int getNo() {
 		return no;
@@ -45,6 +46,12 @@ public class EventBean {
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	public int getListNo() {
+		return listNo;
+	}
+	public void setListNo(int listNo) {
+		this.listNo = listNo;
 	}
 	
 	

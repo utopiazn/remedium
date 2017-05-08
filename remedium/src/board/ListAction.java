@@ -76,6 +76,16 @@ public class ListAction extends ActionSupport  implements SessionAware {
 		}	
 		
 		list = list.subList(page.getStartCount(), lastCount);
+		
+		int count = list.size();
+		
+		for(BoardBean no : list){
+			
+			no.setListNo(count--);
+			
+		}
+		
+		
 // 페이징 처리 할때 필요한 부분 
 	
 		return SUCCESS;

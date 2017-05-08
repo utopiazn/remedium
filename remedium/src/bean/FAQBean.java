@@ -7,6 +7,7 @@ public class FAQBean {
 	private String content; // 질문 종류
 	private String faqId;
 	
+	
 	public String getType() {
 		return type;
 	}

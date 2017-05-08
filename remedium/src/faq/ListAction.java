@@ -67,6 +67,8 @@ public class ListAction extends ActionSupport implements SessionAware {
 		
 		list = list.subList(page.getStartCount(), lastCount);
 		
+		
+		
 		return SUCCESS;
 	}
 	

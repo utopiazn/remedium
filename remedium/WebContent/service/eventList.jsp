@@ -77,7 +77,7 @@ color: black;
 			</s:url>
 				
 	     	      <tr bgcolor="#FFFFFF"  align="center">
-	        		<td><s:property value="no" /></td>
+	        		<td><s:property value="listNo" /></td>
 	        		<td align="center"> &nbsp;<s:a href="%{viewURL}"><s:property value="name" /></s:a></td>
 	        		<td align="center"><s:property value="firstdate" /></td>
 					<td align="center"><s:property value="lastdate" /></td>
@@ -145,7 +145,7 @@ color: black;
 			</s:url>
 				
 	     	      <tr bgcolor="#FFFFFF"  align="center">
-	        		<td><s:property value="no" /></td>
+	        		<td><s:property value="listNo" /></td>
 	        		<td align="center"> &nbsp;<s:a href="%{viewURL}"><s:property value="name" /></s:a></td>
 	        		<td align="center"><s:property value="firstdate" /></td>
 					<td align="center"><s:property value="lastdate" /></td>

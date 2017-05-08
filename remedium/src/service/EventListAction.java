@@ -76,6 +76,12 @@ public class EventListAction extends ActionSupport implements SessionAware {
 		//list = list.subList(page.getStartCount(), lastCount);
 		System.out.println(list.size());
 		
+		int count = list.size();
+		
+		for(EventBean num : list){
+			num.setListNo(count--);
+		}
+		
 		return SUCCESS;
 	}
 

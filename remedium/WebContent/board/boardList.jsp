@@ -78,8 +78,8 @@ height: 22px;
 				</s:param>
 			</s:url>
 			<tr bgcolor="#FFFFFF" align="center">
-				<td><s:property value="no"/>
-		
+				<td><s:property value="listNo"/>
+					
 				</td>
 				<td align="left"> 
 				<s:if test="re_step != 0">

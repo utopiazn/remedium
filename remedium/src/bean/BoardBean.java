@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class BoardBean {
 
+	private int listNo;
 	private int no; 	//글 번호
 	private String subject; 	//제목
 	private String memberID; 	//회원 ID
@@ -68,6 +69,13 @@ public class BoardBean {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public int getListNo() {
+		return listNo;
+	}
+	public void setListNo(int listNo) {
+		this.listNo = listNo;
+	}
+	
 	
 	
 	
