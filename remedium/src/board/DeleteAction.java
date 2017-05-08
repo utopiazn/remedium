@@ -23,7 +23,7 @@ public class DeleteAction extends ActionSupport  implements SessionAware {
 	private int no;
 	private int ref;
 	private int re_step;
-	
+	 
 	BoardBean paramClass;
 	BoardBean resultClass;
 	

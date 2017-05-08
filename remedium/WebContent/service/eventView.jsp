@@ -24,6 +24,8 @@ color: black;
     font-size: 13px;
     text-decoration: none;
     color: white;
+    width: 10%;
+    height: 5%;
  
 }  
 .top{
@@ -38,18 +40,25 @@ color: black;
 	</script>
 </head>
 <body><div class="event">
-<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
+<table width="800" border="0" cellspacing="0" cellpadding="2" align="center">
   		<tr>
   			<td align="center"><h2>EVENT * PROMOTION</h2>
-
+	<hr align="center" width="50%" size="1" color="gray">
+  			<br/>
   			</td>
   		</tr>
   		<tr>
   			<td height="20"></td>
   		</tr>
+  		  <tr>
+          <td align="right">
+            <input class="button" name="list" type="button" value="목록" class="inputb" onClick="javascript:location.href='eventList.action?currentPage=<s:property value="currentPage" />'">
+          </td>
+        </tr>
   	</table>
 		
-<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+<table width="800" border="0" cellspacing="0" cellpadding="0" align="center">
+     
       
       <tr bgcolor="#777777">
         <td height="1" colspan="4"></td>
@@ -122,14 +131,9 @@ color: black;
        
         </td>
       </tr>
-      <img height="400" alt="이벤트사진" src="/remedium/image/eventImage/<s:property value='resultClass.image'/>" >
+      <img height="600" width="800" alt="이벤트사진" src="/remedium/image/eventImage/<s:property value='resultClass.image'/>" >
 
-     <tr>
-          <td align="right" colspan="2">
-            <input class="button" name="list" type="button" value="목록" class="inputb" onClick="javascript:location.href='eventList.action?currentPage=<s:property value="currentPage" />'">
-          </td>
-        </tr>
-
+    
   </table>
   </div>
 </body>

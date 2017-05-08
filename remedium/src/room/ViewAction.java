@@ -16,6 +16,7 @@ public class ViewAction extends ActionSupport implements SessionAware {
 	private RoomBean resultClass = new RoomBean();
 	
 	private int num;
+	private int no;
 	private String firstDate;
 	private String lastDate;
 	private int people;
@@ -25,8 +26,11 @@ public class ViewAction extends ActionSupport implements SessionAware {
 	//객실 개별 뷰
 	public String execute() throws Exception {
 		
-		resultClass = (RoomBean)util.ProjectUtil.sqlMapper.queryForObject("roomSQL.selectOne", getNum());
-		
+		System.out.println("넘버"+ getNo());
+		if(getNo()!=0){
+			setNum(getNo());
+		}
+		resultClass = (RoomBean)util.ProjectUtil.sqlMapper.queryForObject("roomSQL.selectOne", getNum());	
 		classInfo = util.ProjectUtil.getRoomClassInfo(resultClass.getRoom_class());
 		
 		return SUCCESS;
@@ -94,6 +98,14 @@ public class ViewAction extends ActionSupport implements SessionAware {
 
 	public void setClassInfo(String classInfo) {
 		this.classInfo = classInfo;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
 	}
 
 	

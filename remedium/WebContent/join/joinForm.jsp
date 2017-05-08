@@ -117,6 +117,8 @@
 		<tr>
 			<td align="center">
 				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원 가입</h2>
+				<hr align="center" width="80%" size="1" color="gray">
+				<br>
 			</td>
 		</tr>	
 		

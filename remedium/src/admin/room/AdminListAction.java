@@ -38,7 +38,7 @@ public class AdminListAction extends ActionSupport implements SessionAware {
 		reslist = util.ProjectUtil.sqlMapper.queryForList("roomReservationSQL.adminlist");
 		
 		//페이징처리
-		url = "roomAllList.action?";
+		url = "roomAdminList.action?";
 		
 		totalCount = reslist.size(); // 회원 수 만큼 토탈 카운트에 넣음
 		

@@ -15,7 +15,7 @@
 			document.location.href=url;
 		}
 		else{
-			alert("취소하셧습니다.");
+			alert("취소하였습니다.");
 			return
 		}
 		
@@ -102,7 +102,7 @@ text-align: center;
 		<center>
 		<input name="list" type="button" value="글목록" class="button" onClick="javascript:location.href='boardList.action'">
 		<s:if test ="resultClass.Name == '${session.memberName }' || '${ session.userAdmin == '1' }'" >&nbsp;
-    		<input name="modify" type="button" value="글수정" class="button" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
+    		<input type="button" value="글수정" class="button" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
 			&nbsp;<input type="button" value="글삭제" class="button" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />&ref=<s:property value="resultClass.ref" />&re_step=<s:property value="resultClass.re_step" />')">
 		</s:if>
 		<s:if test="${ session.userAdmin == '1' }">

@@ -84,14 +84,14 @@ color: black;
 				단체
 				</s:if>
 				<s:else>
-				<s:property value="people"/>
+				<s:property value="room_capacity"/>
 				</s:else>
 				</td>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="2"></td>
 			</tr>
-			<tr>
+			<%-- <tr>
 				<td bgcolor="#202f58"><font color="white">예약인원</font></td>
 				<td>
 				<s:if test='%{session.people==0}'>
@@ -104,7 +104,7 @@ color: black;
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="2"></td>
-			</tr>			
+			</tr> --%>
 			<tr>
 				<td bgcolor="#202f58"><font color="white">입실날짜</font></td>
 				<td>${firstDate }</td>
@@ -120,15 +120,15 @@ color: black;
 				<td height="1" colspan="2"></td>
 			</tr>
 			<tr>
-				<td bgcolor="#202f58"><font color="white">예약금액</font></td>
-				<td>${price }원</td>
+				<td bgcolor="#202f58"><font color="white">필요Cash</font></td>
+				<td>${price }Cash</td>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="2"></td>
 			</tr>
 			<tr>
-				<td bgcolor="#202f58"><font color="white">충전잔액</font></td>
-				<td>${session.cash}원</td>
+				<td bgcolor="#202f58"><font color="white">잔여Cash</font></td>
+				<td>${session.cash}Cash</td>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="2"></td>
@@ -147,7 +147,7 @@ color: black;
 
 
 <input class="button" type="submit" value="객실예약">
-<input class="button" type="button" value="처음으로" onclick="location.href='/remedium/main.action'" />
+<input class="button" type="button" value="뒤로가기" onclick="javascript:history.back()" />
 </form>
 </div>
 </body>

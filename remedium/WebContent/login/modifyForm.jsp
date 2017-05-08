@@ -160,7 +160,8 @@
 </table>	
 <br/>
 		
-<input type="submit" value="수 정" class="button">	
+<input type="submit" value="수 정" class="button">
+<input type="button" value="취 소" class="button" onClick="javascript:location.href='myPageMain.action'">	
 		
 	
 </form>

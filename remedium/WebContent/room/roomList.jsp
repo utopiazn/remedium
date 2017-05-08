@@ -43,8 +43,16 @@ color: black;
 			<br/>
 			</td>
 		</tr>
+
 	</table>
-	<table width="100%"><tr><td>
+	<table width="100%">
+	<tr>		
+		<tr>
+			<td align="right">
+				<input type="button" value="마이페이지로 이동" class="button"  onClick="javascript:location.href='myPageMain.action'">
+			</td>
+		</tr>
+		 <td>
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr class="top" align="center">
 			<td><strong>객실번호</strong></td>
@@ -79,7 +87,7 @@ color: black;
 			<s:property value="room_capacity"/>명<br>
 			</s:else></td>
 			
-			<td align="right">1일  <s:property value="price"/>원</td>
+			<td align="right">1일  <s:property value="price"/>Cash</td>
 		</tr>
 		<tr bgcolor="#777777">
 			<td height="1" colspan="6"></td>

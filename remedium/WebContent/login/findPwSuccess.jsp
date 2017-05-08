@@ -5,86 +5,65 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>비밀번호 찾기</title>
-<link href="<%=request.getContextPath() %>/css/style.css" rel="stylesheet" type="text/css">
-<script language="javascript">
-function windowclose() {
-	  opener.document.loginform.memberId.value="${resultClass.memberID}";
-	  opener.document.loginform.memberPasswd.value="${resultClass.memberPassword}";
-  self.close();
+<style type="text/css">
+a{
+color: black;
 }
-</script>
+.event{
+margin : 20px; 
+line-height: 2em;
+color: black;
+}
+
+.button{
+    border: 3px solid #202f58;
+    background-color : #202f58;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+ 
+}  
+.top{
+	background-color:#202f58;
+	color: white;
+}
+</style>
+
 
 </head>
 <body>
 
-<center>
 
-<br>
-    
-<table width="100%" height="250" border="0" cellpadding="0" cellspacing="0" >
-<tr>
-  <td valign="top" align="center" bgcolor="#c1e4fa">
-  <table width="450" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="50" valign="top"></td>
-    <td width="400" valign="top">
+<div class="event">
+<table width="850" border="0" cellspacing="0" cellpadding="0" align="center">
+  	<tr>
+  			<td align="center" ><h2>비밀번호 찾기 결과</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			<br/>
+  			</td>
+  			
+  	</tr>
+  	</table>
   
-    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <table width="850" border="0" cellspacing="0" cellpadding="2" align="center">
     <tr>
-      <td height="40"></td>
-    </tr>
-    <tr>
-      <td align="center" class="body_indigo13"><font size="3"><strong>비밀번호 찾기 결과</strong></td>
-    </tr>
-    <tr><td height="10"></td></tr>
-    </table>
-  
-    <table width="100%" border="0" cellpadding="2" cellspacing="0">
-    <tr>
-      <td align="center">
-      <table width="100%" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="1070">
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-        <tr height="10">
-          <td></td>
-          <td></td>
+
+        <tr >
+          <td align="center">비밀번호는 &nbsp; [ ${resultClass.memberPassword} ] &nbsp; 입니다.
         </tr>
-        <!-- 
-        <tr height="30">
-          <td width="100" align="left">아이디</td>
-          &nbsp;<td>${memresultClass.mem_id}</td>
-        </tr>
-        -->
-      
-        <tr height="100">
-          <td width="1000" align="center">비밀번호는 &nbsp; [${resultClass.memberPassword}] &nbsp; 입니다.
-        </tr>
-       
-        <tr height="10">
-          <td></td>
-          <td></td>
-        </tr>
-        </table>
-        </td>
+		
         <tr>
-        <td width="1000" align="center">
-          <a href="loginForm.action"><font size=2><b>로그인</b></font></a>&nbsp;  | &nbsp; 
+        <td align="center">
+          <a href="loginForm.action"><font size=2><b>로그인</b></font></a>&nbsp; /
           <a href="main.action"><font size=2><b>메인으로</b></font></a>
         </td>
       </tr>
-      </table>
-      </td>
-    </tr>
-    </table>
-    </td>
-  </tr>
-  </table>
-  
-  </td>
-</tr>
+
 </table>
-</center>
+</div>
+
 
 </body>
 </html>
