@@ -30,6 +30,10 @@ text-align: center;
 	background-color:#202f58;
 	color: white;
 }
+
+.td{
+	padding-top: 10px;
+}
 </style>
 <SCRIPT type="text/javascript">
 		function validation(frm) {
@@ -80,24 +84,22 @@ text-align: center;
 			<s:hidden name="currentPage" value="%{currentPage}" />
 	</s:else> 
 	
-	<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
-		<tr>
-			  <th align="right" colspan="2" class="info"><font color="#FF0000">*</font>는 필수 입력사항입니다.</th>
-		</tr>
+	<table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="width: 523px;">
+	
 		
 		<tr bgcolor="#777777">
 			<td height="1" colspan="2"></td>
 		</tr>
 		<tr>
-			<td width="100" bgcolor="#202f58"><font color="white">* 작성자</font></td>
-			<td align="left" width="500" bgcolor="#FFFFFF">   &nbsp; ${session.memberName}</td>
+			<td width="100" bgcolor="#202f58"><font color="white">작성자</font></td>
+			<td align="left" width="300" bgcolor="#FFFFFF">   &nbsp; ${session.memberName}</td>
 		</tr>
 		<tr bgcolor="#777777">
 			<td height="1" colspan="2"></td>
 		</tr>
 		
 		<tr>
-			<td width="100" bgcolor="#202f58"><font color="white">* 제 목</font></td>
+			<td width="100" bgcolor="#202f58"><font color="white">제 목</font></td>
 			<td align="left" width="500" bgcolor="#FFFFFF">
 			  &nbsp; <s:textfield name="subject" theme="simple" value="%{resultClass.subject}" cssStyle="width:372px" maxlength="50"/>
 			</td>
@@ -107,8 +109,8 @@ text-align: center;
 			<td height="1" colspan="2"></td>
 		</tr>
 		<tr>
-			<td bgcolor="#202f58"><font color="white">* 내 용</font></td>
-			<td align="left" bgcolor="#FFFFFF">
+			<td bgcolor="#202f58"><font color="white">내 용</font></td>
+			<td class="td" align="left" bgcolor="#FFFFFF">
 			&nbsp; <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="56" rows="10"/>
 			</td>
 		</tr>

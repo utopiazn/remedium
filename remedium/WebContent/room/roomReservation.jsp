@@ -79,14 +79,28 @@ color: black;
 			</tr>
 			<tr>
 				<td bgcolor="#202f58"><font color="white">객실정원</font></td>
-				<td>${room_capacity}명</td>
+				<td>
+				<s:if test='%{room_capacity==0}'>
+				단체
+				</s:if>
+				<s:else>
+				<s:property value="people"/>
+				</s:else>
+				</td>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="2"></td>
 			</tr>
 			<tr>
 				<td bgcolor="#202f58"><font color="white">예약인원</font></td>
-				<td>${session.people}명</td>
+				<td>
+				<s:if test='%{session.people==0}'>
+				단체
+				</s:if>
+				<s:else>
+				<s:property value="people"/>
+				</s:else>
+				</td>
 			</tr>
 			<tr bgcolor="#777777">
 				<td height="1" colspan="2"></td>

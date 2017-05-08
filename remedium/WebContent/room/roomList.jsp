@@ -68,8 +68,8 @@ color: black;
 		<tr>
 			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>"><s:property value="no"/>호</a></td>
 			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>"><s:property value="name"/></a></td>
-			<td align="center"><s:property value="class_name"/></td>
-			<td align="left"><s:property value="construction"/></td>
+			<td align="center"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>"><s:property value="class_name"/></a></td>
+			<td align="left"><a href="/remedium/roomView.action?num=<s:property value="no"/>&firstDate=<s:property value="firstDate"/>&lastDate=<s:property value="lastDate"/>&people=<s:property value="people"/>"><s:property value="construction"/></a></td>
 			<td align="center">
 			<s:if test="%{room_capacity == 0}">
 			단체(5~10명 수용가능)

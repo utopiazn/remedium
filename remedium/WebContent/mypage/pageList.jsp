@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page import="util.*" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html>
@@ -36,7 +38,7 @@ color: black;
 	color: white;
 }
 </style>
- 
+<c:set var="cDateR" value="<%=new ProjectUtil()%>"/>
 </head>
 <body>
 <div class="content">
@@ -75,26 +77,59 @@ color: black;
 <td><s:property value="no"/></td>
 <td><s:property value="firstDate"/></td>
 <td><s:property value="lastDate"/></td>
-<td><s:property value="people"/></td>
+<td>
+<s:if test='%{people==0}'>
+단체
+</s:if>
+<s:else>
+<s:property value="people"/>
+</s:else>
+</td>
 <td><s:property value="money"/></td>
 <td>
+<s:if test='${firstDate > cDateR.currentDate}'>
 <s:if test='%{reservationCheck.equals("n")}'>
-[예약대기중]
+<font color="blue">[예약대기중]</font>
 </s:if>
 <s:elseif test='%{reservationCheck.equals("y")}'>
-[예약완료]
+<font color="green">[예약완료]</font>
 </s:elseif>
-<s:if test='${session.userAdmin=="1"}'><br>
+</s:if>
+<s:else>
+<s:if test='%{reservationCheck.equals("n")}'>
+<b><font color="red">[환불요망]</font></b>
+</s:if>
+<s:elseif test='%{reservationCheck.equals("y")}'>
+<font color="black">[결제완료]</font>
+</s:elseif>
+</s:else>
+
+<s:if test='${session.userAdmin=="1"}'>
 <form action="roomAdminReservationCancel.action" method="post" encType="multipart/form-data">
 <s:hidden name="reservationNo" value="%{reservationNo}" />
 <s:hidden name="money" value="%{money}" />
 <s:hidden name="memberID" value="%{memberID}" />
+
+
+<s:if test='${firstDate > cDateR.currentDate}'>
 <s:if test='%{reservationCheck.equals("n")}'>
 <input class="button" type="button" value="예약확인" onclick="location.href='roomAdminReservation.action?reservationNo=${reservationNo}'">
 </s:if>
+
 <input class="button" type="submit" value="예약취소">
+
+
+</s:if>
+<s:else>
+<s:if test='%{reservationCheck.equals("n")}'>
+
+<input class="button" type="submit" value="예약환불">
+</s:if>
+</s:else>
+
 </form>
 </s:if>
+
 </td>
 </tr>
 <tr bgcolor="#777777">
