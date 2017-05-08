@@ -79,7 +79,7 @@ text-align: center;
 			
 			<td width="200"><strong>객실 종류 이름</strong></td>
         	
-        	<td width="300"><strong>내용</strong></td>
+        	<%-- <td width="300"><strong>내용</strong></td> --%>
 		
 			<td width="200"><strong>수정/삭제</strong></td> 	
 		
@@ -87,7 +87,7 @@ text-align: center;
 		</tr>
       	
       	<tr bgcolor="#777777">        	
-        	<td height="1" colspan="4"></td>
+        	<td height="1" colspan="3"></td>
 		</tr>
 		
 		
@@ -101,11 +101,11 @@ text-align: center;
 		 		
 		 		
 		 		
-		 		<td align="left" style="white-space: normal; line-height: 1.2; height: 3.6em; ">
+		 		<%-- <td align="left" style="white-space: normal; line-height: 1.2; height: 3.6em; ">
 	 		
 		 			<font ></font><s:property value="content"/>
 		 		
-		 		</td>		
+		 		</td>	 --%>	
 		 		
 		 		<td align="center">
 		 		
@@ -116,7 +116,7 @@ text-align: center;
 			</tr>	
 			
 			<tr bgcolor="#777777">
-        		<td height="1" colspan="4"></td>
+        		<td height="1" colspan="3"></td>
       	    </tr>	
 			
 		</s:iterator>
@@ -128,13 +128,13 @@ text-align: center;
 			</tr>
 			
 			<tr bgcolor="#777777">
-				<td height="1" colspan="4"></td>
+				<td height="1" colspan="3"></td>
 			</tr>
 			 
 		</s:if>
 		
 		<tr align="center">
-			<td colspan="4" ><s:property value="pagingHtml" escape="false"/></td>
+			<td colspan="3" ><s:property value="pagingHtml" escape="false"/></td>
 		</tr>
 		
 		
