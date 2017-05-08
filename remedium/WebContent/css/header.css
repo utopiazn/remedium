@@ -22,3 +22,6 @@ color: #FFFFFF; text-align: center; font-weight: bolder; line-height: 3em; float
 {
 margin: 0 auto; float: center; cursor: pointer;
 }
+.h{
+	height: 23px;
+}

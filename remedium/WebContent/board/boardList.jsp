@@ -34,7 +34,9 @@ text-align: center;
 	background-color:#202f58;
 	color: white;
 }
-
+.h{
+height: 22px;
+}
 </style>
 </head>
 <body>
@@ -125,11 +127,11 @@ text-align: center;
 	</div>
 	<table align="center">
 	<form action="boardList.action" class="bottom">
-		<select name="searchNum" >
+		<select name="searchNum" class="h">
 			<option value="0">제 목</option>
 			<option value="1">작성자</option>
-		</select>
-		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
+		</select>&nbsp;
+		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>&nbsp;
 		<input class="button" name="submit" type="submit" value="검색" class="inputb">
 	</form>
 	</table>

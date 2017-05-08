@@ -33,6 +33,9 @@ color: black;
 	background-color:#202f58;
 	color: white;
 }
+.h{
+ height: 22px;
+}
 
 
 </style>
@@ -115,7 +118,7 @@ color: black;
 	
 	<center>
 	<form action="memberAdminList.action">
-		<select name="searchNum">
+		<select name="searchNum" class="h">
 			<option value="0">아이디</option>
 			<option value="1">이름</option>
 			<option value="2">핸드폰</option>
