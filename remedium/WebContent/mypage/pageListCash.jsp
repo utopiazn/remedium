@@ -9,7 +9,7 @@
 <style type="text/css">
 .cash {
     margin-top: 103px;
-    width: 100%;
+    width: 104%;
     height: 140px;
     line-height: 120px;
     font-family: '맑은 고딕', sans-serif;
@@ -49,10 +49,11 @@ function cashok(userinput) {
 <div class="cash">
 
 <form action="myPageCash.action" method="post" enctype="mutipart/form-data" onsubmit="cashok(this)">
-<input type="radio" name="cash" value="50000"/> 50,000 CASH
 <input type="radio" name="cash" value="100000"/> 100,000 CASH
 <input type="radio" name="cash" value="200000"/> 200,000 CASH
-<input type="radio" name="cash" value="300000"/> 300,000 CASH<br>
+<input type="radio" name="cash" value="300000"/> 300,000 CASH
+<input type="radio" name="cash" value="500000"/> 500,000 CASH
+<input type="radio" name="cash" value=1000000"/> 1,000,000 CASH
 <%-- 기타 : 
 <!-- <input type="radio" name="cash" value="300000"/> -->
 <input type="hidden" value="${session.memberId }" name="memberId">
