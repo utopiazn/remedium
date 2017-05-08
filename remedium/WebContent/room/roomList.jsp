@@ -79,7 +79,7 @@ color: black;
 			<s:property value="room_capacity"/>명<br>
 			</s:else></td>
 			
-			<td align="right">1일  <s:property value="price"/>원</td>
+			<td align="right">1일  <s:property value="price"/>Cash</td>
 		</tr>
 		<tr bgcolor="#777777">
 			<td height="1" colspan="6"></td>
