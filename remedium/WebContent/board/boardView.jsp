@@ -48,6 +48,7 @@ text-align: center;
 	color: white;
 }
 </style>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
 </head>
@@ -65,7 +66,7 @@ text-align: center;
 
  
 	
-		<table width="700" border="1" cellspacing="3" cellpadding="3" align="center">	
+		<table width="700" border="1" cellspacing="0" cellpadding="3" align="center">	
 			<tr>
 				<td width="100" bgcolor="#202f58"><font color="white">* 글번호</font></td>
 			
@@ -73,7 +74,7 @@ text-align: center;
 				&nbsp; <s:property value="%{resultClass.no}"/> 
 				</td>
 				
-				<td width="100" bgcolor="#202f58"><font color="white">* 작성자</font></td>
+				<td width="40" bgcolor="#202f58"><font color="white">* 작성자</font></td>
 
 				<td align="left" width="100" bgcolor="#FFFFFF">
 				&nbsp; <s:property value="%{resultClass.name}"/> 

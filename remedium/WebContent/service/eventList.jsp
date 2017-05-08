@@ -48,8 +48,8 @@ color: black;
   			<td height="20"></td>
   		</tr>
   	</table>
-  	
 
+	<s:if test="${session.userAdmin == '1' }">
 	<table width="900"  border="0" cellspacing="0" cellpadding="0" align="center">
 	    <tr align="center" class="top">
       	<td width="50"><strong>NO</strong></td>
@@ -60,7 +60,7 @@ color: black;
       	</tr>
   
        <tr bgcolor="#777777">
-       <td height="1" colspan="5"></td>
+       <td height="1" colspan="4"></td>
       </tr>
       	    
      
@@ -115,7 +115,65 @@ color: black;
     	  </tr>
    
 	</table>
+	</s:if>
 
+	
+	<s:else>
+	<table width="900"  border="0" cellspacing="0" cellpadding="0" align="center">
+	    <tr align="center" class="top">
+      	<td width="50"><strong>NO</strong></td>
+		<td width="350"><strong>이벤트</strong></td>
+        <td width="140"><strong>이벤트 시작</strong></td>
+		<td width="140"><strong>이벤트 종료</strong></td>
+      	</tr>
+  
+       <tr bgcolor="#777777">
+       <td height="1" colspan="4"></td>
+      </tr>
+      	    
+     
+
+	      <s:iterator value="list" >
+
+			<s:url id="viewURL" action="eventView" >
+				<s:param name="no">
+					<s:property value="no" />
+				</s:param>
+				<s:param name="currentPage">
+					<s:property value="currentPage" />
+				</s:param>
+			</s:url>
+				
+	     	      <tr bgcolor="#FFFFFF"  align="center">
+	        		<td><s:property value="no" /></td>
+	        		<td align="center"> &nbsp;<s:a href="%{viewURL}"><s:property value="name" /></s:a></td>
+	        		<td align="center"><s:property value="firstdate" /></td>
+					<td align="center"><s:property value="lastdate" /></td>
+		 	
+	      	      </tr>
+	      	      <tr bgcolor="#777777">
+	        		<td height="1" colspan="4"></td>
+	      	      </tr>
+      
+	      </s:iterator>
+	
+
+	      <s:if test="list.size() <= 0">
+				
+	      <tr bgcolor="#777777">
+      		<td height="1" colspan="4"></td>
+    	      </tr>
+    		
+	      </s:if>
+	      
+	  
+			<br/>
+	      <tr align="center">
+    		<td colspan="4"><s:property value="pagingHtml"  escape="false" /></td>
+    	  </tr>
+   
+	</table>
+	</s:else>
 	<br/>
 	
 </div>

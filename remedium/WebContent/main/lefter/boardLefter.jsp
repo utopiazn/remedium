@@ -28,7 +28,7 @@
 	
 	/*메인메뉴 스타일 지정*/	
 	 #navi3 h2 a{
-	 	display: block;
+		display: block;
 	 	font-weight: bold;
 	 	text-decoration: none;
 	 	margin: 0;
@@ -51,7 +51,7 @@
 	 #navi3 he a:active{
 	 
 	 	background: #202f58;	 	 
-	 	background: linear-gradient(#1a1a1a 0%,##202f58 100%);
+	 	background: linear-gradient(#1a1a1a 0%,#202f58 100%);
 	 	 color: #ffffff;
 	 	text-shadow: 0 1px 1px #000;
 	 

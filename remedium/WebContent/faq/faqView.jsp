@@ -64,18 +64,18 @@ text-align: center;
       
 			
  
-        <td width="100" bgcolor="#202f58"><font color="white">* 질문 유형</font> </td>
+        <td width="100" bgcolor="#202f58"><font color="white"> 질문 유형</font> </td>
         <td align="left" width="100" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.type" />
         </td>
-        <td width="100" bgcolor="#202f58"><font color="white">* 제 목</font></td>
+        <td width="40" bgcolor="#202f58"><font color="white"> 제 목</font></td>
         <td align="left" width="100" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.subject" />
         </td>    
       </tr> 
       
       <tr >    
-       	<td width="100" height="300" bgcolor="#202f58"><font color="white">* 내 용 </font></td>
+       	<td width="100" height="300" bgcolor="#202f58"><font color="white"> 내 용 </font></td>
         <td colspan="3"bgcolor="#FFFFFF">
           &nbsp;A. <s:property value="resultClass.content" />
         </td>
