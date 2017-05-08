@@ -29,6 +29,10 @@ text-align: center;
     color: white;
 }
 
+.textarea_td{
+	padding-top: 10px;
+}
+
 </style>
 
 </head>
@@ -62,9 +66,12 @@ text-align: center;
 		<s:hidden name="image_06" value="${resultClass.image2}"/>
 
 
-		<table width="500" border="0" cellspacing="0" cellpadding="0" align="center">
+		<table width="1000" border="0" cellspacing="0" cellpadding="0" align="center">
 		
-			
+		
+			<tr bgcolor="#777777">
+          		<td height="1" colspan="4"></td>	
+        	</tr>		
 			
 			<tr>				
 				<td width="150" bgcolor="#202f58">
@@ -77,29 +84,22 @@ text-align: center;
 					&nbsp;<s:textfield name="room_class" value="${resultClass.room_class}" theme="simple"  cssStyle="width:270px" maxlength="50"/>				
 					
 				</td>
-			</tr>	
 				
-			<tr bgcolor="#777777">
-          		<td height="1" colspan="2"></td>	
-        	</tr>
-				
-					
-			
-			<tr>
 				<td width="150" bgcolor="#202f58">
 					<font color="white">
 						*객실 종류 이름:
 					</font>
 				</td>
-				<td width="50" bgcolor="#FFFFFF" align="left">					
-					&nbsp;<s:textfield name="name" theme="simple" value="${resultClass.name}"  cssStyle="width:270px" maxlength="50"/>				
-				</td>
-					
-			</tr>
-			
+				<td width="50" bgcolor="#FFFFFF" align="left" >					
+					&nbsp;<s:textfield name="name" theme="simple" value="${resultClass.name}"  cssStyle="width:270px" maxlength="200"/>				
+				</td>				
+				
+			</tr>	
+				
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
-       		</tr>
+          		<td height="1" colspan="4"></td>	
+        	</tr>
+				
 			
 			<tr>
 				<td width="150" bgcolor="#202f58">
@@ -107,13 +107,13 @@ text-align: center;
 					</font>
 				</td>
 				
-				<td width="50" bgcolor="#FFFFFF" align="left"  >			
-					 &nbsp;<s:textarea name="content"  value="${resultClass.content}" theme="simple" cssStyle="width:270px;"  rows="10" cols="40"/>			
+				<td class="textarea_td" width="50" bgcolor="#FFFFFF" align="left" colspan="3" >			
+					 &nbsp;<s:textarea name="content"  value="${resultClass.content}" theme="simple" cssStyle="width:600px;"  rows="10" />			
 				</td>
 			</tr>			
 		
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
+         		<td height="1" colspan="4"></td>	
        		</tr>
        		
        			
@@ -122,8 +122,7 @@ text-align: center;
 				<td width="150" bgcolor="#202f58">
 					<font color="white">이미지1:
 					</font>
-				</td>
-							
+				</td>						
 			
 				<td width="50" bgcolor="#FFFFFF" align="left"  >	
 					  &nbsp;<s:file  name="uploads" theme="simple" />
@@ -137,17 +136,6 @@ text-align: center;
 					  </s:if>
 					  
 				</td>
-				
-			</tr>
-			
-       			
-			
-			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
-       		</tr>
-       		
-       			
-       		<tr>		
 				
 				<td width="150" bgcolor="#202f58">
 					<font color="white">이미지2:
@@ -170,8 +158,11 @@ text-align: center;
 				
 			</tr>
 			
+       			
+			
+
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
+         		<td height="1" colspan="4"></td>	
        		</tr>
        		
        			
@@ -196,15 +187,6 @@ text-align: center;
 					  
 				</td>
 				
-			</tr>
-			
-			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
-       		</tr>
-       		
-       			
-       		<tr>		
-				
 				<td width="150" bgcolor="#202f58">
 					<font color="white">이미지4:
 					</font>
@@ -223,6 +205,17 @@ text-align: center;
 					  </s:if>
 					  
 				</td>
+				
+			</tr>
+			
+			<tr bgcolor="#777777">
+         			<td height="1" colspan="4"></td>	
+       		</tr>
+       		
+       			
+       		<tr>		
+				
+				
 				
 			</tr>
 			
@@ -251,16 +244,6 @@ text-align: center;
 					  
 				</td>
 				
-			</tr>
-			
-			
-			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
-       		</tr>
-       		
-       			
-       		<tr>		
-				
 				<td width="150" bgcolor="#202f58">
 					<font color="white">시설정보:
 					</font>
@@ -284,13 +267,13 @@ text-align: center;
 			
 			
 			<tr bgcolor="#777777">
-         			<td height="1" colspan="2"></td>	
+         			<td height="1" colspan="4"></td>	
        		</tr>
        		
-			
+       		
 			
 			<tr>
-				<td align="right" colspan="2">
+				<td align="center" colspan="4">
 	          		<input class="button" type="submit" value="작성완료" >
 	            	<input class="button" name="list" type="button" value="목록" class="inputb" onClick="javascript:location.href='roomInfoList.action?roomClass=0'">
 	          	</td>
