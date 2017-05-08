@@ -74,7 +74,7 @@ text-decoration: none;
 <input type="date" name="lastDate" value="${session.lastDate}">
 
 고객 수:
-<select name="people">
+<select name="people" class="h">
 <option value="1" <s:if test="${session.people==1}">selected="selected"</s:if> >1명</option>
 <option value="2" <s:if test="${session.people==2}">selected="selected"</s:if> >2명</option>
 <option value="3" <s:if test="${session.people==3}">selected="selected"</s:if> >3명</option>
@@ -83,7 +83,7 @@ text-decoration: none;
 </select>
 
 Room Class:
-<select name="rcType">
+<select name="rcType" class="h">
 <option value="0" <s:if test="${session.rcType==0 && session.rcType==null}">selected="selected"</s:if>>전체</option>
 
 <s:iterator value="%{session.RClist}">
