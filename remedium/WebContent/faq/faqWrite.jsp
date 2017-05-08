@@ -30,6 +30,10 @@ text-align: center;
 	background-color:#202f58;
 	color: white;
 }
+
+.td{
+	padding-top: 10px;
+}
 </style>
 <SCRIPT type="text/javascript">
 		function validation(frm) {
@@ -112,7 +116,7 @@ text-align: center;
 		</tr>
 		<tr>
 			<td bgcolor="#202f58"><font color="white">* 내 용</font></td>
-			<td align="left" bgcolor="#FFFFFF">
+			<td align="left" class="td" bgcolor="#FFFFFF">
 			&nbsp; <s:textarea name="content" theme="simple" value="%{resultClass.content}" cols="71" rows="10"/>
 			</td>
 		</tr>

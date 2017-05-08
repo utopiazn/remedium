@@ -115,7 +115,7 @@ text-align: center;
 		</tr>
 		<tr align="right">
 			<td colspan="7" >
-			<s:if test='${session.memberId } != "" '>
+			<s:if test="${session.memberId != null}">
 				<input class="button" type="button" value="글쓰기" onClick="javascript:location.href='boardWriteForm.action'">
 			</s:if>
 			</td>
