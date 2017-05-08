@@ -11,7 +11,6 @@ color: black;
 margin : 20px; 
 line-height: 2em;
 color: black;
-
 }
 
 .button{
@@ -28,6 +27,8 @@ color: black;
 	background-color:#202f58;
 	color: white;
 }
+
+
 </style>
 <meta charset="UTF-8">
 <title>FAQ 상세보기</title>
@@ -41,7 +42,7 @@ color: black;
 			document.location.href=url;
 		}
 		else{
-			alert("취소하셨습니다.");
+			alert("취소하셧습니다.");
 			return
 		}
 		
@@ -50,7 +51,7 @@ color: black;
 </head>
 <body>
 <div class="event">
-<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
+<table width="850" border="0" cellspacing="0" cellpadding="2" align="center">
   	<tr>
   			<td align="center" ><h2>게시글 보기</h2>
   			<hr align="center" width="50%" size="1" color="gray">
@@ -60,23 +61,23 @@ color: black;
   	</tr>
   	</table>
 		
-<table width="900" border="1" cellspacing="0" cellpadding="0" align="center">
+<table width="850" border="1" cellspacing="0" cellpadding="0" align="center">
       
 			
- 	<tr>
-        <td width="30" bgcolor="#202f58"><font color="white"> 질문 유형</font> </td>
-        <td align="left" width="50" bgcolor="#FFFFFF">
+ 
+        <td width="80" bgcolor="#202f58"><font color="white"> 질문 유형</font> </td>
+        <td align="left" width="40" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.type" />
         </td>
-        <td width="40" bgcolor="#202f58"><font color="white"> 제 목</font></td>
-        <td align="left" width="200" bgcolor="#FFFFFF">
+        <td width="30" bgcolor="#202f58"><font color="white"> 제 목</font></td>
+        <td align="left" width="150" bgcolor="#FFFFFF">
           &nbsp;<s:property value="resultClass.subject" />
         </td>    
       </tr> 
       
-      <tr>    
-       	<td width="100" height="300" bgcolor="#202f58"><font color="white"> 내 용 </font></td>
-        <td colspan="3"bgcolor="#FFFFFF" style="margin-top: 0px;">
+      <tr >    
+       	<td width="80" height="300" bgcolor="#202f58"><font color="white"> 내 용 </font></td>
+        <td colspan="3" bgcolor="#FFFFFF" class="td" align="left">
           &nbsp;A. <s:property value="resultClass.content" />
         </td>
        </tr>

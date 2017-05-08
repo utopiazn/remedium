@@ -109,6 +109,14 @@ public class ListAction extends ActionSupport  implements SessionAware {
 			lastCount = page.getEndCount() + 1;
 		
 		list = list.subList(page.getStartCount(), lastCount);
+		
+		int count = list.size();
+		
+		for(BoardBean no : list){
+			
+			no.setListNo(count--);
+			
+		}
 		return SUCCESS;
 		
 
