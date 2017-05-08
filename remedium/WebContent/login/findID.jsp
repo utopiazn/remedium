@@ -42,9 +42,11 @@ width: 41%;
 	<table width="600" border="0" cellspacing="0" cellpadding="2">
 
 		<tr>
-			<td align="center">
+			<!-- <td align="center"> -->
 				<h2>아이디 찾기</h2>
-			</td>
+				<hr align="center" width="50%" size="1" color="gray">
+				<br>
+			<!-- </td> -->
 		</tr>
 	</table>
 	<form action="findIDAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">

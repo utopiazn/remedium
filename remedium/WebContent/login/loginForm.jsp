@@ -34,6 +34,8 @@
 <body>
 <div class="login">
 <h2> 로 그 인 </h2>
+<hr align="center" width="50%" size="1" color="gray">
+<br>
 
 <center>
 <form action="loginAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">

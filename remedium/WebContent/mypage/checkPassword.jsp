@@ -42,6 +42,9 @@ function pwd(userinput) {
 <div class="pwch">
 
 <h2>비밀번호 확인</h2>
+<hr align="center" width="100%" size="1" color="gray">
+<br>
+  			
 
 <form action="loginDelete.action" method="post" onsubmit="return pwd(this);" enctype="multipart/form-data">
 <s:hidden name="no" value="%{no}"/>
