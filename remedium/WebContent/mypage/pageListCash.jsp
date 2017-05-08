@@ -58,6 +58,7 @@ function cashok(userinput) {
 <input type="hidden" value="${session.memberId }" name="memberId">
 <input type="text" name="cash"/><br> --%>
 <input class="button" type="submit" value="충전하기">
+<input type="button" value="취소" class="button"  onClick="javascript:location.href='myPageMain.action'">
 <!-- <input type="radio" name="cash" value="500000CASH"/> 500,000 CASH
 <input type="radio" name="cash" value="100000CASH"/> 1000,000 CASH
  -->
