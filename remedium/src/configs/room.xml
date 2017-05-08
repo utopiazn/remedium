@@ -38,7 +38,7 @@
 		
 		<!-- 관리자용 객실 수정 -->
 		<action name="roomUpdate" class="admin.room.RoomAction" method="update">
-			<result type="chain">roomAllList</result>
+			<result type="chain">roomView</result>
 		</action>
 		
 		<!-- 관리자용 객실 삭제 -->

@@ -37,20 +37,25 @@ color: black;
 	background-color:#202f58;
 	color: white;
 }
+.line1{
+text-align:right;
+}
+
 </style>
 <c:set var="cDateR" value="<%=new ProjectUtil()%>"/>
 </head>
 <body>
 <div class="content">
-<table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 		<td align="center"><h2>객실 예약 리스트</h2>
-		<hr align="center" width="60%" size="1" color="gray">
+		<hr align="center" width="40%" size="1" color="gray">
 		<br/>
 		</td>
 	</tr>
 </table>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="8" class="line1" ><input class="button" type="button" value="마이페이지로 이동"onClick="location.href='myPageMain.action'"></td></tr>
 <tr class="top" align="center">
 <td><strong>회원 ID</strong></td>
 <td><strong>예약 번호</strong></td>

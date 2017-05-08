@@ -5,31 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
-#image /* 사진 이미지 */
-{
-	width:600px; height:470px; text-align:center;
-}
-#room /* 객실 정보 */
-{
- width: 700px; font-family: "돋움", sans-serif; text-align: left; line-height: 1.7em; display:inline-block;  float: left;
-clear: left; margin-bottom: 30px;
-}
-#semi /* 객실 구성 */
-{
- width: 600px; height: 284px; float: right; display:inline-block;
-}
-#intro /* 객실 소개 */
-{
-font-weight: bolder; font-family: "돋움", sans-serif; text-align: left;
-}
-#all
-{
-width:100%; height: 500px;
-}
 
-a{
-color: black;
-}
 .content{
 margin-top :20px; 
 line-height: 2em;
@@ -54,11 +30,22 @@ color: black;
 	color: white;
 }	
 
+.line1{
+width:45%; float:left; margin:5px; text-align:left;
+margin-left: 5%;
+}
+.line2{
+width:45%; float:left; margin:5px; text-align:center;
+}
+.lineIm{
+width:90%; float:left; clear: left; margin:5px; text-align:center;
+margin-left: 5%;
+}
+
 </style>
 
 </head>
 <body>
-<center>
 <div class="content">
 <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
@@ -69,14 +56,14 @@ color: black;
 </table>
 </div>
 
-<div id="image">
+<div class="lineIm">
 
-<img width="600" height="450" alt="호텔로고" src="/remedium/image/roomClassImage/<s:property value='resultClass.savImage'/>" >
+<img width="100%" height="500" alt="호텔로고" src="/remedium/image/roomClassImage/<s:property value='resultClass.savImage'/>" >
 <%-- <img height="400" alt="호텔로고" src="/remedium/image/roomImage/<s:property value='resultClass.savImage'/>" > --%>
 </div>
 
 
-<div id="room">
+<div class="line1">
 객실 번호 :
 <s:property value="resultClass.no"/>호<br>
 객실 이름 :
@@ -90,6 +77,8 @@ color: black;
 <s:else>
 <s:property value="resultClass.room_capacity"/>명<br>
 </s:else>
+객실 요금 :
+1일 <s:property value="resultClass.price"/>Cash<br>
 객실 소개:<br>
 <s:property value="resultClass.room_comment"/><br>
 
@@ -117,10 +106,11 @@ color: black;
 </form>
 </div>
 
-<div id="semi">
+<div class="line2">
 <s:property value="resultClass.room_construction"/>
 <img width="100%" alt="호텔로고" src="/remedium/image/roomClassImage/<s:property value='classInfo'/>" >
 </div>
+
 
 </body>
 </html>
