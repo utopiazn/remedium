@@ -59,7 +59,7 @@ color: white;
 <body>
 	<div class="subject">
 	<h2 align="center" >편의시설</h2>
-	<hr align="center" width="60%" size="1" color="gray">
+	<hr align="center" width="40%" size="1" color="gray">
 	</div>
 	<div class="line3">
 	<s:if test="${session.userAdmin == 1 }">	

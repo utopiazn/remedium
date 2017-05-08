@@ -9,7 +9,12 @@
 <style type="text/css">
 
 .line3{
-width:99%; float:left; clear: left; margin:5px; text-align:center;
+width:80%; float:left; clear: left; margin:5px; text-align:center;
+margin-left: 10%;
+}
+.line2{
+width:80%; float:left; clear: left; margin:5px; text-align:right;
+margin-left: 10%;
 }
 .content{ margin-top: 20px;  
 line-height: 2em;
@@ -48,21 +53,24 @@ color: black;
 	</tr>
 </table>
 </div>
+	
+<div class="line2">
+<s:if test="${ session.userAdmin == '1' }">
+<input class="button" type="button" value="시설정보수정"onClick="location.href='facilitiesModifyForm.action?no=<s:property value="resultClass.no" />'">  
+<input class="button" type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />&image=<s:property value="resultClass.image" />'">
+</s:if>
+<input class="button" type="button" value="시설목록"onClick="location.href='facilitiesList.action'">
+</div>
 
 <div class="line3">
-<img width="600" height="500" alt="시설사진" src="/remedium/image/facImage/<s:property value='resultClass.image'/>" >
+<img width="100%" height="500" alt="시설사진" src="/remedium/image/facImage/<s:property value='resultClass.image'/>" >
 </div>
 	
 <div class="line3">
 <s:property value="resultClass.content" /><br/>
 운영시간 : <s:property value="resultClass.time" /><br/>
 </div>
-	
-<div class="line3">
-<input class="button" type="button" value="시설정보수정"onClick="location.href='facilitiesModifyForm.action?no=<s:property value="resultClass.no" />'">  
-<input class="button" type="button" value="시설삭제"onClick="location.href='facilitiesDelete.action?no=<s:property value="resultClass.no" />&image=<s:property value="resultClass.image" />'">
-<input class="button" type="button" value="시설목록"onClick="location.href='facilitiesList.action'">
-</div>
+
 
 
 

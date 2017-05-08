@@ -164,7 +164,7 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
-					&nbsp;<s:textfield name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50" />					 
+					&nbsp;<s:password name="memberPassword" theme="simple" value="%{paramClass.memberPassword}" cssStyle="width:270px" maxlength="50" />					 
 					
 					
 					
@@ -181,7 +181,7 @@
 				</td>
 			
 				<td width="50" bgcolor="#FFFFFF" align="left">
-					&nbsp;<s:textfield name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
+					&nbsp;<s:password name="memberPassword2" theme="simple"  cssStyle="width:270px" maxlength="50"/>					
 				</td>
 			</tr>
 			 <tr bgcolor="#777777">
