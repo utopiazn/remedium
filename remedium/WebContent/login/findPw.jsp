@@ -44,12 +44,14 @@ width: 41%;
 <body>
 <div class="pw">
 <br/><br/><br/>
-	<table width="600" border="0" cellspacing="0" cellpadding="2">
+	<table width="600" border="0" cellspacing="0" cellpadding="0">
 
 		<tr>
-			<td align="center">
+			
 				<h2>비밀번호 찾기</h2>
-			</td>
+				<hr align="center" width="50%" size="1" color="gray">
+				<br>						
+				
 		</tr>
 	</table>
 	  <form action="findPwAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">

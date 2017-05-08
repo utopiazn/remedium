@@ -42,6 +42,9 @@ function pwd(userinput) {
 <div class="pwch">
 
 <h2>비밀번호 확인</h2>
+<hr align="center" width="100%" size="1" color="gray">
+<br>
+  			
 
 <form action="loginDelete.action" method="post" onsubmit="return pwd(this);" enctype="multipart/form-data">
 <s:hidden name="no" value="%{no}"/>
@@ -65,7 +68,10 @@ function pwd(userinput) {
 
 
 <tr>
-<td align="center" height="1" colspan="2"><br><input class="button" name="submit" type="submit" value="확인" class="inputb"  style="width: 150px;"/></td>
+<td align="center" height="1" colspan="2"><br>
+<input class="button" name="submit" type="submit" value="확인" class="inputb"  style="width: 75px;"/>
+<input type="button" value="취소" class="button" style="width: 75px;" onClick="javascript:location.href='myPageMain.action'">	
+</td>
 </tr>
 </table>
 </form>

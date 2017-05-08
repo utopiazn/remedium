@@ -72,7 +72,7 @@
 	</delete>
 	
 	<delete id="deleteReply" parameterClass="board">
-		delete from board where re_step = #re_step#
+		delete from board where no = #no#
 	</delete>
 	
 </sqlMap>
