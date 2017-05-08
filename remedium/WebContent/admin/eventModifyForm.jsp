@@ -105,7 +105,7 @@ color: black;
         <tr>
           <td bgcolor="#202f58"><font color="white">*  이벤트 시작</font></td>
           <td align="left" bgcolor="#FFFFFF">
-          &nbsp; <input type="date" name="firstdate">
+          &nbsp; <input type="date" name="firstdate" value="${resultClass.firstdate}">
 
            <%--  <s:textfield name="firstdate" theme="simple" value="%{resultClass.firstdate}" cssStyle="width:100px" maxlength="20"/> --%>
           </td>
@@ -117,7 +117,7 @@ color: black;
         <tr>
           <td bgcolor="#202f58"><font color="white">*  이벤트 종료</font></td>
           <td align="left" bgcolor="#FFFFFF">
-          &nbsp; <input type="date" name="lastdate">
+          &nbsp; <input type="date" name="lastdate" value="${resultClass.lastdate}">
            <%--  <s:textfield name="lastdate" theme="simple" value="%{resultClass.lastdate}" cssStyle="width:100px" maxlength="20"/> --%>
          
           </td>
