@@ -49,21 +49,28 @@ public class ListAction extends ActionSupport implements SessionAware {
 		paramClass.setLastDate(java.sql.Date.valueOf(lastDate));
 		paramClass.setPeople(people);
 		
-		
-		if(rcType==0){
-		
-			if(people==0){
-				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
+		if(people==9){
+			if(rcType==0){
+				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.select_PeopleNoTypeNo", paramClass);
 			}else{
-				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
+				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.select_typeC", paramClass);
 			}
-		
 		}else{
-			paramClass.setRcType(rcType);
-			if(people==0){
-				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup_typeC", paramClass);
+			if(rcType==0){
+			
+				if(people==0){
+					list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup", paramClass);
+				}else{
+					list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch", paramClass);
+				}
+			
 			}else{
-				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch_typeC", paramClass);
+				paramClass.setRcType(rcType);
+				if(people==0){
+					list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerchGroup_typeC", paramClass);
+				}else{
+					list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.selectSerch_typeC", paramClass);
+				}
 			}
 		}
 		

@@ -77,6 +77,7 @@ Cash point: <s:property value="session.cash" />
 
 고객 수:
 <select name="people" class="h">
+<option value="9" <s:if test="${session.people==9}">selected="selected"</s:if> >인원수 무관</option>
 <option value="1" <s:if test="${session.people==1}">selected="selected"</s:if> >1명</option>
 <option value="2" <s:if test="${session.people==2}">selected="selected"</s:if> >2명</option>
 <option value="3" <s:if test="${session.people==3}">selected="selected"</s:if> >3명</option>
@@ -89,12 +90,14 @@ Room Class:
 <option value="0" <s:if test="${session.rcType==0 && session.rcType==null}">selected="selected"</s:if>>전체</option>
 
 <s:iterator value="%{session.RClist}">
+
 <option value='<s:property value="room_class"/>' 
 <s:if test="${session.rcType==room_class}"> 
 	selected="selected"
 </s:if>
 >
   <s:property value="name"/></option>
+
 </s:iterator>
 
 </select>

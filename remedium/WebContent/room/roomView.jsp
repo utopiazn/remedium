@@ -92,18 +92,26 @@ margin-left: 5%;
 <input type="hidden" name="price" value="${resultClass.price}"/>
 <input type="hidden" name="people" value="${people}"/>
 <input type="hidden" name="image" value="${resultClass.savImage}"/>
-<s:if test="${session.memberId == null}">
-<font color="blue">로그인후 이용해 주십시오.</font>
-</s:if>
-<s:elseif test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
+
+<s:if test="${session.memberId != null}">
+<s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
 <input class="button" type="button" value="객실수정" onclick="location.href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>'" />
 <input class="button" type="button" value="객실삭제" onclick="location.href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>'" />
-</s:elseif>
+</s:if>
+
 <s:else>
 <input class="button" type="submit" value="객실예약"/>
 </s:else>
 <input class="button" type="button" value="객실목록" onclick="javascript:history.back()" />
+</s:if>
 </form>
+<s:else>
+<font color="blue">온라인 예약서비스는 로그인 후 이용가능합니다.</font>
+<input class="button" type="button" value="로그인" onclick="location.href='/remedium/loginForm.action'" />
+<input class="button" type="button" value="객실목록" onclick="javascript:history.back()" />
+<br>
+<small>※일반예약문의 : 1544-9970</small>
+</s:else>
 </div>
 
 <div class="line2">

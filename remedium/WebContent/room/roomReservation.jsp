@@ -13,7 +13,15 @@
 			var c = parseInt(userinput.cash.value);
 			
 			if(m > c){
-				alert("현재 충전하신 잔액이 부족합니다.");
+				alert("현재 충전하신 Cash가 부족합니다.\n잔여Cash : "+c);
+				
+				var del = confirm("지금 바로 충전 하시겠습니까?");
+				
+				if(del == true){			
+					document.location.href='myPageCashForm.action';
+				}
+				else{
+				}
 		 		return false;
 			}
 			
@@ -146,7 +154,7 @@ color: black;
 
 
 
-<input class="button" type="submit" value="객실예약">
+<input class="button" type="submit" value="예약하기">
 <input class="button" type="button" value="뒤로가기" onclick="javascript:history.back()" />
 </form>
 </div>
