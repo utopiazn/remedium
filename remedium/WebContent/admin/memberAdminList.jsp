@@ -50,6 +50,11 @@ color: black;
 		</tr>
 		<tr>
 			<td height="20"></td>
+		</tr>
+		<tr>
+			<td align="right">
+			<input type="button" value="마이페이지로 이동" class="button"  onClick="javascript:location.href='myPageMain.action'">
+			</td>
 		</tr> 
 	</table>
 	 
@@ -113,7 +118,7 @@ color: black;
 		<tr >
 			<td colspan="7" align="center"><s:property value="pagingHtml" escape="false"/></td>
 		</tr>
-		<tr>
+		
 	</table>
 	
 	<center>
@@ -125,6 +130,7 @@ color: black;
 		</select>
 		<s:textfield name="searchKey" theme="simple" value="" cssStyle="wdith:120px" maxlength="20"/>
 		<input class="button" name="submit" type="submit" value="검색" class="inputb">
+
 		</form>
 	</center>
 	</div>
