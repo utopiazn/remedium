@@ -35,6 +35,24 @@ text-align: center;
 
 </style>
 
+<script type="text/javascript">
+
+
+	function test1(n){
+		 
+		  var name = "-1";
+		  
+		  alert("fdffdffff");
+		  if(n==1){		
+			  
+			  alert(n);
+		  	document.getElementById("dd").value =name ;
+		  }
+		
+	}
+
+</script>
+
 </head>
 <body>
 
@@ -130,8 +148,11 @@ text-align: center;
 					  <s:if test='%{!image_01.equals("")}'>
 					  
 					  	<br/>&nbsp;
-					  	<font size="2">
-					  	사진이 등록되어있습니다.${image_01}	
+					  	
+					  	
+					  	<font size="2" >					  	
+					  		사진이 등록되어있습니다.${image_01}			  						  	
+					  	<!-- <a onclick="test1(1)" >X</a> -->
 					  	</font>
 					  </s:if>
 					  
