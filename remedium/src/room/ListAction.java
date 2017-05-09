@@ -53,6 +53,7 @@ public class ListAction extends ActionSupport implements SessionAware {
 			if(rcType==0){
 				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.select_PeopleNoTypeNo", paramClass);
 			}else{
+				paramClass.setRcType(rcType);
 				list = util.ProjectUtil.sqlMapper.queryForList("roomSQL.select_typeC", paramClass);
 			}
 		}else{
@@ -75,7 +76,7 @@ public class ListAction extends ActionSupport implements SessionAware {
 		}
 		
 		//페이징처리
-		url = "roomList.action?firstDate="+getFirstDate()+"&lastDate="+getLastDate()+"&people="+getPeople()+"&";
+		url = "roomList.action?firstDate="+getFirstDate()+"&lastDate="+getLastDate()+"&people="+getPeople()+"&rcType="+getRcType()+"&";
 		
 		totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
 		

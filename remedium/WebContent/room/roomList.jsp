@@ -45,13 +45,15 @@ color: black;
 		</tr>
 
 	</table>
-	<table width="100%">
-	<tr>		
+	<table width="100%">		
+		<s:if test="${ session.userAdmin == '1' }">
 		<tr>
 			<td align="right">
 				<input type="button" value="마이페이지로 이동" class="button"  onClick="javascript:location.href='myPageMain.action'">
 			</td>
 		</tr>
+		</s:if>
+		<tr>
 		 <td>
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr class="top" align="center">
