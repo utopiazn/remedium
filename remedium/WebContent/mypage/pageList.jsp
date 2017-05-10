@@ -142,6 +142,9 @@ text-align:right;
 </tr>
 </s:iterator>
 </s:else>
+<tr align="right">
+<td colspan="8"><small>※  예약취소·환불 문의 : 1544-9970</small></td>
+</tr>
 <tr align="center">
 	<td colspan="8"><s:property value="pagingHtml" escape="false"/></td>
 </tr>
