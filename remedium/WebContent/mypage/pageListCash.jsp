@@ -53,16 +53,13 @@ function cashok(userinput) {
 <input type="radio" name="cash" value="200000"/> 200,000 CASH
 <input type="radio" name="cash" value="300000"/> 300,000 CASH
 <input type="radio" name="cash" value="500000"/> 500,000 CASH
-<input type="radio" name="cash" value=1000000"/> 1,000,000 CASH
-<%-- 기타 : 
-<!-- <input type="radio" name="cash" value="300000"/> -->
+<input type="radio" name="cash" value="1000000"/> 1,000,000 CASH
+
 <input type="hidden" value="${session.memberId }" name="memberId">
-<input type="text" name="cash"/><br> --%>
+
 <input class="button" type="submit" value="충전하기">
 <input type="button" value="취소" class="button"  onClick="javascript:location.href='myPageMain.action'">
-<!-- <input type="radio" name="cash" value="500000CASH"/> 500,000 CASH
-<input type="radio" name="cash" value="100000CASH"/> 1000,000 CASH
- -->
+
  </form>
 </div>
 

@@ -73,7 +73,7 @@ color: white;
 		<div class="content">
 			<b><a href='/remedium/facilitiesView.action?no=<s:property value="no" />'><s:property value="name" /></a></b>
 		</div>
-		<div class="content"><strong>개장시간</strong></div>
+		<div class="content"><strong>운영시간</strong></div>
 		<div class="content"><s:property value="time" /></div>
 		</div>
 		

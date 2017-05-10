@@ -41,8 +41,8 @@ function pwd(userinput) {
 
 <div class="pwch">
 
-<h2>비밀번호 확인</h2>
-<hr align="center" width="100%" size="1" color="gray">
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인</h2>
+<hr align="center" width="120%" size="1" color="gray">
 <br>
   			
 
