@@ -92,7 +92,7 @@ text-align: center;
 				<td width="100" bgcolor="#202f58"><font color="white">* 내 용</font>
 				</td>
 			
-				<td colspan="3" align="left" height="300" width="500" bgcolor="#FFFFFF">
+				<td colspan="3" align="left" height="300" width="500" bgcolor="#FFFFFF" style="vertical-align: top;">
 				&nbsp;	<s:property value="%{resultClass.content}" />				
 				</td>
 			</tr>
