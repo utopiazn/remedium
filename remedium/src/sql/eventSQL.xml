@@ -26,6 +26,7 @@
 	<include refid="select-all"/>
 	</select>
 	
+	<!-- 이벤트 개별 뷰 -->
 	<select id="selectOne" resultClass="event">
 	<include refid="select-all"/>
 	<include refid="where-no"/>
@@ -43,6 +44,7 @@
 		<include refid="where-no"/>
 	</update>
 	
+	<!-- 이벤트 삭제 -->
 	<delete id="deleteEvent" parameterClass="event">
 	DELETE EVENT
 	<include refid="where-no"/>

@@ -33,19 +33,19 @@ public class LoginDeleteAction extends ActionSupport implements SessionAware {
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
 		reader.close();
 	}
-	//회원 탈퇴
+	
+	//회원 탈퇴 처리
 	public String execute() throws Exception{
 		
 		paramClass = new MemberBean();
 		
 		paramClass.setMemberID(getMemberID());
 		
-		System.out.println(memberID);
-		
 		sqlMapper.delete("member.deleteMember",paramClass);
 		return SUCCESS;
 	}
 	
+	//회원 탈퇴 폼
 	public String delete() throws Exception{
 		
 	 paramClass = new MemberBean();

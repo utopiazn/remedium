@@ -5,10 +5,13 @@
 	
 <struts>
 	<package name="faqList" extends="struts-default, tiles-default">
+	
+		<!-- 자주묻는 질문 리스트 -->
 		<action name="faqList" class="faq.ListAction" method="execute">
 			<result type="tiles">faqList</result>
 		</action>
 		
+		<!-- 자주묻는 질문 개별 뷰 -->
 		<action name="faqView" class="faq.ViewAction">
 			<result type="tiles">faqView</result>
 		</action>

@@ -5,42 +5,52 @@
 	
 <struts>
 	<package name="board"  extends="struts-default, tiles-default">
+		
+		<!-- 문의사항 게시판 리스트-->
 		<action name="boardList" class="board.ListAction">
 			<result type="tiles">boardList</result>
 		</action>
 		
+		<!-- 문의사항 게시판 개별 뷰-->
 		<action name="boardView" class="board.ViewAction">
 			<result type="tiles">boardView</result>
 		</action>
 		
+		<!-- 문의사항 게시판 작성 폼-->
 		<action name="boardWriteForm" class="board.WriteAction" method="form">
 			<result type="tiles">boardWriteForm</result>
 		</action>
 		
+		<!-- 문의사항 게시판 작성 처리-->
 		<action name="boardWrite" class="board.WriteAction">
 			<result type="redirect-action">
 				<param name="actionName">boardList</param>
 			</result>
 		</action>
 		
+		<!-- 문의사항 게시판 답변 폼-->
 		<action name="boardReplyForm" class="board.WriteAction" method="reply">
 			<result type="tiles">boardWriteForm</result>
 		</action>
 		
+		<!-- 문의사항 게시판 답변 처리-->
 		<action name="boardReply" class="board.WriteAction" >
 			<result type="redirect-action">
 				<param name="actionName">boardList</param>
 			</result>
 		</action>
 	
+		<!-- 문의사항 게시판 수정 폼-->	
 		<action name="boardModifyForm" class="board.ModifyAction" method="form">
 			<result type="tiles">boardWriteForm</result>
 		</action>
 		
+		<!-- 문의사항 게시판 수정 처리-->
 		<action name="boardModify" class="board.ModifyAction">
 			<result type="tiles">boardView</result>
 		</action>
 		
+		<!-- 문의사항 게시판 삭제 처리-->
 		<action name="boardDelete" class="board.DeleteAction">
 			<result type="redirect-action">
 				<param name="actionName">boardList</param>

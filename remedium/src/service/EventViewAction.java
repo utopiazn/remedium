@@ -35,8 +35,6 @@ public class EventViewAction extends ActionSupport implements SessionAware {
 	EventBean paramClass;
 	
 	
-	
-	
 	//생성자
 	public EventViewAction() throws IOException{
 		
@@ -49,13 +47,10 @@ public class EventViewAction extends ActionSupport implements SessionAware {
 	//이벤트의 상세보기
 	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
 		paramClass = new EventBean();
 		
-		System.out.println("NO :"+getNo());
 		paramClass.setNo(getNo());
 	
-		System.out.println("NO :"+getNo());
 		resultClass = (EventBean) sqlMapper.queryForObject("event.selectOne", paramClass);
 
 		

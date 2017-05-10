@@ -47,8 +47,6 @@ public class CashAction extends ActionSupport implements SessionAware{
 		
 		paramClass.setMemberID(getMemberId());
 		
-		System.out.println(cash);
-		
 		int orgCash = (int)session.get("cash");
 		
 		sqlMapper.update("member.updateCash", paramClass);

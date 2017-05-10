@@ -43,8 +43,6 @@ public class DeleteAction extends ActionSupport  implements SessionAware {
 		paramClass.setRef(getRef());
 		paramClass.setRe_step(getRe_step());
 		
-		System.out.println(getRe_step());
-		
 		if(re_step != 0){
 			sqlMapper.delete("board.deleteReply",paramClass);
 		}

@@ -19,27 +19,31 @@
 		 where faqId = #faqId#
 	</sql>
 	
+	<!-- 자주묻는 질문 리스트 -->
 	<select id="selectAll" resultMap="FAQRes">
 		<include refid="select-all" />
-	
 	</select>
 	
+	<!-- 자주묻는 질문 개별 뷰 -->	
 	<select id="selectOne" resultMap="FAQRes">
 		<include refid="select-all" /> 
 		<include refid="where-faqid" />
 		order by type asc	
 	</select>
 	
+	<!-- 자주묻는 질문 추가 -->
 	<insert id="insertFaq" parameterClass="FAQ">
 		insert into faq (type, subject, content, faqId)
 		VALUES (#type#,#subject#,#content#, (select max(faqId) +1 as faqId from faq))	
 	</insert>
 	
+	<!-- 자주묻는 질문 수정 -->
 	<update id="updateFaq" parameterClass="FAQ">
 		update faq set subject = #subject#, content = #content#, type=#type#
 		<include refid="where-faqid" />
 	</update>
 	
+	<!-- 자주묻는 질문 삭제 -->
 	<delete id="deleteFaq" parameterClass="FAQ">
 		delete from faq
 		<include refid="where-faqid" />

@@ -56,12 +56,10 @@ public class EventListAction extends ActionSupport implements SessionAware {
 	//이벤트들의 목록
 	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
 		
 		totalCount = list.size();
 		
 		list = sqlMapper.queryForList("event.selectAll");
-		System.out.println(list.size());
 				
 		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
 		pagingHtml = page.getPagingHtml().toString();
@@ -74,7 +72,6 @@ public class EventListAction extends ActionSupport implements SessionAware {
 		}
 	
 		//list = list.subList(page.getStartCount(), lastCount);
-		System.out.println(list.size());
 		
 		int count = list.size();
 		

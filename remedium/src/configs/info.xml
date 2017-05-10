@@ -5,6 +5,8 @@
 	
 <struts>
 	<package name="info"  extends="struts-default, tiles-default">
+	
+		<!-- 호텔소개 페이지 -->
 		<action name="info" class="main.InfoAction">
 			<result type="tiles">info</result>
 		</action>

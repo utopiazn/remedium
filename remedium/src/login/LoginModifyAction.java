@@ -65,8 +65,6 @@ public class LoginModifyAction extends ActionSupport implements SessionAware {
 		
 		paramClass = new MemberBean();
 		
-		System.out.println("111"+getMemberName());
-		
 		paramClass.setMemberID(getMemberID());
 		paramClass.setMemberPassword(getMemberPassword());
 		paramClass.setMemberName(getMemberName());
@@ -91,7 +89,6 @@ public class LoginModifyAction extends ActionSupport implements SessionAware {
 		paramClass.setAddr1(getAddr1()); 	 // 회원 주소
 		paramClass.setAddr2(getAddr2());
 		
-		System.out.println("11111");
 		sqlMapper.update("member.updateMember", paramClass);
 		
 		/*resultClass = (MemberBean) paramClass;*/

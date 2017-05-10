@@ -38,12 +38,9 @@ public class ViewAction extends ActionSupport implements SessionAware {
 		paramClass = new FAQBean();
 		resultClass = new FAQBean();
 		
-		//System.out.println(getFaqId());
-		
 		paramClass.setFaqId(getFaqId());
 		
 		resultClass = (FAQBean) sqlMapper.queryForObject("faq.selectOne",getFaqId());
-			
 		
 		return SUCCESS;
 	}
