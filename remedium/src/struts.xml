@@ -11,14 +11,16 @@
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.action.extension" value="action" />
 	
-	<package name="tiles"  extends="struts-default, tiles-default">       
+	<package name="tiles"  extends="struts-default, tiles-default">
+	
+		<!-- 기본 호텔 메인 페이지 -->       
 	    <action name="main" class="main.MainAction" method="main">
 			<result type="tiles">main3</result>
 		</action>    	
 
 	</package>
 	
-	
+	<!-- 추가적인 액션경로(직접 들어가서 확인할 것) -->
 	<include file="/configs/member.xml" />
 	<include file="/configs/room.xml" />
 	<include file="/configs/info.xml" />

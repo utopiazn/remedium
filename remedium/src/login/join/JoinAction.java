@@ -30,13 +30,7 @@ public class JoinAction extends ActionSupport  implements SessionAware {
 	private String addr1; // 회원 주소
 	private String addr2; // 회원 상세주소
 	
-	
-	
 	private MemberBean paramClass;
-
-	
-	
-
 
 	public JoinAction() throws IOException {
 		
@@ -59,18 +53,6 @@ public class JoinAction extends ActionSupport  implements SessionAware {
 		
 		paramClass = new MemberBean();
 		
-		System.out.println(getMemberID());							
-		System.out.println(getMemberPassword());
-		System.out.println(getMemberName());
-		System.out.println(getGender());
-		System.out.println(getBirthday());
-		System.out.println(getPhone());
-		System.out.println(getEmail());
-		System.out.println(getZipcode());
-		System.out.println(getAddr1());
-		System.out.println(getAddr2());
-		
-		
 		paramClass.setMemberID(getMemberID());
 		paramClass.setMemberPassword(getMemberPassword());
 		paramClass.setMemberName(getMemberName());
@@ -91,7 +73,6 @@ public class JoinAction extends ActionSupport  implements SessionAware {
 			sqlMapper.insert("member.insertMember", paramClass);
 		}
 		
-
 		return SUCCESS;
 	}
 

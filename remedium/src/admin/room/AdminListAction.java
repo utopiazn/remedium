@@ -30,7 +30,7 @@ public class AdminListAction extends ActionSupport implements SessionAware {
 	
 	
 	@Override
-	//고객이 요청한 예약객실 리스트
+	//고객이 예약요청한 객실 리스트
 	public String execute() throws Exception {
 
 		reslist = new ArrayList<RoomReservationBean>();

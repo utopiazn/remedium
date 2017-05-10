@@ -136,6 +136,16 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 	}
 	/////////////////////////////////////////////////////////////
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//클래스에 저장된 시설정보이미지 가져오기
 	public static String getRoomClassInfo(String room_class) throws Exception{
 		
@@ -149,6 +159,8 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 		
 		return resultClass.getImage2();
 	}
+	
+	
 	
 	
 	
@@ -219,6 +231,17 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 	////////////////////////////////////////////////////////////
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//이미지업로드 설정
 	public static void imageUplode(ImageBean paramClass, int no, String uploadFileName, String fileUploadPath, File upload, String sql) throws IOException, SQLException{
 		
@@ -244,6 +267,10 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 	
 	
 	
+	
+	
+	
+	
 	// 현재 날짜 : java에서는 이 함수 호출
 	public String getDate(){
 		Date currentDate = new Date();
@@ -253,6 +280,9 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 		
 		return cDate;
 	}
+	
+	
+	
 	
 	
 	

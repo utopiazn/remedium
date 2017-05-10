@@ -6,33 +6,39 @@
 <struts>
 	<package name="facilities"  extends="struts-default, tiles-default">
 		
-		
+		<!-- 편의시설 리스트 -->
 		<action name="facilitiesList" class="service.FacilitiesListAction">
 			<result type="tiles">facilitiesList</result>
 		</action>
 		
+		<!-- 편의시설 개별 뷰 -->
 		<action name="facilitiesView" class="service.FacilitiesViewAction">
 			<result type="tiles">facilitiesView</result>
 		</action>
 		
+		<!-- 편의시설 추가 폼 -->
 		<action name="facilitiesInsertForm" class="admin.FacilitiesAction" method="insForm">
 			<result type="tiles">facilitiesInsertForm</result>
 		</action>
 		
+		<!-- 편의시설 추가 처리 -->
 		<action name="facilitiesInsert" class="admin.FacilitiesAction">
 			<result type="redirect-action">
 				<param name="actionName">facilitiesList</param>
 			</result>
 		</action>
 		
+		<!-- 편의시설 수정 폼 -->
 		<action name="facilitiesModifyForm" class="admin.FacilitiesAction" method="updForm">
 			<result type="tiles">facilitiesInsertForm</result>
 		</action>
 		
+		<!-- 편의시설 수정 처리 -->
 		<action name="facilitiesModifyAction" class="admin.FacilitiesAction" method="update">
 			<result type="chain">facilitiesView</result>
 		</action>
 		
+		<!-- 편의시설 삭제 처리 -->
 		<action name="facilitiesDelete" class="admin.FacilitiesAction" method="delete">
 			<result type="redirect-action">
 				<param name="actionName">facilitiesList</param>

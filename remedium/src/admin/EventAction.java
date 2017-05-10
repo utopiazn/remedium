@@ -69,9 +69,7 @@ public class EventAction extends ActionSupport implements SessionAware {
 			System.out.println("경로1"+this.getClass().getResource("/").getPath());
 			
 			File destFile = new File(fileUploadPath + uploadFileName);
-			System.out.println("222222");	
 			FileUtils.copyFile(upload, destFile); 
-			System.out.println("33333333");	
 		}
 		
 		paramClass.setImage(getUploadFileName());	
@@ -94,7 +92,6 @@ public class EventAction extends ActionSupport implements SessionAware {
 	//관리자 이벤트 글 수정 폼
 	public String updForm() throws Exception{
 		
-		System.out.println("222222");
 
 		paramClass = new EventBean();
 		resultClass = new EventBean();
@@ -142,8 +139,6 @@ public class EventAction extends ActionSupport implements SessionAware {
 	
 	//관리자 이벤트 글 삭제
 	public String delete() throws Exception{
-		
-		System.out.println("333333");
 		
 		paramClass = new EventBean();
 		resultClass = new EventBean();

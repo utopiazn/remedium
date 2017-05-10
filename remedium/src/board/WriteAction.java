@@ -55,17 +55,11 @@ public class WriteAction extends ActionSupport implements SessionAware{
 	// 문의 사항 게시글 쓰기 처리
 	public String execute() throws Exception {
 		
-		System.out.println("11111111");
-		
 		paramClass = new BoardBean();
 		resultClass = new BoardBean();	
 		
 		param = new MemberBean();
 		result = new MemberBean();	
-		
-		System.out.println("222222222");
-		
-
 		
 		param.setMemberID(session.get("memberId").toString());
 			

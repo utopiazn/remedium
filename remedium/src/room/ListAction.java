@@ -41,8 +41,6 @@ public class ListAction extends ActionSupport implements SessionAware {
 	@Override
 	//검색된 객실 리스트
 	public String execute() throws Exception {
-		System.out.println(firstDate);
-		System.out.println(lastDate);
 		list = new ArrayList<RoomBean>();
 		paramClass = new RoomReservationBean();
 		paramClass.setFirstDate(java.sql.Date.valueOf(firstDate));

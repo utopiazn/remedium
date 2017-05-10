@@ -5,7 +5,7 @@ public class FAQBean {
 	private String type; // 질문 종류
 	private String subject; // 질문 제목
 	private String content; // 질문 종류
-	private String faqId;
+	private String faqId;  //일련번호
 	
 	
 	public String getType() {

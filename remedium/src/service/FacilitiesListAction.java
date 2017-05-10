@@ -31,7 +31,7 @@ public class FacilitiesListAction extends ActionSupport implements SessionAware 
 	
 
 	
-	//편의시설들의 목록
+	//편의시설 리스트
 	@Override
 	public String execute() throws Exception {
 

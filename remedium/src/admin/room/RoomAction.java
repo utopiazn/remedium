@@ -77,7 +77,7 @@ public class RoomAction extends ActionSupport  implements SessionAware {
 	}
 	
 	//객실정보 수정
-		public String update() throws Exception {
+	public String update() throws Exception {
 			
 			paramClass = new RoomBean();
 			resultClass = new RoomBean();

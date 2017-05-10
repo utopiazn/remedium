@@ -21,11 +21,12 @@
 		</action>
 		
 		
-		<!-- 회원 탈퇴 -->
+		<!-- 회원 탈퇴 폼 -->
 		<action name="loginDeleteForm" class="login.LoginDeleteAction" method="delete" >
 			<result type="tiles">loginDeleteForm</result>
 		</action>
 		
+		<!-- 회원 탈퇴 처리 -->
 		<action name="loginDelete" class="login.LoginDeleteAction">
 			<result type="redirect-action">
 				<param name="actionName">main</param>
@@ -33,11 +34,12 @@
 
 		</action>
 		
-		<!-- 캐쉬 충전 -->
+		<!-- 캐쉬 충전 폼 -->
 		<action name="myPageCashForm" class="mypage.CashAction" method="form">
 			<result type="tiles">myPageCash</result>
 		</action>
 		
+		<!-- 캐쉬 충전 처리 -->
 		<action name="myPageCash" class="mypage.CashAction">
 			<result type="chain">myPageMain</result>
 		</action>
@@ -51,10 +53,6 @@
 		<action name="loginModify" class="login.LoginModifyAction" method="execute">
 			<result type="tiles">loginModify</result>
 		</action>
-
-		
-		
-		
 
 	</package>
 </struts>

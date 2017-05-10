@@ -18,8 +18,6 @@ public class MainAction extends ActionSupport implements SessionAware {
 
 	private List<RoomclassBean> list;
 	
-	
-	
 	private Map session;
 	
 	//사이트 메인 페이지

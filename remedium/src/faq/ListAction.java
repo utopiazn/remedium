@@ -44,16 +44,10 @@ public class ListAction extends ActionSupport implements SessionAware {
 		}
 	
 	//자주묻는 질문 리스트
-
-	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("11111111111111");
 		
 		list = sqlMapper.queryForList("faq.selectAll");
 		 
-		System.out.println("size"+list.size());
-		
 		totalCount = list.size();
 		
 		page = new PagingAction(currentPage, totalCount, blockCount, blockPage, num, "", url);
@@ -66,8 +60,6 @@ public class ListAction extends ActionSupport implements SessionAware {
 		}
 		
 		list = list.subList(page.getStartCount(), lastCount);
-		
-		
 		
 		return SUCCESS;
 	}

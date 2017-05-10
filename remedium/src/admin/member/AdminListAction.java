@@ -70,6 +70,7 @@ public class AdminListAction extends ActionSupport implements SessionAware {
 		return SUCCESS;
 	}
 	
+	//가입된 고객들 검색
 	public String search() throws Exception {
 		
 		System.out.println("getSearchKey"+getSearchKey());

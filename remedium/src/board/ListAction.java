@@ -52,12 +52,9 @@ public class ListAction extends ActionSupport  implements SessionAware {
 			return search();
 		}
 		
-		System.out.println("list");
 		list = sqlMapper.queryForList("board.selectAll"); // 멤버 회원 전부를 가져옴
 		
-		System.out.println("list ");
-		
-// 페이징 처리 할때 필요한 부분
+		// 페이징 처리 할때 필요한 부분
 		totalCount = list.size(); // 회원 수 만큼 토탈 카운트에 넣음
 		
 		System.out.println("url : " + url);
@@ -82,15 +79,14 @@ public class ListAction extends ActionSupport  implements SessionAware {
 		for(BoardBean no : list){
 			
 			no.setListNo(count--);
-			
 		}
-		
-		
-// 페이징 처리 할때 필요한 부분 
+		// 페이징 처리 할때 필요한 부분 
 	
 		return SUCCESS;
 	}
 	
+	
+	//게시판 검색 기능
 	public String search() throws Exception {
 		
 		if(searchNum == 1){

@@ -94,6 +94,7 @@ public class FaqAction extends ActionSupport implements SessionAware {
 		
 		sqlMapper.update("faq.updateFaq",paramClass);
 		
+		resultClass = paramClass;
 		
 		return SUCCESS;
 	}
