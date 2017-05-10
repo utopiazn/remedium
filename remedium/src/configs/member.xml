@@ -15,9 +15,10 @@
 		<!-- 회원가입 처리 -->
 		<action name="join" class="login.join.JoinAction"  method="execute" >
 		
-			<result type="redirect-action">
-				<param name="actionName">loginForm</param>
-			</result>
+			<!-- <result type="redirect-action">
+				<param name="actionName">loginForm</param>				
+			</result> -->
+			<result type="tiles">joinSuccess</result>			
 			<!-- <result type="tiles">loginForm</result> -->
 		</action>
 		
