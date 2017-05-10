@@ -60,9 +60,7 @@
 		</action>
 		
 		<action name="faqModify" class="admin.FaqAction" method="update">
-			<result type="redirect-action">
-				<param name="actionName">faqList</param>
-			</result>
+			<result type="tiles">faqView</result>
 		</action>
 		
 		<action name="faqDelete" class="admin.FaqAction" method="delete">
