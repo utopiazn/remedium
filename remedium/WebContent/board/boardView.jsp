@@ -38,7 +38,7 @@ text-align: center;
     background-color : #202f58;
     display: inline-block;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 15px;
     text-decoration: none;
     color: white;
  
@@ -100,13 +100,13 @@ text-align: center;
 		</table><br/>
 		
 		<center>
-		<input name="list" type="button" value="글목록" class="button" onClick="javascript:location.href='boardList.action'">
-		<s:if test ="resultClass.Name == '${session.memberName }' || '${ session.userAdmin == '1' }'" >&nbsp;
-    		<input type="button" value="글수정" class="button" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
-			&nbsp;<input type="button" value="글삭제" class="button" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />&ref=<s:property value="resultClass.ref" />&re_step=<s:property value="resultClass.re_step" />')">
+		<input name="list" type="button" value="목록" class="button" onClick="javascript:location.href='boardList.action'">
+		<s:if test ="resultClass.Name == '${session.memberName }' || '${ session.userAdmin == '1' }'" >
+    	&nbsp;<input type="button" value="수정" class="button" onClick="javascript:location.href='boardModifyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
+		&nbsp;<input type="button" value="삭제" class="button" onClick="javascript:button_event('boardDelete.action?no=<s:property value="resultClass.no" />&ref=<s:property value="resultClass.ref" />&re_step=<s:property value="resultClass.re_step" />')">
 		</s:if>
 		<s:if test="${ session.userAdmin == '1' }">
-				<input type="button" value="답변" class="button" onClick="javascript:location.href='boardReplyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
+		&nbsp;<input type="button" value="답변" class="button" onClick="javascript:location.href='boardReplyForm.action?no=<s:property value="resultClass.no" />&currentPage=<s:property value="currentPage" />'"> 
 		</s:if>
 		</center>
 </div>
