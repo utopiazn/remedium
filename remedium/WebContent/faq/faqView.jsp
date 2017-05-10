@@ -77,7 +77,7 @@ color: black;
       
       <tr >    
        	<td width="80" height="300" bgcolor="#202f58"><font color="white"> 내 용 </font></td>
-        <td colspan="3" bgcolor="#FFFFFF" class="td" align="left">
+        <td colspan="3" bgcolor="#FFFFFF" class="td" align="left" style="vertical-align: top;">
           &nbsp;A. <s:property value="resultClass.content" />
         </td>
        </tr>
