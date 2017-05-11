@@ -230,7 +230,7 @@ image2	시설정보
 
 		
 			<tr>
-				<td align="right" colspan="2">
+				<td align="center" colspan="4">
 	          		<input class="button" type="submit" value="작성완료" >
 	            	<input class="button" name="list" type="button" value="목록" class="inputb" onClick="javascript:location.href='roomInfoList.action?roomClass=0'">
 	          	</td>
