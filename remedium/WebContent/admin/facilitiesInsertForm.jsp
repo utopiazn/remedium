@@ -34,6 +34,19 @@ color: black;
 <body>
 <div class="content">
 <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  <s:if test="%{resultClass.no != null}">
+  		<tr>
+  			<th align="center"><h2>편의시설 수정</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			</th>
+  		</tr>
+  		<tr>
+  			<td height="20"></td>
+  		</tr>
+</table>	
+<form action="facilitiesModifyAction.action" method="post" enctype="multipart/form-data">
+</s:if>
+<s:else>
   		<tr>
   			<th align="center"><h2>편의시설 추가</h2>
   			<hr align="center" width="50%" size="1" color="gray">
@@ -43,11 +56,6 @@ color: black;
   			<td height="20"></td>
   		</tr>
 </table>
-	
-<s:if test="%{resultClass.no != null}">
-<form action="facilitiesModifyAction.action" method="post" enctype="multipart/form-data">
-</s:if>
-<s:else>
 <form action="facilitiesInsert.action" method="post" enctype="multipart/form-data">
 </s:else>
 		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">

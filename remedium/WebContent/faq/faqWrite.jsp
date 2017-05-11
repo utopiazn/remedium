@@ -65,7 +65,7 @@ text-align: center;
 <div class="event">
 
 <table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
-	
+	<s:if test="resultClass == NULL">
 	<tr>
   			<td align="center" ><h2>자주 묻는 글 쓰기</h2>
   			<hr align="center" width="50%" size="1" color="gray">
@@ -74,12 +74,18 @@ text-align: center;
   			
   		</tr>	
 </table>
-
-	<s:if test="resultClass == NULL">
 		<form action="faqWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 	</s:if>
 	
 	<s:else>
+		<tr>
+  			<td align="center" ><h2>자주 묻는 글 수정</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			<br/>
+  			</td>
+  			
+  		</tr>	
+</table>
 		<form action="faqModify.action" method="post" enctype="multipart/form-data">
 			<s:hidden name="faqId" value="%{resultClass.faqId}" />
 	</s:else> 

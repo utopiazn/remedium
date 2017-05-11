@@ -53,7 +53,7 @@ color: black;
 <div class="event">
 <table width="850" border="0" cellspacing="0" cellpadding="2" align="center">
   	<tr>
-  			<td align="center" ><h2>게시글 보기</h2>
+  			<td align="center" ><h2>자주 묻는 글 보기</h2>
   			<hr align="center" width="50%" size="1" color="gray">
   			<br/>
   			</td>

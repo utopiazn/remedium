@@ -56,7 +56,7 @@ text-align: center;
 <div class="event">
 	<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
 	<tr>
-  			<td align="center" ><h2>게시글 보기</h2>
+  			<td align="center" ><h2>문의 글 보기</h2>
   			<hr align="center" width="50%" size="1" color="gray">
   			<br/>
   			</td>

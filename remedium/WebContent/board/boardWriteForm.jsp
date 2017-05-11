@@ -58,6 +58,7 @@ text-align: center;
 <body>
 <div class="event">
 	<table width="700" border="0" cellspacing="0" cellpadding="2" align="center">
+		<s:if test="resultClass == NULL">
 		<tr>
   			<td align="center" ><h2>문의 글 쓰기</h2>
   			<hr align="center" width="50%" size="1" color="gray">
@@ -67,17 +68,33 @@ text-align: center;
   		</tr>
 	</table>
 	
-	<s:if test="resultClass == NULL">
+
 		<form action="boardWrite.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 	</s:if>
 	
 	<s:elseif test="reply">
+		<tr>
+  			<td align="center" ><h2>문의 글 답변</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			<br/>
+  			</td>
+  			
+  		</tr>
+	</table>
 		<form action="boardReply.action" method="post" enctype="multipart/form-data" onsubmit="return validation(this);">
 			<s:hidden name="ref" value="%{resultClass.ref}" />
 			<s:hidden name="re_step" value="%{resultClass.re_step}" />
 	</s:elseif>
 	
 	<s:else>
+		<tr>
+  			<td align="center" ><h2>문의 글 수정</h2>
+  			<hr align="center" width="50%" size="1" color="gray">
+  			<br/>
+  			</td>
+  			
+  		</tr>
+	</table>
 		<form action="boardModify.action" method="post" enctype="multipart/form-data">
 			<s:hidden name="no" value="%{resultClass.no}" />
 			<s:hidden name="name" value="%{resultClass.name}" />

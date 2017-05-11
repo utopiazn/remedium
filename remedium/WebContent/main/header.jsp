@@ -53,8 +53,8 @@ Cash point: <s:property value="session.cash" />
 
 
 </div>
-
-<div id="menu" style="padding-left: 225px;">
+<s:if test="${session.memberId != null}">
+<div id="menu" style="padding-left: 275px;">
 	<a href="info.action" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
@@ -66,6 +66,21 @@ Cash point: <s:property value="session.cash" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="boardList.action" style="color: white;">QnA</a>
 </div>
+</s:if>
+<s:else>
+<div id="menu">
+	<a href="info.action" style="color: white;">Remedium</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
+    <a href="roomInfoView.action?roomClass=1" style="color: white;">Room</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="facilitiesList.action" style="color: white;">Facility</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="eventList.action" style="color: white;">Event</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="boardList.action" style="color: white;">QnA</a>
+</div>
+</s:else>
 <form action="roomList.action" method="post" enctype="multipart/formdata" onsubmit="return ReservationCH(this);">
 <div id="res">
 <c:set var="cDate" value="<%=new ProjectUtil()%>"/> 
