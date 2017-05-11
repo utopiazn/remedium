@@ -54,7 +54,7 @@ Cash point: <s:property value="session.cash" />
 
 </div>
 
-<div id="menu" >
+<div id="menu" style="padding-left: 225px;">
 	<a href="info.action" style="color: white;">Remedium</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <a href="roomInfoView.action?room_class='1'">객실 소개   </a> -->
