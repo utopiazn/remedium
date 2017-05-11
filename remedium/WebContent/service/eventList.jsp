@@ -60,7 +60,7 @@ color: black;
       	</tr>
   
        <tr bgcolor="#777777">
-       <td height="1" colspan="4"></td>
+       <td height="1" colspan="5"></td>
       </tr>
       	    
      
