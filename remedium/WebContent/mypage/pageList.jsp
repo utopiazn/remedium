@@ -145,9 +145,11 @@ text-align:right;
 </tr>
 </s:iterator>
 </s:else>
+<s:if test='${session.userAdmin!="1"}'>
 <tr align="right">
 <td colspan="8"><small>※  예약취소·환불 문의 : 1544-9970</small></td>
 </tr>
+</s:if>
 <tr align="center">
 	<td colspan="8"><s:property value="pagingHtml" escape="false"/></td>
 </tr>
