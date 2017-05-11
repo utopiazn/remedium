@@ -87,7 +87,7 @@ public class ListAction  extends ActionSupport implements SessionAware {
 	
 	//마이페이지 메인	
 	public String main() throws Exception {
-		// TODO Auto-generated method stub
+
 		return SUCCESS;
 	}
 

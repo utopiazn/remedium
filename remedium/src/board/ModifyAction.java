@@ -36,14 +36,13 @@ public class ModifyAction extends ActionSupport implements SessionAware {
 		reader.close();
 	}
 	
+	//문의사항 게시판 수정 폼
 	public String form() throws Exception {
 		
 		paramClass = new BoardBean();
 		resultClass = new BoardBean();
 		
 		paramClass.setNo(getNo());
-		
-		System.out.println("ID : "+paramClass.getNo());
 		
 		resultClass = (BoardBean) sqlMapper.queryForObject("board.selectOne",paramClass);
 		

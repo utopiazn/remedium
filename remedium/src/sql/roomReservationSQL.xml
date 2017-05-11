@@ -19,31 +19,37 @@
 	
 	<sql id="where-no">WHERE RESERVATIONNO = #reservationNo#</sql>
 	
+	<!-- 객실예약 추가 -->
 	<insert id="insertRes" parameterClass="roomReservation">
 		INSERT INTO ROOM_RESERVATION(RESERVATIONNO, NO, FIRSTDATE, LASTDATE,
 		MONEY, MEMBERID, PEOPLE) VALUES (ROOM_RESERVATION_NO_SEQ.NEXTVAL, #no#, #firstDate#,
 		#lastDate#, #money#, #memberID#, #people#)
 	</insert>
 	
+	<!-- 객실예약 리스트(고객용) -->
 	<select id="reslist" resultMap="roomReservationRes" parameterClass="roomReservation">
 		<include refid="select-all"/>
 		WHERE MEMBERID = #memberID# ORDER BY RESERVATIONNO DESC 
 	</select>
 	
+	<!-- 객실예약 리스트(관리자용) -->
 	<select id="adminlist" resultMap="roomReservationRes">
 	<include refid="select-all"/>
 	ORDER BY RESERVATIONNO DESC
 	</select>
 	
+	<!-- 객실예약 승인 -->
 	<update id="adminReservation" parameterClass="roomReservation">
 		UPDATE ROOM_RESERVATION SET RESERVATIONCHECK = #reservationCheck#
 		<include refid="where-no"/>
 	</update>
 	
+	<!-- 객실예약 취소1 -->
 	<update id="ResCancel1" parameterClass="roomReservation">
 		UPDATE MEMBER SET CASH = CASH + #money# WHERE MEMBERID = #memberID#
 	</update>
 	
+	<!-- 객실예약 취소2 -->
 	<delete id="ResCancel2" parameterClass="roomReservation">
 		DELETE FROM ROOM_RESERVATION
 		<include refid="where-no"/>

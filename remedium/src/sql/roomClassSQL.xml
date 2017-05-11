@@ -37,7 +37,7 @@
 			(#room_class#, #image#, #content#, #image2#, #name#)
 	</insert>
 	
-	<!-- 회원 삭제 -->
+	<!-- 객실소개 삭제 -->
 	<delete id="deleteRoomClass" parameterClass="roomclass">
 		delete 
 			ROOM_CLASS
@@ -45,6 +45,7 @@
 			ROOM_CLASS  = #room_class#		
 	</delete>
 	
+	<!-- 객실소개 수정1 -->
 	<update id="updateRoomClass" parameterClass="roomclass">
 		update 
 			ROOM_CLASS 
@@ -57,7 +58,7 @@
 			ROOM_CLASS = #room_class# 			
 	</update>
 	
-	
+	<!-- 객실소개 수정2 -->
 	<update id="updateRoomClass2" parameterClass="roomclass">
 		update 
 			ROOM_CLASS 

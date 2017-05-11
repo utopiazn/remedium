@@ -17,7 +17,6 @@ public class FacilitiesViewAction extends ActionSupport implements SessionAware 
 	private int no;
 
 	//편의시설의 상세보기
-	@Override
 	public String execute() throws Exception {
 		
 		paramClass = new FacilitiesBean();

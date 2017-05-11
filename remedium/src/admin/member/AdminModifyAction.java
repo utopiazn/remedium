@@ -50,6 +50,7 @@ public class AdminModifyAction extends ActionSupport implements SessionAware {
 		reader.close();
 	}
 	
+	// 가입한 고객 수정 폼 
 	public String modifyForm() throws Exception {
 		
 		paramClass = new MemberBean();

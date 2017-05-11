@@ -29,17 +29,20 @@
 		<result property="name" column="name" />
 	</resultMap>
 	
+	<!-- 객실클래스와 연동한 전체 내용 가져오기 -->
 	<sql id="seletClass" >
 	SELECT a.* ,(SELECT NAME from room_class where ROOM_CLASS = a.ROOM_CLASS ) as CLASS_NAME FROM ROOM a
 	</sql>
 	
 	<sql id="where-no">WHERE NO = #no#</sql>
 	
+	<!-- 객실 전체 리스트 -->
 	<select id="selectAll" resultMap="roomRes">
 		<include refid="seletClass"/>
 		ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 	</select>
 	
+	<!-- 객실 인원수 검색 -->
 	<select id="selectSerch" resultMap="roomRes" parameterClass="roomReservation" >
 		<include refid="seletClass"/>
 		 WHERE NO NOT IN   
@@ -51,6 +54,7 @@
 		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 	</select>
 	
+	<!-- 객실 인원수 검색(단체) -->
 	<select id="selectSerchGroup" resultMap="roomRes" parameterClass="roomReservation">
 		<include refid="seletClass"/>
 		 WHERE NO NOT IN   
@@ -62,6 +66,7 @@
 		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 	</select>
 	
+	<!-- 객실 인원수, 타입별 검색 -->
 	<select id="selectSerch_typeC" resultMap="roomRes" parameterClass="roomReservation" >
 		SELECT a.* ,(SELECT NAME from room_class where ROOM_CLASS = a.ROOM_CLASS ) as CLASS_NAME FROM ROOM a
 		 WHERE NO NOT IN   
@@ -73,6 +78,7 @@
 		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 	</select>
 	
+	<!-- 객실 인원수(단체), 타입별 검색 -->
 	<select id="selectSerchGroup_typeC" resultMap="roomRes" parameterClass="roomReservation" >
 		SELECT a.* ,(SELECT NAME from room_class where ROOM_CLASS = a.ROOM_CLASS ) as CLASS_NAME FROM ROOM a
 		 WHERE NO NOT IN   
@@ -84,6 +90,7 @@
 		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 	</select>
 	
+	<!-- 객실 날짜로만 검색 -->
 	<select id="select_PeopleNoTypeNo" resultMap="roomRes" parameterClass="roomReservation" >
 		SELECT a.* ,(SELECT NAME from room_class where ROOM_CLASS = a.ROOM_CLASS ) as CLASS_NAME FROM ROOM a
 		 WHERE NO NOT IN   
@@ -95,6 +102,7 @@
 		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 	</select>
 	
+	<!-- 객실 타입별 검색 -->
 	<select id="select_typeC" resultMap="roomRes" parameterClass="roomReservation" >
 		SELECT a.* ,(SELECT NAME from room_class where ROOM_CLASS = a.ROOM_CLASS ) as CLASS_NAME FROM ROOM a
 		 WHERE NO NOT IN   
@@ -106,11 +114,13 @@
 		  ORDER BY a.ROOM_CLASS ASC, a.NO ASC
 	</select>
 	
+	<!-- 객실 개별 뷰 -->
 	<select id="selectOne" resultMap="roomRes">
 		<include refid="seletClass"/>
 		WHERE a.NO = #no#
 	</select>
 	
+	<!-- 객실 추가 -->
 	<insert id="insertRoom" parameterClass="room">
 		INSERT INTO ROOM(NO, NAME, ROOM_SIZE, ROOM_CAPACITY, CONSTRUCTION, ROOM_COMMENT,
 		PRICE, ROOM_CLASS) VALUES (#no#, #name#, #room_size#,
@@ -118,6 +128,7 @@
 		#price#, #room_class#)
 	</insert>
 	
+	<!-- 객실 수정 -->
 	<update id="updateRoom" parameterClass="room">
 		UPDATE ROOM SET NAME = #name#, ROOM_SIZE = #room_size#, ROOM_CAPACITY = #room_capacity#,
 		CONSTRUCTION = #construction#, ROOM_COMMENT = #room_comment#,
@@ -125,11 +136,13 @@
 		<include refid="where-no"/>
 	</update>
 	
+	<!-- 객실 이미지 수정 -->
 	<update id="updateImage" parameterClass="room"> 
 		UPDATE ROOM SET SAVIMAGE = #savImage#
 		<include refid="where-no"/>
 	</update>
 	
+	<!-- 객실 삭제 -->
 	<delete id="deleteRoom" parameterClass="room">
 		DELETE FROM ROOM
 		<include refid="where-no"/>

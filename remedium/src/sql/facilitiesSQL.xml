@@ -19,33 +19,39 @@
 	<sql id="where-no">
 		WHERE NO = #no#
 	</sql>
-
+	
+	<!-- 편의시설 리스트 -->
 	<select id="selectAll" resultMap="facilitiesRes">
 		<include refid="select-all" />
 		ORDER BY NO ASC
 	</select>
-
+	
+	<!-- 편의시설 개별 뷰 -->
 	<select id="selectOne" resultMap="facilitiesRes">
 		<include refid="select-all" />
 		<include refid="where-no" />
 	</select>
 	
+	<!-- 편의시설 추가 -->
 	<insert id="insertFac" parameterClass="facilities">
 		INSERT INTO FACILITIES(NO, NAME, CONTENT, TIME) 
 		VALUES (#no#, #name#, #content#, #time#)
 	</insert>
 	
+	<!-- 편의시설 수정 -->
 	<update id="updateFac" parameterClass="facilities">
 		UPDATE FACILITIES SET NO = #no#, NAME = #name#, CONTENT = #content#, 
 		TIME = #time#
 		<include refid="where-no"/>
 	</update>
 	
+	<!-- 편의시설 이미지 수정 -->
 	<update id="updateImage" parameterClass="facilities"> 
 		UPDATE FACILITIES SET IMAGE = #image#
 		<include refid="where-no"/>
 	</update>
 	
+	<!-- 편의시설 삭제 -->
 	<delete id="deleteFac" parameterClass="facilities">
 		DELETE FROM FACILITIES
 		<include refid="where-no"/>

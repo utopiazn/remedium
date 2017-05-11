@@ -1,6 +1,6 @@
 package bean;
 
-public class ImageBean {
+public class ImageBean /*이미지업로드시 상속용 자바빈*/ {
 	private int no; //번호
 	private String image; // 객실 사진 저장본
 	

@@ -86,6 +86,9 @@ text-align:right;
 <s:if test='%{people==0}'>
 단체
 </s:if>
+<s:elseif test="%{people==9}">
+-
+</s:elseif>
 <s:else>
 <s:property value="people"/>
 </s:else>

@@ -78,7 +78,6 @@
 				REGDATE, USERADMIN, ZIPCODE, ADDR1, ADDR2, CASH, USERCHECK) 
 		VALUES (#memberID#, #memberPassword#, #memberName#, #gender#, #birthday#,#phone#, #email#, 
 				sysdate, #userAdmin#, #zipcode#, #addr1#, #addr2#, #cash#, #userCheck# )
-		
 	</insert>
 	
 	<!-- 회원 수정 -->
