@@ -43,6 +43,20 @@ margin-left: 5%;
 }
 
 </style>
+<script type="text/javascript">		
+	
+	function roomDel(url){
+			
+		var del = confirm("정말로 객실을 삭제하시겠습니까?");
+		
+		if(del == true){	
+		alert("삭제하였습니다.");	
+		document.location.href=url;
+		}else{
+		return false;
+		}
+	}
+</script>
 
 </head>
 <body>
@@ -96,7 +110,7 @@ margin-left: 5%;
 <s:if test="${session.memberId != null}">
 <s:if test="${ session.userAdmin == '1' }"> <!-- 아이디가 admin일 경우 객실 수정과 삭제 보여주기 -->
 <input class="button" type="button" value="객실수정" onclick="location.href='/remedium/roomUpdateForm.action?no=<s:property value="resultClass.no"/>'" />
-<input class="button" type="button" value="객실삭제" onclick="location.href='/remedium/roomDelete.action?no=<s:property value="resultClass.no"/>'" />
+<input class="button" type="button" value="객실삭제" onclick="javascript:roomDel('roomDelete.action?no=<s:property value="resultClass.no"/>')" />
 </s:if>
 
 <s:else>

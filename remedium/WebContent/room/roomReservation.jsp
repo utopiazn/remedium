@@ -13,7 +13,7 @@
 			var c = parseInt(userinput.cash.value);
 			
 			if(m > c){
-				var del = confirm("현재 충전하신 Cash가 부족합니다.\n잔여Cash : "+c+"\n지금 바로 충전 하시겠습니까?");
+				var del = confirm("현재 충전하신 Cash가 부족합니다.\n필요Cash : "+m+", 잔여Cash : "+c+"\n지금 바로 충전 하시겠습니까?");
 				
 				if(del == true){			
 					document.location.href='myPageCashForm.action';

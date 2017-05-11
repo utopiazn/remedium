@@ -35,7 +35,12 @@ color: black;
 <div class="content">
 <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
   		<tr>
+  			<s:if test="resultClass ==null">
   			<th align="center"><h2>객실 추가</h2>
+  			</s:if>
+			<s:else>
+			<th align="center"><h2>객실 수정</h2>
+			</s:else>
   			<hr align="center" width="50%" size="1" color="gray">
   			</th>
   		</tr>
@@ -118,8 +123,13 @@ color: black;
 			<tr bgcolor="#777777">
         		<td height="1" colspan="2"></td>	
         	</tr>
-			<tr>		  
-				<td align="right" colspan=2><input class="button" type="submit" name="추가"></td>
+			<tr>	
+				<s:if test="resultClass ==null">
+	  			<td align="right" colspan=2><input class="button" type="submit" value="추가"></td>
+	  			</s:if>
+				<s:else>
+				<td align="right" colspan=2><input class="button" type="submit" value="수정"></td>
+				</s:else>	  
 			</tr>
 		</table>
 	</form>
