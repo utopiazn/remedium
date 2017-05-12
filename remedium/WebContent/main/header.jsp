@@ -166,7 +166,7 @@ function ReservationCH(userinput){
 	}
 	
 	if(fd == cd){
-		alert("오늘 날자를 입력하셨습니다.\n입력하신 검색날짜:"+fd+"\n당일 예약은 불가능 합니다.");
+		alert("오늘 날짜를 입력하셨습니다.\n입력하신 검색날짜:"+fd+"\n당일 예약은 불가능 합니다.");
 		return false;
 	}
 	
