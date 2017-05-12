@@ -2,14 +2,14 @@ package admin;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
+/*import java.io.Reader;*/
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 
-import com.ibatis.common.resources.Resources;
+/*import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
-import com.ibatis.sqlmap.client.SqlMapClientBuilder;
+import com.ibatis.sqlmap.client.SqlMapClientBuilder;*/
 import com.opensymphony.xwork2.ActionSupport;
 
 import bean.EventBean;
@@ -20,8 +20,8 @@ public class EventAction extends ActionSupport implements SessionAware {
 	
 	private Map session;
 	
-	public static Reader reader;
-	public static SqlMapClient sqlMapper;
+	/*public static Reader reader;
+	public static SqlMapClient sqlMapper;*/
 	
 	private int currentPage;
 	
@@ -42,12 +42,12 @@ public class EventAction extends ActionSupport implements SessionAware {
 	EventBean paramClass;
 
 
-	public EventAction() throws IOException{
+	/*public EventAction() throws IOException{
 		
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml");
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);
 		reader.close();
-	}
+	}*/
 	
 	//관리자 이벤트 글 쓰기 폼
 	public String insForm() throws Exception{
@@ -81,7 +81,7 @@ public class EventAction extends ActionSupport implements SessionAware {
 		
 		if(paramClass != null){
 			
-			sqlMapper.insert("event.insertEvent", paramClass);
+			util.ProjectUtil.sqlMapper.insert("event.insertEvent", paramClass);
 		}
 		
 		
@@ -99,7 +99,7 @@ public class EventAction extends ActionSupport implements SessionAware {
 		System.out.println(getNo());
 		paramClass.setNo(getNo());
 		
-		resultClass = (EventBean)sqlMapper.queryForObject("event.selectOne", paramClass);
+		resultClass = (EventBean)util.ProjectUtil.sqlMapper.queryForObject("event.selectOne", paramClass);
 
 		return SUCCESS;
 	}	
@@ -119,7 +119,7 @@ public class EventAction extends ActionSupport implements SessionAware {
 		
 		if(!uploadFileName.equals("")){
 			
-			resultClass = (EventBean)sqlMapper.queryForObject("event.selectOne", paramClass);
+			resultClass = (EventBean)util.ProjectUtil.sqlMapper.queryForObject("event.selectOne", paramClass);
 			
 			File deleteFile = new File(fileUploadPath + resultClass.getImage());
 			deleteFile.delete();
@@ -131,7 +131,7 @@ public class EventAction extends ActionSupport implements SessionAware {
 			paramClass.setImage(getUploadFileName());	
 		}
 		
-		sqlMapper.update("event.updateEvent",paramClass);
+		util.ProjectUtil.sqlMapper.update("event.updateEvent",paramClass);
 		
 		
 		return SUCCESS;
@@ -147,13 +147,13 @@ public class EventAction extends ActionSupport implements SessionAware {
 		System.out.println(getNo());
 		paramClass.setNo(getNo());
 		
-		resultClass = (EventBean)sqlMapper.queryForObject("event.selectOne", paramClass);
+		resultClass = (EventBean)util.ProjectUtil.sqlMapper.queryForObject("event.selectOne", paramClass);
 		
 		File deleteFile = new File(fileUploadPath + resultClass.getImage());
 		deleteFile.delete();
 		
 		
-	    sqlMapper.delete("event.deleteEvent",paramClass);
+		util.ProjectUtil.sqlMapper.delete("event.deleteEvent",paramClass);
 		
 		return SUCCESS;
 	}

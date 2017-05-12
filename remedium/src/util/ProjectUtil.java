@@ -57,6 +57,8 @@ public class ProjectUtil extends ActionSupport implements SessionAware{
 	
 	
 	
+	
+	
 	// 현재 날짜 : jsp에서 쓰기워한 로직 클래스 객체 생성후 currentDate변수를 그냥 가져다 쓰자.
 	public String currentDate = null; 
 	public ProjectUtil(){
