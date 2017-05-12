@@ -61,7 +61,7 @@ color: black;
 <div class="event">
   	<table width="600" border="0" cellspacing="0" cellpadding="2" align="center">
   		<tr>
-  			<td align="center"><h2>EVENT * PROMOTION</h2>
+  			<td align="center"><h2>EVENT * PROMOTION 수정</h2>
   			<hr align="center" width="50%" size="1" color="gray">
   			</td>
   		</tr>

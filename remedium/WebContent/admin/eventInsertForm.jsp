@@ -65,7 +65,7 @@ color: black;
 <div class="event">
   	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
   		<tr>
-  			<th align="center"><h2>EVENT * PROMOTION</h2>
+  			<th align="center"><h2>EVENT * PROMOTION 추가</h2>
   			<hr align="center" width="50%" size="1" color="gray">
   			</th>
   		</tr>
